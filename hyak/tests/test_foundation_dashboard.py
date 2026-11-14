@@ -21,12 +21,12 @@ from hyak.tools import register_dashboard as R
 from monitoring.state import Reader, registry, snapshot
 
 #: monitoring/web/learning.js as committed at 3de64a5 (Qingyun's gate lists his two RL runs); the port's working
-#: copy adds 'hyak-rl-training' to that list and nothing else.
+#: copy adds 'hyak-rl-training' and 'hyak-raw-bpb-training' to that list and nothing else.
 ORIGINAL_LEARNING_JS_SHA256 = 'dad17d32693beaefaf0fe1ca09464c6cd37676b8f19bffaf9266dcb02ab853fc'
 ORIGINAL_GATE = ("    get('learning').hidden = !['anytok-pool-settings-rl-training', 'anytok-pool-regret-rl-training']"
                  ".includes(runId);")
 NEW_GATE = ("    get('learning').hidden = !['anytok-pool-settings-rl-training', 'anytok-pool-regret-rl-training', "
-            "'hyak-rl-training'].includes(runId);")
+            "'hyak-rl-training', 'hyak-raw-bpb-training'].includes(runId);")
 MANAGED = list(DASHBOARD_RUN_IDS.values())
 
 

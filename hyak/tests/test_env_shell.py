@@ -43,7 +43,8 @@ def test_train_dry_run_prints_the_pinned_plan_and_changes_nothing(repo_root, tmp
     out = _run(repo_root, 'setup_train_env.sh', '--dry-run', bash=BASHES[-1])
     assert out.returncode == 0, out.stderr
     prefix = tmp_config.paths.env_train
-    pins = ' '.join(f'{n}=={v}' for n, v in pinned.TRAIN_PINS + pinned.TRAIN_TEST_PINS)
+    # the six image pins, huggingface_hub (docs/raw-bpb-handoff/requirements.txt), pytest
+    pins = ' '.join(f'{n}=={v}' for n, v in pinned.TRAIN_PINS + pinned.TRAIN_HANDOFF_PINS + pinned.TRAIN_TEST_PINS)
     assert f'packages:     {pins}' in out.stdout
     assert f'conda create --yes --prefix {prefix} --override-channels --channel conda-forge python=3.12 pip' in out.stdout
     assert f'{prefix}/bin/python -m pip install --index-url https://pypi.org/simple {pins}' in out.stdout

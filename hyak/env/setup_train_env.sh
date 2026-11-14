@@ -11,6 +11,8 @@
 # Result: $ANYTOK_ROOT/env/train with Python 3.12 and exactly the six pins of the Modal training
 # image (scripts/modal_anytok_pool_20k.py:37-42; stock tokenizers, never the patched pool wheel)
 #   torch==2.15.0 transformers==5.15.1 tokenizers==0.22.2 numpy==2.3.5 safetensors==0.8.0 accelerate==1.14.0
+# plus huggingface_hub==1.33.0, which makes the set equal to docs/raw-bpb-handoff/requirements.txt (the
+# raw-BPB handoff run, README section 0; hyak/handoff/fetch_inputs.sh downloads the bundle with it),
 # plus pytest==9.2.0 for the test suite, a "pip check", and "pip freeze --all" in
 # $ANYTOK_ROOT/env/train.freeze.txt.  Idempotent: re-running with the same settings installs
 # nothing new and rewrites the same freeze file; a changed freeze is reported and the previous
@@ -55,6 +57,8 @@ source "$HERE/../slurm/lib.sh"
 PYTHON_VERSION=3.12
 TORCH_VERSION=2.15.0
 PINS=(torch==2.15.0 transformers==5.15.1 tokenizers==0.22.2 numpy==2.3.5 safetensors==0.8.0 accelerate==1.14.0)
+# The seventh line of docs/raw-bpb-handoff/requirements.txt (PINS + HANDOFF_PINS equal that file; tested).
+HANDOFF_PINS=(huggingface_hub==1.33.0)
 TEST_PINS=(pytest==9.2.0)
 PYPI=https://pypi.org/simple
 KNOWN_TORCH_LABELS="cu132 cu134"
@@ -94,7 +98,7 @@ EXPECTED_TORCH=$TORCH_VERSION${LABEL:++$LABEL}
 
 say "repository:   $HYAK_REPO"
 say "environment:  $PREFIX (Python $PYTHON_VERSION)"
-say "packages:     ${PINS[*]} ${TEST_PINS[*]}"
+say "packages:     ${PINS[*]} ${HANDOFF_PINS[*]} ${TEST_PINS[*]}"
 if [ -n "$INDEX_URL" ]; then
   say "torch build:  torch==$EXPECTED_TORCH from $INDEX_URL"
 else
@@ -163,7 +167,7 @@ if [ -n "$INDEX_URL" ]; then
   run "$PY" -m pip install --index-url "$INDEX_URL" --extra-index-url "$PYPI" "torch==$EXPECTED_TORCH"
 fi
 # With torch==2.15.0+cuXYZ installed, "torch==2.15.0" is already satisfied (PEP 440 ignores local labels).
-run "$PY" -m pip install --index-url "$PYPI" "${PINS[@]}" "${TEST_PINS[@]}"
+run "$PY" -m pip install --index-url "$PYPI" "${PINS[@]}" "${HANDOFF_PINS[@]}" "${TEST_PINS[@]}"
 run "$PY" -m pip check
 
 if [ "$DRY_RUN" = 1 ]; then
@@ -184,6 +188,8 @@ _hyak_libpython_dir "$PREFIX" >/dev/null || hyak_warn "could not create $PREFIX/
 PYTHONPATH="$HYAK_REPO" PYTHONDONTWRITEBYTECODE=1 "$PY" -m hyak.env.check_env --only python,packages \
   --no-gpu --no-network --no-status \
   || hyak_die "the new environment failed hyak.env.check_env (see above)"
+PYTHONPATH="$HYAK_REPO" PYTHONDONTWRITEBYTECODE=1 "$PY" -m hyak.handoff.run requirements >/dev/null \
+  || hyak_die "the new environment differs from docs/raw-bpb-handoff/requirements.txt (see above)"
 
 # --- 5. freeze ------------------------------------------------------------------------------------------
 tmp="$FREEZE.tmp.$$"

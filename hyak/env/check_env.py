@@ -44,6 +44,17 @@ What is checked (names for ``--only`` / ``--skip``):
 job also SLURM_JOB_END_TIME and the seconds left, with a warning when neither is known: the training
 wrapper would then have no in-process stop timer and rely on Slurm's --signal alone).
 
+``--handoff`` checks the environment of the raw-BPB handoff run (README section 0) with only the train
+environment and the bundle in place: ``handoff_requirements`` (the installed packages equal
+docs/raw-bpb-handoff/requirements.txt), ``handoff_inputs`` ($ANYTOK_ROOT/input against BUNDLE_MANIFEST.json: every
+file and size, and the record of hyak/handoff/fetch_inputs.sh), ``handoff_trainer_import`` (Qingyun's launcher stages
+its code tree into a temporary directory and the raw-BPB trainer module is imported from it, which loads the
+committed librust_utils.so and the memory-fix modules), ``rust_library`` on the committed
+runtime/anytok_pool_20k/rust_utils/target/release/librust_utils.so, and ``disk_space`` for one run (about 0.6 TB).
+Not applicable there, reported as skipped: ``code_stage``, ``trainer_import_uniform``, ``trainer_import_rl`` (the port's
+staged trees) and ``model_files`` (the port's model download; the bundle's model is covered by ``handoff_inputs``).
+Without ``--handoff`` the three handoff checks are skipped.
+
 The torch rule (verified 2026-11-13 on pypi.org and download.pytorch.org): ``torch==2.15.0``
 exists for Linux x86-64 only as CUDA 13 builds -- PyPI default CUDA 13.2 (what the Modal images
 installed), ``https://download.pytorch.org/whl/cu132`` and ``.../cu134``; there is no CUDA 12
@@ -91,6 +102,10 @@ GLIBC_FOR_TORCH = (2, 28)   # manylinux_2_28 wheels
 RUNS_FREE_WARN_GB = 1100
 RUNS_FREE_FAIL_GB = 30       # less than one full restart (23.5 GB) plus slack
 ROOT_FREE_WARN_GB = 150
+#: The raw-BPB run alone: 40 grid checkpoints, step 0 and the full restarts of the job boundaries (~0.6 TB).
+HANDOFF_RUNS_FREE_WARN_GB = 650
+#: Checks the raw-BPB handoff run does not use (the port's staged code and model download).
+HANDOFF_NOT_APPLICABLE = ('code_stage', 'trainer_import_uniform', 'trainer_import_rl', 'model_files')
 NETWORK_ENDPOINTS = (
     ('huggingface.co', 'https://huggingface.co/api/models/HuggingFaceTB/SmolLM2-1.7B/revision/'
                        'effd688a12921b4cc83e3312b6feb579f70f9c71', True),
@@ -928,6 +943,9 @@ def _candidate_code_root(ctx: Context, library: Path) -> Path:
 def check_rust_library(ctx: Context) -> CheckResult:
     from hyak.code import pinned
     candidate = getattr(ctx.args, 'rust_library', None)
+    if not candidate and getattr(ctx.args, 'handoff', False):
+        from hyak.handoff.common import RUST_LIBRARY_REL
+        candidate = str(ctx.repo / RUST_LIBRARY_REL)       # the library Qingyun's launcher stages
     temporary = None
     if candidate:
         library = Path(candidate)
@@ -1222,9 +1240,18 @@ def check_filesystem_monitor(ctx: Context) -> CheckResult:
                              MONITOR_FS_FACTS)
 
 
-def disk_verdict(free: dict) -> tuple:
+def disk_verdict(free: dict, handoff: bool = False) -> tuple:
     """``(status, summary, remedy)`` for ``{"runs": free bytes, "root": free bytes}``."""
     runs_gb, root_gb = free['runs'] / 1e9, free['root'] / 1e9
+    if handoff:
+        summary = f'free: ANYTOK_RUNS {runs_gb:,.0f} GB, ANYTOK_ROOT {root_gb:,.0f} GB (filesystem view, not your quota)'
+        if runs_gb < RUNS_FREE_FAIL_GB:
+            return (FAIL, summary, f'less than {RUNS_FREE_FAIL_GB} GB on ANYTOK_RUNS: the first full restart '
+                                   '(23.5 GB) would not fit; free space or move ANYTOK_RUNS')
+        if runs_gb < HANDOFF_RUNS_FREE_WARN_GB:
+            return (WARN, summary, f'the raw-BPB run needs about {HANDOFF_RUNS_FREE_WARN_GB} GB on ANYTOK_RUNS '
+                                   '(check your group quota with hyakstorage)')
+        return (PASS, summary, None)
     summary = f'free: ANYTOK_RUNS {runs_gb:,.0f} GB, ANYTOK_ROOT {root_gb:,.0f} GB (filesystem view, not your quota)'
     if runs_gb < RUNS_FREE_FAIL_GB:
         return (FAIL, summary, f'less than {RUNS_FREE_FAIL_GB} GB on ANYTOK_RUNS: the first full restart '
@@ -1251,7 +1278,7 @@ def check_disk_space(ctx: Context) -> CheckResult:
     if shutil.which('hyakstorage'):
         proc, error = _run(['hyakstorage'], timeout=60)
         details['hyakstorage'] = (proc.stdout[-4000:] if proc is not None else error)
-    status, summary, remedy = disk_verdict(free)
+    status, summary, remedy = disk_verdict(free, getattr(ctx.args, 'handoff', False))
     details['scrubbed_warning'] = ('files on /gpfs/scrubbed untouched for 60 days are deleted; copy the final '
                                    'checkpoints to project storage')
     return CheckResult('disk_space', status, summary, remedy, details)
@@ -1367,6 +1394,99 @@ def check_resources(ctx: Context) -> CheckResult:
     return CheckResult('resources', PASS, summary, details=details)
 
 
+def check_handoff_requirements(ctx: Context) -> CheckResult:
+    from hyak.handoff import common as H
+    path = H.docs_dir(ctx.repo) / H.REQUIREMENTS_NAME
+    pins = H.parse_requirements(path)
+    installed = H.installed_versions([name for name, _ in pins])
+    problems = H.requirement_problems(pins, installed)
+    details = {'requirements': str(path), 'installed': installed}
+    if problems:
+        return CheckResult('handoff_requirements', FAIL, '; '.join(problems),
+                           'bash hyak/env/setup_train_env.sh (it installs exactly that set)', details)
+    return CheckResult('handoff_requirements', PASS, f'{len(pins)} packages equal {H.DOCS_REL}/{H.REQUIREMENTS_NAME} '
+                       f'(torch {installed.get("torch")})', details=details)
+
+
+def check_handoff_inputs(ctx: Context) -> CheckResult:
+    from hyak.handoff import common as H
+    root, receipt = ctx.paths.root, ctx.paths.handoff_receipt
+    manifest_path = ctx.paths.bundle_manifest
+    remedy = 'on the login node: bash hyak/handoff/fetch_inputs.sh'
+    if not manifest_path.is_file() or not ctx.paths.input.is_dir():
+        return CheckResult('handoff_inputs', FAIL, f'{ctx.paths.input} or {manifest_path} is missing', remedy)
+    manifest = json.loads(manifest_path.read_text())
+    reference = json.loads((H.docs_dir(ctx.repo) / H.MANIFEST_NAME).read_text())
+    if manifest != reference:
+        return CheckResult('handoff_inputs', FAIL, f'{manifest_path} differs from {H.DOCS_REL}/{H.MANIFEST_NAME}',
+                           remedy + ' --force (moves the wrong tree aside)')
+    problems = []
+    for name, item in manifest['files'].items():
+        path = root / name
+        if not path.is_file():
+            problems.append(f'{name} missing')
+        elif path.stat().st_size != item['bytes']:
+            problems.append(f'{name}: {path.stat().st_size} bytes, manifest {item["bytes"]}')
+    details = {'root': str(root), 'files': len(manifest['files']), 'problems': problems[:20],
+               'receipt': str(receipt), 'receipt_exists': receipt.is_file()}
+    if problems:
+        return CheckResult('handoff_inputs', FAIL, f'{len(problems)} problem(s): {problems[0]}',
+                           remedy + ' --force', details)
+    if not receipt.is_file():
+        return CheckResult('handoff_inputs', WARN, f'{len(manifest["files"])} files with the right sizes, but no '
+                           f'record of a full verification ({receipt})', remedy + ' (hashes every file once)', details)
+    return CheckResult('handoff_inputs', PASS, f'{len(manifest["files"])} files of {manifest_path.name} present with '
+                       f'their sizes; verified in full by fetch_inputs.sh ({receipt.name})', details=details)
+
+
+HANDOFF_TRAINER_PROBE = r'''
+import importlib.util, json, sys, tempfile, time, traceback
+from pathlib import Path
+
+args = json.loads(sys.argv[1])
+result = {"ok": False}
+START = time.time()
+try:
+    repo = Path(args["repo"])
+    spec = importlib.util.spec_from_file_location("raw_bpb_launcher", repo / "scripts" / "run_raw_bpb_training.py")
+    launcher = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(launcher)
+    code = launcher.prepare_code(Path(tempfile.mkdtemp(prefix="hyak-check-rawbpb-", dir=args.get("tmp"))))
+    result["code"] = str(code)
+    sys.path.insert(0, str(code / "scripts"))
+    spec = importlib.util.spec_from_file_location("raw_bpb_trainer", code / "scripts" / "train_joint_smollm_input.py")
+    trainer = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(trainer)
+    result.update(ok=True, rust_utils=getattr(trainer.rust_utils, "__version__", None),
+                  memory_fix=trainer.apply_gpu_memory_fix.__module__, seconds=round(time.time() - START, 2))
+except BaseException as exc:
+    result["error"] = f"{type(exc).__name__}: {exc}"
+    result["traceback"] = traceback.format_exc()[-3000:]
+print("HYAK_PROBE_RESULT " + json.dumps(result))
+'''
+
+
+def check_handoff_trainer_import(ctx: Context) -> CheckResult:
+    tmp = None
+    if ctx.paths is not None and ctx.paths.runs.is_dir():
+        tmp = str(ctx.paths.runs)
+    probe = run_probe(HANDOFF_TRAINER_PROBE, {'repo': str(ctx.repo), 'tmp': tmp}, timeout=ctx.args.probe_timeout)
+    result = probe['result'] or {}
+    details = {'probe': result, 'probe_stderr': probe['stderr']}
+    code = result.get('code')
+    if code:
+        shutil.rmtree(Path(code).parent, ignore_errors=True)
+    if not result.get('ok'):
+        error = result.get('error') or probe['error'] or 'unknown error'
+        details['probe_stdout'] = probe['stdout']
+        return CheckResult('handoff_trainer_import', FAIL, f'the raw-BPB trainer did not import from the launcher\'s '
+                           f'staged tree: {error}', rust_failure_remedy(error + ' ' + probe['stderr'])
+                           if 'rust' in error.lower() else 'see the error; check the train environment', details)
+    return CheckResult('handoff_trainer_import', PASS, f'launcher staged its tree and the raw-BPB trainer imported '
+                       f'(rust_utils {result.get("rust_utils")}, memory fix from {result.get("memory_fix")}) in '
+                       f'{result.get("seconds")} s', details=details)
+
+
 #: name -> (function, requirements); requirements: "config" (needs a loaded config), "gpu", "network".
 CHECKS = (
     ('config', check_config, ()),
@@ -1389,6 +1509,9 @@ CHECKS = (
     ('network', check_network, ('network',)),
     ('freeze', check_freeze, ('config',)),
     ('resources', check_resources, ()),
+    ('handoff_requirements', check_handoff_requirements, ('handoff',)),
+    ('handoff_inputs', check_handoff_inputs, ('config', 'handoff')),
+    ('handoff_trainer_import', check_handoff_trainer_import, ('handoff',)),
 )
 CHECK_NAMES = tuple(name for name, _, _ in CHECKS)
 
@@ -1413,8 +1536,13 @@ def run_checks(ctx: Context, names, on_result: Optional[Callable] = None) -> lis
     for name in names:
         function, needs = functions[name]
         start = time.monotonic()
+        handoff = getattr(ctx.args, 'handoff', False)
         if 'config' in needs and ctx.paths is None:
             result = CheckResult(name, SKIP, 'skipped: configuration not loaded (see config)')
+        elif 'handoff' in needs and not handoff:
+            result = CheckResult(name, SKIP, 'skipped: only with --handoff (the raw-BPB handoff run)')
+        elif handoff and name in HANDOFF_NOT_APPLICABLE:
+            result = CheckResult(name, SKIP, 'not used by the raw-BPB handoff run (--handoff)')
         elif 'gpu' in needs and ctx.args.no_gpu:
             result = CheckResult(name, SKIP, 'skipped (--no-gpu)')
         elif 'network' in needs and ctx.args.no_network:
@@ -1495,6 +1623,9 @@ def main(argv=None) -> int:
     parser.add_argument('--skip', action='append', metavar='NAME[,NAME]', help='skip these checks')
     parser.add_argument('--no-gpu', action='store_true', help='skip nvidia_smi, torch_cuda, gpu_smoke (login node)')
     parser.add_argument('--no-network', action='store_true', help='skip the network check')
+    parser.add_argument('--handoff', action='store_true',
+                        help='check the raw-BPB handoff run (README 0): requirements.txt, the bundle, the launcher\'s '
+                             'trainer; skip the port-staged code and model checks')
     parser.add_argument('--rust-library', type=Path, help='check this librust_utils.so instead of the staged one')
     parser.add_argument('--io-test-mib', type=int, default=1024,
                         help='MiB written and read back on ANYTOK_RUNS to measure throughput (0 = off)')

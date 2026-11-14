@@ -8,7 +8,8 @@
 #
 #   <stage>            check-env probe corpus wheel pool stage-inputs init train-uniform
 #                      train-rl eval-prepare eval-uniform eval-rl replay-check smoke-train
-#   --count N         submit N identical jobs (train-*: N chained 24 h segments through
+#                      smoke-rawbpb train-rawbpb   (the raw-BPB handoff run, README section 0)
+#   --count N         submit N identical jobs (train-*: N chained 24 h jobs through
 #                      --dependency=singleton; pool/eval-*: N parallel claim-based workers).
 #                      Other stages are one-shot and accept only N=1.
 #   --debug            use HYAK_QOS_DEBUG and HYAK_TIME_DEBUG (overrides per-stage QoS/time); refused for
@@ -43,7 +44,9 @@
 # A time limit passed with --env or in the config also decides --signal (it is computed after the --env
 # pairs are applied).  Train stages need a limit of at least margin + 20 minutes and a margin of at
 # least 1 minute; train-rl (and smoke-train --run rl) is refused until $ANYTOK_ROOT/input/pairing.json
-# exists, i.e. until the uniform bootstrap segment froze the pair.
+# exists, i.e. until the uniform bootstrap segment froze the pair.  smoke-rawbpb and train-rawbpb are refused
+# until hyak/handoff/fetch_inputs.sh has verified the input bundle ($ANYTOK_ROOT/handoff/inputs-verified.json);
+# smoke-rawbpb uses the debug QoS and time by default (like check-env), train-rawbpb is a singleton chain.
 #
 # Works with bash 3.2 (macOS) for --dry-run tests.
 set -euo pipefail
@@ -64,6 +67,8 @@ _stage_file() {
     eval-uniform|eval-rl) echo 09_eval_score.sbatch ;;
     replay-check) echo 10_replay_check.sbatch ;;
     smoke-train) echo 11_smoke_train.sbatch ;;
+    smoke-rawbpb) echo 12_smoke_rawbpb.sbatch ;;
+    train-rawbpb) echo 13_train_rawbpb.sbatch ;;
     *) return 1 ;;
   esac
 }
@@ -74,9 +79,9 @@ _stage_run() {
     *) echo "" ;;
   esac
 }
-SINGLETON_STAGES="train-uniform train-rl"
-MULTI_JOB_STAGES="pool eval-prepare eval-uniform eval-rl train-uniform train-rl"
-DEBUG_STAGES="check-env probe"
+SINGLETON_STAGES="train-uniform train-rl train-rawbpb"
+MULTI_JOB_STAGES="pool eval-prepare eval-uniform eval-rl train-uniform train-rl train-rawbpb"
+DEBUG_STAGES="check-env probe smoke-rawbpb"
 RE_ENV='^[A-Za-z_][A-Za-z0-9_]*='
 RE_COUNT='^[0-9]+$'
 RE_AFTER='^[0-9]+(_[0-9]+)?(:[0-9]+(_[0-9]+)?)*$'
@@ -249,7 +254,7 @@ fi
 # timer fires one margin before the time limit, and a margin of 0 leaves the job to be killed at the limit
 # with up to 2,000 updates lost.  Such a job would end "paused" without training (train) or fail (smoke).
 case $STAGE in
-  train-uniform|train-rl|smoke-train)
+  train-uniform|train-rl|smoke-train|smoke-rawbpb|train-rawbpb)
     [ "$MARGIN" -ge 1 ] || hyak_die "$STAGE: HYAK_SEGMENT_MARGIN_MINUTES is 0, so the job would not be asked to stop and Slurm would kill it at the time limit in the middle of an update or a save. Remedy: set HYAK_SEGMENT_MARGIN_MINUTES (or HYAK_SEGMENT_MARGIN_MINUTES_$SUFFIX) to at least 1; the default is 45 for training and 10 for smoke-train"
     NEED_SECONDS=$(( (MARGIN + 20) * 60 ))
     if [ "$TIME_SECONDS" -lt "$NEED_SECONDS" ]; then
@@ -268,6 +273,19 @@ if [ "$STAGE" = train-rl ] || { [ "$STAGE" = smoke-train ] && [ "$RUN" = rl ]; }
     fi
   fi
 fi
+
+# The raw-BPB handoff stages train on the verified input bundle only (hyak/handoff/fetch_inputs.sh).
+case $STAGE in
+  smoke-rawbpb|train-rawbpb)
+    if [ ! -e "$ANYTOK_ROOT/handoff/inputs-verified.json" ]; then
+      BUNDLE_MESSAGE="$STAGE needs the verified input bundle: $ANYTOK_ROOT/handoff/inputs-verified.json has not been written yet. Remedy: on the login node run  bash hyak/handoff/fetch_inputs.sh  (download, check, extract into $ANYTOK_ROOT/input, verify every file)"
+      if [ "$DRY_RUN" = 1 ]; then
+        hyak_warn "$BUNDLE_MESSAGE (a real submission is refused until then)"
+      else
+        hyak_die "$BUNDLE_MESSAGE"
+      fi
+    fi ;;
+esac
 
 # --- Tillicum limits (warnings only; other clusters differ) ------------------------------------------------
 # _mem_mib VALUE: Slurm memory (N, NK, NM, NG, NT; a bare number is MiB) in MiB, "" when not a number.

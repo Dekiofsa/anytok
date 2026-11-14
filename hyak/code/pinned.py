@@ -187,6 +187,8 @@ TRAIN_PINS = (
     ('torch', '2.15.0'), ('transformers', '5.15.1'), ('tokenizers', '0.22.2'),
     ('numpy', '2.3.5'), ('safetensors', '0.8.0'), ('accelerate', '1.14.0'),
 )
+#: The one pin the raw-BPB handoff adds (docs/raw-bpb-handoff/requirements.txt = TRAIN_PINS + this; tested).
+TRAIN_HANDOFF_PINS = (('huggingface_hub', '1.33.0'),)
 #: Test runner of the train environment (the version the port's tests were written with).
 TRAIN_TEST_PINS = (('pytest', '9.2.0'),)
 #: The package set the corpus build was validated with: it reproduces every record of the original corpus,

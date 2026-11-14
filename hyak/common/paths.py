@@ -53,24 +53,27 @@ STAGE_EVAL_UNIFORM = 'eval-uniform'
 STAGE_EVAL_RL = 'eval-rl'
 STAGE_REPLAY_CHECK = 'replay-check'
 STAGE_SMOKE_TRAIN = 'smoke-train'
+#: The raw-BPB handoff run (Qingyun's launcher scripts/run_raw_bpb_training.py on his input bundle; README 0).
+STAGE_SMOKE_RAWBPB = 'smoke-rawbpb'
+STAGE_TRAIN_RAWBPB = 'train-rawbpb'
 
 #: Every stage, in pipeline order.  Must equal ``HYAK_STAGES`` in hyak/slurm/lib.sh (tested).
 STAGES = (
     STAGE_CHECK_ENV, STAGE_PROBE, STAGE_CORPUS, STAGE_WHEEL, STAGE_POOL, STAGE_STAGE_INPUTS,
     STAGE_INIT, STAGE_TRAIN_UNIFORM, STAGE_TRAIN_RL, STAGE_EVAL_PREPARE, STAGE_EVAL_UNIFORM,
-    STAGE_EVAL_RL, STAGE_REPLAY_CHECK, STAGE_SMOKE_TRAIN,
+    STAGE_EVAL_RL, STAGE_REPLAY_CHECK, STAGE_SMOKE_TRAIN, STAGE_SMOKE_RAWBPB, STAGE_TRAIN_RAWBPB,
 )
 
 #: Stages submitted to the debug QoS and debug time limit by default (Tillicum debug: <= 1 h, 1 GPU).
-DEBUG_STAGES = (STAGE_CHECK_ENV, STAGE_PROBE)
+DEBUG_STAGES = (STAGE_CHECK_ENV, STAGE_PROBE, STAGE_SMOKE_RAWBPB)
 
 #: Stages chained with ``--dependency=singleton`` (D14): only one job per name runs at a time.
-SINGLETON_STAGES = (STAGE_TRAIN_UNIFORM, STAGE_TRAIN_RL)
+SINGLETON_STAGES = (STAGE_TRAIN_UNIFORM, STAGE_TRAIN_RL, STAGE_TRAIN_RAWBPB)
 
 #: Stages for which ``submit.sh --count N`` with N > 1 is allowed: claim-based work
 #: distribution (pool, eval-*) or singleton chains (train-*).  Every other stage is one-shot.
 MULTI_JOB_STAGES = (STAGE_POOL, STAGE_EVAL_PREPARE, STAGE_EVAL_UNIFORM, STAGE_EVAL_RL,
-                    STAGE_TRAIN_UNIFORM, STAGE_TRAIN_RL)
+                    STAGE_TRAIN_UNIFORM, STAGE_TRAIN_RL, STAGE_TRAIN_RAWBPB)
 
 #: Training runs (also run directory names under $ANYTOK_RUNS and code trees under code/).
 RUN_UNIFORM = 'uniform'
@@ -99,6 +102,8 @@ SBATCH_FILES = {
     STAGE_EVAL_RL: '09_eval_score.sbatch',
     STAGE_REPLAY_CHECK: '10_replay_check.sbatch',
     STAGE_SMOKE_TRAIN: '11_smoke_train.sbatch',
+    STAGE_SMOKE_RAWBPB: '12_smoke_rawbpb.sbatch',
+    STAGE_TRAIN_RAWBPB: '13_train_rawbpb.sbatch',
 }
 
 #: Dashboard registry id of each long-running stage (D13).  check-env, wheel, stage-inputs,
@@ -106,7 +111,11 @@ SBATCH_FILES = {
 #: events.jsonl in their monitor directory but get no registry entry.  eval-prepare (feature
 #: preparation for all 1,000 tokenizers, several claim-based jobs) is evaluation work and is
 #: registered because AGENTS.md requires long evaluation jobs to be visible.
+#: The raw-BPB handoff stages (train-rawbpb, smoke-rawbpb) are registered first among the managed entries:
+#: their status is the launcher's own OUTPUT/status.json, read through the link <monitor>/<stage>/run.
 DASHBOARD_RUN_IDS = {
+    STAGE_TRAIN_RAWBPB: 'hyak-raw-bpb-training',
+    STAGE_SMOKE_RAWBPB: 'hyak-raw-bpb-smoke',
     STAGE_TRAIN_UNIFORM: 'hyak-uniform-training',
     STAGE_TRAIN_RL: 'hyak-rl-training',
     STAGE_EVAL_UNIFORM: 'hyak-eval-uniform',
@@ -138,6 +147,8 @@ STAGE_PROGRESS = {
     STAGE_EVAL_RL: {'completed_field': 'completed', 'total': None, 'unit': 'tokenizers'},
     STAGE_REPLAY_CHECK: {'completed_field': 'completed', 'total': None, 'unit': 'updates'},
     STAGE_SMOKE_TRAIN: {'completed_field': 'step', 'total': None, 'unit': 'steps'},
+    STAGE_SMOKE_RAWBPB: {'completed_field': 'step', 'total': 3, 'unit': 'steps'},
+    STAGE_TRAIN_RAWBPB: {'completed_field': 'step', 'total': FINAL_STEP, 'unit': 'steps'},
 }
 
 #: Corpus pool sizes (directory corpus/<size>-v1).
@@ -509,6 +520,23 @@ class Paths:
     def smoke_dir(self, run: str) -> Path:
         """``$ANYTOK_RUNS/smoke/<run>`` (``run_segment --smoke`` output)."""
         return self.smoke_root / validate_run(run)
+
+    # --- the raw-BPB handoff (README section 0; hyak/handoff) ------------------------------------
+    @property
+    def handoff_dir(self) -> Path:
+        """``$ANYTOK_ROOT/handoff``: the downloaded bundle archive, its .sha256, its receipt, and
+        ``inputs-verified.json`` (written by hyak/handoff/fetch_inputs.sh after the full verification)."""
+        return self.root / 'handoff'
+
+    @property
+    def handoff_receipt(self) -> Path:
+        """``handoff/inputs-verified.json``: the record that ``$ANYTOK_ROOT/input`` is the verified bundle."""
+        return self.handoff_dir / 'inputs-verified.json'
+
+    @property
+    def bundle_manifest(self) -> Path:
+        """``$ANYTOK_ROOT/BUNDLE_MANIFEST.json`` (extracted next to ``input/`` from the bundle archive)."""
+        return self.root / 'BUNDLE_MANIFEST.json'
 
     # --- dashboard-visible monitor files ----------------------------------------------------
     def monitor_dir(self, stage: str) -> Path:

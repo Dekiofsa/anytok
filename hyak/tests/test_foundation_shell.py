@@ -452,7 +452,7 @@ def test_dry_run_every_stage(sub_env, overrides, debug):
         flags, file = parse_dry_run(out.stdout)
         assert flags == expected_flags(t.cfg, stage, debug, REPO.resolve(), t.base / 'monitor', t.config_file), stage
         assert file == str(REPO.resolve() / 'hyak/slurm' / SBATCH_FILES[stage])
-        assert ('dependency' in flags) == (stage in ('train-uniform', 'train-rl'))
+        assert ('dependency' in flags) == (stage in ('train-uniform', 'train-rl', 'train-rawbpb'))
         if debug:
             assert (flags['qos'], flags['time']) == ('debug', '01:00:00')
     assert not marker.exists(), 'dry run must not call sbatch or squeue'

@@ -1,5 +1,10 @@
 # AnyTok on Hyak Tillicum: run guide
 
+**The current experiment is the raw-BPB handoff run: section 0.** It runs Qingyun's verified launcher and
+input bundle (original corpus, pool, model and identity-warmed hypernetwork) for one 20,000-update raw-BPB RL
+run. The rest of this introduction and sections 1 to 13 describe the port's earlier plan; they are kept as a
+fallback, and section 0.8 says which of them still apply.
+
 This directory is a port of the AnyTok joint-training experiment from Modal to the Slurm cluster
 Hyak **Tillicum** (NVIDIA H200, 141 GB). It reruns two 20,000-update runs and evaluates both:
 
@@ -21,6 +26,7 @@ and 2 before you submit anything: section 2 holds the decisions that are expensi
 
 Contents
 
+0. The raw-BPB handoff run (this experiment)
 1. What is reproduced, the forced deviations (D1 to D7) and the RL protocol (D8)
 2. Decisions before the expensive steps
 3. Prerequisites
@@ -41,6 +47,237 @@ All commands run from the repository root of your checkout on the cluster. Numbe
 first 100 GPU-hours are free. Every program of the port ends with the same exit-code contract
 (table in section 14): 0 ok, 1 crash, 2 usage or setup problem, 3 a stop that needs your decision,
 4 a check failed, 75 not now.
+
+---
+
+## 0. The raw-BPB handoff run (this experiment)
+
+**This section is the run guide of the current experiment.** Sections 1 to 13 describe the port's
+earlier plan (regenerated corpus and pool, random initialization, a uniform and a straight-reward RL
+run); they stay as a fallback and most of them do not apply here (0.8).
+
+### 0.1 What it is
+
+One 20,000-update training run: Qingyun's raw-BPB RL trainer
+(`runtime/anytok_pool_raw_bpb_rl_20k/scripts/train_joint_smollm_input.py`, started by his launcher
+`scripts/run_raw_bpb_training.py`, both used exactly as committed in 670993b). The LM, the input
+hypernetwork and the shared-settings tokenizer policy train together; the policy reward is the raw
+transferred continuation BPB (`--reward-objective raw_bpb`, `policy_reward_bpb == train_bpb`), the
+entropy weight is 0, the paired token boundaries are the corrected ones of the regret run, and the
+hypernetwork runs with his GPU-only memory fix (`scripts/pool_training_memory.py`, `memory_execution:
+optimized`). Policy learning rate 0.001, baseline decay 0.99, policy seed 43, LM and hypernetwork seed 42,
+micro-batch 32, checkpoints every 500 updates (full restarts every 2,000 and at every graceful stop).
+His `docs/raw-bpb-handoff/README.md` is the specification; the table "What must stay the same" there
+holds. The comparison baseline is the **original uniform run**; no uniform run, no corpus build, no
+tokenizer pool, no wheel, no random initialization and no memory probe are run here.
+
+### 0.2 What the bundle contains
+
+The public Hugging Face dataset `cminst/anytok-training-inputs`, pinned in
+`docs/raw-bpb-handoff/bundle-reference.json` (revision `c2421b0c...`, archive
+`anytok-training-inputs-v1.tar.gz`, 9,314,144,730 bytes, SHA-256 `51f24daf...`). It extracts to
+`input/` (1,062 files, 13,445,041,321 bytes) and `BUNDLE_MANIFEST.json` (the repository holds a copy):
+
+* `pool/`: the original 1,000 tokenizers (332 BPE, 328 WordPiece, 340 Unigram), their plan (byte-identical
+  to `plans/tokenizer-pool-1000-v1.json`) and result index;
+* `corpus/`: the original 23 staged training files (10 billion raw text bytes, 4.02 GB compressed) and
+  their manifest; `recipe.json`; `eval/`: the held-out sanity data;
+* `model/`: the original SmolLM2-1.7B and its tokenizer;
+* `warmup/`: the **identity-warmed input hypernetwork**, the shared starting point of the original
+  runs. It is an initialization, **not a trained checkpoint**: no partially trained LM, hypernetwork or
+  policy is in the bundle, and none is loaded (the run starts with fresh optimizers and a uniform policy);
+* `uniform_heldout_tokenizers.json` (the two fixed ZeTT sanity tokenizers), `uniform_run_config.json`
+  (the original uniform settings the trainer compares 21 of its settings with), `manifest.json`,
+  `rl-input-audit.json`.
+
+So corpus, pool, model and initialization are the originals; D1, D2, D4, D5 and D6 do not arise.
+
+### 0.3 Commands, in order
+
+All on the login node of Tillicum from the repository root, except where a job is submitted.
+
+```bash
+# 1. configuration (4.1): ANYTOK_ROOT (project storage) and ANYTOK_RUNS; optional HYAK_ACCOUNT (Qingyun's jobs
+#    used zlab) and HYAK_RAWBPB_OUTPUT (default $ANYTOK_RUNS/raw-bpb-20k). Torch: the default (empty
+#    HYAK_TORCH_INDEX_URL) installs PyPI's torch 2.15.0, the build of the Modal images of the original runs
+#    and of his regret run; HYAK_TORCH_INDEX_URL=https://download.pytorch.org/whl/cu132 gives 2.15.0+cu132,
+#    the build of his Tillicum H200 check. Both are CUDA 13.2 builds of the same release; pick one before
+#    step 2 and keep it for the whole run
+cp hyak/config.env.example hyak/config.env && chmod 600 hyak/config.env      # then edit it
+python3 -m hyak.common.config --check
+hyak/slurm/submit.sh train-rawbpb --dry-run          # the exact sbatch line: QoS normal, 24 h, TERM 20 min before the end
+
+# 2. environment (4.2): Python 3.12 and exactly docs/raw-bpb-handoff/requirements.txt (+ pytest)
+bash hyak/env/setup_train_env.sh
+
+# 3. inputs: download (resumable), check size and SHA-256, extract into $ANYTOK_ROOT/input, verify all 1,062 files
+bash hyak/handoff/fetch_inputs.sh --dry-run
+bash hyak/handoff/fetch_inputs.sh
+
+# 4. optional, recommended: the environment on an H200 (debug job, minutes; 0.5)
+hyak/slurm/submit.sh check-env --env HYAK_CHECK_ENV_ARGS=--handoff
+
+# 5. smoke: 2 updates fresh, a resume to update 3, Qingyun's checks (debug job, a few minutes)
+hyak/slurm/submit.sh smoke-rawbpb
+
+# 6. the run: three chained 24 h jobs (one at a time; extra jobs exit 0 at once once the run is complete)
+hyak/slurm/submit.sh train-rawbpb --count 3
+
+# 7. dashboard (section 7): entries hyak-raw-bpb-training and hyak-raw-bpb-smoke
+python3 -m hyak.tools.register_dashboard
+
+# 8. stop gracefully, resume, extend
+hyak/slurm/stop.sh train-rawbpb                       # TERM to the batch shell: the trainer saves a full restart
+hyak/slurm/submit.sh train-rawbpb --count 2           # resumes from the newest full restart
+```
+
+`fetch_inputs.sh` needs internet (login node) and the train environment's `huggingface_hub`
+(`token=False`: no credentials). It is resumable and a re-run on a verified tree does nothing;
+`--remove-archive` deletes the archive after the verification (it is kept by default); `--from-dir DIR`
+copies the three files from a directory on the cluster instead of the Hub; an existing
+`$ANYTOK_ROOT/input` that does not verify is refused unless `--force`, which moves it aside. If the
+login node reaps the extraction, use `--download-only` there and `--no-download` in an interactive job
+(section 4.4). Good output ends with `OK: ... is the verified bundle` and writes
+`$ANYTOK_ROOT/handoff/inputs-verified.json`; `submit.sh` refuses `smoke-rawbpb` and `train-rawbpb`
+without it. The fallback pipeline (sections 1-13) writes into the same `$ANYTOK_ROOT/input`: never run
+its stages with this `ANYTOK_ROOT`.
+
+### 0.4 The smoke (smoke-rawbpb)
+
+`hyak/slurm/12_smoke_rawbpb.sbatch`, debug QoS, 1 h, margin 10 minutes. In `$ANYTOK_RUNS/raw-bpb-smoke`
+(`HYAK_RAWBPB_SMOKE_OUTPUT`), which must not exist or be empty (a re-run is refused with the `rm -rf`
+remedy; nothing is deleted for you): the installed packages are compared with
+`docs/raw-bpb-handoff/requirements.txt`; the launcher runs `--stop-at-update 2` from scratch and then
+`--resume --stop-at-update 3`; after each phase `python -m hyak.handoff.run verify --smoke` checks what
+`scripts/verify_raw_bpb_handoff.py` checks (that script has its paths built in, so the port repeats its
+checks instead of editing it): `status.json` complete at the phase's step; train rows exactly 1..N;
+in every row `policy_reward_bpb == train_bpb`, `|paired_gap_bpb - (train_bpb - paired_canonical_bpb)| <
+1e-12`, `paired_valid_examples == 128`, `paired_maximum_positions <= 128`, `policy_updates == step`,
+`reward_objective == raw_bpb`; `run_config.json` with reward objective `raw_bpb`, policy reward
+`paired_pre_model_update_transferred_bpb`, memory execution `optimized`, entropy weight 0, learning rate
+0.001, baseline decay 0.99, policy seed 43, 1,000 tokenizers, micro-batch 32; the model, policy and
+selection counters of `step-000002` and `step-000003` equal 2 and 3. Exit 0 only when all pass (the
+stage status ends `complete`; `rawbpb_verified` lines in `modal_results/hyak_tillicum/smoke-rawbpb/<job>-train.log`).
+Read `seconds` and `peak_gib` of the three `train` lines there (Qingyun: 3.6 to 7.7 s, 89.8 GiB at a
+90,000-token vocabulary), then delete the smoke output (three full restarts, about 70 GB).
+
+### 0.5 The run (train-rawbpb)
+
+`hyak/slurm/13_train_rawbpb.sbatch`, QoS normal, 24 h, chained with `--dependency=singleton`. Each job:
+
+* exits 3 at once while `modal_results/hyak_tillicum/train-rawbpb/HALTED.json` exists (an earlier job
+  failed; inspect, fix, delete the file, resubmit);
+* asks `python -m hyak.handoff.run prepare`: the newest full restart is at 20,000 -> exit 0 with the
+  note "complete", nothing else; a resumable full restart -> the launcher with `--resume`; no output, or
+  an empty one -> a fresh start; trainer files but no resumable restart (a first start that died before
+  its first save) -> exit 2 and the remedy `mv <output> <output>.partial-<UTC>` (nothing is deleted); an
+  incomplete newest restart or a `run_config.json` that is not this protocol -> exit 3. Before a resume,
+  weights-only checkpoints newer than the restart and stale `.writing-*` directories (what a hard kill
+  leaves) are moved to `<output>/interrupted/<UTC>/`: the trainer cannot overwrite a step directory
+  and would otherwise stop with `FileExistsError` when it reaches that step again. Delete them once the
+  run has passed those steps;
+* before a launch, exits 2 when the installed packages differ from `requirements.txt`;
+* runs `python -u scripts/run_raw_bpb_training.py --inputs $ANYTOK_ROOT/input --output <output>
+  [--resume]` as a forwarded child, with `ANYTOK_RUN_PLATFORM` (`HYAK_PLATFORM`) and
+  `ANYTOK_RUN_PROFILE` (`<cluster>/<partition>`) set for its status rows, `TOKENIZERS_PARALLELISM=false`,
+  `PYTORCH_ALLOC_CONF=expandable_segments:True`, `HF_HUB_OFFLINE=1` and the libpython link on
+  `LD_LIBRARY_PATH` (4.4) for `librust_utils.so`;
+* after exit 0 checks the raw-BPB receipt of every update of this job and the counters of the newest
+  full restart (`python -m hyak.handoff.run verify`; a failure is exit 4) and that a newer full restart
+  exists (unless a stop was requested).
+
+**Stopping, the margin, and what a stop costs.** Slurm sends TERM to the batch shell 20 minutes before the
+24 h limit (`HYAK_SEGMENT_MARGIN_MINUTES_TRAIN_RAWBPB=20`, `--signal=B:TERM@1200`); `stop.sh` sends the
+same TERM. The shell forwards it to the launcher, the launcher to the trainer; the trainer finishes the
+update in progress, runs the sanity evaluation, writes a **full restart** (LM, hypernetwork, optimizer,
+policy, corpus position and all random states, about 23.5 GB, SHA-256 manifest, atomic rename) and
+records `paused_at`; the job ends 0, status `paused`. Why 20 minutes: Qingyun's H200 check (job 470079)
+did a fresh start, two updates, a resume and a third update with **three** full saves, three sanity
+evaluations and the restart verification in 158 s; a graceful stop is one update (at most about 10 s),
+one evaluation and one save, so a few minutes even on a slow file system, and 20 minutes leaves
+headroom for Slurm's up-to-60-s early signal and a busy GPFS while costing about 1.4% of each job.
+The launcher has no in-process timer: Slurm's signal is the only stop. If a TERM lands while a
+weights-only checkpoint is being written, the trainer stops after that save without a full restart;
+the next job resumes from the previous full restart (at most 2,000 updates are replayed) after moving the
+newer checkpoints aside. A hard kill (plain `scancel`, node failure) can cost up to 2,000 updates.
+
+Exit codes follow the port's contract (section 14): 0 (also paused, complete or not now), 1 crash, 2
+configuration or input, 3 a decision, 4 a failed check, 137 or another 128+n a killed trainer (the
+launcher exits 256-n when the trainer dies of signal n; the job records 128+n), 143 a stop that was
+asked for. Every failure writes `HALTED.json` and halts the chain. **What must not change during the
+run:** the checkout (the launcher stages its code from it and the trainer refuses a resume when its
+script hash changes), `ANYTOK_ROOT` and `HYAK_RAWBPB_OUTPUT` (the trainer records the input paths), the
+bundle and the environment.
+
+### 0.6 Storage, time and GPU-hours
+
+| What | Where | Size |
+|---|---|---|
+| inputs (extracted bundle) | `$ANYTOK_ROOT/input` (project storage) | 13.4 GB |
+| archive (kept by default; `--remove-archive`) | `$ANYTOK_ROOT/handoff` | 9.3 GB |
+| train environment | `$ANYTOK_ROOT/env/train` | about 7 GB + pip cache |
+| run output: step 0 and 10 grid full restarts (23.5 GB each), 30 weights-only checkpoints (8.6 GB), one full restart per job boundary | `$HYAK_RAWBPB_OUTPUT` | about 0.5-0.6 TB, +23.5 GB while a save is staged |
+| smoke output | `$HYAK_RAWBPB_SMOKE_OUTPUT` | about 70 GB; delete after the smoke |
+
+Put the output on project storage if the group's quota allows it (`hyakstorage`; the project space is
+1 TB per group), otherwise on scrubbed storage (`ANYTOK_RUNS`, the default) and copy the final
+checkpoint and the small files to project storage as soon as the run ends (section 9, with
+`raw-bpb-20k` in place of the run names; scrubbed storage deletes files not accessed for 60 days, so
+the run should finish well within 60 days of its first checkpoint). The launcher also stages a small
+code tree `.raw-bpb-code-<hash>` next to the output.
+
+*Estimate* (not measured on a full run): Qingyun's H200 updates took 3.6, 5.5 and 7.7 s (vocabularies
+of 43k, 62k and 90k; the first updates), and 6.34 s for the training phases of a 128k step; the original
+runs took 3.0 to 3.4 s per update on a B300 including evaluation and checkpoints. With 5 to 8 s per
+update on an H200 plus about an hour of evaluations and saves, 20,000 updates take about 30 to 46 hours:
+two 24 h jobs, possibly a third; submit three (an unneeded job ends at once). That is about 30 to 47
+GPU-hours (0.90 USD per GPU-hour after the first 100 free hours, so at most about 42 USD). The smoke is
+well under one GPU-hour. Read `seconds` in the first `train` lines of the run and size the chain from
+it: jobs = 20,000 x seconds / (24 h - 20 min - about 5 min of start-up).
+
+### 0.7 Dashboard, evaluation
+
+`register_dashboard` (every job runs it) adds `hyak-raw-bpb-training` and `hyak-raw-bpb-smoke` (category
+Training, platform `Hyak Tillicum · H200`), modelled on Qingyun's example entry: the `progress_json`
+adapter on the launcher's own `OUTPUT/status.json` (`completed_field` `step`, total 20,000), the logs
+`OUTPUT/events.jsonl`, the job's events and the newest Slurm log. The job links
+`modal_results/hyak_tillicum/train-rawbpb/run` to the output directory, so the registry holds only
+repository-relative paths. The training entry also has a learning configuration like his regret entry
+(the trainer's `train`, `eval` and `initial_eval` rows in `<job>-train.log`, policy snapshots in
+`policy-monitor.json`, refreshed by `python -m hyak.tools.policy_monitor` during the job, no overlay of
+the old-protocol uniform scores); the dashboard page shows that panel only for the run ids listed in
+`monitoring/web/learning.js`, and the port adds `hyak-raw-bpb-training` to that list (its only change
+to that file besides `hyak-rl-training`). The job's own life cycle (HALTED, refusals, notes) is in
+`python3 -m hyak.common.status show --stage train-rawbpb`, not in the launcher's status.
+
+**Evaluation of the final checkpoint will be added while training runs.** Sections 6.13 to 6.15
+describe the port's evaluation of its own two runs; they are not wired to this run yet.
+
+### 0.8 Which later sections apply
+
+| Section | For this run |
+|---|---|
+| 1 (D1-D8) | not the design of this run. Still true: D3 (one H200, 24 h jobs chained until 20,000) and D7 (1 GPU, 8 CPUs, no `--mem`). D1, D2, D4, D5, D6 do not arise (original warmup, his memory fix, original corpus and pool, fixed sanity tokenizers); D8 (the port's straight-reward variant) is replaced by his raw-BPB trainer |
+| 2 | 2.4 (where checkpoints live) and 2.5 (the driver, >= 580) apply; 2.1-2.3 and 2.6 do not |
+| 3, 4.1, 4.2, 4.4 | apply (storage numbers: 0.6 here); 4.3 (stage_code, fetch_model) does not |
+| 5, 6.2-6.15 | do not apply (corpus, wheel, pool, stage-inputs, init, probe, replay-check, uniform and the old RL stages, smoke-train, the port's evaluation); 6.1 applies with `--env HYAK_CHECK_ENV_ARGS=--handoff` |
+| 7, 8 | apply for watching, `stop.sh`, extending a chain and `HALTED.json`; the run-segment repairs, the run lock wait, the retention commands and the pairing rules of 8 do not |
+| 9 | the storage discipline and the archiving commands apply (one run, `raw-bpb-20k`) |
+| 10, 11 | do not apply (no regeneration) |
+| 12 | describes the fallback's laptop checks; for this run see 0.9 |
+| 13, 14 | apply (14 lists the new stages) |
+
+### 0.9 Verified, and not
+
+On a laptop (macOS, CPU torch 2.15.0, the pinned packages), with fakes: the two job scripts under bash
+with a fake launcher and fake trainer state (fresh, resume, complete, partial-state refusal, the TERM
+reaching the launcher, failure and `HALTED.json`, the exit-code mapping), the smoke checks with good and
+broken metrics, `fetch_inputs.sh` with a small fake bundle (size and SHA mismatches refused, a verified
+tree is a no-op, extraction and Qingyun's verifier), the registry entries, the submit dry runs, and
+Qingyun's own `tests/test_raw_bpb_handoff.py` and `tests/test_chunked_hypernetwork.py`. Not verified
+here: the 9.3 GB download and extraction (not downloaded off-cluster, `AGENTS.md`), the launcher with the
+real trainer (it needs CUDA; Qingyun ran it on a Tillicum H200), Slurm's signal timing, and the
+dashboard on the login node.
 
 ---
 
@@ -1564,9 +1801,10 @@ hyak/slurm/submit.sh <stage> [--count N] [--debug] [--dry-run] [--run uniform|rl
 ```
 
 Stages: `check-env probe corpus wheel pool stage-inputs init train-uniform train-rl eval-prepare
-eval-uniform eval-rl replay-check smoke-train`. `--count N > 1` only for `pool`, `eval-prepare`,
-`eval-uniform`, `eval-rl`, `train-uniform`, `train-rl`. `--debug` uses the debug QoS and 1 h
-(check-env and probe use them by default; refused for training). `--after` adds `afterok` and
+eval-uniform eval-rl replay-check smoke-train smoke-rawbpb train-rawbpb` (the last two: the raw-BPB
+handoff run, section 0). `--count N > 1` only for `pool`, `eval-prepare`, `eval-uniform`, `eval-rl`,
+`train-uniform`, `train-rl`, `train-rawbpb` (the training stages are singleton chains). `--debug` uses
+the debug QoS and 1 h (check-env, probe and smoke-rawbpb use them by default; refused for training). `--after` adds `afterok` and
 `--kill-on-invalid-dep=yes`. `--env KEY=VALUE` sets a variable for the job and, when KEY is a config
 key (`HYAK_TIME_SMOKE_TRAIN=00:40:00`), decides this submission's resources; values may contain
 spaces and commas. Secrets (`HF_TOKEN` and any name containing TOKEN, SECRET, PASSWORD, CREDENTIAL,
@@ -1575,8 +1813,9 @@ API_KEY) are refused: put `HF_TOKEN` in `hyak/config.env`. After `--`, resource 
 `HYAK_<FLAG>_<STAGE>`. `submit.sh` passes plain `--export=ALL`: the job's variables (`HYAK_REPO`,
 `HYAK_STAGE`, `HYAK_RUN`, `HYAK_CONFIG` and every `--env` pair) are exported by `submit.sh` itself,
 so they never appear on the recorded `sbatch` line. It refuses `train-rl` and `smoke-train --run rl`
-until `$ANYTOK_ROOT/input/pairing.json` exists, and training stages whose limit is below margin + 20
-minutes (a 2-hour rehearsal that exercises both stop mechanisms needs
+until `$ANYTOK_ROOT/input/pairing.json` exists, `smoke-rawbpb` and `train-rawbpb` until
+`$ANYTOK_ROOT/handoff/inputs-verified.json` exists (written by `bash hyak/handoff/fetch_inputs.sh`), and
+training stages whose limit is below margin + 20 minutes (a 2-hour rehearsal that exercises both stop mechanisms needs
 `HYAK_SEGMENT_MARGIN_MINUTES_TRAIN_UNIFORM=30` with `HYAK_TIME_TRAIN_UNIFORM=02:00:00`). A mistyped
 per-stage variable gets a warning.
 
@@ -1607,8 +1846,15 @@ whole environment to every job.
 | `HYAK_EVAL_INDICES` | eval-uniform, eval-rl | pilot: score only these pool indices, pool panel only, no packing |
 | `HYAK_EVAL_PANELS` | eval-uniform, eval-rl | panels to score (default `pool natural`) |
 
+Config keys of the raw-BPB run (section 0; in `hyak/config.env`, or per submission with `--env`):
+`HYAK_RAWBPB_OUTPUT` (default empty = `$ANYTOK_RUNS/raw-bpb-20k`), `HYAK_RAWBPB_SMOKE_OUTPUT` (default empty
+= `$ANYTOK_RUNS/raw-bpb-smoke`), `HYAK_SEGMENT_MARGIN_MINUTES_TRAIN_RAWBPB` (20) and
+`HYAK_SEGMENT_MARGIN_MINUTES_SMOKE_RAWBPB` (10). The job scripts set `ANYTOK_RUN_PLATFORM` and
+`ANYTOK_RUN_PROFILE` for the launcher themselves.
+
 `HYAK_REGISTER_TIMEOUT_SECONDS` (default 60) bounds the dashboard registration in every job. Jobs
-set `HF_HUB_OFFLINE=1` for train, smoke-train, eval, probe, init and replay stages, and remove
+set `HF_HUB_OFFLINE=1` for train, smoke-train, eval, probe, init, replay and the two raw-BPB stages
+(which also get `TOKENIZERS_PARALLELISM=false` and `PYTORCH_ALLOC_CONF=expandable_segments:True`), and remove
 `PYTHONPATH`, `PYTHONHOME`, `PYTHONSTARTUP`, `PYTHONUSERBASE` and `LD_PRELOAD` from the inherited
 environment (the names are logged and recorded in an `environment_sanitized` event;
 `CUDA_VISIBLE_DEVICES` is untouched). For training stages they also unset
@@ -1634,7 +1880,11 @@ Where a program uses a code more specifically: `run_segment --should-start` prin
 stops it with 75); `eval.score`: 0, 75, 2, 1; `eval.pack`: 0, 75, 2, 1; `eval.validate_prefixes`: 0
 (also up to date, or another job holds the claim), 3, 2, 1; `eval.rebuild_panel`: 0, 4, 2, 1;
 `common.config`: 0, 2; `tools.register_dashboard`: 0, 2, 4 (`--check`: not up to date);
-`tools.reconcile`: 0, 2; `tools.policy_monitor`: 0, 2, 1 (it also exits 0 when another collector
+`tools.reconcile`: 0, 2; `handoff.fetch` (`fetch_inputs.sh`): 0, 2, 4, 1; `handoff.run prepare`: 0
+(fresh or resume), 75 (complete, or the trainer's lock held), 2 (partial state), 3 (an incomplete newest
+restart, not the raw-BPB protocol); `handoff.run verify`: 0, 4, 2; `handoff.run requirements`: 0, 2;
+`scripts/run_raw_bpb_training.py`: the trainer's code, 256-n for a trainer killed by signal n (the job
+records 128+n); `tools.policy_monitor`: 0, 2, 1 (it also exits 0 when another collector
 holds the lock). `train.monitor --once` exits 1 with a traceback on failure; the background monitor
 never exits on a refresh error and logs `monitor_refresh_failed` events.
 
@@ -1654,6 +1904,8 @@ never exits on a refresh error and logs `monitor_refresh_failed` events.
 | eval-uniform, eval-rl | `hyak/slurm/09_eval_score.sbatch` | train | `python -m hyak.eval.score --run R --panel P`; `python -m hyak.eval.pack --panel P` |
 | replay-check | `hyak/slurm/10_replay_check.sbatch` | train | `python -m hyak.train.replay_check --schedule-only`; `python -m hyak.train.replay_check` (the example replay, 2,000 updates by default) |
 | smoke-train | `hyak/slurm/11_smoke_train.sbatch` | train | `python -m hyak.train.run_segment --run R --smoke` |
+| smoke-rawbpb | `hyak/slurm/12_smoke_rawbpb.sbatch` | train | `python -m hyak.handoff.run requirements`; `python -m hyak.handoff.run prepare --smoke`; `scripts/run_raw_bpb_training.py --stop-at-update 2`, then `--resume --stop-at-update 3`, each followed by `python -m hyak.handoff.run verify --smoke` |
+| train-rawbpb | `hyak/slurm/13_train_rawbpb.sbatch` | train | `python -m hyak.handoff.run requirements`; `python -m hyak.handoff.run prepare`; `python -m hyak.tools.policy_monitor --follow` (background); `scripts/run_raw_bpb_training.py [--resume]`; `python -m hyak.handoff.run verify` |
 
 Every job script: no `#SBATCH` lines (submit.sh supplies the resources), `set -euo pipefail`,
 sources `hyak/slurm/lib.sh`, loads the config, activates the environment, registers the dashboard
@@ -1664,7 +1916,9 @@ timers: the in-process timer of a training segment fires at the remaining time m
 `HYAK_SEGMENT_MARGIN_MINUTES` minus 5 minutes (50 minutes before the limit with the default margin
 of 45); Slurm's backup `--signal=B:TERM@<margin>` follows 5 minutes later; a segment starts only
 with at least margin + 20 minutes left (65 by default). `segment_end` reports `stop_source` (timer,
-signal, external), `stop_seconds` and `stop_deferred_seconds`. For short rehearsals use
+signal, external), `stop_seconds` and `stop_deferred_seconds`. The raw-BPB stages have no in-process timer
+(the launcher has none): Slurm's `--signal=B:TERM@<margin>` (20 minutes for train-rawbpb) is their stop,
+forwarded by the batch shell to the launcher and by the launcher to the trainer (section 0.5). For short rehearsals use
 `HYAK_SEGMENT_MARGIN_MINUTES_SMOKE_TRAIN` or `HYAK_SEGMENT_MARGIN_MINUTES_TRAIN_UNIFORM`.
 
 ### Files
@@ -1683,6 +1937,17 @@ $ANYTOK_ROOT/eval/{panels,features,scores,reports}
 $ANYTOK_ROOT/checkpoints/{uniform,rl}        archived finals (section 9)
 $ANYTOK_RUNS/{uniform,rl}                    trainer output directories (+ hyak_segment.json, interrupted/)
 $ANYTOK_RUNS/{probe,smoke,cleared,.hyak-cache,.locks}
+$ANYTOK_ROOT/handoff/                        raw-BPB bundle archive, .sha256, bundle-receipt.json,
+                                             inputs-verified.json (fetch_inputs.sh)
+$ANYTOK_ROOT/BUNDLE_MANIFEST.json            the bundle's manifest (equals docs/raw-bpb-handoff/BUNDLE_MANIFEST.json)
+$ANYTOK_ROOT/input/                          (raw-BPB run) the extracted bundle: pool, corpus, recipe, eval,
+                                             model, warmup, uniform_*.json, manifest.json, rl-input-audit.json
+$ANYTOK_RUNS/raw-bpb-20k, raw-bpb-smoke      the raw-BPB run and its smoke (HYAK_RAWBPB_OUTPUT,
+                                             HYAK_RAWBPB_SMOKE_OUTPUT): status.json, events.jsonl, run_config.json,
+                                             step-NNNNNN/, interrupted/; .raw-bpb-code-<hash>/ next to them
+modal_results/hyak_tillicum/{smoke,train}-rawbpb/
+                                             status.json, events.jsonl (the job's life cycle), run -> the output,
+                                             <job>-train.log (the trainer's lines), HALTED.json, policy-monitor.json
 modal_results/hyak_tillicum/<stage>/         status.json, events.jsonl, slurm-<job>.out,
                                              latest-slurm.out, <job>-train.log, HALTED.json,
                                              previous-<utc>/ (an earlier attempt of a run)
@@ -1702,6 +1967,8 @@ In the checkout, besides the job scripts and modules:
 hyak/variants/anytok_pool_straight_rl_20k/   the RL trainer (D8): its scripts/ directory holds the trainer;
                                              straight_reward.patch (the exact diff from the regret
                                              trainer), README.md (provenance, hashes, the decision)
+hyak/handoff/                                the raw-BPB run: fetch_inputs.sh (+ fetch.py), run.py (prepare, verify,
+                                             requirements, mark), common.py, job_rawbpb.sh (shared by 12 and 13)
 hyak/code/pinned.py                          SHA-256 pins: runtime snapshots (uniform, original RL,
                                              regret at 3de64a5), the variant, Rust sources, plans
 ```
@@ -1712,6 +1979,12 @@ numbers in a status or event are written as `null` with the raw text beside them
 ### Tests
 
 On the cluster (train environment, in a job; section 4.4):
+
+The raw-BPB stages are covered by `hyak/tests/test_handoff_rawbpb.py` (fake launcher, fake bundle). Qingyun's own
+tests for his launcher and memory fix are outside `hyak/` and run the same way:
+`PYTHONDONTWRITEBYTECODE=1 $ROOT/env/train/bin/python -m pytest -p no:cacheprovider tests/test_raw_bpb_handoff.py tests/test_chunked_hypernetwork.py -q`
+(most of them need CUDA and skip on a CPU node).
+
 
 ```bash
 PYTHONDONTWRITEBYTECODE=1 $ROOT/env/train/bin/python -m pytest -p no:cacheprovider hyak/tests -q

@@ -56,10 +56,14 @@
 # path, and an entry of an earlier activation under $ANYTOK_ROOT/env is replaced, never stacked),
 # PYTHONPATH=$HYAK_REPO, PYTHONDONTWRITEBYTECODE=1, PYTHONUNBUFFERED=1, PYTHONNOUSERSITE=1,
 # HF_HOME=$ANYTOK_ROOT/hf-cache, HYAK_ENV=<name>, HF_HUB_OFFLINE=1 for the stages that never need the
-# network (train-uniform, train-rl, smoke-train, eval-*, probe, init, replay-check; the corpus stage
+# network (train-uniform, train-rl, smoke-train, eval-*, probe, init, replay-check, smoke-rawbpb, train-rawbpb; the corpus stage
 # unsets it), and
 # TOKENIZERS_PARALLELISM as the original Modal images had it for the stage in $HYAK_STAGE: "false" for
 # eval-prepare/eval-uniform/eval-rl, "true" for pool/wheel, unset otherwise (the training images set nothing).
+# For the raw-BPB handoff stages (smoke-rawbpb, train-rawbpb) it exports what docs/raw-bpb-handoff/README.md
+# asks for: TOKENIZERS_PARALLELISM=false and PYTORCH_ALLOC_CONF=expandable_segments:True (the launcher sets the
+# same); libpython3.12, which runtime/anytok_pool_20k/rust_utils/target/release/librust_utils.so needs, is
+# visible through the hyak-libpython link directory below, as for every train stage.
 # It never touches CUDA_VISIBLE_DEVICES (Slurm sets it).
 #
 # hyak_run_forwarding: Slurm's --signal=B:TERM@... reaches only this batch shell.  Bash returns
@@ -71,7 +75,7 @@
 # (redirect its output with >>file 2>&1 on the call), not a pipeline: only the direct child is
 # signalled.  Under "set -e" call it as:  rc=0; hyak_run_forwarding prog args || rc=$?
 
-HYAK_STAGES="check-env probe corpus wheel pool stage-inputs init train-uniform train-rl eval-prepare eval-uniform eval-rl replay-check smoke-train"
+HYAK_STAGES="check-env probe corpus wheel pool stage-inputs init train-uniform train-rl eval-prepare eval-uniform eval-rl replay-check smoke-train smoke-rawbpb train-rawbpb"
 HYAK_STAGE_OVERRIDE_FLAGS="PARTITION QOS ACCOUNT GRES CPUS MEM TIME SEGMENT_MARGIN_MINUTES PLATFORM"
 HYAK_MONITOR_REL="modal_results/hyak_tillicum"
 HYAK_TERM_RECEIVED=${HYAK_TERM_RECEIVED:-0}
@@ -506,7 +510,7 @@ hyak_activate() {
   export HF_HOME="$ANYTOK_ROOT/hf-cache"
   export HYAK_ENV="$which"
   case ${HYAK_STAGE:-} in
-    eval-prepare|eval-uniform|eval-rl) export TOKENIZERS_PARALLELISM=false ;;
+    eval-prepare|eval-uniform|eval-rl|smoke-rawbpb|train-rawbpb) export TOKENIZERS_PARALLELISM=false ;;
     pool|wheel) export TOKENIZERS_PARALLELISM=true ;;
     '') hyak_warn "HYAK_STAGE is not set; leaving TOKENIZERS_PARALLELISM=${TOKENIZERS_PARALLELISM:-<unset>}" ;;
     *) unset TOKENIZERS_PARALLELISM ;;
@@ -514,7 +518,7 @@ hyak_activate() {
   # Stages that read only staged files (nothing is downloaded after the corpus, model and wheel steps):
   # fail at once instead of waiting for a network that may not be there.
   case ${HYAK_STAGE:-} in
-    train-uniform|train-rl|smoke-train|eval-prepare|eval-uniform|eval-rl|probe|init|replay-check) export HF_HUB_OFFLINE=1 ;;
+    train-uniform|train-rl|smoke-train|eval-prepare|eval-uniform|eval-rl|probe|init|replay-check|smoke-rawbpb|train-rawbpb) export HF_HUB_OFFLINE=1 ;;
     corpus) unset HF_HUB_OFFLINE ;;       # the build reads the sources from the Hub: a stale value would break it
   esac
   # The pinned trainers compute in the numerical mode they were validated in: TORCH_ALLOW_TF32_CUBLAS_OVERRIDE
@@ -522,13 +526,16 @@ hyak_activate() {
   # changes __debug__) from the trainer and the guards.  Neither may come from the login shell or a module.
   # PYTORCH_CUDA_ALLOC_CONF is deliberately kept: it is a memory-allocator setting, not a numerical one.
   case ${HYAK_STAGE:-} in
-    train-uniform|train-rl|smoke-train)
+    train-uniform|train-rl|smoke-train|smoke-rawbpb|train-rawbpb)
       for name in TORCH_ALLOW_TF32_CUBLAS_OVERRIDE PYTHONOPTIMIZE; do
         if _hyak_isset "$name"; then
           hyak_warn "unsetting $name for the training stage ${HYAK_STAGE} (it would change the trainer's numerics or its checks; value not logged)"
           unset "$name"
         fi
       done ;;
+  esac
+  case ${HYAK_STAGE:-} in
+    smoke-rawbpb|train-rawbpb) export PYTORCH_ALLOC_CONF=expandable_segments:True ;;
   esac
   hyak_info "activated $prefix ($(python -c 'import sys; print(sys.version.split()[0])' 2>/dev/null || echo '?'))"
 }

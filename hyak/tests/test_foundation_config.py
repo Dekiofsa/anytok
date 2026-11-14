@@ -19,6 +19,8 @@ DESIGN_DEFAULTS = {
     'HYAK_TIME_DEBUG': '01:00:00', 'HYAK_MODULES': 'conda', 'HYAK_SEGMENT_MARGIN_MINUTES': '45',
     'HYAK_HN_CHUNK_ROWS': '16384', 'HYAK_POOL_WORKERS': '2', 'HYAK_POOL_THREADS': '4',
     'HYAK_CORPUS_WORKERS': '6', 'HYAK_PLATFORM': 'Hyak Tillicum · H200', 'HF_TOKEN': '',
+    # the raw-BPB handoff run (README 0): empty = $ANYTOK_RUNS/raw-bpb-20k and $ANYTOK_RUNS/raw-bpb-smoke
+    'HYAK_RAWBPB_OUTPUT': '', 'HYAK_RAWBPB_SMOKE_OUTPUT': '',
     'HYAK_TORCH_INDEX_URL': '',
 }
 
@@ -316,7 +318,7 @@ def test_paths_normalised_not_resolved(tmp_path):
 
 
 def test_stage_tables_consistent():
-    assert len(set(P.STAGES)) == len(P.STAGES) == 14
+    assert len(set(P.STAGES)) == len(P.STAGES) == 16
     assert set(P.SBATCH_FILES) == set(P.STAGES) == set(P.STAGE_PROGRESS)
     assert set(P.DASHBOARD_RUN_IDS) <= set(P.STAGES)
     assert all(v.startswith('hyak-') for v in P.DASHBOARD_RUN_IDS.values())
@@ -328,8 +330,10 @@ def test_stage_tables_consistent():
     assert P.DASHBOARD_RUN_IDS['pool'] == 'hyak-tokenizer-pool'
     assert P.DASHBOARD_RUN_IDS['eval-uniform'] == 'hyak-eval-uniform'
     assert P.DASHBOARD_RUN_IDS['eval-rl'] == 'hyak-eval-rl'
-    assert set(P.SINGLETON_STAGES) == {'train-uniform', 'train-rl'}
-    assert set(P.DEBUG_STAGES) == {'check-env', 'probe'}
+    assert set(P.SINGLETON_STAGES) == {'train-uniform', 'train-rl', 'train-rawbpb'}
+    assert set(P.DEBUG_STAGES) == {'check-env', 'probe', 'smoke-rawbpb'}
+    assert P.DASHBOARD_RUN_IDS['train-rawbpb'] == 'hyak-raw-bpb-training'
+    assert P.STAGE_PROGRESS['train-rawbpb'] == {'completed_field': 'step', 'total': 20000, 'unit': 'steps'}
     assert P.SBATCH_FILES['train-rl'] == P.SBATCH_FILES['train-uniform'] == '07_train.sbatch'
     assert P.SBATCH_FILES['eval-rl'] == P.SBATCH_FILES['eval-uniform'] == '09_eval_score.sbatch'
     assert P.STAGE_PROGRESS['train-rl'] == {'completed_field': 'step', 'total': 20000, 'unit': 'steps'}

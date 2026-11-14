@@ -35,11 +35,13 @@ import tempfile
 
 from hyak.common.config import ConfigError, load_config, repo_root, stage_value
 from hyak.common.io import atomic_write_text
-from hyak.common.paths import (DASHBOARD_RUN_IDS, FINAL_STEP, STAGE_PROGRESS, STAGE_TRAIN_RL,
-                               default_monitor_root, monitor_rel)
+from hyak.common.paths import (DASHBOARD_RUN_IDS, FINAL_STEP, STAGE_PROGRESS, STAGE_SMOKE_RAWBPB, STAGE_TRAIN_RAWBPB,
+                               STAGE_TRAIN_RL, default_monitor_root, monitor_rel)
 
 #: Display names of the managed entries.
 NAMES = {
+    'train-rawbpb': 'AnyTok · Raw-BPB RL · entropy weight 0 · 20k steps · Hyak',
+    'smoke-rawbpb': 'AnyTok · Raw-BPB RL · startup and restart check · Hyak',
     'train-uniform': 'AnyTok · Uniform pool 20k · Hyak',
     'train-rl': 'AnyTok · Joint RL 20k · straight BPB reward · entropy 0 · Hyak',
     'eval-uniform': 'AnyTok · Evaluation · uniform 20k checkpoint · Hyak',
@@ -59,6 +61,20 @@ RL_BASELINE_LOGS = 'no-old-protocol-baseline-*.log'
 RL_PROTOCOL_NOTE = ('Straight transferred-BPB policy reward, entropy 0, corrected paired boundaries on this run. '
                     'The Hyak uniform run\'s sanity scores used the original cuts and are not overlaid.')
 
+#: The raw-BPB handoff stages (README section 0) are modelled on Qingyun's example entry in
+#: docs/raw-bpb-handoff/README.md: the progress_json adapter on the launcher's own OUTPUT/status.json, completed field
+#: ``step``, its OUTPUT/events.jsonl in the logs.  The job links <monitor>/<stage>/run -> OUTPUT, so the registry keeps
+#: repository-relative paths only.
+RAWBPB_STAGES = (STAGE_TRAIN_RAWBPB, STAGE_SMOKE_RAWBPB)
+RAWBPB_LINK = 'run'
+DESCRIPTIONS = {
+    STAGE_TRAIN_RAWBPB: ('Fresh raw-BPB comparison with corrected boundaries and the GPU-only memory fix (Qingyun\'s '
+                         'launcher and input bundle on Tillicum); the baseline is the original uniform run.'),
+    STAGE_SMOKE_RAWBPB: 'Two updates from scratch, then a resume to update 3, with the raw-BPB receipt checks.',
+}
+RAWBPB_PROTOCOL_NOTE = ('Raw transferred-BPB policy reward, entropy 0, corrected paired boundaries on this run. '
+                        'Historical uniform sanity scores used different cuts and are not overlaid.')
+
 _WS = re.compile(r'[ \t\n\r]*')
 
 
@@ -71,12 +87,13 @@ def build_entries(cfg: dict) -> list:
     entries = []
     for stage, run_id in DASHBOARD_RUN_IDS.items():
         progress = STAGE_PROGRESS[stage]
+        rawbpb = stage in RAWBPB_STAGES
         entry = {
             'id': run_id,
             'name': NAMES[stage],
             'adapter': 'progress_json',
             'platform': stage_value(cfg, 'HYAK_PLATFORM', stage),
-            'status': _rel(stage, 'status.json'),
+            'status': _rel(stage, f'{RAWBPB_LINK}/status.json' if rawbpb else 'status.json'),
             'completed_field': progress['completed_field'],
         }
         entry['completion_stage'] = 'complete'
@@ -86,6 +103,18 @@ def build_entries(cfg: dict) -> list:
             entry['total'] = progress['total']
         entry['unit'] = progress['unit']
         logs = [_rel(stage, 'events.jsonl'), _rel(stage, 'latest-slurm.out')]
+        if rawbpb:
+            logs = [_rel(stage, f'{RAWBPB_LINK}/events.jsonl')] + logs
+        if stage == STAGE_TRAIN_RAWBPB:
+            entry['learning'] = {
+                'logs': _rel(stage, '*-train.log'),
+                'baseline_logs': _rel(stage, RL_BASELINE_LOGS),
+                'plan': POOL_PLAN,
+                'snapshots': _rel(stage, 'policy-monitor.json'),
+                'protocol_note': RAWBPB_PROTOCOL_NOTE,
+                'baseline_required': False,
+            }
+            logs.append(_rel(stage, 'policy-monitor.log'))
         if stage == STAGE_TRAIN_RL:
             entry['learning'] = {
                 'logs': _rel(STAGE_TRAIN_RL, '*-train.log'),
@@ -99,9 +128,13 @@ def build_entries(cfg: dict) -> list:
         entry['profiles'] = []
         entry['app_names'] = []
         entry['logs'] = logs
+        if rawbpb:
+            entry['category'] = 'Training'
+            entry['description'] = DESCRIPTIONS[stage]
         entries.append(entry)
     for entry in entries:
-        if entry['completed_field'] == 'step' and entry.get('total') != FINAL_STEP:
+        smoke = entry['id'] == DASHBOARD_RUN_IDS[STAGE_SMOKE_RAWBPB]      # a 3-update check, not a 20k run
+        if entry['completed_field'] == 'step' and not smoke and entry.get('total') != FINAL_STEP:
             raise RuntimeError(f"training entry {entry['id']} must have total {FINAL_STEP}")
     return entries
 

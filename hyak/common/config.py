@@ -47,6 +47,8 @@ CONFIG_ENV = 'HYAK_CONFIG'
 REPO_ENV = 'HYAK_REPO'
 PLACEHOLDER = 'CHANGE_ME'
 REQUIRED_PATH_KEYS = ('ANYTOK_ROOT', 'ANYTOK_RUNS')
+#: Optional storage paths (empty = a default under $ANYTOK_RUNS; hyak.handoff.common).
+OPTIONAL_PATH_KEYS = ('HYAK_RAWBPB_OUTPUT', 'HYAK_RAWBPB_SMOKE_OUTPUT')
 #: Smallest accepted HYAK_HN_CHUNK_ROWS (hypernetwork chunk rows; hyak.memory enforces the same floor).
 MIN_HN_CHUNK_ROWS = 4096
 SECRET_KEYS = ('HF_TOKEN',)
@@ -244,6 +246,21 @@ def validate_config(cfg: dict, source='config') -> None:
         if not 0 < seconds < float('inf'):
             problems.append(f'{key}={value!r} must be a finite, non-zero time limit')
 
+    outputs = {}
+    for key in OPTIONAL_PATH_KEYS:
+        value = cfg.get(key, '')
+        if not value:
+            continue
+        if not value.startswith('/'):
+            problems.append(f'{key}={value!r} must be an absolute path (or empty for the default)')
+        elif value == '/' or value != os.path.normpath(value) or value.startswith('//'):
+            problems.append(f'{key}={value!r} must be a normalised path (no trailing slash, no //, no . or .. '
+                            f'components); write {os.path.normpath(value)!r}')
+        else:
+            problems.extend(_checkout_problems(key, value))
+            outputs[key] = value
+    if len(outputs) == 2 and len(set(outputs.values())) == 1:
+        problems.append('HYAK_RAWBPB_OUTPUT and HYAK_RAWBPB_SMOKE_OUTPUT must be different directories')
     integer('HYAK_CPUS', 1, allow_none=True)
     integer('HYAK_SEGMENT_MARGIN_MINUTES', 0)
     integer('HYAK_HN_CHUNK_ROWS', MIN_HN_CHUNK_ROWS)
