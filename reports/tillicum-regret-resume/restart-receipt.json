@@ -1,0 +1,77 @@
+{
+  "block_bytes": 8388608,
+  "files": [
+    {
+      "bytes": 7248239832,
+      "path": "step-005288/lm.pt",
+      "remote": "regret-run/step-005288/lm.pt",
+      "sha256": "3f59f1edea75da6f181c0094c332c87f26f53d861e8bb902b3f80b09bb0b6479"
+    },
+    {
+      "bytes": 14834411782,
+      "path": "step-005288/optimizer.pt",
+      "remote": "regret-run/step-005288/optimizer.pt",
+      "sha256": "d0579e890cc0d21cd1b831db481c1decd1b4c5f877cd9447af7ef61fd23afd1e"
+    },
+    {
+      "bytes": 207610,
+      "path": "step-005288/policy.pt",
+      "remote": "regret-run/step-005288/policy.pt",
+      "sha256": "cef3b6c705d73833879cf5b4f23983208ea0b2bc13893ca5cab2d2053360da8e"
+    },
+    {
+      "bytes": 6002758,
+      "path": "step-005288/state.pt",
+      "remote": "regret-run/step-005288/state.pt",
+      "sha256": "a2ac02ffc542445cd49af8fb584cbd4670f20dd3ef1f0f353799742793a20f9f"
+    },
+    {
+      "bytes": 2382,
+      "path": "step-005288/hypernet/config.json",
+      "remote": "regret-run/step-005288/hypernet/config.json",
+      "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+    },
+    {
+      "bytes": 1376918848,
+      "path": "step-005288/hypernet/model.safetensors",
+      "remote": "regret-run/step-005288/hypernet/model.safetensors",
+      "sha256": "2512cb29d4418c6261ca3693fef5877568305eb2545ac6831ced548676f3052f"
+    },
+    {
+      "bytes": 3069,
+      "path": "run_config.json",
+      "remote": "regret-run/run_config.json",
+      "sha256": "f489da6e6cefd8f3c294b30f55c26ba35790443182f537b46e9d343a4726c816"
+    },
+    {
+      "bytes": 318,
+      "path": "initial_eval.json",
+      "remote": "regret-run/initial_eval.json",
+      "sha256": "dea3641fbbc755f049ad936d54c952ba04a1a6eb8fde3c4718136154bc15b573"
+    },
+    {
+      "bytes": 6595169,
+      "path": "events.jsonl",
+      "remote": "regret-run/events.jsonl",
+      "sha256": "a8eb617982a17c2d5759349fcbb6dbce2ec87b077559b60cff8871d2261a5cfb"
+    },
+    {
+      "bytes": 1078,
+      "path": "step-005288/manifest.json",
+      "remote": "regret-run/step-005288/manifest.json",
+      "sha256": "16297eb0c1d39082bd328ba1d0745e11d77ddfc8606fcb45c7dc1af3cb927d4b"
+    },
+    {
+      "bytes": 2647207,
+      "path": "heldout_tokenizers.json",
+      "remote": "input/uniform_heldout_tokenizers.json",
+      "sha256": "f2731fdda25480376cae15e6e8902d8dd3f3884d9c2463d2c1d394714325b6dd"
+    }
+  ],
+  "source": {
+    "prefix": "regret-run",
+    "profile": "transformer",
+    "volume": "anytok-pool-rl-20k"
+  },
+  "step": 5288
+}

@@ -69,3 +69,49 @@ Training profile: queues. App `ap-Zs8ZtQSjXUwZXdgCAc5c7c`, call
 `fc-01M7CAD80PMWK668CEGW63J2SA`. Launch receipt:
 `modal_results/anytok_pool_regret_rl_20k/verification.json`, also persisted as
 `queues / anytok-pool-rl-20k / regret-run/launch_verification.json`.
+
+## Tillicum continuation (2026-11-14)
+
+The user authorized continuing the stopped Modal experiment on Tillicum. The
+original queued Modal app was stopped to prevent duplicate training. The last
+complete restart is transformer / anytok-pool-rl-20k / regret-run/step-005288.
+The later logged update 5815 and weights-only checkpoint 5500 do not contain
+complete restart state. The interrupted source trajectory remains archived;
+continuation replays from committed step 5288.
+
+All eleven restart/config/metadata files (23,475,030,053 bytes) transferred
+directly from Modal to Tillicum, with every source hash verified. The existing
+full input bundle was verified identical. No large payload crossed the local
+caller. Original Modal checkpoints remain unchanged. The complete restart is
+also verified in cminst/anytok-regret-rl-20k before resumed training.
+
+Tillicum job 470164: zlab account, gpu-h200 partition, normal QoS, one H200,
+24-hour wall limit, no explicit CPU or memory reservations. The scheduler
+assigned 4 CPUs / 120G RAM. At the published $0.90/GPU-hour rate, a full
+24-hour allocation is $21.60; actual billing follows elapsed time.
+Official rate/limits: https://hyak.uw.edu/docs/systems/tillicum/scheduling-jobs/
+
+The guarded migration permits only model/warmup paths, recorded trainer source
+and validated memory-execution fields to change. Every scientific setting,
+regret reward, entropy weight 0, policy, optimizer, corpus position and saved
+RNG state is retained. The new execution is the accepted GPU-only
+chunked_norm_mlp path and direct embedding backward. Cross-device bitwise
+trajectory equality is not claimed; hardware changes CUDA dropout mapping.
+
+Resumed updates passed paired-example, reward and counter checks. The first
+127k-vocabulary update peaked at 115.18 GiB allocated. Training continues to
+20k with 500-step weights, 2k-step full restarts and graceful-stop restarts.
+Checkpoints are atomically written, checksum-verified and uploaded directly
+from Tillicum to Hugging Face. The latest-restart pointer is published only
+after payload verification. A successful graceful walltime stop submits the
+next job with an afterok dependency; failed training is not automatically
+restarted. A five-minute pre-walltime signal allows a final checkpoint/backup.
+
+Remote run: /gpfs/scrubbed/qxli2/anytok-h200-smoke/modal_results/tillicum_regret/run
+Job driver: scripts/tillicum_regret_job.py
+Migration guard: scripts/resume_regret_tillicum.py
+Live metadata mirror: scripts/watch_tillicum_regret.py in tmux
+anytok-tillicum-regret. The existing dashboard run ID and learning plots are
+reused. Its committed history excludes the discarded later Modal trajectory.
+Checkpoint repository: https://huggingface.co/cminst/anytok-regret-rl-20k
+Migration receipts and initial progress: reports/tillicum-regret-resume/.

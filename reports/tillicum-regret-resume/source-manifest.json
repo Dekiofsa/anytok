@@ -1,0 +1,26 @@
+{
+  "scripts/resume_regret_tillicum.py": {
+    "bytes": 3101,
+    "sha256": "8b765af8f6480bb661182faa8c30fe85816e70b8cb845fd4082c4279cb7ade7f"
+  },
+  "scripts/tillicum_regret_job.py": {
+    "bytes": 7773,
+    "sha256": "69e2ccd48258aa0cc9756ba18640c79eacac68fb4beed455dc5bb4cd38702dc7"
+  },
+  "scripts/tillicum_regret_status.py": {
+    "bytes": 2177,
+    "sha256": "cb5f67e720989e0c1cc83ad9a608e18fa1a69f419dadaa4c22d2272de180384a"
+  },
+  "scripts/watch_tillicum_regret.py": {
+    "bytes": 5565,
+    "sha256": "d3aca1089324189d7ee36ef9015caf0c0380037ee1543d2d13268293e0d41468"
+  },
+  "scripts/fetch_regret_tillicum_restart.py": {
+    "bytes": 4245,
+    "sha256": "328510f63d2e6262840773491cc8759f0b86cdbfb333c3f3eae6dbb8dc58dc8f"
+  },
+  "scripts/tillicum_regret_train.sbatch": {
+    "bytes": 588,
+    "sha256": "b1977289a2a1c84edfb209d75c107ee26a47d8a13e67e723d966e94e32123cfd"
+  }
+}

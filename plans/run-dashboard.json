@@ -4,50 +4,27 @@
       "id": "anytok-pool-regret-rl-training",
       "name": "Regret RL · entropy 0 · 20k steps",
       "adapter": "progress_json",
-      "platform": "Modal · B300",
+      "platform": "Tillicum · H200",
       "status": "modal_results/anytok_pool_regret_rl_20k/status.json",
       "completed_field": "step",
       "total": 20000,
       "unit": "steps",
       "learning": {
-        "logs": "modal_results/anytok_pool_regret_rl_20k/*-train.log",
+        "logs": "modal_results/anytok_pool_regret_rl_20k/committed-train.log",
         "baseline_logs": "modal_results/anytok_pool_regret_rl_20k/no-old-protocol-baseline-*.log",
         "plan": "plans/tokenizer-pool-1000-v1.json",
         "snapshots": "modal_results/anytok_pool_regret_rl_20k/policy-monitor.json",
-        "protocol_note": "Corrected paired boundaries on this run. Historical uniform sanity scores used different cuts and are not overlaid.",
+        "protocol_note": "Corrected paired boundaries; resumed from committed step 5,288 on Tillicum H200. The uncommitted later Modal trajectory is archived. Historical uniform sanity scores used different cuts and are not overlaid.",
         "baseline_required": false
       },
       "profiles": [
-        "queues",
-        "stars",
-        "transformer",
-        "aurora",
-        "anushavenkatachalam",
-        "cron",
-        "pandas",
-        "code-group2-evcc",
-        "mix345-net",
-        "github",
-        "grufaller",
-        "group-pytorch",
-        "li004330",
-        "transformers-impl",
-        "qingy1337",
-        "remote-worker",
-        "gildmember",
-        "data-pipelines",
-        "csproject",
-        "assignment2-testcases",
-        "trenton",
-        "definitive",
-        "deployment"
+        "zlab"
       ],
-      "app_names": [
-        "anytok-pool-regret-rl-20k-b300"
-      ],
+      "app_names": [],
       "logs": [
         "modal_results/anytok_pool_regret_rl_20k/controller.log",
-        "modal_results/anytok_pool_regret_rl_20k/events.jsonl"
+        "modal_results/anytok_pool_regret_rl_20k/events.jsonl",
+        "modal_results/anytok_pool_regret_rl_20k/tillicum-train.log"
       ],
       "progress_log": "modal_results/anytok_pool_regret_rl_20k/events.jsonl",
       "category": "Training",

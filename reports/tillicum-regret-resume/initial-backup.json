@@ -1,0 +1,9 @@
+{
+  "at_utc": "2026-11-14T22:42:32.988369+00:00",
+  "kind": "full_restart_checkpoint",
+  "manifest_sha256": "16297eb0c1d39082bd328ba1d0745e11d77ddfc8606fcb45c7dc1af3cb927d4b",
+  "prefix": "checkpoints/step-005288",
+  "repo_id": "cminst/anytok-regret-rl-20k",
+  "revision": "d105be28a52a2d4e64da5c56ec75b40ee23ede1d",
+  "step": 5288
+}

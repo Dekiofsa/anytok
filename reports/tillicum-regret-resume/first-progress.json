@@ -1,0 +1,78 @@
+{
+  "step": 5297,
+  "total": 20000,
+  "changes": {
+    "memory_execution": {
+      "after": "optimized",
+      "before": null
+    },
+    "memory_source_sha256": {
+      "after": {
+        "chunked_hypernetwork.py": "ecf04b58a90bee6211f9fda3712d73649e89f9c42fa01179caebbe48cbe26afd",
+        "local_memory_variants.py": "c1610140bf517fc26fbb41e541ccf0f135dbacc59df3a3ca880d1e1a4b599de6",
+        "lossless_layer_norm.py": "0bd292f45fdceb9eda11c1bff970a2a90f9e645c08f5135c02dcea9d36da1d8d",
+        "lossless_mlp.py": "b7849b1455a5d62f034ae83ad6a4a86b532e03398323a8d9c7398934a4807872",
+        "pool_training_memory.py": "3c482f79514a11d1fd65a7ecb033a3ec8a18bbd72e26ce5196948695f7ee93f8"
+      },
+      "before": null
+    },
+    "model": {
+      "after": "/gpfs/scrubbed/qxli2/anytok-h200-smoke/modal_results/local_memory/artifacts/input/model",
+      "before": "/mnt/rl/input/model"
+    },
+    "reward_objective": {
+      "after": "regret",
+      "before": null
+    },
+    "training_script_sha256": {
+      "after": "c411e683c2251047ad497512aea1ca948ffb0bece398ce5fd21992782e18ce8b",
+      "before": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+    },
+    "warmup_checkpoint": {
+      "after": "/gpfs/scrubbed/qxli2/anytok-h200-smoke/modal_results/local_memory/artifacts/input/warmup",
+      "before": "/__modal/volumes/vo-3qdytlKkwWESkGKVmHOMVW/input/warmup"
+    }
+  },
+  "reason": "Modal B300 to Tillicum H200; verified identical input artifacts and GPU-only memory fix",
+  "stage": "train",
+  "at_utc": "2026-11-14T22:45:52.071452+00:00",
+  "workers": [
+    {
+      "id": "470164",
+      "profile": "zlab",
+      "platform": "Tillicum \u00b7 H200",
+      "state": "train"
+    }
+  ],
+  "gradient_norm_before_clip": 1.782297968864441,
+  "hn_lr": 3.1776e-05,
+  "input_lexical_loss": 0.2316322922706604,
+  "lm_lr": 5.296e-07,
+  "loss_nats_per_token": 2.21603684646841,
+  "paired_batch_sha256": "95223439c503dd45e5865611e0f753a24dabd61a1206c36244909590a378f25f",
+  "paired_canonical_bpb": 0.941701094172964,
+  "paired_gap_bpb": 0.06111766666558062,
+  "paired_maximum_positions": 128,
+  "paired_valid_examples": 128,
+  "peak_gib": 115.18,
+  "policy_action_probability": 0.9256419524597307,
+  "policy_advantage_bpb": -0.02244968369340869,
+  "policy_baseline_bpb": 0.08334285352205523,
+  "policy_effective_tokenizers": 1.3729523516482331,
+  "policy_entropy": 0.3169634223586118,
+  "policy_max_probability": 0.9263425445230681,
+  "policy_reward_bpb": 0.06111766666558062,
+  "policy_selected_probability": 0.9263425445230681,
+  "policy_unique_tokenizers": 433,
+  "policy_updates": 5297,
+  "rejected_examples": 0,
+  "reward_objective": "regret",
+  "scored_bytes": 23748,
+  "scored_tokens": 7449,
+  "seconds": 7.248,
+  "tokenizer_config_index": 771,
+  "tokenizer_pool_index": 771,
+  "tokenizer_vocab_size": 127000,
+  "train_bpb": 1.0028187608385446,
+  "truncated_forms": 2427
+}

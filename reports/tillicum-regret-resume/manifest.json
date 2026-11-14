@@ -1,0 +1,36 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 1844,
+      "sha256": "fd7c33131e46d791f096a3404177e757f9b4712fe6ff0ffb75b5a4217f9724d6"
+    },
+    "restart-receipt.json": {
+      "bytes": 2520,
+      "sha256": "03ec8d5d64efd5a4fb18d25ec967bf712a1feb739ca98882f6b65875d19d9dc2"
+    },
+    "modal-config.json": {
+      "bytes": 3069,
+      "sha256": "f489da6e6cefd8f3c294b30f55c26ba35790443182f537b46e9d343a4726c816"
+    },
+    "tillicum-config.json": {
+      "bytes": 3756,
+      "sha256": "14bae67b143ddee939de1fb16b5bbd1528cd348ca52da45c8fe6d672df671263"
+    },
+    "source-manifest.json": {
+      "bytes": 884,
+      "sha256": "5a4072c5640aeb58b180cb0f837bb23c62e5146554225f21eac68c4b07e281dd"
+    },
+    "first-progress.json": {
+      "bytes": 2890,
+      "sha256": "f1e64eddc5249fa80e5a18caf3f364d9a4ed975db9ee0375a5e07c626957b0a7"
+    },
+    "initial-backup.json": {
+      "bytes": 334,
+      "sha256": "1df2e243681f75ab21bb4f712c8544be96a9cc605f9a8c7473803451e48ade00"
+    },
+    "validation.json": {
+      "bytes": 383,
+      "sha256": "99a651cce993705652e2b551a1a96a4ab4f3d34c28da4e3a6b07b8d39d2eed2b"
+    }
+  }
+}
