@@ -186,7 +186,7 @@
     }));
   }
   window.refreshLearning = async runId => {
-    get('learning').hidden = !['anytok-pool-settings-rl-training', 'anytok-pool-regret-rl-training'].includes(runId);
+    get('learning').hidden = !['anytok-pool-settings-rl-training', 'anytok-pool-regret-rl-training', 'hyak-rl-training'].includes(runId);
     if (runId !== activeRun) { activeRun = runId; lastFetch = 0; }
     if (get('learning').hidden || busy || Date.now() - lastFetch < 10000) return;
     busy = true; requested = runId;

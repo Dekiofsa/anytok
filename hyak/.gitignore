@@ -1,0 +1,3 @@
+# Your cluster configuration (paths, account, HF_TOKEN): copy config.env.example to config.env
+# and keep it out of git.
+config.env

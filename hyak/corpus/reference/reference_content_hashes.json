@@ -1,0 +1,583 @@
+{
+  "buckets": {
+    "books-en": {
+      "counts": {
+        "eval_bytes": 5004835,
+        "eval_docs": 105,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 11923,
+        "skipped_docs": 5,
+        "train_bytes": 500036025,
+        "train_docs": 10652
+      },
+      "eval": {
+        "decompressed_sha256": "4da5b454911c086520e8b16f6751ac9ef3154cd4155cbd390b84eecf9017debd",
+        "lines": 105
+      },
+      "python": "3.12.15",
+      "size": "extra",
+      "train": {
+        "decompressed_sha256": "b5c071a6cbe2fad8ba115e30ab44ab514f6ca000b7ae49cfee4b146f4394032e",
+        "lines": 10652
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "code": {
+      "counts": {
+        "eval_bytes": 5021291,
+        "eval_docs": 655,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 140727,
+        "skipped_docs": 2585,
+        "train_bytes": 1000000970,
+        "train_docs": 124644
+      },
+      "eval": {
+        "decompressed_sha256": "929669fbb5f9a633dba90e8b09cfe41da80e69f5d71b70d922321980014e997f",
+        "lines": 655
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "ec0faf12042b7b27007c4d12cb0084a6b3b204fc88cdb5108a68a44916d887e2",
+        "lines": 124644
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "legal-en": {
+      "counts": {
+        "eval_bytes": 5010209,
+        "eval_docs": 441,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 95234,
+        "skipped_docs": 0,
+        "train_bytes": 800006243,
+        "train_docs": 85423
+      },
+      "eval": {
+        "decompressed_sha256": "3201002a06f790d28c7aebf55184632a3896da32cb86974c432f5a3f3521e564",
+        "lines": 441
+      },
+      "python": "3.12.15",
+      "size": "specialty",
+      "train": {
+        "decompressed_sha256": "83b655f1e6fb347fb3aa2b06d33058c3bac1f24e96b76deed65423dceebe6572",
+        "lines": 85423
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "math-en": {
+      "counts": {
+        "eval_bytes": 5000148,
+        "eval_docs": 890,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 218770,
+        "skipped_docs": 23,
+        "train_bytes": 1000000152,
+        "train_docs": 196332
+      },
+      "eval": {
+        "decompressed_sha256": "1685f8469639be5bf6542e653b72ab52dee0ca24145012f5cd9c97451b0cd424",
+        "lines": 890
+      },
+      "python": "3.12.15",
+      "size": "extra",
+      "train": {
+        "decompressed_sha256": "0c184580faae126fe3c8bbb5a660aebe9ab68c5370c97437db2cbc8b28349410",
+        "lines": 196332
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "medical-en": {
+      "counts": {
+        "eval_bytes": 5090413,
+        "eval_docs": 148,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 24231,
+        "skipped_docs": 694,
+        "train_bytes": 800008098,
+        "train_docs": 21158
+      },
+      "eval": {
+        "decompressed_sha256": "10f5002e95b7e9a51067428ada45853941df41f26849defd8ccc30923facbd08",
+        "lines": 148
+      },
+      "python": "3.12.15",
+      "size": "specialty",
+      "train": {
+        "decompressed_sha256": "7c2c6666ecda57352f8ad93f1bc6006f0eeca0a63391c143a23a5ffba9b9977f",
+        "lines": 21158
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "papers-en": {
+      "counts": {
+        "eval_bytes": 5000091,
+        "eval_docs": 3299,
+        "seen_eval_rows": 3299,
+        "seen_train_rows": 378239,
+        "skipped_docs": 0,
+        "train_bytes": 500000068,
+        "train_docs": 378239
+      },
+      "eval": {
+        "decompressed_sha256": "e9b422ab20f3a89cda6f3f0e1d485516e2aa9d899efbddc7d94c132c68023e8b",
+        "lines": 3299
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "d0379c88bbecc8585569cad3e015c94a95316818b8841aef7890064b35fe161e",
+        "lines": 378239
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "qa-en": {
+      "counts": {
+        "eval_bytes": 5003177,
+        "eval_docs": 1767,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 189037,
+        "skipped_docs": 2,
+        "train_bytes": 500002607,
+        "train_docs": 169995
+      },
+      "eval": {
+        "decompressed_sha256": "065a8d54af3fe4d5f60201566acdd58fa40f82ff72f707dbd1bbf6febb7152bc",
+        "lines": 1767
+      },
+      "python": "3.12.15",
+      "size": "extra",
+      "train": {
+        "decompressed_sha256": "c093aa916f03023793f63947b15a67d0bcbad0dab9a8750a86ff7b7b8abe3d99",
+        "lines": 169995
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "web-ar": {
+      "counts": {
+        "eval_bytes": 5006752,
+        "eval_docs": 901,
+        "seen_eval_rows": 901,
+        "seen_train_rows": 109224,
+        "skipped_docs": 1,
+        "train_bytes": 642860252,
+        "train_docs": 109223
+      },
+      "eval": {
+        "decompressed_sha256": "d03f8ca84d5d13b206dda7597c30865432a3f6ef6f5b4e876ed846e880482530",
+        "lines": 901
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "85fdda2f68fd1643f026629049aa90b94131060908405f424c9a14055ca69bb6",
+        "lines": 109223
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "web-en": {
+      "counts": {
+        "eval_bytes": 5005551,
+        "eval_docs": 1653,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 904697,
+        "skipped_docs": 0,
+        "train_bytes": 2500029021,
+        "train_docs": 812448
+      },
+      "eval": {
+        "decompressed_sha256": "e2b54754381cf264e2a194a9b8f00dd9ffed81c13a5e1867c4a189a344421f28",
+        "lines": 1653
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "95ef506d0a6e04273697cf2c082f4c4104d381c71b2851192686fb7a66c6ee1d",
+        "lines": 812448
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "web-es": {
+      "counts": {
+        "eval_bytes": 5000358,
+        "eval_docs": 1491,
+        "seen_eval_rows": 1491,
+        "seen_train_rows": 150865,
+        "skipped_docs": 0,
+        "train_bytes": 642867017,
+        "train_docs": 150865
+      },
+      "eval": {
+        "decompressed_sha256": "2b172c34e4db690e82a091f9d6f4af0bebfe4acf1dbaa1e2c81891a58bf675ba",
+        "lines": 1491
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "2dbd61795bb2822f910269ca3d9455f9116cc0f0e3fed01b1fb85e354a794d83",
+        "lines": 150865
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "web-fr": {
+      "counts": {
+        "eval_bytes": 5003170,
+        "eval_docs": 1334,
+        "seen_eval_rows": 1334,
+        "seen_train_rows": 173425,
+        "skipped_docs": 0,
+        "train_bytes": 643005744,
+        "train_docs": 173425
+      },
+      "eval": {
+        "decompressed_sha256": "016bfa8a19e6e2344adbc3d8c7912199dc501081e79ac06584c0a87a2b14037c",
+        "lines": 1334
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "0a540e6d153730d9ad6ea682e4b24aba9ec39a34572850632aedba792f56cad9",
+        "lines": 173425
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "web-hi": {
+      "counts": {
+        "eval_bytes": 5001323,
+        "eval_docs": 735,
+        "seen_eval_rows": 735,
+        "seen_train_rows": 97995,
+        "skipped_docs": 0,
+        "train_bytes": 642860650,
+        "train_docs": 97995
+      },
+      "eval": {
+        "decompressed_sha256": "4f810f352a4ce2eac3c2e03b69568b8e757d725d4243848a27d721148dd02340",
+        "lines": 735
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "7a86d521fa18680c2b84392e57bb4cd4ea8c1850d302adf73a3f6bc0e8c8038a",
+        "lines": 97995
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "web-ja": {
+      "counts": {
+        "eval_bytes": 5003919,
+        "eval_docs": 1388,
+        "seen_eval_rows": 1388,
+        "seen_train_rows": 162753,
+        "skipped_docs": 0,
+        "train_bytes": 642876728,
+        "train_docs": 162753
+      },
+      "eval": {
+        "decompressed_sha256": "ba4697236fb7de533322f2987599d2763047ae2e7d23af8fd705eed58e70db99",
+        "lines": 1388
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "cd00f3485be25b2e3c36da6bf57c014527f4c69f6a4ffcbc1dc94a66c41aac58",
+        "lines": 162753
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "web-ru": {
+      "counts": {
+        "eval_bytes": 5025255,
+        "eval_docs": 800,
+        "seen_eval_rows": 800,
+        "seen_train_rows": 84828,
+        "skipped_docs": 8,
+        "train_bytes": 642860367,
+        "train_docs": 84820
+      },
+      "eval": {
+        "decompressed_sha256": "2788cfff3f5d3170ed0d8a324738eaadcc1e24af71bdb79f4569bfc9d0707155",
+        "lines": 800
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "b2e9858c0421975448c2970fe98cc4855e236b8fe04a49e81b768f44c2278dcf",
+        "lines": 84820
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "web-zh": {
+      "counts": {
+        "eval_bytes": 5002121,
+        "eval_docs": 1328,
+        "seen_eval_rows": 1328,
+        "seen_train_rows": 179171,
+        "skipped_docs": 0,
+        "train_bytes": 642860032,
+        "train_docs": 179171
+      },
+      "eval": {
+        "decompressed_sha256": "0bf3f80b45ecec762eb33a8c1d113a0056b6486f9cbe55448ae9bf923ef419a2",
+        "lines": 1328
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "455140903825bd9370c173301dd913858756bdb7c4de42e10d9e6e8d9e8f0239",
+        "lines": 179171
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "wiki-ar": {
+      "counts": {
+        "eval_bytes": 5014104,
+        "eval_docs": 205,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 18073,
+        "skipped_docs": 62,
+        "train_bytes": 187655005,
+        "train_docs": 16171
+      },
+      "eval": {
+        "decompressed_sha256": "3bf2797f87ef0e021ae6e8fbcc711fa603d0ca7bcf3c5888eb13647fc6bfc823",
+        "lines": 205
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "bce28952882f54ed71e1b36ec6e6f2102dcd2079627bdb4d45a2ef8e03182f54",
+        "lines": 16171
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "wiki-en": {
+      "counts": {
+        "eval_bytes": 5080195,
+        "eval_docs": 228,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 37286,
+        "skipped_docs": 61,
+        "train_bytes": 187501356,
+        "train_docs": 33465
+      },
+      "eval": {
+        "decompressed_sha256": "328a1823c3d39bb23e88c3b5c126f131ad1ad3238938697d8e18222d0fb8c402",
+        "lines": 228
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "57ac5f43786ee28270d99ba5942120ce27b727445a61b86af0d2017a7de81f45",
+        "lines": 33465
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "wiki-es": {
+      "counts": {
+        "eval_bytes": 5006715,
+        "eval_docs": 259,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 15650,
+        "skipped_docs": 2,
+        "train_bytes": 187537421,
+        "train_docs": 14028
+      },
+      "eval": {
+        "decompressed_sha256": "d3e178e8bbd0c671ef8fe83d9a8d2cd30712205e9fe084d170c3abcb80ce3006",
+        "lines": 259
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "71bd17198b53ee1d40d9dd9f1715335c8342fa3d5e3880072114a97bf3ef9b37",
+        "lines": 14028
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "wiki-fr": {
+      "counts": {
+        "eval_bytes": 5005948,
+        "eval_docs": 227,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 13879,
+        "skipped_docs": 20,
+        "train_bytes": 187530573,
+        "train_docs": 12393
+      },
+      "eval": {
+        "decompressed_sha256": "45fffeece6122b6edb2d3014abfa14f44f26e42a2d4cf1f154551a59d0ed32a3",
+        "lines": 227
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "354cc961624046adc8315d52a5765e97cbfc65f27e922682248bd46f863cc135",
+        "lines": 12393
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "wiki-hi": {
+      "counts": {
+        "eval_bytes": 5000099,
+        "eval_docs": 574,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 51282,
+        "skipped_docs": 1133,
+        "train_bytes": 187510410,
+        "train_docs": 45123
+      },
+      "eval": {
+        "decompressed_sha256": "2337a4752c8c5eb23ffa744ed430511d978644d1bf2a923987b760ffd8b0f2a1",
+        "lines": 574
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "de198b155687b256dca2db327faece6adeefed2432350b9501dc6c4460a62f22",
+        "lines": 45123
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "wiki-ja": {
+      "counts": {
+        "eval_bytes": 5022616,
+        "eval_docs": 227,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 11704,
+        "skipped_docs": 7,
+        "train_bytes": 187586917,
+        "train_docs": 10480
+      },
+      "eval": {
+        "decompressed_sha256": "909bb0f1b9dad0f007f80bd994c23db2935cdd18262f721ce4ca7e5fc7008719",
+        "lines": 227
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "531a916ba864d27a4d6b7f5ec245ce3b1afd0e702535cb39ba3956b0d57b4939",
+        "lines": 10480
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "wiki-ru": {
+      "counts": {
+        "eval_bytes": 5034065,
+        "eval_docs": 131,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 9577,
+        "skipped_docs": 2,
+        "train_bytes": 187592394,
+        "train_docs": 8567
+      },
+      "eval": {
+        "decompressed_sha256": "201afdf1b10427ef548c4eb0f06dea8e11b770edf9b394a40ce2a0d7ab963b75",
+        "lines": 131
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "992c67c104a079771173037ebd810de0991e002fd1facb99fd62b1ccf46c4279",
+        "lines": 8567
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    },
+    "wiki-zh": {
+      "counts": {
+        "eval_bytes": 5001261,
+        "eval_docs": 321,
+        "seen_eval_rows": 0,
+        "seen_train_rows": 26352,
+        "skipped_docs": 94,
+        "train_bytes": 187503493,
+        "train_docs": 23633
+      },
+      "eval": {
+        "decompressed_sha256": "39ae281c60b020cfeb3cef5079056b77cf4ca8e722a4157f2a79e5a7e489190b",
+        "lines": 321
+      },
+      "python": "3.12.15",
+      "size": "full",
+      "train": {
+        "decompressed_sha256": "f94360ebf6e651077d1aeb0d27328167229481a06a5ad140d0272efa2bfff8c7",
+        "lines": 23633
+      },
+      "zlib": {
+        "runtime": "1.2.12",
+        "version": "1.2.12"
+      }
+    }
+  },
+  "note": "Decompressed-content fingerprints (SHA-256 and line count of the DECOMPRESSED train.jsonl.gz and eval.jsonl.gz, independent of gzip time and zlib) of the full-size corpus built off-cluster on 2026-11-13 with hyak.corpus.build that matched every repository anchor. Used by hyak.corpus.verify as reference anchors. decompressed-content fingerprints of a full-size build by hyak.corpus.build that matches every repository anchor (23/23 train byte counts, byte-identical regenerated recipe, 3,149 ids, 1,592 hashes, 34 excerpts, 23 held-out sizes)",
+  "package_sets": [
+    "{\"datasets\": \"5.2.0\", \"fsspec\": \"2026.9.0\", \"hf-xet\": \"1.8.0\", \"huggingface-hub\": \"2.4.0\", \"pyarrow\": \"26.0.1\", \"requests\": \"2.34.2\", \"urllib3\": \"2.8.0\"}"
+  ]
+}

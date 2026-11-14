@@ -1,0 +1,20 @@
+--- a/runtime/anytok_pool_regret_rl_20k/scripts/train_joint_smollm_input.py
++++ b/hyak/variants/anytok_pool_straight_rl_20k/scripts/train_joint_smollm_input.py
+@@ -384,7 +384,7 @@
+               "microbatch_size": args.microbatch_size,
+               "tokenizer_sampling": "adversarial_shared_settings_mlp_per_optimizer_update",
+               "policy": bandit.settings,
+-              "policy_reward": "paired_pre_model_update_transferred_bpb_minus_current_canonical_bpb",
++              "policy_reward": "paired_pre_model_update_transferred_bpb",
+               "pairing_protocol": "nearest_valid_canonical_midpoint_boundary_joint_128_positions_v1",
+               "paired_reward_source_sha256": hashlib.sha256((REPO / "hf_hypernet/paired_reward.py").read_bytes()).hexdigest(),
+               "policy_source_sha256": hashlib.sha256((REPO / 'hf_hypernet/settings_policy.py').read_bytes()).hexdigest(),
+@@ -613,7 +613,7 @@
+         optimizer.zero_grad(set_to_none=True)
+         scored_bytes = sum(x[2] for x in examples)
+         train_bpb, canonical_bpb, reward_bpb = paired_gap_bpb(loss_nats, canonical_nats, scored_bytes)
+-        policy_metrics = bandit.update(pool_index, reward_bpb)
++        policy_metrics = bandit.update(pool_index, train_bpb)
+         del generated, leaf, lexical, forms, priors
+         step = update + 1
+         metrics = {"stage": "train", "step": step,
