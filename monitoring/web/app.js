@@ -27,6 +27,10 @@ function render(data) {
   if (!data) return;
   const percent = data.total ? Math.min(100, data.completed / data.total * 100) : 0;
   $('name').textContent = data.name;
+  const experiment = data.runs.find(r => r.id === data.id);
+  $('category').textContent = experiment?.category || 'Other experiments';
+  $('run-description').textContent = experiment?.description || '';
+  $('run-description').hidden = !experiment?.description;
   $('platform').textContent = data.platform;
   $('stage').textContent = data.stage.replaceAll('_', ' ');
   $('stage').classList.toggle('complete', data.stage === 'complete');
@@ -45,6 +49,8 @@ function render(data) {
   $('trajectory-plots').hidden = data.id !== 'uniform-trajectories';
   const plotConfigs = {
     'local-memory': ['local_memory', 'local_memory_plot_updated_at', 'Local hypernetwork memory diagnostics', 'Real checkpoint and optimizer · complete native vocabularies · batch 128 · microbatch 32 · out-of-memory cases retained.', 'local-memory'],
+    'chunked-memory': ['chunked_memory', 'chunked_memory_plot_updated_at', 'Lossless chunking: memory and speed', 'Full native vocabularies · original outputs and all parameter gradients · rejected candidates retained.', 'chunked-memory'],
+    'vocab-scaling': ['vocab_scaling', 'vocab_scaling_plot_updated_at', 'Vocabulary scaling and slowdown', 'Measured 32k–43k · dashed extrapolations to 128k · complete native vocabularies · paired warmup and checkpoint reload.', 'vocab-scaling'],
     'frozen-policy-regret': ['frozen_policy_regret', 'frozen_regret_plot_updated_at', 'Canonical-gap versus raw BPB reward · entropy 0.01', 'Only the policy reward changes · same frozen RL20k model, initialization, 1,000 tokenizers and all 288 + 288 passages.', 'frozen-policy-regret-20k'],
     'frozen-policy-regret-entropy0': ['frozen_policy_regret_entropy0', 'frozen_regret_entropy0_plot_updated_at', 'Canonical-gap versus raw BPB reward · entropy 0', 'Only the policy reward changes · same frozen RL20k model, initialization, 1,000 tokenizers and all 288 + 288 passages.', 'frozen-policy-regret-entropy0-20k'],
     'frozen-policy-entropy0': ['frozen_policy_entropy0', 'frozen_entropy_plot_updated_at', 'Entropy 0 versus 0.01', 'Only the entropy coefficient changes · same seed, initialization, 20,000 updates and complete 1,000-tokenizer / 288 + 288 passage reward table.', 'frozen-policy-entropy0-20k'],
@@ -119,12 +125,22 @@ function render(data) {
   $('connection').classList.toggle('live', !data.offline && !data.error);
   const age = data.remote_age === null ? 'Awaiting Modal metadata' : `Modal data ${duration(data.remote_age)} old`;
   $('freshness').textContent = `${age}${data.polling ? ' · Refreshing' : ''} · Local artifacts every 2s · Modal every 30s · Credits every 5m`;
-  if ($('run').dataset.signature !== JSON.stringify(data.runs)) {
-    $('run').replaceChildren(...data.runs.map(r => {
+  const catalog = data.runs.map(({id, name, category, description}) => ({id, name, category, description}));
+  const signature = JSON.stringify(catalog);
+  if ($('run').dataset.signature !== signature) {
+    const groups = new Map();
+    for (const r of catalog) {
+      const category = r.category || 'Other experiments';
+      if (!groups.has(category)) {
+        const group = document.createElement('optgroup'); group.label = category;
+        groups.set(category, group);
+      }
       const option = document.createElement('option'); option.value = r.id;
-      option.textContent = `${r.name} (${number(r.completed)}/${number(r.total)})`; return option;
-    }));
-    $('run').dataset.signature = JSON.stringify(data.runs);
+      option.textContent = r.name; option.title = r.description || '';
+      groups.get(category).append(option);
+    }
+    $('run').replaceChildren(...groups.values());
+    $('run').dataset.signature = signature;
   }
   $('run').value = data.id;
   $('profiles').replaceChildren(...data.profiles.map(p => {

@@ -1,0 +1,82 @@
+{
+  "runtime/anytok_pool_20k/hf_hypernet/__init__.py": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "runtime/anytok_pool_20k/hf_hypernet/configuration_hypernet.py": {
+    "bytes": 2842,
+    "sha256": "e986d140ad63311b63425a3cac6e4af2410ed180c184847aca80e0ab6af554de"
+  },
+  "runtime/anytok_pool_20k/hf_hypernet/hyper_roberta.py": {
+    "bytes": 9559,
+    "sha256": "5c385150184fd0a55fb45a289a4eed2b6b7756880849f080c4f55b25355b8512"
+  },
+  "runtime/anytok_pool_20k/hf_hypernet/hyper_t5.py": {
+    "bytes": 8525,
+    "sha256": "c40548e12cb2f2074ead8ce7876cf40c1ed77b057e735c0b6f9a8027b3e50eb2"
+  },
+  "runtime/anytok_pool_20k/hf_hypernet/identity_warmup.py": {
+    "bytes": 6928,
+    "sha256": "1c5cca36d2a2b3cdfeb7e2d3fbb8efdc300c69fd6f0bee47e2876d49b8ff5666"
+  },
+  "runtime/anytok_pool_20k/hf_hypernet/joint_training.py": {
+    "bytes": 9358,
+    "sha256": "7ce18a9d9843faac1a9438f6ad595588569c0512574b7a602e5b11b432bdaf5e"
+  },
+  "runtime/anytok_pool_20k/hf_hypernet/modeling_hypernet.py": {
+    "bytes": 15817,
+    "sha256": "9314094415250b093040f27948434f949811913d5a82b77c5676681361031541"
+  },
+  "runtime/anytok_pool_20k/hf_hypernet/pool_sampling.py": {
+    "bytes": 3037,
+    "sha256": "846446a0ddb8b833801bb74b7939452a3195760a98e9bab2a3dd2e73d57f1b57"
+  },
+  "runtime/anytok_pool_20k/hf_hypernet/smollm_setup.py": {
+    "bytes": 1155,
+    "sha256": "17082b9e68320bb763ba6ca8f0772ec4fc49f84e23abf404b27d1a4b299eed06"
+  },
+  "runtime/anytok_pool_20k/hf_hypernet/tokenizer_inputs.py": {
+    "bytes": 4053,
+    "sha256": "70e99d9edb56fead0597a2d593dc992a2ad3b85d688c09bfe953bcc7d42077c8"
+  },
+  "runtime/anytok_pool_20k/rust_utils/target/release/librust_utils.so": {
+    "bytes": 3810872,
+    "sha256": "9b485a745b374afbe20d846eba6e63c47fa251ff56c133f40c20c0fa7000e2f4"
+  },
+  "runtime/anytok_pool_raw_bpb_rl_20k/scripts/train_joint_smollm_input.py": {
+    "bytes": 37315,
+    "sha256": "c411e683c2251047ad497512aea1ca948ffb0bece398ce5fd21992782e18ce8b"
+  },
+  "runtime/anytok_pool_regret_rl_20k/hf_hypernet/paired_reward.py": {
+    "bytes": 4116,
+    "sha256": "406cfc58bf1c46cef0dc6785bbb313ca5797c0d35bf6cd786b3115a92e5523c1"
+  },
+  "runtime/anytok_pool_settings_rl_20k/hf_hypernet/settings_policy.py": {
+    "bytes": 8836,
+    "sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c"
+  },
+  "scripts/chunked_hypernetwork.py": {
+    "bytes": 10216,
+    "sha256": "ecf04b58a90bee6211f9fda3712d73649e89f9c42fa01179caebbe48cbe26afd"
+  },
+  "scripts/local_memory_variants.py": {
+    "bytes": 10455,
+    "sha256": "c1610140bf517fc26fbb41e541ccf0f135dbacc59df3a3ca880d1e1a4b599de6"
+  },
+  "scripts/lossless_layer_norm.py": {
+    "bytes": 9827,
+    "sha256": "0bd292f45fdceb9eda11c1bff970a2a90f9e645c08f5135c02dcea9d36da1d8d"
+  },
+  "scripts/lossless_mlp.py": {
+    "bytes": 1879,
+    "sha256": "b7849b1455a5d62f034ae83ad6a4a86b532e03398323a8d9c7398934a4807872"
+  },
+  "scripts/pool_training_memory.py": {
+    "bytes": 1811,
+    "sha256": "3c482f79514a11d1fd65a7ecb033a3ec8a18bbd72e26ce5196948695f7ee93f8"
+  },
+  "scripts/run_raw_bpb_training.py": {
+    "bytes": 6884,
+    "sha256": "b6ef35aa9008c4aa77ad4861c7ec8408dd5ce042b0cfc2ce4f2f5a40e3c148d8"
+  }
+}

@@ -95,6 +95,8 @@ class Monitor:
             ages = [time.time() - r['checked_at'] for r in selected.values() if r.get('checked_at')]
             result = {**data, 'logs': read_logs(data, run, self.root, profile, worker),
                       'runs': [{'id': r['id'], 'name': r['name'],
+                                'category': r.get('category', 'Other experiments'),
+                                'description': r.get('description', ''),
                                 'completed': self.data[r['id']]['completed'],
                                 'total': self.data[r['id']]['total']} for r in self.runs],
                       'offline': self.offline, 'polling': self.polling,
@@ -122,6 +124,10 @@ class Monitor:
             result['frozen_entropy_plot_updated_at'] = entropy_plot.stat().st_mtime if entropy_plot.is_file() else None
             memory_plot = self.root / 'plots/local_memory.png'
             result['local_memory_plot_updated_at'] = memory_plot.stat().st_mtime if memory_plot.is_file() else None
+            chunked_plot = self.root / 'plots/chunked_memory.png'
+            result['chunked_memory_plot_updated_at'] = chunked_plot.stat().st_mtime if chunked_plot.is_file() else None
+            scaling_plot = self.root / 'plots/vocab_scaling.png'
+            result['vocab_scaling_plot_updated_at'] = scaling_plot.stat().st_mtime if scaling_plot.is_file() else None
             for name in ['regret', 'regret_entropy0']:
                 path = self.root / f'plots/frozen_policy_{name}.png'
                 result[f'frozen_{name}_plot_updated_at'] = path.stat().st_mtime if path.is_file() else None
@@ -206,6 +212,10 @@ ASSETS = {'/': ('index.html', 'text/html; charset=utf-8'),
 PLOTS = {'/plots/natural_transfer.png': ('natural_transfer.png', 'image/png'),
          '/plots/local_memory.png': ('local_memory.png', 'image/png'),
          '/plots/local_memory.pdf': ('local_memory.pdf', 'application/pdf'),
+         '/plots/chunked_memory.png': ('chunked_memory.png', 'image/png'),
+         '/plots/chunked_memory.pdf': ('chunked_memory.pdf', 'application/pdf'),
+         '/plots/vocab_scaling.png': ('vocab_scaling.png', 'image/png'),
+         '/plots/vocab_scaling.pdf': ('vocab_scaling.pdf', 'application/pdf'),
          '/plots/frozen_policy_regret.png': ('frozen_policy_regret.png', 'image/png'),
          '/plots/frozen_policy_regret.pdf': ('frozen_policy_regret.pdf', 'application/pdf'),
          '/plots/frozen_policy_regret_entropy0.png': ('frozen_policy_regret_entropy0.png', 'image/png'),
