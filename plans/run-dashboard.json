@@ -536,6 +536,27 @@
       "description": "Tests whether a selection policy can find hard pool tokenizers while the trained LM and hypernetwork stay frozen."
     },
     {
+      "id": "raw-bpb-handoff",
+      "name": "Raw-BPB training handoff · package and verification",
+      "category": "Diagnostics",
+      "description": "Packages the exact input bundle, verifies the raw-BPB trainer and memory fix, and publishes the handoff. No full training run is launched.",
+      "adapter": "progress_json",
+      "platform": "Tillicum / Hugging Face",
+      "status": "modal_results/raw_bpb_handoff/status.json",
+      "progress_log": "modal_results/raw_bpb_handoff/events.jsonl",
+      "completion_stage": "complete",
+      "total": 3,
+      "unit": "handoff stages",
+      "profiles": [
+        "zlab"
+      ],
+      "app_names": [],
+      "logs": [
+        "modal_results/raw_bpb_handoff/controller.log",
+        "modal_results/raw_bpb_handoff/events.jsonl"
+      ]
+    },
+    {
       "id": "tillicum-128k-smoke",
       "name": "H200 fit test · full 128k vocabulary",
       "adapter": "progress_json",

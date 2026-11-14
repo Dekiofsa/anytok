@@ -1,0 +1,10 @@
+{
+  "archive": "anytok-training-inputs-v1.tar.gz",
+  "bytes": 9314144730,
+  "input_bytes": 13445041321,
+  "input_files": 1062,
+  "manifest": "BUNDLE_MANIFEST.json",
+  "sha256": "51f24daf94303f63f00b2d5458c7d34e346163fffa3cefac5d55f36edde3bf5f",
+  "tokenizers": 1000,
+  "verified_archive_members": 1063
+}

@@ -1,0 +1,11 @@
+{
+  "archive_url": "https://huggingface.co/datasets/cminst/anytok-training-inputs/resolve/c2421b0c046967a7eb05fa628546c5058f69d035/anytok-training-inputs-v1.tar.gz",
+  "at_utc": "2026-11-14T21:56:26.331056+00:00",
+  "bytes": 9314144730,
+  "input_files": 1062,
+  "repo_id": "cminst/anytok-training-inputs",
+  "repo_url": "https://huggingface.co/datasets/cminst/anytok-training-inputs",
+  "revision": "c2421b0c046967a7eb05fa628546c5058f69d035",
+  "sha256": "51f24daf94303f63f00b2d5458c7d34e346163fffa3cefac5d55f36edde3bf5f",
+  "stage": "complete"
+}
