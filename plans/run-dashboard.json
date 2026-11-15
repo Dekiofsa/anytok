@@ -1,6 +1,22 @@
 {
   "runs": [
     {
+      "id": "hardness-predictor-6500",
+      "name": "Frozen 6.5k · hardness predictor · 20k observations",
+      "category": "Diagnostics",
+      "description": "Only the shared settings-to-gap predictor learns. Frozen 6.5k LM/HN, fresh real reward forwards, complete pool, one exploration visit every four steps, one MSE update per observation.",
+      "adapter": "progress_json",
+      "platform": "Local · RTX PRO 6000 96 GB",
+      "status": "modal_results/hardness_predictor_6500/status.json",
+      "progress_log": "modal_results/hardness_predictor_6500/events.jsonl",
+      "total": 20000,
+      "unit": "observations",
+      "completion_stage": "complete",
+      "profiles": ["local"],
+      "app_names": [],
+      "logs": ["modal_results/hardness_predictor_6500/controller.log", "modal_results/hardness_predictor_6500/events.jsonl"]
+    },
+    {
       "id": "anytok-pool-regret-rl-training",
       "name": "Regret RL · entropy 0 · 20k steps",
       "adapter": "progress_json",
