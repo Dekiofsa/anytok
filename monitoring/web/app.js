@@ -48,6 +48,7 @@ function render(data) {
   if (window.refreshLearning) window.refreshLearning(data.id);
   $('trajectory-plots').hidden = data.id !== 'uniform-trajectories';
   const plotConfigs = {
+    'regret-favorite-trajectory': ['regret_favorite_trajectory', 'regret_favorite_plot_updated_at', 'Is the model learning the policy favorite?', 'Tokenizer #771 · every saved checkpoint through 8k · identical 4,096 training-style examples · active dropout · local GPU.', 'regret-favorite-trajectory'],
     'regret-pool-ranking-6500': ['regret_pool_ranking_6500', 'regret_pool_ranking_plot_updated_at', 'Saved policy versus measured training hardness', 'Frozen step 6,500 · all 1,000 tokenizers · 32 fixed batches of 128 · actual variable-continuation regret reward with dropout active.', 'regret-pool-ranking-6500'],
     'local-memory': ['local_memory', 'local_memory_plot_updated_at', 'Local hypernetwork memory diagnostics', 'Real checkpoint and optimizer · complete native vocabularies · batch 128 · microbatch 32 · out-of-memory cases retained.', 'local-memory'],
     'chunked-memory': ['chunked_memory', 'chunked_memory_plot_updated_at', 'Lossless chunking: memory and speed', 'Full native vocabularies · original outputs and all parameter gradients · rejected candidates retained.', 'chunked-memory'],

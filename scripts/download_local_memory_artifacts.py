@@ -32,7 +32,7 @@ async def _block_urls(volume, path):
 block_urls = synchronizer.create_blocking(_block_urls)
 
 
-def resume_blocks(volume, remote, partial, size, force_all=False):
+def resume_blocks(volume, remote, partial, size, force_all=False, concurrency=8, progress=None):
     """Repair missing sparse blocks with deadlines; verify whole-file SHA later.
 
     Modal SDK 1.5.4's HTTP session has no read deadline. Retain all verified
@@ -63,7 +63,12 @@ def resume_blocks(volume, remote, partial, size, force_all=False):
                 except Exception:
                     if attempt==4:raise RuntimeError('Block download failed: '+remote+' block '+str(index)) from None
                     time.sleep(min(8,2**attempt))
-        with ThreadPoolExecutor(max_workers=8) as executor:list(executor.map(fetch,missing))
+        with ThreadPoolExecutor(max_workers=concurrency) as executor:
+            futures = [executor.submit(fetch, index) for index in missing]
+            for completed, future in enumerate(as_completed(futures), 1):
+                future.result()
+                if progress is not None:
+                    progress(completed, len(missing), len(urls))
 
 
 def event(stage, **fields):

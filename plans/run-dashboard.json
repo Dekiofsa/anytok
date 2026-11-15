@@ -148,6 +148,25 @@
       ]
     },
     {
+      "id": "regret-favorite-trajectory",
+      "name": "Regret RL · is tokenizer #771 improving?",
+      "category": "Evaluations",
+      "description": "Local evaluation of all 18 committed checkpoints through 8k on tokenizer #771. Same 32 fixed training-style batches at every checkpoint; shows BPB, canonical gap and policy focus.",
+      "adapter": "progress_json",
+      "platform": "Local · RTX PRO 6000 96 GB",
+      "status": "modal_results/regret_favorite_trajectory/status.json",
+      "progress_log": "modal_results/regret_favorite_trajectory/events.jsonl",
+      "total": 18,
+      "unit": "checkpoints",
+      "completion_stage": "complete",
+      "profiles": ["local"],
+      "app_names": [],
+      "logs": [
+        "modal_results/regret_favorite_trajectory/controller.log",
+        "modal_results/regret_favorite_trajectory/events.jsonl"
+      ]
+    },
+    {
       "id": "rl-ood-20k",
       "name": "RL vs uniform · held-out tokenizer weaknesses",
       "adapter": "progress_json",
