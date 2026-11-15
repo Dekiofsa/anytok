@@ -127,6 +127,27 @@
       "description": "Trains the LM and hypernetwork with the original ZeTT tokenizer-sampling method."
     },
     {
+      "id": "regret-pool-ranking-6500",
+      "name": "Regret 6.5k · policy vs all 1,000 tokenizers",
+      "category": "Evaluations",
+      "description": "Frozen step 6,500; ranks every tokenizer using 32 fixed training-style batches, variable continuations, paired regret and active dropout. Compares measured hardness with the saved policy.",
+      "adapter": "progress_json",
+      "platform": "Tillicum · H200",
+      "status": "modal_results/regret_pool_ranking/status.json",
+      "progress_log": "modal_results/regret_pool_ranking/events.jsonl",
+      "total": 1000,
+      "unit": "tokenizers",
+      "completion_stage": "complete",
+      "profiles": [
+        "zlab"
+      ],
+      "app_names": [],
+      "logs": [
+        "modal_results/regret_pool_ranking/controller.log",
+        "modal_results/regret_pool_ranking/events.jsonl"
+      ]
+    },
+    {
       "id": "rl-ood-20k",
       "name": "RL vs uniform · held-out tokenizer weaknesses",
       "adapter": "progress_json",

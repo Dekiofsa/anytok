@@ -128,6 +128,8 @@ class Monitor:
             result['chunked_memory_plot_updated_at'] = chunked_plot.stat().st_mtime if chunked_plot.is_file() else None
             scaling_plot = self.root / 'plots/vocab_scaling.png'
             result['vocab_scaling_plot_updated_at'] = scaling_plot.stat().st_mtime if scaling_plot.is_file() else None
+            ranking_plot = self.root / 'plots/regret_pool_ranking_6500.png'
+            result['regret_pool_ranking_plot_updated_at'] = ranking_plot.stat().st_mtime if ranking_plot.is_file() else None
             for name in ['regret', 'regret_entropy0']:
                 path = self.root / f'plots/frozen_policy_{name}.png'
                 result[f'frozen_{name}_plot_updated_at'] = path.stat().st_mtime if path.is_file() else None
@@ -210,6 +212,8 @@ ASSETS = {'/': ('index.html', 'text/html; charset=utf-8'),
           '/Manrope.ttf': ('Manrope.ttf', 'font/ttf')}
 
 PLOTS = {'/plots/natural_transfer.png': ('natural_transfer.png', 'image/png'),
+         '/plots/regret_pool_ranking_6500.png': ('regret_pool_ranking_6500.png', 'image/png'),
+         '/plots/regret_pool_ranking_6500.pdf': ('regret_pool_ranking_6500.pdf', 'application/pdf'),
          '/plots/local_memory.png': ('local_memory.png', 'image/png'),
          '/plots/local_memory.pdf': ('local_memory.pdf', 'application/pdf'),
          '/plots/chunked_memory.png': ('chunked_memory.png', 'image/png'),
