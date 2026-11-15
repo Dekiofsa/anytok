@@ -41,6 +41,8 @@ def main():
     result = dict(status=read(STATE / 'run/status.json'), transfer=read(STATE / 'transfer-status.json'),
         backup=read(STATE / 'backup-status.json'), policy=read(STATE / 'policy-monitor.json'),
         job=job, queue=queue, complete=read(STATE / 'complete.json'),
+        pause_request=read(STATE / 'pause-request.json'), paused=read(STATE / 'paused.json'),
+        pause_status=read(STATE / 'pause-status.json'),
         event_offset=offset, next_offset=offset + len(chunk), event_text=chunk.decode())
     if job:
         log = STATE / ('slurm-' + job['job_id'] + '.log')

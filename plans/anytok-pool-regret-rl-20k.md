@@ -115,3 +115,14 @@ anytok-tillicum-regret. The existing dashboard run ID and learning plots are
 reused. Its committed history excludes the discarded later Modal trajectory.
 Checkpoint repository: https://huggingface.co/cminst/anytok-regret-rl-20k
 Migration receipts and initial progress: reports/tillicum-regret-resume/.
+
+### Requested checkpoint pause (2026-11-14)
+
+The user requested pausing at the next scheduled checkpoint while the live run
+was near step 7,600. A cloud-side guard waits for the committed full restart
+manifest at **8,000**, releases only training allocation **470164**, verifies
+and backs up that checkpoint directly to Hugging Face, and records `paused.json`.
+The persistent `pause-request.json` blocks automatic continuation. The separate
+four-H200 step-6,500 tokenizer-ranking sweep continues. Dashboard observation
+shows the pending pause and then the paused checkpoint. Explicit user direction
+is required before resuming.

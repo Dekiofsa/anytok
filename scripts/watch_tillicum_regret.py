@@ -84,6 +84,24 @@ def main():
                 data.update(stage='failed', state='failed', error='Slurm: ' + queue)
             elif not job:
                 data['stage'] = 'preparing_tillicum_resume'
+            request = remote.get('pause_request')
+            paused = remote.get('paused')
+            pause_status = remote.get('pause_status') or {}
+            if request:
+                data['pause_target_step'] = request['target_step']
+                data['status_note'] = f"User requested a pause at full checkpoint {request['target_step']:,}; no automatic continuation."
+                if data.get('seconds_per_step'):
+                    data['eta_seconds'] = max(0, request['target_step'] - data.get('step', 0)) * data['seconds_per_step']
+                for worker in data['workers']:
+                    worker['task'] = f"Step {data.get('step', 0):,}; pauses at {request['target_step']:,}"
+            if paused:
+                data.update(stage='paused', state='stopped', step=paused['step'], workers=[],
+                            eta_seconds=None, error=None, checkpoint_backup=paused['checkpoint_backup'],
+                            latest_resumable_step=paused['step'], latest_weights_step=paused['step'])
+            elif request and pause_status.get('gpu_released'):
+                data.update(stage='pause_backup', state='stopped', step=request['target_step'],
+                            workers=[], eta_seconds=None, error=None,
+                            status_note='Training GPU released after the full checkpoint; verifying its cloud backup.')
             signature = (data.get('step'), data['stage'], data.get('slurm_job_id'),
                          json.dumps(data.get('checkpoint_backup'), sort_keys=True))
             save_json(STATE / 'status.json', data)

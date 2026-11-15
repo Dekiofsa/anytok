@@ -93,6 +93,9 @@ def _backup_checkpoint(api, folder):
 
 def main():
     STATE.mkdir(parents=True, exist_ok=True)
+    if (STATE / 'pause-request.json').exists():
+        print(json.dumps(dict(stage='paused', reason='User requested a checkpoint pause; explicit resume required')), flush=True)
+        return
     lock = (STATE / 'job.lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     from huggingface_hub import HfApi
