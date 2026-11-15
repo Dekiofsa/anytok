@@ -1,0 +1,113 @@
+{
+  "aggregation": "arithmetic mean of per-update byte-weighted BPB; same as policy reward",
+  "batches": 32,
+  "checkpoints_scored": 3,
+  "checkpoints_total": 18,
+  "complete": false,
+  "dropout": "active; same fixed independent per-batch seeds across every checkpoint",
+  "endpoint_change": {
+    "canonical_bpb": {
+      "last_minus_first": -0.01642837708518464,
+      "paired_batch_bootstrap_95pct": [
+        -0.01766485452585738,
+        -0.015364156830915972
+      ]
+    },
+    "gap_bpb": {
+      "last_minus_first": -0.14381326466333805,
+      "paired_batch_bootstrap_95pct": [
+        -0.1479491210259186,
+        -0.14008282366816846
+      ]
+    },
+    "raw_bpb": {
+      "last_minus_first": -0.1602416417485227,
+      "paired_batch_bootstrap_95pct": [
+        -0.16505681328093144,
+        -0.15606144301280003
+      ]
+    }
+  },
+  "examples": 4096,
+  "first_step": 500,
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "last_step": 8000,
+  "latest_minus_each_checkpoint": {
+    "2000": {
+      "canonical_bpb": {
+        "mean": -0.01603440804969723,
+        "paired_batch_bootstrap_95pct": [
+          -0.01711292553544966,
+          -0.015094878767544756
+        ]
+      },
+      "gap_bpb": {
+        "mean": -0.07215416103136106,
+        "paired_batch_bootstrap_95pct": [
+          -0.07649214248606102,
+          -0.0683895542869163
+        ]
+      },
+      "raw_bpb": {
+        "mean": -0.08818856908105828,
+        "paired_batch_bootstrap_95pct": [
+          -0.09308173713014721,
+          -0.08395284149176124
+        ]
+      }
+    },
+    "500": {
+      "canonical_bpb": {
+        "mean": -0.01642837708518464,
+        "paired_batch_bootstrap_95pct": [
+          -0.01766485452585738,
+          -0.015364156830915972
+        ]
+      },
+      "gap_bpb": {
+        "mean": -0.14381326466333805,
+        "paired_batch_bootstrap_95pct": [
+          -0.1479491210259186,
+          -0.14008282366816846
+        ]
+      },
+      "raw_bpb": {
+        "mean": -0.1602416417485227,
+        "paired_batch_bootstrap_95pct": [
+          -0.16505681328093144,
+          -0.15606144301280003
+        ]
+      }
+    },
+    "8000": {
+      "canonical_bpb": {
+        "mean": 0.0,
+        "paired_batch_bootstrap_95pct": [
+          0.0,
+          0.0
+        ]
+      },
+      "gap_bpb": {
+        "mean": 0.0,
+        "paired_batch_bootstrap_95pct": [
+          0.0,
+          0.0
+        ]
+      },
+      "raw_bpb": {
+        "mean": 0.0,
+        "paired_batch_bootstrap_95pct": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "maximum_positions": 128,
+  "panel_sha256": "4afcd96282ec8700d6cdfc0b275138769d614cc2d633e44b0f340b1921c0951d",
+  "scored_bytes": 772718,
+  "scored_examples_identical_across_checkpoints": true,
+  "scored_tokens": 232312,
+  "tokenizer": 771,
+  "torch": "2.15.0+cu132"
+}

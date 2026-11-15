@@ -1,0 +1,634 @@
+{
+  "approval": "User explicitly requested local evaluation of this tokenizer throughout training; cloud originals retained.",
+  "checkpoints": [
+    {
+      "kind": "modal",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "f0460a372ab356e201b776702b9f99da9470024c4ea0388cd3236cd5c38a4861"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "5d7bc7aa0994ef34f2ac4656555f3eab01349f7fbbca85ef964787ea3515f992"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "73628ff10bf52e2b7bb4f45957e757949726e0c055b3c1bc735a8ee9e10ce911"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "step": 500,
+        "trainer_sha256": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+      },
+      "manifest_sha256": "04392df6cd39b7b29262fa5d8f2872ae02062f2b7009376267fff43a86eb7d06",
+      "prefix": "regret-run/step-000500",
+      "profile": "queues",
+      "step": 500,
+      "volume": "anytok-pool-rl-20k"
+    },
+    {
+      "kind": "modal",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "8cc2a09340095be42aed232f15bf5e5552518dac3d5cb90f7e10ccd45d2442cb"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "be9f49913f728a111e3411be6cef86134199dfe18feba16ffba6843414a079ec"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "e76765af44d664b68ceebde63985ba377a37f0bed5a427a01b6dfab06f443c66"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "step": 1000,
+        "trainer_sha256": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+      },
+      "manifest_sha256": "22cc9cd969dd077dc543945382285b57009a626175bc60b9a5e08404971171d7",
+      "prefix": "regret-run/step-001000",
+      "profile": "queues",
+      "step": 1000,
+      "volume": "anytok-pool-rl-20k"
+    },
+    {
+      "kind": "modal",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "ee31a142d1e4a6470e5c1a835a31ae7e41eb39bca153676b2b4e0d9048c52e83"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "28c87ed27e901c891c403b5115302f948c7fe7d4592efc100296b94dc778ba52"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "23332ef84252ca988c3bfbe0ee5e985f1b742199aa35a4e5a1784d6c9df547f3"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "step": 1500,
+        "trainer_sha256": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+      },
+      "manifest_sha256": "fa2a5893ed339395a4b30a4d5913e31398839170416e74995886d10daad59cf2",
+      "prefix": "regret-run/step-001500",
+      "profile": "queues",
+      "step": 1500,
+      "volume": "anytok-pool-rl-20k"
+    },
+    {
+      "kind": "modal",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "c896efe210683f5f6acb3b1b6862d8045db69de61f900bacb985333d4cd4a9d4"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "bdba1b071d142c23782bd8f4edd0a51aab910468f81a5a148486ebadae34990e"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "bb5af3437be2c583317bf519db7fd5c26d3ac9efc1defe7f74eeac461514ad85"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "f4ad1852eef1346faffe41af987256bd7d8cadb2279bd4755d6de63c87a987eb"
+          },
+          "state.pt": {
+            "bytes": 5611142,
+            "sha256": "8d1e7711eb63ba44409b4f013bf6853b3d240fdf40b60ae345a51acf1fd5d2e5"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "step": 2000,
+        "trainer_sha256": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+      },
+      "manifest_sha256": "f1b3a72452fe05f4b5dec7f835a61e187cd1361eb28f8b445aa251a180928abb",
+      "prefix": "regret-run/step-002000",
+      "profile": "queues",
+      "step": 2000,
+      "volume": "anytok-pool-rl-20k"
+    },
+    {
+      "kind": "modal",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "6808629817927f461db71b870bb1f90af1841caeab2018324535f4fb47a22f3e"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "6c566975c2308984c599fbdbddbee48ac3fa9876aeb17747fdf4cd38f979cfcf"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "cdacc65a74d69e4b9c33c40378e0e82b225c17dd4a100c8ed90b3599871130d7"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "step": 2500,
+        "trainer_sha256": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+      },
+      "manifest_sha256": "e3bd796cc0b83f41ee42b1773fb67d47f8dd84e63b32e7f88e0bed4b65097c32",
+      "prefix": "regret-run/step-002500",
+      "profile": "queues",
+      "step": 2500,
+      "volume": "anytok-pool-rl-20k"
+    },
+    {
+      "kind": "modal",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "1330a4a7fa845a627971d419a0a31d9bbb9e850c6a8224104526cb91bd33aefa"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "f05d31ea46dc5b8d8de54e5c6acd909b40c8b3c22f9e0b98b43d1e56851f7fba"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "91ac96f6d49cab8752dfb6d89ccd5cc779177901eea55a0c74ee5a6d9340fb56"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "step": 2912,
+        "trainer_sha256": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+      },
+      "manifest_sha256": "2a0d0a7570ced86d3f8d2ab8962de6818db0ea7998dda20a4bbb8c332e8902ad",
+      "prefix": "regret-run/step-002912",
+      "profile": "queues",
+      "step": 2912,
+      "volume": "anytok-pool-rl-20k"
+    },
+    {
+      "kind": "modal",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "0dba9e107e55df4e0e8518d9de4aa951d8feb0d54c7e09ab41038534dfe231bd"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "eaa5e0cecfaf5a0c9aa96896263c4b25601c527e8c78b29f0b4a43ac2935f8d5"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "104ecb6672efbdd4136cf1752b0bfc2e405864d42ae8350bcf218190444de74e"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "step": 3000,
+        "trainer_sha256": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+      },
+      "manifest_sha256": "fc3f0f6def26f8d2a9e3cc66edab92a13f651e56997b820976d64adf1f3d6774",
+      "prefix": "regret-run/step-003000",
+      "profile": "stars",
+      "step": 3000,
+      "volume": "anytok-pool-rl-20k"
+    },
+    {
+      "kind": "modal",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "59ec47754adf7468df7b8699ce14916b5dcf04d2bac4bfb8ec3d1aa3f3f12168"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "07885a5c12fe9620a40721e7a550c6c50d89a9933645ca7437f354ccfd397fc2"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "ee44323e0d5b16b1a0dd2eda9d69b9bde1b854a7a62de756bc2347e5bb5124d4"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "step": 3500,
+        "trainer_sha256": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+      },
+      "manifest_sha256": "a4e122a35845f5fd326cd8cae4d380245ba69604e3fa304eb3035f2055c2c386",
+      "prefix": "regret-run/step-003500",
+      "profile": "stars",
+      "step": 3500,
+      "volume": "anytok-pool-rl-20k"
+    },
+    {
+      "kind": "modal",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "faa843465171e99ea4483042f862cf731032f64c9551e8097bb66c80ef2e2fcf"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "d20897f5a9ee9c10fca138a95a3a048136d7dff1df401fe4fa961d4fc4134bc4"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "f3f0571006c3f22dd7ecff2c6c8bd7ee030bdf4089aebcee1273b9680eab2539"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "727bd6afd5676d4a510b9205b175246df804fd1f0833db9151a97e883d10125d"
+          },
+          "state.pt": {
+            "bytes": 5386374,
+            "sha256": "0a12f6667e1da51ec102e04eeaa6dda649279a3e2469bb1bbc26874dbf318cd9"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "step": 4000,
+        "trainer_sha256": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+      },
+      "manifest_sha256": "35637334de5a0120ed2911690522b83351053e00b312438fa6932a06fea49cdb",
+      "prefix": "regret-run/step-004000",
+      "profile": "stars",
+      "step": 4000,
+      "volume": "anytok-pool-rl-20k"
+    },
+    {
+      "kind": "modal",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "7575aa7d0663ce1e44120ef88212ae642dac9b9f83db7a226c6d52785a1d326b"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "8d087c4485216772db86c12a6e1bc105ea932527ae62c352c65ec0cec08c45f9"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "d96dcc2a1279c3bf49077fc2c0daf59834edd11ec53045f94a88525097be1072"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "step": 4500,
+        "trainer_sha256": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+      },
+      "manifest_sha256": "b977b3017a93f00edeb8711b771381891260e856c104070295b183636553d118",
+      "prefix": "regret-run/step-004500",
+      "profile": "stars",
+      "step": 4500,
+      "volume": "anytok-pool-rl-20k"
+    },
+    {
+      "kind": "modal",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "221cb88a4432d6a8af6ed00cfa431126f674ed5ec0a204d1fab3b80c1f238cec"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "ea339177f1aa62186a2170dc3148d97fe54176782a501bf1a3c11ddbaafac1f7"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "b8704d05c6c53fdc3d159dbf0222d05b242dde8c338bf65d70c6a26bc15ec74b"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "step": 5000,
+        "trainer_sha256": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+      },
+      "manifest_sha256": "f2382e32b95f2dbf8be9a0361566f9e9cad6ca392af0e1e13ed1d53caed4f103",
+      "prefix": "regret-run/step-005000",
+      "profile": "stars",
+      "step": 5000,
+      "volume": "anytok-pool-rl-20k"
+    },
+    {
+      "kind": "hf",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "2512cb29d4418c6261ca3693fef5877568305eb2545ac6831ced548676f3052f"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "3f59f1edea75da6f181c0094c332c87f26f53d861e8bb902b3f80b09bb0b6479"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "d0579e890cc0d21cd1b831db481c1decd1b4c5f877cd9447af7ef61fd23afd1e"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "cef3b6c705d73833879cf5b4f23983208ea0b2bc13893ca5cab2d2053360da8e"
+          },
+          "state.pt": {
+            "bytes": 6002758,
+            "sha256": "a2ac02ffc542445cd49af8fb584cbd4670f20dd3ef1f0f353799742793a20f9f"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "step": 5288,
+        "trainer_sha256": "76ff232402154653c5899826a4f63f8a4afadf5a443829f87919f8e75b31c6d4"
+      },
+      "manifest_sha256": "16297eb0c1d39082bd328ba1d0745e11d77ddfc8606fcb45c7dc1af3cb927d4b",
+      "prefix": "checkpoints/step-005288",
+      "repo": "cminst/anytok-regret-rl-20k",
+      "revision": "6850e1960fd32a70958771823bf0000c547493dd",
+      "step": 5288
+    },
+    {
+      "kind": "hf",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "5a6d4c5265d4ab3f9089e323a44130b18291e377b6583e67104c176308cfd9d3"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "e0b6633a1c53765b2ce6dd4e75805411ecb1bf4b291bdf51cb2dade90b5ced70"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "1e71459c7a6bfc3266514e605c4c49041564d80d00c31287cdbd5866e062bb3c"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "step": 5500
+      },
+      "manifest_sha256": "ce2f8006347f31983bbb455ed0936e1e32240e988b24f51aaa0061613e33be0e",
+      "prefix": "checkpoints/step-005500",
+      "repo": "cminst/anytok-regret-rl-20k",
+      "revision": "6850e1960fd32a70958771823bf0000c547493dd",
+      "step": 5500
+    },
+    {
+      "kind": "hf",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "fdcdc04ca202af7b05c9ad818b22b717c1eb079f0f3982a17d20f645537170bb"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "96f7a8bbdfeb9c1af3a4e025f25cf3644e1f40032cfaeaa16324d08a634abf10"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "006f249561fee3eafe291ed998ea6cfa9f7139ebd7f8d04ff5aa8f9a54823a4a"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "11d7318fc7de519437dd17b843ee613ccb031bb2290de82bf4a4fcb123b04b6a"
+          },
+          "state.pt": {
+            "bytes": 6261190,
+            "sha256": "6341afdb1ad25306fec4152c5f926e665b9d3267dc3d8120f048852aec4d87d7"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "step": 6000
+      },
+      "manifest_sha256": "c605c4e0a3e792f4060e98101386130715620bfe6cb60a4a061659585bf56c60",
+      "prefix": "checkpoints/step-006000",
+      "repo": "cminst/anytok-regret-rl-20k",
+      "revision": "6850e1960fd32a70958771823bf0000c547493dd",
+      "step": 6000
+    },
+    {
+      "kind": "hf",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "3371fb55db4028725751c6e4c89d24f37d03518c17107c7af577f97657ed35db"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "27b4422620846160bdf7bc41df6af8d14d3c4d1deec3ca566fb58a53035fc343"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "f7737e316434743d1cfeafcfcffff864689d03366e5c686023bd7d3267d2f997"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "step": 6500
+      },
+      "manifest_sha256": "383c317cf320777cc32b627119af781f0b215d67544999178b4c41c2ceaeaf0d",
+      "prefix": "checkpoints/step-006500",
+      "repo": "cminst/anytok-regret-rl-20k",
+      "revision": "6850e1960fd32a70958771823bf0000c547493dd",
+      "step": 6500
+    },
+    {
+      "kind": "hf",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "5aefeb2bbaf4851a7223d9b62046e6cbf0ae044580bae66c0249292fe5c4e16f"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "4888f110e8023259cf31eb3503bdf21b412eb36755636200ac627a256e64ea51"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "9dab17af9cc648ed752c20142e2987d89caf998bb3b417f15856664ec105bcae"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "step": 7000
+      },
+      "manifest_sha256": "cd8765d63401a509b70683fb758379496f38a3e5bbde2560c9eb4c09c5539d07",
+      "prefix": "checkpoints/step-007000",
+      "repo": "cminst/anytok-regret-rl-20k",
+      "revision": "6850e1960fd32a70958771823bf0000c547493dd",
+      "step": 7000
+    },
+    {
+      "kind": "hf",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "270e2632971ff2fa8b06bfc4e752c9986fb02b38e60b98e2766d64b98744fca1"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "21363ebdee71b50c40075409f6017ec39f0e36ea8dd92e410f69e2c788f00dc4"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "7f64d7148f4a08f12d915591f810c310927cbe71dc98ae39a15399da575a38ff"
+          }
+        },
+        "kind": "weights_only_checkpoint",
+        "step": 7500
+      },
+      "manifest_sha256": "20ffea20c44ff4e1407727739b14f5b45066f07a16743b0f57cf2eb0b12b6e1d",
+      "prefix": "checkpoints/step-007500",
+      "repo": "cminst/anytok-regret-rl-20k",
+      "revision": "6850e1960fd32a70958771823bf0000c547493dd",
+      "step": 7500
+    },
+    {
+      "kind": "hf",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "29dd6eab220943651156b8b005989b85e227db52b400cf9470ec82ff1fc58d2a"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "f1db029eb66dbfbd1cc0199b7829a76f4d89831b94f3c7f9c9b3afadd83beef6"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "00876e08201e6dcf5465b37a5c7ec8a3585641bb7e5e4b134247bc5ab2fa01fb"
+          },
+          "policy.pt": {
+            "bytes": 207610,
+            "sha256": "62e074cf6f7930218b94a3bc1f3143f5e05a038df3fc20fe0e79443770b28ab9"
+          },
+          "state.pt": {
+            "bytes": 5593798,
+            "sha256": "6d8e89aa65f04f12df692e8a7a085b4737b1e0e024f1427423c4c9365bc1201b"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "step": 8000
+      },
+      "manifest_sha256": "3829bc297ffdeab836c97de036e78a5ea81ead0e60aa2bf444a0005c9a02bda3",
+      "prefix": "checkpoints/step-008000",
+      "repo": "cminst/anytok-regret-rl-20k",
+      "revision": "6850e1960fd32a70958771823bf0000c547493dd",
+      "step": 8000
+    }
+  ],
+  "excluded": "Discarded transformer Modal continuation after 5288; resumed Tillicum grid is used from 5500.",
+  "hf_revision": "6850e1960fd32a70958771823bf0000c547493dd",
+  "panel_sha256": "4afcd96282ec8700d6cdfc0b275138769d614cc2d633e44b0f340b1921c0951d",
+  "steps": [
+    500,
+    1000,
+    1500,
+    2000,
+    2500,
+    2912,
+    3000,
+    3500,
+    4000,
+    4500,
+    5000,
+    5288,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000
+  ],
+  "tokenizer": 771,
+  "training_events_sha256": "6013d0c82446f0a2842f3c4cdf8f2fc42c9c7beaf50c6464acc2e4616e559d93"
+}
