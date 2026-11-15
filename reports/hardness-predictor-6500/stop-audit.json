@@ -1,0 +1,25 @@
+{
+  "checkpoint": "modal_results/hardness_predictor_6500/checkpoints/step-015300",
+  "checkpoint_hashes_verified": true,
+  "checkpoint_manifest_sha256": "6690d27d2a020b226baef86f050671f193b048320735166eb947d01951c323f3",
+  "checkpoint_verification": {
+    "exploration_visits": 3825,
+    "maximum_exploration_visits": 4,
+    "minimum_exploration_visits": 3,
+    "predictor_optimizer_rng_stream_loadable": true,
+    "unique_visited": 1000,
+    "updates": 15300
+  },
+  "cloud_checkpoint": {
+    "path": "diagnostics/hardness-predictor-step-006500/checkpoints/step-015300",
+    "repo": "cminst/anytok-regret-rl-20k",
+    "revision": "df11e4cc14887471a1b3ce78a728a8c4d1c58e38"
+  },
+  "completed": 15300,
+  "controller_exited": true,
+  "original_frozen_checkpoint_step": 6500,
+  "planned_total": 20000,
+  "stopped_at_utc": "2026-11-15T21:23:54.301199+00:00",
+  "user_requested_early_stop": true,
+  "worker_exited": true
+}

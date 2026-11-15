@@ -74,6 +74,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--prepare-only',action='store_true')
     args=parser.parse_args()
+    if (STATE/'stop-request.json').exists() and not args.prepare_only:
+        parser.error('This pilot was stopped by the user; preserve its saved state and use an explicitly approved new run.')
     STATE.mkdir(parents=True,exist_ok=True)
     lock=(STATE/'controller.lock').open('a')
     fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)

@@ -1,0 +1,26 @@
+{
+  "completed": 15300,
+  "exploitation_observations": 11475,
+  "exploration_observations": 3825,
+  "frozen_checkpoint_step": 6500,
+  "greedy_indices": [
+    83
+  ],
+  "greedy_mass_in_hardest100": 1.0,
+  "greedy_reference_gap": 0.08901326869728733,
+  "greedy_reference_ranks": [
+    18
+  ],
+  "observations": 15300,
+  "oracle_reference_gap": 0.0934474509056506,
+  "prediction_rank_spearman": 0.8847489087489089,
+  "prediction_rmse": 0.008319716907110713,
+  "real_reward_evaluations": true,
+  "reference_used_for_learning": false,
+  "saved_policy_reference_gap": 0.07363595671651547,
+  "stage": "stopped",
+  "total": 20000,
+  "uniform_reference_gap": 0.06615230355877902,
+  "unique_exploration": 1000,
+  "unique_visited": 1000
+}

@@ -21,6 +21,10 @@ def main():
     if not snapshots:return
     records=[json.loads(line) for line in (STATE/'observations.jsonl').read_text().splitlines()]
     last=snapshots[-1];step=last['step']
+    stop_path=STATE/'stop-audit.json'
+    stopped=json.loads(stop_path.read_text()) if stop_path.exists() else None
+    if stopped and stopped['completed']!=step:
+        raise ValueError('Stopped checkpoint and final monitoring snapshot disagree')
     records=[row for row in records if row['step']<=step]
     if [row['step'] for row in records]!=list(range(1,step+1)):
         raise ValueError('Live reward observations are incomplete or duplicated')
@@ -38,6 +42,7 @@ def main():
     ranks=np.empty(1000,dtype=int);ranks[np.argsort(-reference,kind='stable')]=np.arange(1,1001)
     ids=last['greedy_indices']
     result=dict(completed=step,total=20000,frozen_checkpoint_step=6500,
+        stage='stopped' if stopped else ('complete' if step==20000 else 'running'),
         observations=len(records),real_reward_evaluations=True,reference_used_for_learning=False,
         greedy_indices=ids,greedy_reference_ranks=[int(ranks[i]) for i in ids],
         greedy_reference_gap=last['greedy_reference_gap'],uniform_reference_gap=expected['uniform_mean_gap'],
@@ -103,16 +108,17 @@ def main():
     ax.legend(frameon=False,fontsize=7)
     for ax in [axes[0,0],axes[0,1],axes[1,0]]:ax.set(xlabel='Predictor update',xlim=(0,max(100,step)))
     for ax in axes.flat:ax.grid(axis='y',color='#E9EDF1',lw=.6);ax.set_axisbelow(True)
-    fig.suptitle(f'Frozen 6.5k · online hardness predictor · {step:,} / 20,000 live rewards',fontsize=13)
+    suffix=' · stopped early' if stopped else ''
+    fig.suptitle(f'Frozen 6.5k · online hardness predictor · {step:,} / 20,000 live rewards{suffix}',fontsize=13)
     fig.supxlabel('One observation → one MSE update · every fourth step explores · LM/HN frozen with active dropout\nReference scores are evaluator-only estimates from the H200 panel; learner rewards are measured locally.',fontsize=8)
     for suffix in ['png','pdf']:
         target=PLOT.with_suffix('.'+suffix);temporary=target.with_name(target.stem+'.tmp.'+suffix)
         fig.savefig(temporary,dpi=170,facecolor='white');temporary.replace(target);shutil.copy2(target,REPORT/target.name)
     plt.close(fig)
-    for name in ['plan.json','preflight.json','completion-audit.json']:
+    for name in ['plan.json','preflight.json','completion-audit.json','stop-audit.json']:
         if (STATE/name).exists():shutil.copy2(STATE/name,REPORT/name)
     lines=['# Online hardness predictor on the frozen 6.5k model','',
-        f'**{step:,} / 20,000 observations complete.** The LM and hypernetwork stay frozen. Only the small CPU settings predictor learns.','',
+        (f'**Stopped at the user’s request after {step:,} / 20,000 observations.** The pilot ended early at a saved checkpoint; this is not a completed 20k experiment.' if stopped else f'**{step:,} / 20,000 observations complete.**')+' The LM and hypernetwork stay frozen. Only the small CPU settings predictor learns.','',
         'The shared 18→64→64→1 Tanh network predicts paired BPB gap. After each real reward evaluation, Adam at 0.001 makes one squared-error update on that observation. Every fourth step visits the next tokenizer in a shuffled complete-pool cycle; other steps choose the largest prediction, breaking ties uniformly. There is no initial warmup, replay buffer, entropy term or age weighting. A full 20k run gives each tokenizer exactly five exploration visits.','',
         'Each reward uses a fresh 128-example recipe-sampled training batch, the unchanged paired cut helper, variable canonical continuations, BOS + prefix + continuation ≤128 positions, and microbatch32. Canonical and transferred targets/bytes match exactly. Hypernetwork dropout stays active, with a fresh full native embedding table per observation. The validated memory implementation preserves full vocabularies.','',
         'The original 23-bucket corpus and complete tokenizer pool are checksum verified. Data sampling uses private Python seed42 and selector initialization/permutations use private seed43. Exact raw windows reserved for the reference panel and replacement banks are excluded from learner batches by content hashes while retaining recipe bucket choices.','',
@@ -122,7 +128,7 @@ def main():
         '![Live hardness-predictor plots](hardness_predictor_6500.png)','',
         '[PDF](hardness_predictor_6500.pdf) · [Learning curve](learning-curve.csv) · [All current predictions](current-predictions.csv)','']
     (REPORT/'README.md').write_text('\n'.join(lines))
-    if step==20000:
+    if step==20000 or stopped:
         with gzip.open(REPORT/'observations.jsonl.gz','wt') as stream:
             for row in records:stream.write(json.dumps(row)+'\n')
         with gzip.open(REPORT/'snapshots.json.gz','wt') as stream:json.dump(snapshots,stream)

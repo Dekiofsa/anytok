@@ -45,3 +45,7 @@ Dashboard: `hardness-predictor-6500`, Diagnostics. State:
 remain persistent in cloud storage; the user-authorized local diagnostic copy
 is verified against original manifests. Code, score metadata and plots are
 published to the existing GitHub branch after the completed audit.
+
+## User-requested early stop — 2026-11-15
+
+The user requested ending the frozen pilot before the planned 20,000 observations. Stop at the next committed 100-observation checkpoint, **15,300**. Preserve the predictor, Adam state, exploration schedule/RNG, corpus stream and observations; back up the final state and stopped report to the existing HF diagnostic namespace. This is an early-stopped pilot, not a completed 20k run. The original joint training run stays paused; starting a joint hardness-predictor experiment requires a separate agreed plan.

@@ -1,0 +1,27 @@
+{
+  "artifact_receipt_sha256": "98428313ed032acabc636a767ed5e475fd9667ffe4c7bcd6cbb2566bfab615d8",
+  "batch_size": 128,
+  "checkpoint_step": 6500,
+  "code_sha256": {
+    "frozen_training_reward.py": "5f568c55410fc6c85787b939778409841be6324bd762479ddd39d89685b01911",
+    "hardness_predictor.py": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+    "train_hardness_predictor.py": "6e270d00b71cd7142f7735d80ece004254c2101fc0539eb40009436f49807a73"
+  },
+  "continuation": "variable",
+  "cuda_seed_base": 2026111600,
+  "data_seed": 42,
+  "dropout_active": true,
+  "exploration_period": 4,
+  "learning_rate": 0.001,
+  "loss": "one squared-error update on the current observed paired-regret reward",
+  "maximum_positions": 128,
+  "microbatch_size": 32,
+  "predictor_seed": 43,
+  "ranking_role": "evaluator only; never supplied to the learner",
+  "replay": false,
+  "reward": "pre-update transferred BPB minus paired canonical BPB",
+  "tokenizers": 1000,
+  "updates": 20000,
+  "version": 1,
+  "warmup_updates": 0
+}

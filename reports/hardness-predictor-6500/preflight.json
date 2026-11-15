@@ -1,0 +1,27 @@
+{
+  "frozen_models_unchanged": true,
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "parity_metrics": {
+    "canonical_bpb": 0.9196016545468769,
+    "canonical_nats": 15389.214017152786,
+    "dropout_seed": 2026111500,
+    "gap_bpb": 0.0662157444384025,
+    "maximum_positions": 128,
+    "paired_batch_sha256": "2b691a4b5cfd04b345e4291f6e2f7639a645089c6784cd038dbb7b83e7d3e461",
+    "raw_bpb": 0.9858173989852794,
+    "rejected_examples": 0,
+    "scored_bytes": 24143,
+    "scored_tokens": 7314,
+    "tokenizer_sha256": "d131375e6b821e5a7c4256f94fbb7eb22e167650be4cdcdb74ce6916c72e5cc4",
+    "transferred_nats": 16497.311482429504,
+    "truncated_forms": 2427,
+    "valid_examples": 128,
+    "vocabulary": 127000
+  },
+  "plan_sha256": "41878bdf88b19afa6c406169fc1f86d9c35bbbf9f07c8e3d753c5f9429aa1a8d",
+  "real_forward_calls": 5,
+  "real_reward_resume_bitwise_equal": true,
+  "same_gpu_reward_bitwise_equal": true,
+  "seconds": 14.87792054284364,
+  "torch": "2.15.0+cu132"
+}

@@ -1,0 +1,48 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 2587,
+      "sha256": "1ac39eae33e63e7f1ea765576d10ba80ebb95b3cd7a9a0cded8dac3c6917ed51"
+    },
+    "analysis.json": {
+      "bytes": 728,
+      "sha256": "9e9dd0f0c718afbe4abc8f0a30c6afe227090150f9e551224354e69ec5101ac5"
+    },
+    "current-predictions.csv": {
+      "bytes": 60174,
+      "sha256": "afd338cdcc04ed907d7d48b6810f6930449ff1acbb74bfbf9271a8e8dee94738"
+    },
+    "hardness_predictor_6500.pdf": {
+      "bytes": 41604,
+      "sha256": "46b153916c3c6f3fea477b4d3e984dbe083aaa84ae53edabf738f9cb3c87d0dc"
+    },
+    "hardness_predictor_6500.png": {
+      "bytes": 424009,
+      "sha256": "f9fcd54cc24988b954e1ccf9e438ba9e269dc3214fab4e9ec11d916eb475676d"
+    },
+    "learning-curve.csv": {
+      "bytes": 18624,
+      "sha256": "f0fadc65dcfc73dfb580c0ed91c2271020b0e6e76dc1885f4f629d0e437630ad"
+    },
+    "observations.jsonl.gz": {
+      "bytes": 2627034,
+      "sha256": "b376d5215f2886042af62afa84463d746ee303bb19bffa791789928856726c03"
+    },
+    "plan.json": {
+      "bytes": 1028,
+      "sha256": "41878bdf88b19afa6c406169fc1f86d9c35bbbf9f07c8e3d753c5f9429aa1a8d"
+    },
+    "preflight.json": {
+      "bytes": 992,
+      "sha256": "16366f4cfeeb7af02c9f85f2408f6ca1150702458dcd20d56ee92288bc7a86cd"
+    },
+    "snapshots.json.gz": {
+      "bytes": 1393112,
+      "sha256": "5f4a65358fa9798abd9797173b4ed527677e7f75552356a253383d9c24b292c9"
+    },
+    "stop-audit.json": {
+      "bytes": 917,
+      "sha256": "1b31652aaa01ddbb92f93f298b456817a1d5e1408eabc35e7a195e46e9a33e09"
+    }
+  }
+}

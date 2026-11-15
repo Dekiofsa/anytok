@@ -2,9 +2,9 @@
   "runs": [
     {
       "id": "hardness-predictor-6500",
-      "name": "Frozen 6.5k · hardness predictor · 20k observations",
+      "name": "Frozen 6.5k · hardness predictor · stopped at 15.3k",
       "category": "Diagnostics",
-      "description": "Only the shared settings-to-gap predictor learns. Frozen 6.5k LM/HN, fresh real reward forwards, complete pool, one exploration visit every four steps, one MSE update per observation.",
+      "description": "Stopped early at the user's request after 15,300 of 20,000 planned observations. Frozen 6.5k LM/HN, fresh real rewards, complete pool, one exploration visit every four steps, one MSE update per observation.",
       "adapter": "progress_json",
       "platform": "Local · RTX PRO 6000 96 GB",
       "status": "modal_results/hardness_predictor_6500/status.json",
