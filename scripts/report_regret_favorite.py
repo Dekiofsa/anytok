@@ -128,8 +128,8 @@ def plot(result, table, scores, draws):
                 '-o',ms=3.5,color=green,label='Fraction of previous 500 updates')
     ax.set(title='D · How much training did the policy assign to #771?', ylabel='Selection probability / update fraction', ylim=(0,1.03))
     ax.legend(frameon=False,fontsize=8)
-    ax.text(.02,.97,f"Selected {table[-1]['cumulative_selections']:,} times by step {steps[-1]:,}",
-            transform=ax.transAxes,va='top',fontsize=8,color='#525C67')
+    ax.text(.98,.03,f"Selected {table[-1]['cumulative_selections']:,} times by step {steps[-1]:,}",
+            transform=ax.transAxes,ha='right',va='bottom',fontsize=8,color='#525C67')
     for ax in axes.flat:
         ax.set(xlabel='Joint training step',xlim=(400,8100))
         ax.axvline(5288,color='#D5DCE3',ls=':',lw=.8)

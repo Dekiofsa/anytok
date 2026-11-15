@@ -25,12 +25,12 @@
       "sha256": "e04d4797842b8c3f084d8b65e5b75c3ef6c0177c5f675be916747887117f185a"
     },
     "regret_favorite_trajectory.pdf": {
-      "bytes": 25089,
-      "sha256": "be3c64f9802625480029db9097d00963d58c7e5f0a4271e8f4425cfb9115d2cb"
+      "bytes": 25088,
+      "sha256": "a020f4b4770adf141f094a5cf13f1e8e301279a02c37d3116aa6e98146f4ac89"
     },
     "regret_favorite_trajectory.png": {
-      "bytes": 308311,
-      "sha256": "5541eec0591608b4dedff5f601424176eaedcd2a9cb8330c8a3a539e4bc14e70"
+      "bytes": 309127,
+      "sha256": "40f179065dbed5a2d633f17ff2d518f07f0401ce2ad94031672d24607b53f6ee"
     }
   }
 }
