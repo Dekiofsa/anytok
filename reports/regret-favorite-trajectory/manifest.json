@@ -1,36 +1,36 @@
 {
   "files": {
     "README.md": {
-      "bytes": 3761,
-      "sha256": "5719137cc6a828cb47deec7b884363295527858b2f55207e2f1bf1c26395b50f"
+      "bytes": 4685,
+      "sha256": "c8479642f5209c33bfc33397b5371fdae477c4f94e50f8762abe0476739b4c1e"
     },
     "all-batch-scores.json.gz": {
-      "bytes": 9207,
-      "sha256": "b99f819edf884c50cb82325678194eb53d3c7d8494b5d3801a9cbaddb77eaa71"
+      "bytes": 39293,
+      "sha256": "9be3bc314f98b2660bd8823cad0924d2b063c5b109db683bcda4764cc2f47ca1"
     },
     "analysis.json": {
-      "bytes": 2828,
-      "sha256": "538858cf86be322df6fcee34e7366698fe6c7202c5045ee3264ffc96290342e1"
+      "bytes": 11440,
+      "sha256": "42bc4f705b234e4ed05aa2ce33eb75ee860d8724ef4580a95706d7a0245b2728"
     },
     "checkpoint-sources.json": {
       "bytes": 23396,
       "sha256": "8b194eeda1bab2a0bf33fb767b3e9e8573a3e88eaa8d91cdc2f335d1476637c0"
     },
     "learning-curve.csv": {
-      "bytes": 813,
-      "sha256": "01424db9632ca1ae86f10a1d9fef02626dbaa593540ba12827d970cf7ca1853d"
+      "bytes": 3930,
+      "sha256": "9d51aed3f0eb9d09c4b71ba81c577d0e208a7eded7c570eb95025b6018b1a5f3"
     },
     "panel-manifest.json": {
       "bytes": 7248,
       "sha256": "e04d4797842b8c3f084d8b65e5b75c3ef6c0177c5f675be916747887117f185a"
     },
     "regret_favorite_trajectory.pdf": {
-      "bytes": 22318,
-      "sha256": "b5ecd019e80a2fbf937ad5164ae4d1f9fcf0c84bc78e0de0e29196c6e7248e75"
+      "bytes": 25089,
+      "sha256": "be3c64f9802625480029db9097d00963d58c7e5f0a4271e8f4425cfb9115d2cb"
     },
     "regret_favorite_trajectory.png": {
-      "bytes": 300157,
-      "sha256": "9f8deb93cb1af69541868ceeaddb523e28ec4130576b63c9a4cff5d93b12a350"
+      "bytes": 308311,
+      "sha256": "5541eec0591608b4dedff5f601424176eaedcd2a9cb8330c8a3a539e4bc14e70"
     }
   }
 }
