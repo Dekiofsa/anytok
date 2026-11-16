@@ -1,6 +1,22 @@
 {
   "runs": [
     {
+      "id": "selector-simulations",
+      "name": "Selector stress tests · predictor vs REINFORCE",
+      "category": "Diagnostics",
+      "description": "CPU simulations: all 1,000 measured reward distributions, five environments, five seeds, 20k observations per selector. Synthetic drift is explicitly labeled; original entropy-zero REINFORCE and uniform baselines.",
+      "adapter": "progress_json",
+      "platform": "Local · CPU only",
+      "status": "modal_results/selector_simulations/status.json",
+      "progress_log": "modal_results/selector_simulations/events.jsonl",
+      "total": 1500000,
+      "unit": "simulated observations",
+      "completion_stage": "complete",
+      "profiles": ["local"],
+      "app_names": [],
+      "logs": ["modal_results/selector_simulations/controller.log", "modal_results/selector_simulations/events.jsonl"]
+    },
+    {
       "id": "hardness-predictor-6500",
       "name": "Frozen 6.5k · hardness predictor · stopped at 15.3k",
       "category": "Diagnostics",

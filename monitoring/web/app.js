@@ -48,6 +48,7 @@ function render(data) {
   if (window.refreshLearning) window.refreshLearning(data.id);
   $('trajectory-plots').hidden = data.id !== 'uniform-trajectories';
   const plotConfigs = {
+    'selector-simulations': ['selector_simulations', 'selector_simulations_plot_updated_at', 'Can the selector track changing weaknesses?', 'CPU stress tests · all 1,000 measured reward distributions · five explicitly simulated environments · original entropy-zero REINFORCE and uniform baselines · five seeds each.', 'selector-simulations'],
     'hardness-predictor-6500': ['hardness_predictor_6500', 'hardness_predictor_plot_updated_at', 'Can a predictor learn which tokenizers are hard?', 'Frozen 6.5k LM/HN · 20k actual fresh-batch reward observations · one-in-four coverage exploration · one online regression update per observation.', 'hardness-predictor-6500'],
     'regret-favorite-trajectory': ['regret_favorite_trajectory', 'regret_favorite_plot_updated_at', 'Is the model learning the policy favorite?', 'Tokenizer #771 · every saved checkpoint through 8k · identical 4,096 training-style examples · active dropout · local GPU.', 'regret-favorite-trajectory'],
     'regret-pool-ranking-6500': ['regret_pool_ranking_6500', 'regret_pool_ranking_plot_updated_at', 'Saved policy versus measured training hardness', 'Frozen step 6,500 · all 1,000 tokenizers · 32 fixed batches of 128 · actual variable-continuation regret reward with dropout active.', 'regret-pool-ranking-6500'],

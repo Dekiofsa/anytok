@@ -1,0 +1,11 @@
+{
+  "all_pinned_source_hashes_match": true,
+  "all_trace_hashes_match": true,
+  "complete_cells": 75,
+  "every_observed_reward_and_current_oracle_reconstructed": true,
+  "measured_batches_per_tokenizer": 32,
+  "observations_reconstructed": 1500000,
+  "predictor_explores_every_tokenizer_exactly_five_times_in_every_cell": true,
+  "real_lm_or_hypernetwork_updates": 0,
+  "tokenizers": 1000
+}

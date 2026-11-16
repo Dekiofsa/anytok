@@ -1,0 +1,54 @@
+{
+  "abrupt": "At 10000: lower every Unigram mean by twice the observed #771 gap drop",
+  "calibration": {
+    "causal": false,
+    "decay_per_visit": 0.00013589888897870255,
+    "elapsed_steps": 1500,
+    "end_gap": 0.06048527893909727,
+    "end_step": 8000,
+    "note": "Observed joint-training change; not a causal effect per selection.",
+    "observed_drop": 0.012486762790812657,
+    "selected_visits": 1381,
+    "start_gap": 0.07297204172990993,
+    "start_step": 6500
+  },
+  "gradual": "At 10000: linearly lower every Unigram mean by observed #771 gap drop over 1500 steps",
+  "interpretation": "Stress tests of finite-table bandits; synthetic changes are not inferred LM counterfactuals. Practice environments differ by selector history; compare current-world missed hardness, not absolute reward alone.",
+  "learner_initialization": "Fresh original initialization for every cell; no ranking labels supplied to learner",
+  "measured_batches_per_tokenizer": 32,
+  "methods": [
+    "uniform",
+    "reinforce",
+    "predictor"
+  ],
+  "noise": "Resample the same shared measured batch index per step; action-specific centered residuals unchanged",
+  "practice": "Exponential mean decay per selection calibrated to #771 6500\u21928000; tokenizer-only or entire algorithm family",
+  "predictor": "Unchanged approved predictor, Adam .001, one-in-four shuffled coverage, single-observation MSE",
+  "reinforce": "Original SettingsTokenizerBandit, Adam .001, EMA .99, entropy 0, sampled softmax",
+  "scenarios": [
+    "fixed",
+    "gradual",
+    "abrupt",
+    "practice_tokenizer",
+    "practice_family"
+  ],
+  "seeds": [
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "source_sha256": {
+    "reports/regret-favorite-trajectory/learning-curve.csv": "9d51aed3f0eb9d09c4b71ba81c577d0e208a7eded7c570eb95025b6018b1a5f3",
+    "reports/regret-pool-ranking-6500/all-scores.json.gz": "f5d7245ac233451c285ccdd4bd2195561cc75b4a66a50fc3a1f3480455d221ca",
+    "reports/regret-pool-ranking-6500/pool-index.json": "7cdc2c0bb4b300605d152255ed6156f598154fb3dbe402e272c83276941353a1",
+    "reports/regret-pool-ranking-6500/tokenizer-ranking.csv": "6f23f8c17df97dafb10f54321917eb99b58f30721a32d899e03454f7b3dfe795",
+    "runtime/anytok_pool_settings_rl_20k/hf_hypernet/settings_policy.py": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+    "scripts/hardness_predictor.py": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+    "scripts/run_selector_simulations.py": "3845cbbcfe177c0afeba6f1016260fff289d4c4ec946888c6ab55ec96fb7a275",
+    "scripts/selector_simulation.py": "672c45cf10dca824527d362ede15317c704503498382c8d30f59aebf3953e18a"
+  },
+  "steps": 20000,
+  "tokenizers": 1000
+}

@@ -134,6 +134,8 @@ class Monitor:
             result['regret_favorite_plot_updated_at'] = favorite_plot.stat().st_mtime if favorite_plot.is_file() else None
             hardness_plot = self.root / 'plots/hardness_predictor_6500.png'
             result['hardness_predictor_plot_updated_at'] = hardness_plot.stat().st_mtime if hardness_plot.is_file() else None
+            simulation_plot = self.root / 'plots/selector_simulations.png'
+            result['selector_simulations_plot_updated_at'] = simulation_plot.stat().st_mtime if simulation_plot.is_file() else None
             for name in ['regret', 'regret_entropy0']:
                 path = self.root / f'plots/frozen_policy_{name}.png'
                 result[f'frozen_{name}_plot_updated_at'] = path.stat().st_mtime if path.is_file() else None
@@ -216,6 +218,8 @@ ASSETS = {'/': ('index.html', 'text/html; charset=utf-8'),
           '/Manrope.ttf': ('Manrope.ttf', 'font/ttf')}
 
 PLOTS = {'/plots/natural_transfer.png': ('natural_transfer.png', 'image/png'),
+         '/plots/selector_simulations.png': ('selector_simulations.png', 'image/png'),
+         '/plots/selector_simulations.pdf': ('selector_simulations.pdf', 'application/pdf'),
          '/plots/regret_pool_ranking_6500.png': ('regret_pool_ranking_6500.png', 'image/png'),
          '/plots/regret_pool_ranking_6500.pdf': ('regret_pool_ranking_6500.pdf', 'application/pdf'),
          '/plots/regret_favorite_trajectory.png': ('regret_favorite_trajectory.png', 'image/png'),
