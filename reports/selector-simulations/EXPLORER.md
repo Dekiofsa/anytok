@@ -4,12 +4,24 @@ Open the [interactive selector explorer](http://100.84.104.59:1337/selector-expl
 It uses the existing dashboard server. Locally, run
 `python scripts/run_dashboard.py` and open `http://localhost:1337/selector-explorer`.
 
+The main view compares **Old policy** and **New predictor**. It starts just
+before a sudden change. Click **After the change**: the purple dots move down,
+and you can see whether each method's black ring moves to a harder choice.
+Higher dots are harder for the model. The amber diamond marks the hardest one.
+The number below the chart says directly how much harder a choice was available.
+
+Open **Why did it choose this?** to see its predictions or selection probabilities
+and the individual text-batch score. The full-run chart, one-tokenizer details,
+complete pool table, and numeric definitions are expandable. **Also show random
+choices** adds the random baseline. Other simulations, repeats, and playback
+speeds are under **Other scenarios and playback options**.
+
 Each dot is one of the original 1,000 tokenizers. Its height in the truth chart
 is its **current mean BPB gap**: the hardness that our simulated environment
 assigns it. Higher means harder. Every method sees the same tokenizer settings,
 but it does not see the truth chart.
 
-The second chart shows what that selector has learned **before making the
+The chart inside **Why did it choose this?** shows what that selector has learned **before making the
 displayed choice**. REINFORCE predicts selection probabilities; the new predictor
 predicts BPB gaps. Those are different quantities, so their axes are labeled
 differently. Uniform sampling assigns 0.1% to every tokenizer.

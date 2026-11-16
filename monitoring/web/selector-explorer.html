@@ -2,36 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inside the selector · AnyTok</title>
+  <title>Does the policy move on? · AnyTok</title>
   <link rel="icon" href="/favicon.ico?v=axolotl-1" sizes="any">
   <link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/selector-explorer.css">
   <script src="/selector-explorer.js" defer></script>
 </head>
 <body><main class="page explorer">
-  <header class="topline"><span>ANYTOK / INSIDE THE SELECTOR</span><a href="/?run=selector-simulations">Back to results ↗</a></header>
-  <div class="heading"><div><h1>Can it follow the hard tokenizers?</h1><p class="intro">Scrub through the completed experiments. See the hidden world, the selector’s estimates, and the one reward it receives.</p></div></div>
-  <div class="explanation-grid">
-    <article><span class="eyebrow">01 · MEASURED START</span><h2>1,000 tokenizers, 32 rewards each</h2><p>Real measurements anchor the starting world. A reward is transferred BPB minus canonical BPB. A larger gap means a harder tokenizer.</p></article>
-    <article><span class="eyebrow">02 · SIMULATED CHANGE</span><h2>We decide how hardness changes</h2><p>The rule below changes the reward means. Only the selector learns here; these changes stand in for model improvement.</p></article>
-    <article><span class="eyebrow">03 · ONE OBSERVATION</span><h2>Choose one, see one reward</h2><p>The selector sees settings and its past observations. The true hardness of all 1,000 choices is hidden from it.</p></article>
-    <article><span class="eyebrow">04 · THE TEST</span><h2>Does it find what is hard now?</h2><p>Compare its chosen tokenizer with the currently hardest one. Getting stuck on an easier favorite increases the shortfall.</p></article>
-  </div>
-  <section class="world-rule" aria-labelledby="rule-heading"><span class="eyebrow">THE ENVIRONMENT YOU ARE WATCHING</span><h2 id="rule-heading">Loading saved experiment…</h2><p id="rule-description"></p><p id="world-warning" class="intro"></p></section>
-  <section class="playback-controls" aria-label="Experiment replay controls">
-    <div class="control-row"><label>ENVIRONMENT<select id="environment"></select></label><label>REPEAT<select id="repeat"></select></label><label>PLAYBACK SPEED<select id="speed"><option value="1">Slow · 25 steps / frame</option><option value="5">Medium · 125 steps / frame</option><option value="21" selected>Fast · 525 steps / frame</option></select></label><button id="play" class="play-button" disabled>Play ▶</button></div>
-    <div class="slider-heading"><strong id="step-label" aria-live="polite">Entering step —</strong><span id="playback-state">Loading…</span></div>
-    <input type="range" id="step" min="0" max="800" value="0" aria-label="Training observation step" disabled>
-    <div class="jump-row"><button id="start">Step 1</button><button id="before">Before change · 9,900</button><button id="after">After change · 11,500</button><button id="end">End · 20,000</button><span>Drag in 25-step increments, use arrow keys, or click the timeline.</span></div>
+  <header class="topline"><span>ANYTOK / SELECTOR EXPERIMENT</span><a href="/?run=selector-simulations">Back to results</a></header>
+  <div class="heading"><div><h1>Does it move on when its favorite gets easier?</h1><p class="intro">Each method chooses from 1,000 tokenizers. We want it to keep finding the ones the model struggles with.</p></div></div>
+  <section class="world-rule" aria-labelledby="rule-heading"><span class="eyebrow">What we pretend happens</span><h2 id="rule-heading">Loading…</h2><p id="rule-description"></p><p id="world-warning"></p></section>
+  <section class="playback-controls" aria-label="Replay controls">
+    <div class="slider-heading"><button id="play" class="play-button" disabled>Play ▶</button><strong id="step-label" aria-live="polite">Loading…</strong><span id="playback-state">Drag the slider to move through the run.</span></div>
+    <input type="range" id="step" min="0" max="800" value="0" aria-label="Step in the saved run" disabled>
+    <div class="jump-row"><button id="start">Beginning</button><button id="before">Before the change</button><button id="after">After the change</button><button id="end">End</button></div>
+    <details class="replay-options"><summary>Other scenarios and playback options</summary><div class="control-row"><label>What changes?<select id="environment"></select></label><label>Which run?<select id="repeat"></select></label><label>Playback speed<select id="speed"><option value="1">Slow</option><option value="5">Medium</option><option value="21" selected>Fast</option></select></label></div></details>
   </section>
   <p id="explorer-error" class="warning" role="alert" hidden></p>
-  <section aria-labelledby="timeline-heading"><div class="section-heading"><h2 id="timeline-heading">The whole run, with this moment marked</h2><a id="frame-download" href="/api/selector-explorer" target="_blank" rel="noopener">View this frame’s data ↗</a></div><p class="intro">Shortfall = current hardest mean − chosen mean. Lower is better. Lines average 100 observations from this repeat, including exploration.</p><div class="timeline-wrap"><canvas id="timeline" height="180" role="img" aria-label="Selection shortfall across all 20,000 observations for the three selectors"></canvas></div><div id="method-legend" class="explorer-legend"></div></section>
-  <section aria-labelledby="moment-heading"><div class="section-heading"><h2 id="moment-heading">What happens at this step?</h2><span>All 1,000 tokenizers remain available</span></div>
-    <p class="intro moment-note">A dot’s height in the truth chart is its mean BPB gap: its simulated hardness. The observed reward is one noisy measurement around that mean. Read each card from truth → estimates → choice → reward. This reward has not yet updated the estimates above it.</p>
-    <div class="explorer-legend"><span><i class="dot bpe"></i>BPE</span><span><i class="dot wordpiece"></i>WordPiece</span><span><i class="dot unigram"></i>Unigram</span><span>◯ chosen</span><span class="best-legend">◆ hardest now</span><span>Click a dot to inspect it</span></div>
+  <section aria-labelledby="moment-heading">
+    <div class="section-heading"><h2 id="moment-heading">Did it pick a hard tokenizer?</h2><label class="baseline-toggle"><input id="show-uniform" type="checkbox"> Also show random choices</label></div>
+    <p class="chart-instruction">Each dot is one tokenizer. <strong>Higher = harder for the model.</strong> We want the black ring near the highest dots.</p>
+    <div class="explorer-legend"><span>◯ the method’s choice</span><span class="best-legend">◆ hardest available</span><span><i class="dot bpe"></i>BPE</span><span><i class="dot wordpiece"></i>WordPiece</span><span><i class="dot unigram"></i>Unigram</span></div>
+    <p id="moment-summary" class="moment-summary" aria-live="polite"></p>
     <div id="method-cards" class="method-cards"></div>
   </section>
-  <section class="tokenizer-inspector" aria-labelledby="inspect-heading"><div class="section-heading"><h2 id="inspect-heading">Follow one tokenizer across all three worlds</h2><label>TOKENIZER ID<input id="tokenizer-id" type="number" min="0" max="999" value="771" aria-label="Tokenizer ID to inspect"></label></div><p id="tokenizer-settings" class="intro"></p><div id="tokenizer-domains" class="domain-mixture"></div><div class="table-scroll"><table><thead><tr><th>SELECTOR / WORLD</th><th>TRUE MEAN NOW</th><th>ITS ESTIMATE</th><th>PREVIOUS SELECTIONS</th><th>CHOSEN THIS STEP?</th></tr></thead><tbody id="tokenizer-comparison"></tbody></table></div><p class="intro">The generator settings are visible to the shared networks. The true means shown here are available only to us, the observers.</p></section>
-  <details id="all-tokenizers" class="all-tokenizers"><summary>Inspect the complete 1,000-tokenizer pool</summary><div class="control-row"><label>SHOW THIS WORLD<select id="table-method"><option value="reinforce">Old REINFORCE</option><option value="predictor">New hardness predictor</option><option value="uniform">Uniform sampling</option></select></label><label>SORT BY<select id="table-sort"><option value="hardness">True hardness now</option><option value="belief">Selector’s estimate</option><option value="visits">Previous selections</option><option value="index">Tokenizer ID</option></select></label></div><p class="intro">Every tokenizer is included. Click a row to inspect it above. A high estimate does not guarantee that the selector samples that tokenizer.</p><div class="table-scroll full-pool-table"><table><thead><tr><th>TOKENIZER</th><th>ALGORITHM</th><th>VOCAB</th><th>INITIAL MEAN</th><th>TRUE MEAN NOW</th><th>SELECTOR ESTIMATE</th><th>PREVIOUS SELECTIONS</th></tr></thead><tbody id="pool-rows"></tbody></table></div></details>
-  <footer><p>These are completed CPU simulations, replayed without changing their results. True means are calculated from the declared simulation rule. Cached selector estimates reproduce every original decision exactly; no future observation enters the displayed estimate.</p><p id="calibration-note"></p><p><a href="https://github.com/qingy1337/anytok/tree/zett-modal-20k/reports/selector-simulations" target="_blank" rel="noopener">Setup, plots, all traces &amp; audit ↗</a></p></footer>
+  <details id="timeline-details" class="extra-section"><summary>How did their choices change over the whole run?</summary>
+    <p class="intro">This shows how much harder a tokenizer each method could have picked instead. <strong>Zero means it picked the hardest one available.</strong> A rising line means it is overlooking harder choices.</p>
+    <div class="timeline-wrap"><canvas id="timeline" height="200" role="img" aria-label="How far each method’s choices are from the hardest available choice over time"></canvas></div><div id="method-legend" class="explorer-legend"></div><p class="intro">Each point averages 100 choices. Click the chart to jump to that part of the run.</p>
+  </details>
+  <details id="inspector-details" class="extra-section"><summary>Look closely at one tokenizer</summary>
+    <section class="tokenizer-inspector" aria-labelledby="inspect-heading"><div class="section-heading"><h2 id="inspect-heading">Follow the same tokenizer</h2><label>Tokenizer ID<input id="tokenizer-id" type="number" min="0" max="999" value="771" aria-label="Tokenizer ID to inspect"></label></div><p id="tokenizer-settings" class="intro"></p><div id="tokenizer-domains" class="domain-mixture"></div><div class="table-scroll"><table><thead><tr><th>METHOD</th><th>HOW HARD IT IS</th><th>WHAT THE METHOD THINKS</th><th>TIMES CHOSEN EARLIER</th><th>CHOSE IT NOW?</th></tr></thead><tbody id="tokenizer-comparison"></tbody></table></div><p class="intro">The methods know the tokenizer’s settings. They learn how hard it is only by trying it.</p></section>
+  </details>
+  <details id="all-tokenizers" class="extra-section all-tokenizers"><summary>See all 1,000 tokenizers in a table</summary><div class="control-row"><label>Method<select id="table-method"><option value="reinforce">Old policy</option><option value="predictor">New predictor</option><option value="uniform">Random choices</option></select></label><label>Sort by<select id="table-sort"><option value="hardness">Hardest first</option><option value="belief">Highest estimate first</option><option value="visits">Most chosen first</option><option value="index">Tokenizer ID</option></select></label></div><div class="table-scroll full-pool-table"><table><thead><tr><th>TOKENIZER</th><th>ALGORITHM</th><th>VOCAB SIZE</th><th>DIFFICULTY AT START</th><th>DIFFICULTY NOW</th><th>METHOD’S ESTIMATE</th><th>TIMES CHOSEN EARLIER</th></tr></thead><tbody id="pool-rows"></tbody></table></div></details>
+  <details class="extra-section technical-details"><summary>How the numbers and simulation work</summary>
+    <p><strong>“Harder” means a larger transfer gap:</strong> BPB with the new tokenizer minus BPB with the canonical tokenizer. The dot shows the average gap. A single text batch can score higher or lower than that average.</p>
+    <p>The methods cannot see all these dots. Each method chooses one tokenizer, receives its score on one batch, and updates what it has learned.</p>
+    <p>These are saved simulations. We start with 32 real measurements for each tokenizer, then apply the selected rule to make some tokenizers easier. No LM or hypernetwork is being trained on this page.</p>
+    <p id="calibration-note"></p><p>The slider moves in 25-step increments. The estimates shown are from before the displayed choice was made. The full-run chart includes all 20,000 choices.</p>
+    <p><a id="frame-download" href="/api/selector-explorer" target="_blank" rel="noopener">Data at this step</a> · <a href="https://github.com/qingy1337/anytok/tree/zett-modal-20k/reports/selector-simulations" target="_blank" rel="noopener">Full report, code and data</a></p>
+  </details>
   <div id="point-tooltip" class="point-tooltip" role="tooltip" hidden></div>
 </main></body></html>
