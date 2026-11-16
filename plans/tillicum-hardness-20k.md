@@ -67,3 +67,12 @@ most one adjacent float32 value. Shapes, names, dtypes and finite values must
 match. Larger differences still abort. Original failed preflight artifacts are
 preserved and hash-verified. The full fresh20k run starts only after these
 checks pass. Exact preflight/launch receipts are mirrored to the local run state.
+
+Atstep500 the payload upload and all cloud hash checks completed, but the
+derived dashboard-summary import failed because the script directory rather
+than the checkout root was on Python's import path. The model files were safe.
+The active process was repaired with an import-path symlink and the summary was
+rebuilt from the checksum-verified small policy checkpoint, without restarting
+training. Future allocations explicitly add the root tosys.path, and verified
+payloads can retry summary creation independently. A regression test covers
+metadata repair without a duplicate upload and without duplicate snapshots.

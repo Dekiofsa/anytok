@@ -16,6 +16,7 @@ import time
 from package_training_inputs import atomic_json,sha256
 from run_hardness_training import ROOT,STATE,INPUT,command
 from check_checkpoint_rounding import compare_safetensors
+sys.path.insert(0,str(ROOT))
 
 RUN=STATE/'run'
 REPO='cminst/anytok-hardness-predictor-20k'
@@ -138,7 +139,12 @@ def latest_restart():
 
 def backup(api,folder):
     receipt=STATE/'backups'/(folder.name+'.json')
-    if receipt.exists():return
+    if receipt.exists():
+        record=json.loads(receipt.read_text())
+        if finish_summary(folder,record):
+            latest=sorted((STATE/'backups').glob('step-*.json'))[-1]
+            atomic_json(STATE/'backup-status.json',dict(stage='verified',**json.loads(latest.read_text())))
+        return
     manifest=json.loads((folder/'manifest.json').read_text());step=manifest['step']
     for name,expected in manifest['files'].items():
         if (folder/name).stat().st_size!=expected['bytes'] or sha256(folder/name)!=expected['sha256']:
@@ -163,7 +169,15 @@ def backup(api,folder):
         operations.append(CommitOperationAdd(path_in_repo='latest_restart.json',path_or_fileobj=(json.dumps(record,indent=2)+'\n').encode()))
     api.create_commit(repo_id=REPO,operations=operations,commit_message=f'Verified checkpoint metadata {step}')
     atomic_json(receipt,record);atomic_json(STATE/'backup-status.json',dict(stage='verified',**record))
+    finish_summary(folder,record)
+
+
+def finish_summary(folder,record):
+    """A verified payload must not prevent retrying derived metadata after an error."""
+    step=record['step']
     if step:
+        path=STATE/'policy-monitor.json';previous=json.loads(path.read_text()) if path.exists() else dict(snapshots=[])
+        if any(row['step']==step for row in previous['snapshots']):return
         import torch
         from monitoring.policy_summary import summarize
         value=torch.load(folder/'policy.pt',map_location='cpu',weights_only=True)
@@ -172,9 +186,9 @@ def backup(api,folder):
         summary=summarize(configs,frequencies,value['counts'].tolist(),step)
         summary.update(kind='recent_actual_selection_frequencies',recent_steps=value['recent_steps'],
             predictions=value['predictions'].tolist(),exploration_visits=int(value['exploration_counts'].sum()))
-        path=STATE/'policy-monitor.json';previous=json.loads(path.read_text()) if path.exists() else dict(snapshots=[])
         snapshots={row['step']:row for row in previous['snapshots']};snapshots[step]=summary
         atomic_json(path,dict(snapshots=[snapshots[s] for s in sorted(snapshots)],error=None,checked_at=datetime.now(timezone.utc).isoformat()))
+        return True
 
 
 def main():
