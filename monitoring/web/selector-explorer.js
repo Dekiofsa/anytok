@@ -6,7 +6,7 @@
   const colors = {bpe: '#2F8FD0', wordpiece: '#36967B', unigram: '#8657BC'};
   const methods = ['uniform', 'reinforce', 'predictor'];
   const rules = {
-    fixed: ['Each tokenizer stays as hard as it was at the start.', 'The methods can learn which ones are hard, but the scores themselves never change.'],
+    fixed: ['Each tokenizer stays as hard as it was at the start.', 'The scores stay the same. Watch whether the methods find the hardest choices.'],
     gradual: ['Halfway through, Unigram tokenizers gradually get easier.', 'At step 10,000, the purple dots start moving down. The methods need to notice that other choices may now be harder.'],
     abrupt: ['Halfway through, Unigram tokenizers suddenly get easier.', 'At step 10,000, the purple dots drop. Does the method switch to something harder, or keep choosing its old favorite?'],
     practice_tokenizer: ['Each choice makes that one tokenizer a little easier.', 'Choosing the same tokenizer again and again can leave harder ones untouched. Does the method move on?'],
@@ -35,6 +35,7 @@
     $('rule-heading').textContent = rules[scenario][0]; $('rule-description').textContent = rules[scenario][1];
     $('world-warning').textContent = scenario.startsWith('practice')
       ? 'This is a simulation. Each method’s past choices decide which tokenizers get easier, so their charts can end up looking different.'
+      : scenario === 'fixed' ? 'This simulation uses our measured scores and keeps each tokenizer’s difficulty unchanged.'
       : 'This is a simulation. We start with real measured scores, then pretend the model improves according to this rule.';
     $('before').hidden = $('after').hidden = !['gradual', 'abrupt'].includes(scenario);
   }
