@@ -212,7 +212,7 @@ def main():
             '.venv-memory/bin/python scripts/audit_selector_simulations.py',
             '.venv-memory/bin/python scripts/report_selector_simulations.py','```','',
             'The controller preserves completed runs after verifying their trace hashes; interrupted runs repeat deterministically from their seed. It refuses changed pinned inputs or simulator code in the same run directory. The real LM weights are not needed.','']
-    (REPORT/'README.md').write_text('\n'.join(lines)+'\n')
+    (REPORT/'README.md').write_text('\n'.join(lines).rstrip()+'\n')
     atomic_json(REPORT/'manifest.json',dict(files={str(p.relative_to(REPORT)):dict(bytes=p.stat().st_size,sha256=sha256(p)) for p in REPORT.rglob('*') if p.is_file() and p.name!='manifest.json'}))
     print(json.dumps(dict(complete_cells=len(cells),curve_rows=len(curves))))
 

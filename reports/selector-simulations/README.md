@@ -79,4 +79,3 @@ CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv-memory/bin/
 ```
 
 The controller preserves completed runs after verifying their trace hashes; interrupted runs repeat deterministically from their seed. It refuses changed pinned inputs or simulator code in the same run directory. The real LM weights are not needed.
-
