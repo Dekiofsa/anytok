@@ -175,6 +175,7 @@ def main():
     shutil.copy2(STATE/'plan.json',REPORT/'plan.json')
     cal=plan['calibration']
     lines=['# Selector simulations: can the selector track changing weaknesses?','',
+        '[Interactive explorer: time slider, all tokenizers and exact decisions](http://100.84.104.59:1337/selector-explorer) · [How to read it](EXPLORER.md)','',
         f'**{len(cells)} / 75 runs complete.** Five environments × three selectors × five seeds, each with 20,000 observations. All work is local CPU; the real LM and hypernetwork remain unchanged.','',
         '## What is measured and what is simulated','',
         'The fixed environment resamples the complete 1,000 × 32 reward table measured at model checkpoint 6,500. A batch index is drawn uniformly with replacement at every step; all methods within a seed see the same batch-index sequence. Each reward is the selected tokenizer’s paired BPB gap on that batch. These are finite empirical reward distributions, not fresh language-model evaluations or estimates of all future text.','',

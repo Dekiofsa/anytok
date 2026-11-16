@@ -1,5 +1,7 @@
 # Selector simulations: can the selector track changing weaknesses?
 
+[Interactive explorer: time slider, all tokenizers and exact decisions](http://100.84.104.59:1337/selector-explorer) · [How to read it](EXPLORER.md)
+
 **75 / 75 runs complete.** Five environments × three selectors × five seeds, each with 20,000 observations. All work is local CPU; the real LM and hypernetwork remain unchanged.
 
 ## What is measured and what is simulated

@@ -73,6 +73,7 @@ class Monitor:
         self.polling = False
         self.plot_error = None
         self.threads = []
+        self.selector_explorer = None
         self.refresh()
 
     def refresh(self):
@@ -209,6 +210,10 @@ class Monitor:
 
 
 ASSETS = {'/': ('index.html', 'text/html; charset=utf-8'),
+          '/selector-explorer': ('selector-explorer.html', 'text/html; charset=utf-8'),
+          '/selector-explorer/': ('selector-explorer.html', 'text/html; charset=utf-8'),
+          '/selector-explorer.js': ('selector-explorer.js', 'text/javascript; charset=utf-8'),
+          '/selector-explorer.css': ('selector-explorer.css', 'text/css; charset=utf-8'),
           '/app.js': ('app.js', 'text/javascript; charset=utf-8'),
           '/learning.js': ('learning.js', 'text/javascript; charset=utf-8'),
           '/style.css': ('style.css', 'text/css; charset=utf-8'),
@@ -267,7 +272,25 @@ def make_server(monitor, host='0.0.0.0', port=1337, assets=None):
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
             request = urlsplit(self.path)
-            if request.path == '/api/state':
+            if request.path == '/api/selector-explorer':
+                args = parse_qs(request.query)
+                try:
+                    with monitor.lock:
+                        if monitor.selector_explorer is None:
+                            from monitoring.selector_explorer import SelectorExplorer
+                            monitor.selector_explorer = SelectorExplorer(monitor.root)
+                        explorer = monitor.selector_explorer
+                    if args.get('view', ['frame'])[0] == 'meta':
+                        payload = explorer.metadata()
+                    else:
+                        payload = explorer.frame(args.get('scenario', ['practice_family'])[0],
+                            int(args.get('seed', ['43'])[0]), int(args.get('frame', ['0'])[0]))
+                    self.respond(json.dumps(payload, ensure_ascii=False, allow_nan=False).encode(), 'application/json; charset=utf-8')
+                except (ValueError, AssertionError):
+                    self.send_error(400, 'Invalid replay selection or inconsistent saved data')
+                except FileNotFoundError:
+                    self.send_error(404, 'Saved simulation data is unavailable')
+            elif request.path == '/api/state':
                 args = parse_qs(request.query)
                 try:
                     payload = monitor.state(*(args.get(k, [None])[0] for k in ('run', 'profile', 'worker')))

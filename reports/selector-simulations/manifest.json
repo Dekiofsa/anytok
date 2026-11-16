@@ -1,8 +1,12 @@
 {
   "files": {
+    "EXPLORER.md": {
+      "bytes": 4080,
+      "sha256": "66d90ccb3d46e3ad13be7db150a45a1d83c2165edc9d1e1a6f7855195b9a1484"
+    },
     "README.md": {
-      "bytes": 8639,
-      "sha256": "28cf1bc3592f6865ca92656e48a91b9735f816f54c5c868814007e782688c42c"
+      "bytes": 8790,
+      "sha256": "48d3580eaf91e174ef8aab1bc18d81af130e44ee0271a865dc5875606bcbbf01"
     },
     "aggregate-curves.csv": {
       "bytes": 664923,
@@ -23,6 +27,10 @@
     "plan.json": {
       "bytes": 2704,
       "sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294"
+    },
+    "playback-audit.json": {
+      "bytes": 65601,
+      "sha256": "ac80e82e06a5a781529a01f5628936d827e4298fe4b7fbf459260bc15a14aade"
     },
     "selection_concentration.pdf": {
       "bytes": 81643,

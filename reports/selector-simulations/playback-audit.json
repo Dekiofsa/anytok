@@ -1,0 +1,1137 @@
+{
+  "decisions_replayed": 1500000,
+  "exact_action_agreement": true,
+  "frame_timing": "Before choice and before current reward updates learner",
+  "frames_per_run": 801,
+  "probabilities_normalized": true,
+  "receipts": {
+    "abrupt-predictor-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "f4ff6d5f866c01040102d829429a73a709abd47ac14aa59d2bf0ecdc1b777f1c"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "be06db745fc350630722209ebd9eabee803045e77dc1681e764c2daf528c2804"
+    },
+    "abrupt-predictor-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "886ed55f6c0e4061c3cc81ea07514e51f539ab8c2fa2f2a1233237b5d51fcc4b"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "085ce2511b5767ee82d8c0d7defb5c81979c3631729d9ea238b414dbed83d9b1"
+    },
+    "abrupt-predictor-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "2c596bc790cfb26f1bc804a41c1528aa4f0d260eb3e4517c9faf986b8a9c3e9f"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "411b233feef4f1103d0af0557ed0695d734bb0f48781f059f03b917c1b7d0518"
+    },
+    "abrupt-predictor-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "dc9d71f183e9726bc0f5f168375b9dbccd0d63df7316ddcbccde0203d85903c9"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "3af7b1e44ba80f76b1c933e70adcfd1119d23d7b1c56bcb4487bf4ab4390498b"
+    },
+    "abrupt-predictor-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "1a2862d8edb72aa0774a783f60580489b1affd66d230d78f39c6b2cf6d63c35a"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "ac7711b86f797476ff4e9d6826cb556350d19d513aed408fcdc84ff10240b60a"
+    },
+    "abrupt-reinforce-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "cee2da7eb7218e3af1d04a10b3dd375a6387b9d7729f8121942bde3512c0f916"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "5b0b2fa8c876f50e7a4aeb3f0defe728609821e6d656200a907e3cd4b28e7065"
+    },
+    "abrupt-reinforce-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "8f420e489b839cce1579fb310483b70709fb56c527c2b441bd0813e54426a6cf"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "de3de3f42c90a3a174adc779d731e6b68b66126a5d4a936b2776988a2e0fcc7e"
+    },
+    "abrupt-reinforce-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "e231b96b077c255b0baf6c6bcaaf91c9ce204edbf5bee96136afcdf6fc30b65e"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "ec8c9cfb918dc16556c9b8176a0ce12ac99cee17c442a7628452eb386d7e7ac6"
+    },
+    "abrupt-reinforce-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "77aa00bff34166e77d7052f91f8acd82a0552a20c91409bf32886b64816ec908"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "6875dbfb673c51ada29041f81a6a91ff05db3a179ce9e3431948782850a76ecb"
+    },
+    "abrupt-reinforce-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "f1cd0b8a5645623b6f752bc660304d37209b69a1352cedcc781e997bdad4f73e"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "753f12dd563d9610c44e81a44ef40fe27de97ca4a1a300b0e998e0ac7229e9db"
+    },
+    "abrupt-uniform-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "40e91212cd5c5efa03eaf3e5e4e03e4f4544fa0c2c23ac34548a09c0d79c0989"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "abrupt-uniform-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "adea0dd69e6ca2b5b27225d012077d151d5f2c4af933854b7c194a2de1fe8566"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "abrupt-uniform-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "4245ec9590696b8c652bd889b7dbed48ddae66e26373fdacfc961dcb2a493cf4"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "abrupt-uniform-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "293f5c973603d0289cb541a1c633be6c9a9494d92a60d78c9ec20abe0753dee2"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "abrupt-uniform-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "79e67e8185e5104f8e0988d8608d218f6e9a5437673e5c3192f48fa219af9118"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "fixed-predictor-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "5474e7e68b85744da642cb1ac6b5ee41f720bb3312fd35a9148a89bb2a3164c8"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "3400eaa05822996afdeac0efd00c284c635e7890394eda41577d37dc16ea2f90"
+    },
+    "fixed-predictor-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "3831e36fd1d99445bfa08877255e1c73207bd04334c131cd928e5dcfa59784e5"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "834fef5f0f464e19bf65a4bfdd4d43de174ecb7e008b70cd6dc3dbc08a9ef9cf"
+    },
+    "fixed-predictor-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "8d8ed3e1a5c6949c42d2fee041e7f15df6254e2524e82b853f90ae4a9e4d3be4"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "cbd44826a0e5ad8f13e541646d23731614703ff63a0dab3372bcb295bf314af3"
+    },
+    "fixed-predictor-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "9a186c0c509afc5687caa2cdae1e3fddbb9fb76bccd8c87a1f966a59ff151d2d"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "f702e9c495891898658ccdd3b8779e8e4978e18ea6c5d8cf597089a4ae825a1c"
+    },
+    "fixed-predictor-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "97540614da0484b2d6b7e492223e795b33c531b779ec12ce7d9e06ea4658dc24"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "17bf3b8f444c5f0ff9a55d33c95f89f1805be46cfe34a22f361bb6351bc5c2d4"
+    },
+    "fixed-reinforce-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "cd828ac5444bd38ab1c33f4118c7aa1a791ebee4bc172bc474fd19501304d3c3"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "2875b2b8fb11dacb379d24df1d1a7e473b4fe0f04985372e63400a182e12ac86"
+    },
+    "fixed-reinforce-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "16ac19e4fc6866ea9dccf4d349b6b245d3cd52d1d2fe8d09e8cef70ad2784826"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "2d2224946762e7846d06b73ee44036cbc63eb78ec41317ea8cd5860c64e5ecc1"
+    },
+    "fixed-reinforce-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "f8a8ffe9fc55ce18480c5d60f7ffbffc5dc33d701840f44c9d3cfc509a84e5bf"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "3f28298c9bb67b683929d82bc4602e5d0aabf0e8f1a991e7cc2111b46ce4ac60"
+    },
+    "fixed-reinforce-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "6faa70f0078d2e0d6b127c1b773ee0134f75338cb6fe576eab8a95b244dcf7cf"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "6843188f667cc2751ec86089153918c909e7027e39f2848b08299a7d593bbf35"
+    },
+    "fixed-reinforce-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "fd845ae2744243a9cacfa0b70d860ac9ed2b86f73b6e9428a03cae4ed6346da7"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "fc6e15a06c6640d95146d717502ffc3db910f0f854faf60f6bdb78dea4149f62"
+    },
+    "fixed-uniform-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "baeb67b57292124d9c2c855baf7af33655432d476eaacf185cb19d502dc32d84"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "fixed-uniform-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "59db2b75afe8714e6b2df413756148ebc03a4c2f3a51399e1042eab9d10f8d40"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "fixed-uniform-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "d4e264707ebf5f38b60c4f71488b6a03ec1fb4f6976ab178039306d021ba15f7"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "fixed-uniform-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "9041250fbdf388939e0c9189b9db93451bc35cc9f1681c32f1f7b1df002a4192"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "fixed-uniform-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "341400cfefa0a2555185676b6896b8c4321ba62083189ef76ff90f4321fd2d14"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "gradual-predictor-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "1648cdac176e1f335df823883a79c43e1fd4b283fbcdbd0b41df9561f6ff2d53"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "98323c22274d4b4b807ac702651c3226cc666fe2505ee67bbf29dfaf2ce93369"
+    },
+    "gradual-predictor-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "83806ae94549afdc9a02d8c011c0adb2df38be710e00ebb0693d45bc24870670"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "1cc16677314cb46e9fde750320cb947ef3847530f9e8f9a3765c10724a40e4f0"
+    },
+    "gradual-predictor-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "eeff2fbd758305a0a2ef39cf8af06ea1ea7eafbc338ba15e46f64001278993dc"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "73cf0d143ceba6586063d184e347825aa5f1cbf302bb35e349cfe7b071045100"
+    },
+    "gradual-predictor-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "557bb28771fe9188a7517dd19335c23b8aae483bdf3344f90538e4bc37da4927"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "fcba7c005681531aa67fb97181550bb8810813e0e4f64750ce5ef5e9a5b361bd"
+    },
+    "gradual-predictor-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "21262121bb1e0087ec84e15527151aa5240ced26cdf8be9aabb84d460b819d4a"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "dc99c620c5a668e97d38eb77fca9b7ec74e6f04760b5e885f70850becd7e2512"
+    },
+    "gradual-reinforce-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "c0267d17a9a343d76c616cd46fbcacfa7339dc44fd67995cfd1698393b5c9172"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "0601ded7bcefc8672cbf8048d5f8313e8c9a18b977a3b313f2130e92dddd743a"
+    },
+    "gradual-reinforce-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "745a4eaf2e880d8bff677737f4292c48e2f48d92ec25bbd34d5dfd0a938b6554"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "5836e0a79b64e48256a4cc2ca4ca86cb5585513dacd5e0b68035227af9c31cf6"
+    },
+    "gradual-reinforce-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "9a9fdaae77209a618b50a04dfa0e09c89669861a9c4956b4313f04731de9c9d2"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "3b0b04e6719a70391ddb5aec9e64422ea60083fd3d36f1d139f1945997157e83"
+    },
+    "gradual-reinforce-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "8530cca952d3d4112506d6677674de1dec1612dd3a8313b74eb5d730ec6c722b"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "a8f7bd3100439752b1a767f9773a96b4c23d3efc63699a64b458cddba4fdb70a"
+    },
+    "gradual-reinforce-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "ea35ecf054d0f9a118db9b6c5c68a1202b64ee6092ae6587744bb7c4682024dc"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "da80522f4e842983cb30860b03938dc41b4499f9fb2cd2ec9ebde013b226067a"
+    },
+    "gradual-uniform-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "6d79cdcdc7703a183fc0c8d63459dec2967d397907879087b929d82003220d6f"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "gradual-uniform-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "aa5d6962c131b1d6c2cba9012777f2503325514ecb3c0a7b5a7028ffc870822d"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "gradual-uniform-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "d9c2f33c6ea05f9641cb5c8509687e14bb9908a99edf99c2af697d9c62fbb3ec"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "gradual-uniform-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "e8a4984e516f1546125e19f260855b3fb6bbcff369181ef351647741551792f5"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "gradual-uniform-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "8ae85ac8d2a34384569903c79a94b6e5a4d4a7dfcd5a6383100f2e19edeca049"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "practice_family-predictor-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "7729648ecbc4576231efdba213ad4116ff1506aa876545aee6b4cb601efd3113"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "7007a4703eba03246aaa6fa41a4dad4d77338fb425af7543404681f69168b660"
+    },
+    "practice_family-predictor-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "bf1001ed960948ef2493f0c36facf11be9e3b1fb7267b59bbaa6243a5061e0b4"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "fe5e4dc8df8cf5efee72a38e65112d93de164e271d16fc62062e1767a90e2a32"
+    },
+    "practice_family-predictor-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "d48475e024b5b8a9282b8d3baaebabf06b9ec8f748ffc7f64837c33170c9152b"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "0718113b0a8865fc8454e1a3317eb28227164a7b4b5933add341012da2bdf077"
+    },
+    "practice_family-predictor-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "cac228f3a44a87a1bfea4ee4b342d48a726bf4f36b444e0cc13ae79a88c3e025"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "c7b9473fcbf27ad6678f8c078164fe708202ffdc38245e4526a122c862003892"
+    },
+    "practice_family-predictor-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "1d9f28bc8e191e43e577cbbb2691adb2dd17702914b918bf3d338300858e88f2"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "d4e711f989c42a0435334262929664ddfffef421c200be350348411c229f1bed"
+    },
+    "practice_family-reinforce-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "7e152357c05f33f940a8783feeb72ed76f4ceba802f004493c7636a4f9a7fc5f"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "3254ad89d18b7ec1017959e802d5ca24342424c569d6a967e97ad26d39b4bdc5"
+    },
+    "practice_family-reinforce-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "807c050eb4ad90216aec45c145e78122279f74381ed2c619870de5723f18aee1"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "fe09ffbcd5a1fab3f88d589aa2668543c74fe6b32facb9bb096f96313c55a4c4"
+    },
+    "practice_family-reinforce-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "588500bf7a27de496abbda3dc36a5102237292f9adeed7a7d7f51149c21adab1"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "540e08aa8182d32ea895b98480451d24339ee951ac96e20b9c26d0ff7e46fe70"
+    },
+    "practice_family-reinforce-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "c3c2231a9be56e27ea05e698972140f1bedc3505b555ca2e5204c5a7b3abb97b"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "82d066e94d336c017308d303f64742ecc2d584cf6396a03a43dfbfe12adfca15"
+    },
+    "practice_family-reinforce-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "e4a5f9ecd3c6114e23ae503a320904d47f65c3b3285504e6d045ac6c4d449218"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8d43b0c37069fd9148ff62cdc9b385e8c218342fb27b783bee97e1c0320ed34e"
+    },
+    "practice_family-uniform-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "90a0fa02d70d02a62b7308c87c37ede987e6bba8472d3ec3f2f9d43fa5f1cc57"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "practice_family-uniform-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "9c6f195aa5ac982d40f7dff162d86f2d237c65afca7facdb24eb2bb6260028a3"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "practice_family-uniform-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "cb8b8199808832a31cce1890e34403b533ee20509dca507faadedd674cea1c01"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "practice_family-uniform-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "403bb02f0d1eb59966775ccd021fe109672f9eef304fc223dd53003c90b0ae8f"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "practice_family-uniform-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "40ba544436e47e7fc4b6e4456ce1fd5082b6a6ede451c6ed1b39abc2df615e85"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "practice_tokenizer-predictor-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "53b687e514bde2a7bd1e802e4a6198fb97a53109a96d577b44624e75a9761924"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "4a3303dfa158a4a820159942f9a792f23feb45c68634482c3dfd2b80a7a04b95"
+    },
+    "practice_tokenizer-predictor-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "455db02080635cdeeeef9b6b0aa3c9f8043556cdb5ba1c038eea931508817260"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "ec0c3bfd5944de622629bf0975b562ee1eb5870ea7692d01a4c71fa367a100af"
+    },
+    "practice_tokenizer-predictor-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "dece714e21b6d00ef92e0c59bccb2d990a45aa0a45632cbb84f5b434628c7020"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "de4d57f8fa3822c81c9085ab72d6f62523557413cf050f379d260b25c19375aa"
+    },
+    "practice_tokenizer-predictor-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "957e25a3661dbac766beddd246bbedd2a56bb731f1b8a444045ad18ea79d9903"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "ca741d84406bee5a6e1a52d86729048ee42d89a1004d504502eb9173300a5eeb"
+    },
+    "practice_tokenizer-predictor-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "e53b3fda1dbed778675b1fc64a6c78a67d41c7d7620aeb9b31f4de17070b111d"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "5fd5544ec0f13ef7f09dfe3a159f03778d7593009f6d913c119b72328e19597f"
+    },
+    "practice_tokenizer-reinforce-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "0c653bcde570e6101dba85eea5813e5e874c310802685894fb1f97dcf6a56e82"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "9957af7f5a32ac855f153da0a3f7dd86bae537db9ba01ebe2fd24cac92aee170"
+    },
+    "practice_tokenizer-reinforce-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "2980a0d587ceeef9c6b12d0ba97aff65cdcf45a3199ec7ad8ac75099f8bdf8c0"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "ee8e824353bb7f37fe46284b3f38dc375c0b99dfffe70cf6338da3ba0a9a50a8"
+    },
+    "practice_tokenizer-reinforce-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "f4a26727186f1edd7d362ae9945ae26092bd067b3bf5fbc17274ca299f40c4e4"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "86eb6162c46c394b77fff2e0f7e16c3ecc00129e8c35997e3ad03ec5ae6cffd5"
+    },
+    "practice_tokenizer-reinforce-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "410911c65d24d282c78aea6ac310070feb65f8c7512cb5852a57c0d0a0f92019"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8cd2931a1b358dc547ef06c4e35762a4a7a5fa9db29eab9df6378f2e4dc0d4dd"
+    },
+    "practice_tokenizer-reinforce-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "ef9f9f30babca7dc60330703e09053d649c39040ef0b88bd2e52a0faf9c2f599"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "2c1a3aa34677a4aa69989db54d4830434bb8820ea3153d3c15f99daf7d106a31"
+    },
+    "practice_tokenizer-uniform-43": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "cc7d636935df1febb625bb96767da6c5fc72142ae594aa914952574efe796335"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "practice_tokenizer-uniform-44": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "ab90cd38af62ccb3af6524b11e5bd3092e2de6e72a6a4d5a780a2b7dbd86a9dd"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "practice_tokenizer-uniform-45": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "27c6cd790fe54bb4d71bd1bfb36290372f08d1c8dd277925e42a4a22e5ebeeff"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "practice_tokenizer-uniform-46": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "2275b0467b48930aa31f8964e54d59934c782b25cc06cf0fbc7f98df771505e1"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    },
+    "practice_tokenizer-uniform-47": {
+      "actions_match_every_step": true,
+      "frames": 801,
+      "source": {
+        "builder_sha256": "9bd9a9f27a6d33755591ba78681f90b33fbe829d7d970d90926d9de76408e2fd",
+        "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+        "predictor_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+        "simulation_plan_sha256": "f70bbaf90e4b949e29cd32301bd55a57203b882acbce4e396385f0b9e93c9294",
+        "torch": "2.15.0+cu132",
+        "trace_sha256": "639638cf01ec3460147dc5b09b8e1d023f9fa49f6fe332b59f0fbea5a1f1a3c4"
+      },
+      "steps_replayed": 20000,
+      "timing": "Beliefs before selecting at the displayed step; reward at that step has not entered learning.",
+      "values_sha256": "8010b7ed19c2d7bea952f894f23458b06ea6ee6106015de198a43aab169ffb27"
+    }
+  },
+  "runs": 75,
+  "source_outcomes_unchanged": true,
+  "tokenizers_per_frame": 1000
+}

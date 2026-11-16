@@ -64,6 +64,7 @@ function render(data) {
     'natural-model-comparison': ['model_comparison', 'model_comparison_plot_updated_at', 'Final trained models · fixed natural-text regime', 'ZeTT, uniform-pool and RL at 20k · identical passages · 229 fixed confirmation stress passages.', 'natural-model-comparison-20k'],
     'pool-regime-comparison': ['random_pool_50', 'pool_reference_plot_updated_at', 'Selected 24 versus a uniform random 50', 'Measured scores · 50 pool tokenizers drawn uniformly without replacement · the same 229 stress passages and three trained models.', 'random-pool-50'],
   };
+  $('selector-explorer-link').hidden = data.id !== 'selector-simulations';
   const plotConfig = plotConfigs[data.id];
   $('natural-plots').hidden = !plotConfig || !data[plotConfig[1]];
   if (plotConfig && data[plotConfig[1]]) {
