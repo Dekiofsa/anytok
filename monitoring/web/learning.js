@@ -105,36 +105,44 @@
   }
   function render() {
     if (!data) return;
+    const observed = data.selector_kind === 'hardness_predictor';
+    const currentName = observed ? 'Predictor' : 'RL';
+    get('learning-heading').textContent = observed ? 'Sanity scores & tokenizer choices' : 'Sanity scores & sampling policy';
+    get('policy-peak').closest('article').querySelector('h3').textContent = observed ? 'Most repeated choice · last 500' : 'Highest selection probability';
+    get('policy-peak').closest('article').querySelector('p').textContent = observed ? 'Share of actual recent choices going to the same tokenizer' : 'Probability of the single most likely tokenizer; uniform = 0.1%';
+    document.querySelector('.distribution-heading h2').textContent = observed ? 'Where recent choices went' : 'Where the policy puts its probability';
+    document.querySelector('.tokenizer-details summary').textContent = observed ? 'Most chosen tokenizers recently' : 'Most likely tokenizers at this checkpoint';
+    get('policy-top').closest('table').querySelectorAll('th')[2].textContent = observed ? 'RECENT SHARE' : 'PROBABILITY';
     const includeInitial = get('show-initial').checked;
     const scoreSeries = metric => ['rl', 'uniform'].flatMap(run => [0, 1].map(i => ({
-      name: `${run === 'rl' ? 'RL' : 'Uniform'} · T${i + 1}`, color: i ? colors.blue : colors.green,
+      name: `${run === 'rl' ? currentName : 'Uniform'} · T${i + 1}`, color: i ? colors.blue : colors.green,
       dash: run === 'uniform' ? '6 4' : '',
       points: data.curves[run].filter(p => includeInitial || p.step > 0).map(p => [p.step, p.tokenizers[i][metric]])
     })));
     const scores = scoreSeries('bpb');
     if (get('show-canonical').checked) for (const run of ['rl', 'uniform']) for (let i = 0; i < 2; i++) {
-      scores.push({name: `${run === 'rl' ? 'RL' : 'Uniform'} canonical · T${i + 1}`, color: i ? '#b59e7a' : colors.gray,
+      scores.push({name: `${run === 'rl' ? currentName : 'Uniform'} canonical · T${i + 1}`, color: i ? '#b59e7a' : colors.gray,
         dash: run === 'uniform' ? '6 4' : '', points: data.curves[run].filter(p => includeInitial || p.step > 0).map(p => [p.step, p.tokenizers[i].canonical])});
     }
     chart('sanity-bpb', scores, {label: 'Sanity continuation BPB'});
     chart('sanity-gap', scoreSeries('gap'), {label: 'Sanity transfer gap in BPB'});
     const latest = data.latest_step;
     chart('policy-spread', [
-      {name: 'Effective tokenizer count', color: colors.green, points: [[0, data.pool_size], ...data.policy.map(p => [p.step, p.policy_effective_tokenizers])]},
+      {name: observed ? 'Variety of recent choices' : 'Effective tokenizer count', color: colors.green, points: [[0, observed ? 0 : data.pool_size], ...data.policy.map(p => [p.step, p.policy_effective_tokenizers])]},
       {name: 'Unique tokenizers sampled', color: colors.blue, points: [[0, 0], ...data.policy.map(p => [p.step, p.policy_unique_tokenizers])]},
       {name: 'Pool size', color: colors.gray, dash: '5 4', points: [[0, data.pool_size], [latest, data.pool_size]]}
     ], {label: 'Policy effective count and observed coverage', zero: true, minPad: 10, format: 'count'});
     chart('policy-peak', [
-      {name: 'Highest probability', color: colors.orange, points: [[0, 100 / data.pool_size], ...data.policy.map(p => [p.step, p.policy_max_probability * 100])]},
-      {name: 'Uniform', color: colors.gray, dash: '5 4', points: [[0, 100 / data.pool_size], [latest, 100 / data.pool_size]]}
-    ], {label: 'Maximum single tokenizer probability', zero: true, format: 'percent'});
+      {name: observed ? 'Most repeated choice' : 'Highest probability', color: colors.orange, points: [[0, observed ? 0 : 100 / data.pool_size], ...data.policy.map(p => [p.step, p.policy_max_probability * 100])]},
+      ...(!observed ? [{name: 'Uniform', color: colors.gray, dash: '5 4', points: [[0, 100 / data.pool_size], [latest, 100 / data.pool_size]]}] : [])
+    ], {label: observed ? 'Largest actual choice share in the latest 500 steps' : 'Maximum single tokenizer probability', zero: true, format: 'percent'});
     const last = data.latest_policy;
     const metrics = get('policy-metrics'); metrics.replaceChildren();
     if (last) for (const [name, value] of [
-      ['EFFECTIVE TOKENIZERS', Math.round(last.policy_effective_tokenizers).toLocaleString('en-US')],
+      [observed ? 'RECENT VARIETY' : 'EFFECTIVE TOKENIZERS', Math.round(last.policy_effective_tokenizers).toLocaleString('en-US')],
       ['UNIQUE SAMPLED', `${last.policy_unique_tokenizers} / ${data.pool_size}`],
-      ['HIGHEST PROBABILITY', `${(last.policy_max_probability * 100).toFixed(3)}%`],
-      ['ENTROPY (NATS)', last.policy_entropy.toFixed(3)]]) {
+      [observed ? 'MOST REPEATED' : 'HIGHEST PROBABILITY', `${(last.policy_max_probability * 100).toFixed(3)}%`],
+      observed ? ['POOL CHECKS', last.coverage_visits] : ['ENTROPY (NATS)', last.policy_entropy.toFixed(3)]]) {
       const item = node('div'); item.append(node('dt', name), node('dd', value)); metrics.append(item);
     }
     get('learning-freshness').textContent = `Through step ${latest.toLocaleString('en-US')} · updates every 10s`;
@@ -154,10 +162,11 @@
   const names = {bpe: 'BPE', wordpiece: 'WordPiece', unigram: 'Unigram', regex: 'Regex', line256: 'Line 256', 'no-regex': 'No regex'};
   function renderDistribution() {
     if (!data) return;
+    const observed = data.selector_kind === 'hardness_predictor';
     const chosen = get('policy-snapshot').value;
     const snapshot = chosen === 'latest' ? data.snapshots.at(-1) : data.snapshots.find(s => String(s.step) === chosen);
     const legendHost = get('distribution-legend'); legendHost.replaceChildren();
-    legend(legendHost, [{name: 'Policy probability', color: colors.green}, {name: 'Uniform pool', color: '#b7b7b7'}, {name: 'Observed selections so far', color: colors.orange}]);
+    legend(legendHost, [{name: observed ? 'Recent actual choices' : 'Policy probability', color: colors.green}, {name: 'Uniform pool', color: '#b7b7b7'}, {name: 'All selections so far', color: colors.orange}]);
     for (const field of ['algorithm', 'pretokenizer', 'vocab', 'merge_noise', 'domain']) {
       const host = get(`dist-${field}`); host.replaceChildren();
       if (!snapshot) { host.append(node('p', 'Waiting for the first cloud snapshot…', 'intro chart-empty')); continue; }
@@ -178,7 +187,7 @@
         row.append(stack, node('span', pct(values.policy), 'bar-value')); host.append(row);
       }
     }
-    get('distribution-note').textContent = snapshot ? `Policy snapshot at step ${snapshot.step.toLocaleString('en-US')} · Top 100 tokenizers hold ${pct(snapshot.top_100_probability)} probability · Mean vocabulary ${Math.round(snapshot.mean_vocab).toLocaleString('en-US')}. Observed bars count all selections through this checkpoint. Hover bars for exact values.` : 'Waiting for checkpoint metadata; training continues independently.';
+    get('distribution-note').textContent = snapshot ? observed ? `Step ${snapshot.step.toLocaleString('en-US')}: latest ${snapshot.recent_steps} actual choices. The 100 most selected tokenizers account for ${pct(snapshot.top_100_probability)} of these choices. Orange bars count all choices so far.` : `Policy snapshot at step ${snapshot.step.toLocaleString('en-US')} · Top 100 tokenizers hold ${pct(snapshot.top_100_probability)} probability · Mean vocabulary ${Math.round(snapshot.mean_vocab).toLocaleString('en-US')}. Observed bars count all selections through this checkpoint. Hover bars for exact values.` : 'Waiting for checkpoint metadata; training continues independently.';
     get('policy-top').replaceChildren(...(snapshot?.top_tokenizers || []).map(t => {
       const tr = node('tr');
       for (const value of [`#${t.index}`, `${names[t.algorithm]} · ${names[t.pretokenizer]} · ${Math.round(t.vocab_size / 1000)}k`, `${(t.probability * 100).toFixed(3)}%`, t.selections]) tr.append(node('td', value));
@@ -186,8 +195,8 @@
     }));
   }
   window.refreshLearning = async runId => {
-    get('learning').hidden = !['anytok-pool-settings-rl-training', 'anytok-pool-regret-rl-training'].includes(runId);
-    if (runId !== activeRun) { activeRun = runId; lastFetch = 0; }
+    get('learning').hidden = !['anytok-pool-settings-rl-training', 'anytok-pool-regret-rl-training', 'anytok-hardness-training'].includes(runId);
+    if (runId !== activeRun) { activeRun = runId; lastFetch = 0; if (runId === 'anytok-hardness-training') get('show-initial').checked = true; }
     if (get('learning').hidden || busy || Date.now() - lastFetch < 10000) return;
     busy = true; requested = runId;
     try {

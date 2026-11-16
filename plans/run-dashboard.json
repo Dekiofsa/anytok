@@ -1,6 +1,32 @@
 {
   "runs": [
     {
+      "id": "anytok-hardness-training",
+      "name": "Hardness predictor · regret · fresh 20k",
+      "category": "Training",
+      "description": "Fresh original LM and warmed-up HN. The settings predictor learns the paired BPB gap; every fourth choice checks the shuffled 1,000-tokenizer pool. One H200 on Tillicum.",
+      "adapter": "progress_json",
+      "platform": "Tillicum · H200",
+      "status": "modal_results/tillicum_hardness/status.json",
+      "completed_field": "step",
+      "progress_log": "modal_results/tillicum_hardness/events.jsonl",
+      "total": 20000,
+      "unit": "steps",
+      "completion_stage": "complete",
+      "profiles": ["zlab"],
+      "app_names": [],
+      "learning": {
+        "logs": "modal_results/tillicum_hardness/train.log",
+        "baseline_logs": "modal_results/tillicum_hardness/no-baseline-*.log",
+        "plan": "plans/tokenizer-pool-1000-v1.json",
+        "snapshots": "modal_results/tillicum_hardness/policy-monitor.json",
+        "selector_kind": "hardness_predictor",
+        "protocol_note": "Fresh original initialization; same paired 128-position training and two fixed sanity tokenizers. Selection plots show actual recent choices, not softmax probabilities.",
+        "baseline_required": false
+      },
+      "logs": ["modal_results/tillicum_hardness/slurm.log", "modal_results/tillicum_hardness/train.log", "modal_results/tillicum_hardness/events.jsonl"]
+    },
+    {
       "id": "selector-simulations",
       "name": "Selector stress tests · predictor vs REINFORCE",
       "category": "Diagnostics",

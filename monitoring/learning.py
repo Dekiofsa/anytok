@@ -77,6 +77,14 @@ class LearningReader:
             curves['uniform'] = []
         keys = ('policy_effective_tokenizers', 'policy_max_probability', 'policy_unique_tokenizers', 'policy_entropy')
         policy = [{'step': r['step'], **{k: r.get(k) for k in keys}} for r in train]
+        if config.get('selector_kind') == 'hardness_predictor':
+            policy = [{'step': r['step'],
+                'policy_effective_tokenizers': r.get('selector_recent_effective_tokenizers'),
+                'policy_max_probability': r.get('selector_recent_largest_share'),
+                'policy_unique_tokenizers': r.get('selector_unique_tokenizers'),
+                'policy_entropy': r.get('selector_recent_entropy'),
+                'coverage_visits': r.get('selector_exploration_visits'),
+                'prediction_squared_error': r.get('selector_squared_error')} for r in train]
         snapshots = self.reader.json(self.root / config['snapshots'], {}) or {}
         plan = self.reader.json(self.root / config['plan'], {}) or {}
         configs = {c['index']: c for c in plan.get('configs', [])}
@@ -89,7 +97,9 @@ class LearningReader:
                 if value is not None:
                     counts[value] = counts.get(value, 0) + 1
             exposure[field] = {key: value / len(recent) for key, value in counts.items()} if recent else {}
-        return {'latest_step': latest, 'curves': curves, 'protocol_note': config.get('protocol_note'), 'panel': [
+        return {'latest_step': latest, 'curves': curves, 'protocol_note': config.get('protocol_note'),
+                'selector_kind': config.get('selector_kind'),
+                'policy_measurement': 'recent_actual_selection_frequencies' if config.get('selector_kind') == 'hardness_predictor' else 'learned_probabilities', 'panel': [
                     {k: r[k] for k in ('bytes', 'examples', 'truncated_forms')} for r in reference],
                 'policy': sampled(policy), 'latest_policy': policy[-1] if policy else None,
                 'snapshots': snapshots.get('snapshots', []),
