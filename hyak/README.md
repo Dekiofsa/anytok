@@ -1,5 +1,8 @@
 # AnyTok on Hyak Tillicum: run guide
 
+**Results of the finished raw-BPB run (20,000 updates, 2026-11-17):
+[reports/raw-bpb-rl-20k-tillicum](../reports/raw-bpb-rl-20k-tillicum/README.md).**
+
 **The current experiment is the raw-BPB handoff run: section 0.** It runs Qingyun's verified launcher and
 input bundle (original corpus, pool, model and identity-warmed hypernetwork) for one 20,000-update raw-BPB RL
 run. The rest of this introduction and sections 1 to 13 describe the port's earlier plan; they are kept as a
@@ -20,8 +23,9 @@ corrected evaluation for both final checkpoints (scope: section 1).
 
 The pinned trainers under `runtime/` are not changed. Everything new lives under `hyak/`, including
 the RL trainer variant (`hyak/variants/anytok_pool_straight_rl_20k`: Qingyun's regret trainer with
-one line of the policy update and the reward label changed). Nothing here has run on Tillicum yet:
-section 12 lists what was checked on a laptop and what only the cluster can show. Read sections 1
+one line of the policy update and the reward label changed). The plan of sections 1 to 13 has not run
+on Tillicum (section 0's run finished there on 2026-11-17): section 12 lists what was checked on a
+laptop and what only the cluster can show. Read sections 1
 and 2 before you submit anything: section 2 holds the decisions that are expensive to reverse.
 
 Contents
@@ -43,8 +47,9 @@ Contents
 14. Reference
 
 All commands run from the repository root of your checkout on the cluster. Numbers marked
-*estimate* were not measured on Tillicum. Billing on Tillicum is 0.90 USD per GPU-hour; the
-first 100 GPU-hours are free. Every program of the port ends with the same exit-code contract
+*estimate* were not measured on Tillicum. Billing on Tillicum is 0.90 USD per GPU-hour. The cluster
+docs mention 100 free GPU-hours, but the cost report (`hyakusage`) charged this account's first hours
+in full (2026-11-17). Every program of the port ends with the same exit-code contract
 (table in section 14): 0 ok, 1 crash, 2 usage or setup problem, 3 a stop that needs your decision,
 4 a check failed, 75 not now.
 
@@ -231,7 +236,8 @@ of 43k, 62k and 90k; the first updates), and 6.34 s for the training phases of a
 runs took 3.0 to 3.4 s per update on a B300 including evaluation and checkpoints. With 5 to 8 s per
 update on an H200 plus about an hour of evaluations and saves, 20,000 updates take about 30 to 46 hours:
 two 24 h jobs, possibly a third; submit three (an unneeded job ends at once). That is about 30 to 47
-GPU-hours (0.90 USD per GPU-hour after the first 100 free hours, so at most about 42 USD). The smoke is
+GPU-hours (0.90 USD per GPU-hour, so at most about 42 USD; the finished run used 39.9 GPU-hours and
+cost 35.89 USD). The smoke is
 well under one GPU-hour. Read `seconds` in the first `train` lines of the run and size the chain from
 it: jobs = 20,000 x seconds / (24 h - 20 min - about 5 min of start-up).
 
@@ -250,8 +256,8 @@ the old-protocol uniform scores); the dashboard page shows that panel only for t
 to that file besides `hyak-rl-training`). The job's own life cycle (HALTED, refusals, notes) is in
 `python3 -m hyak.common.status show --stage train-rawbpb`, not in the launcher's status.
 
-**Evaluation of the final checkpoint will be added while training runs.** Sections 6.13 to 6.15
-describe the port's evaluation of its own two runs; they are not wired to this run yet.
+**Evaluation of the final checkpoint is not set up yet.** Sections 6.13 to 6.15 describe the port's
+evaluation of its own two runs; they are not wired to this run.
 
 ### 0.8 Which later sections apply
 

@@ -1,0 +1,44 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 11316,
+      "sha256": "cf8c16e18c31e4aa6b40a05b1c096703e66da9322e4cc525d944854e3196142b"
+    },
+    "code/add_difficulty.py": {
+      "bytes": 2528,
+      "sha256": "2ed04a80e5cdff02875da79b701db50af8dcca75a6940be347990c125e283c50"
+    },
+    "code/extract_results.py": {
+      "bytes": 6454,
+      "sha256": "40f47fbe94fb9440ae19ab3ab56bcacab81fa50102c04daecd0194a264813a75"
+    },
+    "code/make_report.py": {
+      "bytes": 12100,
+      "sha256": "3757a1f6db21362e29d072b6e047e64bb18e1b33758bcebae9dd154db484bc0a"
+    },
+    "code/write_manifest.py": {
+      "bytes": 769,
+      "sha256": "85300489ddcf49f34f628c3d53f86d4e585b9fb4d09bc667b092ed26d6c6f57b"
+    },
+    "data/results.json": {
+      "bytes": 172784,
+      "sha256": "d0b6631a3bb6feee06ea764082ee85ccdec36e7a6b5bcbd7258db66dce6702a5"
+    },
+    "data/summary.json": {
+      "bytes": 7909,
+      "sha256": "d4f20b92d50fcb4f0ee4ba4c512f08fb7a00acf4676431323068b22188fc016c"
+    },
+    "plots/chooser_focus.svg": {
+      "bytes": 14597,
+      "sha256": "18698bee33dd21d2eb3e61c5a436664d8b8dac0ddd422c4fd1390c3f273b254a"
+    },
+    "plots/kinds_picked.svg": {
+      "bytes": 11505,
+      "sha256": "64109cfa5d65f0d011db693a4ed5467e786a176f97f7c07bb1aa48db0cb890c1"
+    },
+    "plots/test_score.svg": {
+      "bytes": 4411,
+      "sha256": "57ff846ee345eb23d70ad09ba7a39825c1e7c2424ea5b5aadb4075fdceec9200"
+    }
+  }
+}
