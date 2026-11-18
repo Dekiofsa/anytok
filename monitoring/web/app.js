@@ -48,6 +48,7 @@ function render(data) {
   if (window.refreshLearning) window.refreshLearning(data.id);
   $('trajectory-plots').hidden = data.id !== 'uniform-trajectories';
   const plotConfigs = {
+    'four-way-8k-evaluation': ['four_way_8k', 'four_way_8k_plot_updated_at', 'Four training methods at 8k', 'Uniform, Raw-BPB RL, Regret RL and Hardness predictor · identical random 50 + 12 held-out tokenizers · 576 broad-text passages · 32 scored continuation tokens within 128 total positions. Main figure shows text sample B; sample A and detailed views are in the report.', 'four-way-8k'],
     'selector-simulations': ['selector_simulations', 'selector_simulations_plot_updated_at', 'Can the selector track changing weaknesses?', 'CPU stress tests · all 1,000 measured reward distributions · five explicitly simulated environments · original entropy-zero REINFORCE and uniform baselines · five seeds each.', 'selector-simulations'],
     'hardness-predictor-6500': ['hardness_predictor_6500', 'hardness_predictor_plot_updated_at', 'Can a predictor learn which tokenizers are hard?', 'Frozen 6.5k LM/HN · 20k actual fresh-batch reward observations · one-in-four coverage exploration · one online regression update per observation.', 'hardness-predictor-6500'],
     'regret-favorite-trajectory': ['regret_favorite_trajectory', 'regret_favorite_plot_updated_at', 'Is the model learning the policy favorite?', 'Tokenizer #771 · every saved checkpoint through 8k · identical 4,096 training-style examples · active dropout · local GPU.', 'regret-favorite-trajectory'],

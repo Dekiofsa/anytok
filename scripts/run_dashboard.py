@@ -137,6 +137,8 @@ class Monitor:
             result['hardness_predictor_plot_updated_at'] = hardness_plot.stat().st_mtime if hardness_plot.is_file() else None
             simulation_plot = self.root / 'plots/selector_simulations.png'
             result['selector_simulations_plot_updated_at'] = simulation_plot.stat().st_mtime if simulation_plot.is_file() else None
+            four_way_plot = self.root / 'plots/four_way_8k.png'
+            result['four_way_8k_plot_updated_at'] = four_way_plot.stat().st_mtime if four_way_plot.is_file() else None
             for name in ['regret', 'regret_entropy0']:
                 path = self.root / f'plots/frozen_policy_{name}.png'
                 result[f'frozen_{name}_plot_updated_at'] = path.stat().st_mtime if path.is_file() else None
@@ -223,6 +225,14 @@ ASSETS = {'/': ('index.html', 'text/html; charset=utf-8'),
           '/Manrope.ttf': ('Manrope.ttf', 'font/ttf')}
 
 PLOTS = {'/plots/natural_transfer.png': ('natural_transfer.png', 'image/png'),
+         '/plots/four_way_8k.png': ('four_way_8k.png', 'image/png'),
+         '/plots/four_way_8k.pdf': ('four_way_8k.pdf', 'application/pdf'),
+         '/plots/four_way_8k_sample_a.png': ('four_way_8k_sample_a.png', 'image/png'),
+         '/plots/four_way_8k_sample_a.pdf': ('four_way_8k_sample_a.pdf', 'application/pdf'),
+         '/plots/four_way_8k_tokenizers.png': ('four_way_8k_tokenizers.png', 'image/png'),
+         '/plots/four_way_8k_tokenizers.pdf': ('four_way_8k_tokenizers.pdf', 'application/pdf'),
+         '/plots/four_way_8k_domains.png': ('four_way_8k_domains.png', 'image/png'),
+         '/plots/four_way_8k_domains.pdf': ('four_way_8k_domains.pdf', 'application/pdf'),
          '/plots/selector_simulations.png': ('selector_simulations.png', 'image/png'),
          '/plots/selector_simulations.pdf': ('selector_simulations.pdf', 'application/pdf'),
          '/plots/regret_pool_ranking_6500.png': ('regret_pool_ranking_6500.png', 'image/png'),
