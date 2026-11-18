@@ -141,6 +141,8 @@ class Monitor:
             result['four_way_8k_plot_updated_at'] = four_way_plot.stat().st_mtime if four_way_plot.is_file() else None
             synthetic_plot = self.root / 'plots/synthetic_student.png'
             result['synthetic_student_plot_updated_at'] = synthetic_plot.stat().st_mtime if synthetic_plot.is_file() else None
+            generalization_plot = self.root / 'plots/student_generalization.png'
+            result['student_generalization_plot_updated_at'] = generalization_plot.stat().st_mtime if generalization_plot.is_file() else None
             for name in ['regret', 'regret_entropy0']:
                 path = self.root / f'plots/frozen_policy_{name}.png'
                 result[f'frozen_{name}_plot_updated_at'] = path.stat().st_mtime if path.is_file() else None
@@ -227,6 +229,12 @@ ASSETS = {'/': ('index.html', 'text/html; charset=utf-8'),
           '/Manrope.ttf': ('Manrope.ttf', 'font/ttf')}
 
 PLOTS = {'/plots/natural_transfer.png': ('natural_transfer.png', 'image/png'),
+         '/plots/student_generalization.png': ('student_generalization.png', 'image/png'),
+         '/plots/student_generalization.pdf': ('student_generalization.pdf', 'application/pdf'),
+         '/plots/student_generalization_choices.png': ('student_generalization_choices.png', 'image/png'),
+         '/plots/student_generalization_choices.pdf': ('student_generalization_choices.pdf', 'application/pdf'),
+         '/plots/student_generalization_focus.png': ('student_generalization_focus.png', 'image/png'),
+         '/plots/student_generalization_focus.pdf': ('student_generalization_focus.pdf', 'application/pdf'),
          '/plots/synthetic_student.png': ('synthetic_student.png', 'image/png'),
          '/plots/synthetic_student.pdf': ('synthetic_student.pdf', 'application/pdf'),
          '/plots/synthetic_student_focus.png': ('synthetic_student_focus.png', 'image/png'),
