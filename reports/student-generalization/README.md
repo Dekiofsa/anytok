@@ -2,7 +2,7 @@
 
 [Live progress and plots](http://100.84.104.59:1337/?run=student-generalization). Repository snapshots can lag the running study.
 
-**37 / 1,380 runs complete.** This is a local CPU study; real training stays paused. Live plots are provisional until every planned observation passes the independent audit.
+**1,380 / 1,380 runs complete.** This is a local CPU study; real training stays paused. Live plots are provisional until every planned observation passes the independent audit.
 
 We test whether an adversarial teacher keeps choosing problems that used to be hard after a synthetic student improves. The first study used either no sharing or complete sharing across a tokenizer algorithm. This study fills in the gap between those extremes and varies student speed independently.
 
@@ -27,3 +27,5 @@ These are controlled hypothetical learning rules, not estimates that a real LM i
 ## Data and reproduction
 
 `python scripts/run_student_generalization.py` runs the frozen full plan. `python scripts/report_student_generalization.py --partial` refreshes the live views; without --partial it independently reconstructs every saved reward, student update and rank. Per-step traces and receipts remain under `modal_results/student_generalization/cells/`; full summary metadata are in this folder. No tokenizers, corpora or model checkpoints are downloaded.
+
+Raw per-step traces are preserved in the verified cloud archive listed in archive-receipt.json; each trace checksum is in trace-manifest.json.

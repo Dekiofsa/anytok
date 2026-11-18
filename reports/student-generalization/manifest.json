@@ -1,0 +1,60 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 3780,
+      "sha256": "17393f1caea3cdeb4fb42df07b6b327e50bc66945bf9b36adcf8973d9b7a3234"
+    },
+    "analysis.json": {
+      "bytes": 287265,
+      "sha256": "2d94611d0ea7c00510570010e5c59b9a2033e5dd46f87c850390c5e8976543ce"
+    },
+    "archive-receipt.json": {
+      "bytes": 3154,
+      "sha256": "0197fc799cc0c91277197911168c2cc5373f3fc8324d74610ae2d2fdcb1716da"
+    },
+    "audit.json": {
+      "bytes": 219,
+      "sha256": "e575e8683138c47e1765106fc2b27c2954e64832d2fcf8984361c172434d9e92"
+    },
+    "per-run-results.csv": {
+      "bytes": 394227,
+      "sha256": "8b4e15d4f82b3fe75c9a69fdd3a22bed8571e52bf7d24b6ba787d6365264d916"
+    },
+    "plan.json": {
+      "bytes": 24022,
+      "sha256": "4cbc41f913e7b95ededf6a9b2290b7b2b5b34c4072c87b751a571ccded389fc9"
+    },
+    "student_generalization.pdf": {
+      "bytes": 23457,
+      "sha256": "91801e484dc23bb4926447a4851729b0dca6e86bb3aa8ed90e8a6c8bcffad3b5"
+    },
+    "student_generalization.png": {
+      "bytes": 290163,
+      "sha256": "a5584c6f9f36651c9d6a5d8acc7ab62b0b26c5583d1850911f370723f74a00bf"
+    },
+    "student_generalization_choices.pdf": {
+      "bytes": 24523,
+      "sha256": "a5ccb6cc1b99c91fc3f5bf1b513aa353a75caac43051f52cc7a40dde6fa0f887"
+    },
+    "student_generalization_choices.png": {
+      "bytes": 229466,
+      "sha256": "a6e3a95815bfd7292a078774709d7ce7ec3539b87a5d6390941f971353de179b"
+    },
+    "student_generalization_focus.pdf": {
+      "bytes": 24533,
+      "sha256": "58fb61b4170c5702e1ecc388613a7a33da4409ff7bf2db41316247364c294d70"
+    },
+    "student_generalization_focus.png": {
+      "bytes": 233612,
+      "sha256": "b77eac379bb3c07f67cc048249a4967e356bb5190d120704a058e83816506608"
+    },
+    "summary.csv": {
+      "bytes": 86607,
+      "sha256": "d9253c1af8956dd9eb7a834ecd6d1711d249f1283014fbc1259cdd327acffd49"
+    },
+    "trace-manifest.json": {
+      "bytes": 229354,
+      "sha256": "5879b09ffa8a26544b814c6d7d3b96549234780e3d825111059623a9e91c6d68"
+    }
+  }
+}

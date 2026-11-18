@@ -1,0 +1,79 @@
+{
+  "parts": [
+    {
+      "bytes": 134144000,
+      "path": "diagnostics/student-generalization/traces-000.tar",
+      "revision": "c5358caf4fabb3ffe690e4ee4abfa824646e2d53",
+      "sha256": "cad40e9657d6f242259565bf8d854691d5c1e7ee88d9ed4a4c04f3d8bbb74847"
+    },
+    {
+      "bytes": 133632000,
+      "path": "diagnostics/student-generalization/traces-001.tar",
+      "revision": "b96394400d70b18b4089a7bf7f7ae27c16c2a64c",
+      "sha256": "b681edf958a5df6695b8d34e7c7af2c166d1e5215584498f8151103b9261f3a1"
+    },
+    {
+      "bytes": 133713920,
+      "path": "diagnostics/student-generalization/traces-002.tar",
+      "revision": "7e0ace1e70a127636eb7df030633d78ba40e1d83",
+      "sha256": "1c0356a2df004fe1f9c5728806753ac80747840dc35d0e694dd926979a4e663c"
+    },
+    {
+      "bytes": 133498880,
+      "path": "diagnostics/student-generalization/traces-003.tar",
+      "revision": "55c55647616e5deed58f8cfafddddbdc6f0bfc86",
+      "sha256": "6b484bd1aad9031a852c513430f791e87b174b1463ba083484a952d0590a2105"
+    },
+    {
+      "bytes": 133427200,
+      "path": "diagnostics/student-generalization/traces-004.tar",
+      "revision": "6198896e22b55634094060e3276e4af3c8a35006",
+      "sha256": "bf49b6aab28e36697d726ca18e1dc1a20679f8db157ace0a12915a92f70bf7fc"
+    },
+    {
+      "bytes": 134410240,
+      "path": "diagnostics/student-generalization/traces-005.tar",
+      "revision": "3c78920992deeed21ac6ae6e2b9881320607e0de",
+      "sha256": "1d2325dba02a37eb53a119d40360d6b85250337a4a8fa64a031625737406b824"
+    },
+    {
+      "bytes": 133867520,
+      "path": "diagnostics/student-generalization/traces-006.tar",
+      "revision": "49a3bdc2ff4f7cc8d7e8b6892a412aa7598c1347",
+      "sha256": "b1ccc0545440f5af2fdf7ea0d07bc629b6a2903176b1573a207ee3025a486599"
+    },
+    {
+      "bytes": 133089280,
+      "path": "diagnostics/student-generalization/traces-007.tar",
+      "revision": "9f169dd17e3fa3a8fe831894e6c29a23cd9b4bc9",
+      "sha256": "e0247a11b255d3156512bd1d1aee594f98be96cb61131c873997e8f008539c6e"
+    },
+    {
+      "bytes": 134123520,
+      "path": "diagnostics/student-generalization/traces-008.tar",
+      "revision": "c63b197d1ef93d0a919025a559bf76e319c191eb",
+      "sha256": "244963fa207d2a0755f7253671deb98c06e472a6f15f0cff27b47d847fedea91"
+    },
+    {
+      "bytes": 133580800,
+      "path": "diagnostics/student-generalization/traces-009.tar",
+      "revision": "bac9861489efc232866ab38fa0fdfd462834a080",
+      "sha256": "07a084d372a5ae8e35b02bd6539afc6e49961e7239f0d41a98a67620edcd78b7"
+    },
+    {
+      "bytes": 133335040,
+      "path": "diagnostics/student-generalization/traces-010.tar",
+      "revision": "00c3a95422acb3b58275f19809065c2be314c90f",
+      "sha256": "1d47f242ee6858ec24007fe0e452e5a623b06e714701ae150127c3be4ecc7a9b"
+    },
+    {
+      "bytes": 98416640,
+      "path": "diagnostics/student-generalization/traces-011.tar",
+      "revision": "1ce8a3a61fff046f4c385696ebb69aa1590d47c3",
+      "sha256": "3ff98c6012e69db088d2b2ab37a58530a7f928e80eb44af8de3cfd9c762e0c57"
+    }
+  ],
+  "prefix": "diagnostics/student-generalization",
+  "repo_id": "cminst/anytok-hardness-predictor-20k",
+  "verified": true
+}
