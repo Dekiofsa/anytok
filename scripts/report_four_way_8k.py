@@ -257,7 +257,7 @@ def write_report(report,data):
     if not target.exists() or sha256(target)!=sha256(STATE/'results.json.gz'):
         shutil.copy2(STATE/'results.json.gz',target)
     with (REPORT/'tokenizer-scores.csv').open('w') as f:
-        writer=csv.DictWriter(f,fieldnames=['sample','model','tokenizer','kind','canonical_bpb','transferred_bpb','gap_bpb'])
+        writer=csv.DictWriter(f,fieldnames=['sample','model','tokenizer','kind','canonical_bpb','transferred_bpb','gap_bpb'],lineterminator='\n')
         writer.writeheader()
         for split,info in report['splits'].items():
             for k,name in enumerate(MODELS):

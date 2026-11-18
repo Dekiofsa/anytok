@@ -49,8 +49,8 @@
       "sha256": "491130c916f2c7e58fdb94e27283827f82ced426813b31454ee585075e876a16"
     },
     "tokenizer-scores.csv": {
-      "bytes": 42618,
-      "sha256": "2ae1fedc3ea8baa3a5c3a8f6fc90250d5a33fcaabdca4be77d6dc843573db4fb"
+      "bytes": 42121,
+      "sha256": "b142c0b6f40c461ff38a33f2b0bac00862db758520302530f8ac626c6e6db95f"
     }
   }
 }
