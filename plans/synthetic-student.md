@@ -79,3 +79,16 @@ confirmation. Do not tune the rules or omit unfavorable seeds after inspection.
 Dashboard: `synthetic-student`; state `modal_results/synthetic_student/`;
 report `reports/synthetic-student/`. The existing interactive explorer continues
 to show its original 75 runs; these new outcomes are not substituted into it.
+
+Completed: all 60 runs and all 1.2 million observations. The independent audit
+reconstructed every reward, rank and student transition. All 6,500 real replay
+actions matched; the largest saved-probability difference was 6.44e-14.
+
+With a fresh teacher and no coverage, a stale majority persisted at the end
+in 0/5 frozen cases, 0/5 individual-learning cases and 5/5 family-learning
+cases. In the family cases, the first stale majority appeared at synthetic
+choices 1,488–2,039. Starting with the actual collapsed policy, 3/5 continuations
+remained stale even with a frozen student. Uniform-mixture exploration helped
+the family-learning cases but did not reliably rescue the collapsed frozen
+teacher. These are outcomes under the declared rules, not an identified cause
+of the real training collapse.

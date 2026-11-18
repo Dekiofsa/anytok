@@ -1,0 +1,799 @@
+{
+  "interpretation": "Hypothetical student rules; five future continuations per condition, one real collapsed initialization. SD across continuations, not a confidence interval or evidence about real-world student generalization.",
+  "paired": [
+    {
+      "coverage_minus_original": 0.005849927153835597,
+      "differences": [
+        0.006655992574745503,
+        0.004657319551055255,
+        0.009004525971515848,
+        0.003972496898536605,
+        0.004959300773324772
+      ],
+      "initial": "fresh",
+      "metric": "final_2000_missed_hardness",
+      "negative_changes": 0,
+      "paired_sd": 0.0020212315410832837,
+      "positive_changes": 5,
+      "scenario": "frozen"
+    },
+    {
+      "coverage_minus_original": -0.0009174280285608012,
+      "differences": [
+        -2.8350463999599757e-06,
+        -0.0022775518530430985,
+        0.0022816914188217336,
+        -0.0021523154482709804,
+        -0.0024361292139117004
+      ],
+      "initial": "fresh",
+      "metric": "final_2000_policy_missed_hardness",
+      "negative_changes": 4,
+      "paired_sd": 0.0020464715127084007,
+      "positive_changes": 1,
+      "scenario": "frozen"
+    },
+    {
+      "coverage_minus_original": 0.0,
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial": "fresh",
+      "metric": "final_2000_stale_focus_fraction",
+      "negative_changes": 0,
+      "paired_sd": 0.0,
+      "positive_changes": 0,
+      "scenario": "frozen"
+    },
+    {
+      "coverage_minus_original": 8.800221779070583e-07,
+      "differences": [
+        3.38709584601915e-07,
+        -9.328672279096395e-09,
+        1.462372323235428e-08,
+        1.0493603763706005e-09,
+        4.055056893603748e-06
+      ],
+      "initial": "fresh",
+      "metric": "final_2000_top100_probability",
+      "negative_changes": 1,
+      "paired_sd": 1.7808928521662902e-06,
+      "positive_changes": 4,
+      "scenario": "frozen"
+    },
+    {
+      "coverage_minus_original": 0.0,
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial": "fresh",
+      "metric": "final_student_mean_gap",
+      "negative_changes": 0,
+      "paired_sd": 0.0,
+      "positive_changes": 0,
+      "scenario": "frozen"
+    },
+    {
+      "coverage_minus_original": 0.0,
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial": "fresh",
+      "metric": "final_mastery",
+      "negative_changes": 0,
+      "paired_sd": 0.0,
+      "positive_changes": 0,
+      "scenario": "frozen"
+    },
+    {
+      "coverage_minus_original": 0.006810730257055328,
+      "differences": [
+        0.006881501871309311,
+        0.0023914551359024185,
+        0.004567365929231471,
+        0.01381883990302183,
+        0.00639448844581161
+      ],
+      "initial": "collapsed",
+      "metric": "final_2000_missed_hardness",
+      "negative_changes": 0,
+      "paired_sd": 0.00429693328958264,
+      "positive_changes": 5,
+      "scenario": "frozen"
+    },
+    {
+      "coverage_minus_original": 0.003332653237193723,
+      "differences": [
+        0.004402314411246425,
+        -8.042337226732421e-09,
+        -0.0021560162471958044,
+        0.010420987398539222,
+        0.003995988665715999
+      ],
+      "initial": "collapsed",
+      "metric": "final_2000_policy_missed_hardness",
+      "negative_changes": 2,
+      "paired_sd": 0.004823401134413867,
+      "positive_changes": 3,
+      "scenario": "frozen"
+    },
+    {
+      "coverage_minus_original": 0.2,
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "initial": "collapsed",
+      "metric": "final_2000_stale_focus_fraction",
+      "negative_changes": 0,
+      "paired_sd": 0.447213595499958,
+      "positive_changes": 1,
+      "scenario": "frozen"
+    },
+    {
+      "coverage_minus_original": -0.19999973063885873,
+      "differences": [
+        -7.488399641261697e-09,
+        1.0441890947784275e-08,
+        2.984073921297181e-08,
+        -0.999998693110256,
+        7.121731829090688e-09
+      ],
+      "initial": "collapsed",
+      "metric": "final_2000_top100_probability",
+      "negative_changes": 2,
+      "paired_sd": 0.4472130155038371,
+      "positive_changes": 3,
+      "scenario": "frozen"
+    },
+    {
+      "coverage_minus_original": 0.0,
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial": "collapsed",
+      "metric": "final_student_mean_gap",
+      "negative_changes": 0,
+      "paired_sd": 0.0,
+      "positive_changes": 0,
+      "scenario": "frozen"
+    },
+    {
+      "coverage_minus_original": 0.0,
+      "differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial": "collapsed",
+      "metric": "final_mastery",
+      "negative_changes": 0,
+      "paired_sd": 0.0,
+      "positive_changes": 0,
+      "scenario": "frozen"
+    },
+    {
+      "coverage_minus_original": 0.004728483241004875,
+      "differences": [
+        0.004266968200639436,
+        0.006495095941204756,
+        0.0047328239235371735,
+        0.004353571679968733,
+        0.0037939564596742746
+      ],
+      "initial": "fresh",
+      "metric": "final_2000_missed_hardness",
+      "negative_changes": 0,
+      "paired_sd": 0.0010425730658014528,
+      "positive_changes": 5,
+      "scenario": "individual"
+    },
+    {
+      "coverage_minus_original": -0.00030116497920041333,
+      "differences": [
+        -0.0004647047222094986,
+        0.002302338897483629,
+        -0.0010898197831048537,
+        -0.0010430285217493448,
+        -0.0012106107664219988
+      ],
+      "initial": "fresh",
+      "metric": "final_2000_policy_missed_hardness",
+      "negative_changes": 4,
+      "paired_sd": 0.0014836110709037095,
+      "positive_changes": 1,
+      "scenario": "individual"
+    },
+    {
+      "coverage_minus_original": 0.1006,
+      "differences": [
+        0.0,
+        0.503,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial": "fresh",
+      "metric": "final_2000_stale_focus_fraction",
+      "negative_changes": 0,
+      "paired_sd": 0.2249484385364788,
+      "positive_changes": 1,
+      "scenario": "individual"
+    },
+    {
+      "coverage_minus_original": 0.024627034607205334,
+      "differences": [
+        0.07305292711931388,
+        -0.362125467425728,
+        0.14802820865060506,
+        0.14051449493622514,
+        0.12366500975561057
+      ],
+      "initial": "fresh",
+      "metric": "final_2000_top100_probability",
+      "negative_changes": 1,
+      "paired_sd": 0.21816784744355897,
+      "positive_changes": 4,
+      "scenario": "individual"
+    },
+    {
+      "coverage_minus_original": 1.1695076620826805e-05,
+      "differences": [
+        8.758550293863632e-06,
+        1.1125871215142413e-05,
+        1.255483839439353e-05,
+        1.2080160242219917e-05,
+        1.3955962958514534e-05
+      ],
+      "initial": "fresh",
+      "metric": "final_student_mean_gap",
+      "negative_changes": 0,
+      "paired_sd": 1.9330202014918922e-06,
+      "positive_changes": 5,
+      "scenario": "individual"
+    },
+    {
+      "coverage_minus_original": 0.00011212435189009197,
+      "differences": [
+        0.00017759492831802975,
+        0.00011887516840388378,
+        0.00010574452244037271,
+        0.00011634367388708901,
+        4.206346640108459e-05
+      ],
+      "initial": "fresh",
+      "metric": "final_mastery",
+      "negative_changes": 0,
+      "paired_sd": 4.8215667782462016e-05,
+      "positive_changes": 5,
+      "scenario": "individual"
+    },
+    {
+      "coverage_minus_original": 0.004539690930081649,
+      "differences": [
+        0.0045071969912807005,
+        -0.002506754009817329,
+        0.011380502637077752,
+        0.004942453415557285,
+        0.004375055616309836
+      ],
+      "initial": "collapsed",
+      "metric": "final_2000_missed_hardness",
+      "negative_changes": 1,
+      "paired_sd": 0.004915268796411568,
+      "positive_changes": 4,
+      "scenario": "individual"
+    },
+    {
+      "coverage_minus_original": -0.00041780698587789175,
+      "differences": [
+        -0.0007911054100739451,
+        -0.006957153860506458,
+        0.00687110148413113,
+        0.00016621610412736153,
+        -0.0013780932470675465
+      ],
+      "initial": "collapsed",
+      "metric": "final_2000_policy_missed_hardness",
+      "negative_changes": 3,
+      "paired_sd": 0.004931881705228741,
+      "positive_changes": 2,
+      "scenario": "individual"
+    },
+    {
+      "coverage_minus_original": -0.0633,
+      "differences": [
+        0.0,
+        -0.3165,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial": "collapsed",
+      "metric": "final_2000_stale_focus_fraction",
+      "negative_changes": 1,
+      "paired_sd": 0.14154310297573666,
+      "positive_changes": 0,
+      "scenario": "individual"
+    },
+    {
+      "coverage_minus_original": 0.05744716646565486,
+      "differences": [
+        0.05427680087859754,
+        0.360308897620391,
+        -0.22201414711317347,
+        -0.020336673578431386,
+        0.11500095452089065
+      ],
+      "initial": "collapsed",
+      "metric": "final_2000_top100_probability",
+      "negative_changes": 2,
+      "paired_sd": 0.2116581379812234,
+      "positive_changes": 3,
+      "scenario": "individual"
+    },
+    {
+      "coverage_minus_original": 1.2733164838063526e-05,
+      "differences": [
+        2.2252649616666398e-05,
+        -4.066513233702551e-06,
+        2.0553428019834397e-05,
+        1.3027284535782613e-05,
+        1.1898975251736776e-05
+      ],
+      "initial": "collapsed",
+      "metric": "final_student_mean_gap",
+      "negative_changes": 1,
+      "paired_sd": 1.0425793359017254e-05,
+      "positive_changes": 4,
+      "scenario": "individual"
+    },
+    {
+      "coverage_minus_original": 5.5805152796279364e-05,
+      "differences": [
+        -6.980218065330557e-05,
+        0.00015152553498185006,
+        6.233364201188932e-05,
+        -3.3224116651325852e-06,
+        0.0001382911793060956
+      ],
+      "initial": "collapsed",
+      "metric": "final_mastery",
+      "negative_changes": 2,
+      "paired_sd": 9.391782099530127e-05,
+      "positive_changes": 3,
+      "scenario": "individual"
+    },
+    {
+      "coverage_minus_original": -0.01747011218754514,
+      "differences": [
+        -0.024846514635967848,
+        -0.001714623585121023,
+        -0.01651716993613962,
+        -0.03275770202861375,
+        -0.01151455075188346
+      ],
+      "initial": "fresh",
+      "metric": "final_2000_missed_hardness",
+      "negative_changes": 5,
+      "paired_sd": 0.011965930263454357,
+      "positive_changes": 0,
+      "scenario": "family"
+    },
+    {
+      "coverage_minus_original": -0.01925711753163963,
+      "differences": [
+        -0.026399591280340633,
+        -0.001716701996931188,
+        -0.01808552203608679,
+        -0.03806814581638791,
+        -0.01201562652845161
+      ],
+      "initial": "fresh",
+      "metric": "final_2000_policy_missed_hardness",
+      "negative_changes": 5,
+      "paired_sd": 0.013841493068534702,
+      "positive_changes": 0,
+      "scenario": "family"
+    },
+    {
+      "coverage_minus_original": -0.2177,
+      "differences": [
+        -0.008000000000000007,
+        0.0,
+        -0.08050000000000002,
+        -1.0,
+        0.0
+      ],
+      "initial": "fresh",
+      "metric": "final_2000_stale_focus_fraction",
+      "negative_changes": 3,
+      "paired_sd": 0.43862791748815994,
+      "positive_changes": 0,
+      "scenario": "family"
+    },
+    {
+      "coverage_minus_original": 0.20003960575531116,
+      "differences": [
+        0.0001986348575899967,
+        -6.75009176525252e-07,
+        -1.3205369272972798e-08,
+        0.9999999981663653,
+        8.39671461541486e-08
+      ],
+      "initial": "fresh",
+      "metric": "final_2000_top100_probability",
+      "negative_changes": 2,
+      "paired_sd": 0.447191462473094,
+      "positive_changes": 3,
+      "scenario": "family"
+    },
+    {
+      "coverage_minus_original": -0.00644257037161145,
+      "differences": [
+        -0.015099532029534263,
+        0.004707627519367062,
+        -0.011421277373865453,
+        -0.004993770500070584,
+        -0.005405899473954014
+      ],
+      "initial": "fresh",
+      "metric": "final_student_mean_gap",
+      "negative_changes": 4,
+      "paired_sd": 0.007537093756661899,
+      "positive_changes": 1,
+      "scenario": "family"
+    },
+    {
+      "coverage_minus_original": 0.21764155640908492,
+      "differences": [
+        0.5137339868485808,
+        -0.18672726216632451,
+        0.3765659279292596,
+        0.19627500070842585,
+        0.1883601287254827
+      ],
+      "initial": "fresh",
+      "metric": "final_mastery",
+      "negative_changes": 1,
+      "paired_sd": 0.26351269247060094,
+      "positive_changes": 4,
+      "scenario": "family"
+    },
+    {
+      "coverage_minus_original": -0.020847352389342155,
+      "differences": [
+        -0.050769033774115145,
+        -0.008286197204263865,
+        0.0035171952646332293,
+        -0.047060068557767704,
+        -0.0016386576751972956
+      ],
+      "initial": "collapsed",
+      "metric": "final_2000_missed_hardness",
+      "negative_changes": 4,
+      "paired_sd": 0.0259942361899998,
+      "positive_changes": 1,
+      "scenario": "family"
+    },
+    {
+      "coverage_minus_original": -0.022395229224899373,
+      "differences": [
+        -0.0538228438307279,
+        -0.009348624352270688,
+        0.004434432983981235,
+        -0.04983150240942333,
+        -0.0034076085160561695
+      ],
+      "initial": "collapsed",
+      "metric": "final_2000_policy_missed_hardness",
+      "negative_changes": 4,
+      "paired_sd": 0.02734510220860557,
+      "positive_changes": 1,
+      "scenario": "family"
+    },
+    {
+      "coverage_minus_original": -0.4002,
+      "differences": [
+        -1.0,
+        0.0,
+        -0.0010000000000000009,
+        -1.0,
+        0.0
+      ],
+      "initial": "collapsed",
+      "metric": "final_2000_stale_focus_fraction",
+      "negative_changes": 3,
+      "paired_sd": 0.5475401355151968,
+      "positive_changes": 0,
+      "scenario": "family"
+    },
+    {
+      "coverage_minus_original": 0.39999980935235324,
+      "differences": [
+        0.9999998733159972,
+        3.538957092340961e-11,
+        1.98564677056793e-07,
+        0.9999992521795369,
+        -2.773338346641791e-07
+      ],
+      "initial": "collapsed",
+      "metric": "final_2000_top100_probability",
+      "negative_changes": 1,
+      "paired_sd": 0.5477223323870785,
+      "positive_changes": 4,
+      "scenario": "family"
+    },
+    {
+      "coverage_minus_original": -0.00744159259652723,
+      "differences": [
+        -0.013220054374292342,
+        -0.002444376348590953,
+        -0.0009127466707526538,
+        -0.017811083905129622,
+        -0.002819701683870579
+      ],
+      "initial": "collapsed",
+      "metric": "final_student_mean_gap",
+      "negative_changes": 5,
+      "paired_sd": 0.007580845030006758,
+      "positive_changes": 0,
+      "scenario": "family"
+    },
+    {
+      "coverage_minus_original": 0.2274378379132182,
+      "differences": [
+        0.3544340676822457,
+        0.08252509653664264,
+        0.10069944168804179,
+        0.5122721606480678,
+        0.0872584230110931
+      ],
+      "initial": "collapsed",
+      "metric": "final_mastery",
+      "negative_changes": 0,
+      "paired_sd": 0.1961958370077423,
+      "positive_changes": 5,
+      "scenario": "family"
+    }
+  ],
+  "summary": [
+    {
+      "coverage": 0.0,
+      "final_2000_missed_hardness": 0.0018306565200746686,
+      "final_2000_missed_hardness_sd": 0.0018739601344238202,
+      "final_2000_policy_missed_hardness": 0.0018310700904625378,
+      "final_2000_policy_missed_hardness_sd": 0.0018735104710229011,
+      "final_2000_stale_focus_fraction": 0.0,
+      "final_2000_stale_focus_fraction_sd": 0.0,
+      "final_2000_top100_probability": 0.9999991160044714,
+      "final_2000_top100_probability_sd": 1.778463700038053e-06,
+      "final_mastery": 0.0,
+      "final_mastery_sd": 0.0,
+      "final_student_mean_gap": 0.06615230355877902,
+      "final_student_mean_gap_sd": 0.0,
+      "initial": "fresh",
+      "repetitions": 5,
+      "scenario": "frozen"
+    },
+    {
+      "coverage": 0.25,
+      "final_2000_missed_hardness": 0.007680583673910266,
+      "final_2000_missed_hardness_sd": 0.0009947927821893617,
+      "final_2000_policy_missed_hardness": 0.0009136420619017367,
+      "final_2000_policy_missed_hardness_sd": 0.0012490548445231009,
+      "final_2000_stale_focus_fraction": 0.0,
+      "final_2000_stale_focus_fraction_sd": 0.0,
+      "final_2000_top100_probability": 0.9999999960266492,
+      "final_2000_top100_probability_sd": 5.344448782242978e-09,
+      "final_mastery": 0.0,
+      "final_mastery_sd": 0.0,
+      "final_student_mean_gap": 0.06615230355877902,
+      "final_student_mean_gap_sd": 0.0,
+      "initial": "fresh",
+      "repetitions": 5,
+      "scenario": "frozen"
+    },
+    {
+      "coverage": 0.0,
+      "final_2000_missed_hardness": 0.010196490496483005,
+      "final_2000_missed_hardness_sd": 0.006511903174693817,
+      "final_2000_policy_missed_hardness": 0.010196611295382485,
+      "final_2000_policy_missed_hardness_sd": 0.006511812257739628,
+      "final_2000_stale_focus_fraction": 0.6,
+      "final_2000_stale_focus_fraction_sd": 0.5477225575051662,
+      "final_2000_top100_probability": 0.39999974375038405,
+      "final_2000_top100_probability_sd": 0.5477222026335776,
+      "final_mastery": 0.0,
+      "final_mastery_sd": 0.0,
+      "final_student_mean_gap": 0.06615230355877902,
+      "final_student_mean_gap_sd": 0.0,
+      "initial": "collapsed",
+      "repetitions": 5,
+      "scenario": "frozen"
+    },
+    {
+      "coverage": 0.25,
+      "final_2000_missed_hardness": 0.017007220753538332,
+      "final_2000_missed_hardness_sd": 0.00477848403253859,
+      "final_2000_policy_missed_hardness": 0.013529264532576208,
+      "final_2000_policy_missed_hardness_sd": 0.00662939561226341,
+      "final_2000_stale_focus_fraction": 0.8,
+      "final_2000_stale_focus_fraction_sd": 0.4472135954999579,
+      "final_2000_top100_probability": 0.20000001311152532,
+      "final_2000_top100_probability_sd": 0.44721358794564814,
+      "final_mastery": 0.0,
+      "final_mastery_sd": 0.0,
+      "final_student_mean_gap": 0.06615230355877902,
+      "final_student_mean_gap_sd": 0.0,
+      "initial": "collapsed",
+      "repetitions": 5,
+      "scenario": "frozen"
+    },
+    {
+      "coverage": 0.0,
+      "final_2000_missed_hardness": 0.0047137555209705246,
+      "final_2000_missed_hardness_sd": 0.0005704085717115675,
+      "final_2000_policy_missed_hardness": 0.004729763622701366,
+      "final_2000_policy_missed_hardness_sd": 0.0005600337358729637,
+      "final_2000_stale_focus_fraction": 0.0,
+      "final_2000_stale_focus_fraction_sd": 0.0,
+      "final_2000_top100_probability": 0.7916453694272416,
+      "final_2000_top100_probability_sd": 0.058436464667789075,
+      "final_mastery": 0.005702471069847172,
+      "final_mastery_sd": 3.9251229665496006e-05,
+      "final_student_mean_gap": 0.06590048995054068,
+      "final_student_mean_gap_sd": 1.7086809129396624e-06,
+      "initial": "fresh",
+      "repetitions": 5,
+      "scenario": "individual"
+    },
+    {
+      "coverage": 0.25,
+      "final_2000_missed_hardness": 0.0094422387619754,
+      "final_2000_missed_hardness_sd": 0.0012769020944315903,
+      "final_2000_policy_missed_hardness": 0.004428598643500953,
+      "final_2000_policy_missed_hardness_sd": 0.001815723944549803,
+      "final_2000_stale_focus_fraction": 0.1006,
+      "final_2000_stale_focus_fraction_sd": 0.2249484385364788,
+      "final_2000_top100_probability": 0.816272404034447,
+      "final_2000_top100_probability_sd": 0.2280774023881599,
+      "final_mastery": 0.005814595421737265,
+      "final_mastery_sd": 2.5919451954940538e-05,
+      "final_student_mean_gap": 0.0659121850271615,
+      "final_student_mean_gap_sd": 6.134733598204416e-07,
+      "initial": "fresh",
+      "repetitions": 5,
+      "scenario": "individual"
+    },
+    {
+      "coverage": 0.0,
+      "final_2000_missed_hardness": 0.005210059450226397,
+      "final_2000_missed_hardness_sd": 0.0030477466295655196,
+      "final_2000_policy_missed_hardness": 0.00521879216327948,
+      "final_2000_policy_missed_hardness_sd": 0.0030039078918008047,
+      "final_2000_stale_focus_fraction": 0.0633,
+      "final_2000_stale_focus_fraction_sd": 0.14154310297573666,
+      "final_2000_top100_probability": 0.7973192009624855,
+      "final_2000_top100_probability_sd": 0.14816256921127724,
+      "final_mastery": 0.005721960750723689,
+      "final_mastery_sd": 3.6627129651175816e-05,
+      "final_student_mean_gap": 0.06590670136199121,
+      "final_student_mean_gap_sd": 7.3826448231854756e-06,
+      "initial": "collapsed",
+      "repetitions": 5,
+      "scenario": "individual"
+    },
+    {
+      "coverage": 0.25,
+      "final_2000_missed_hardness": 0.009749750380308047,
+      "final_2000_missed_hardness_sd": 0.0028971671166750598,
+      "final_2000_policy_missed_hardness": 0.004800985177401589,
+      "final_2000_policy_missed_hardness_sd": 0.0032101735418217027,
+      "final_2000_stale_focus_fraction": 0.0,
+      "final_2000_stale_focus_fraction_sd": 0.0,
+      "final_2000_top100_probability": 0.8547663674281404,
+      "final_2000_top100_probability_sd": 0.10478970381184377,
+      "final_mastery": 0.005777765903519968,
+      "final_mastery_sd": 6.945577121417788e-05,
+      "final_student_mean_gap": 0.06591943452682927,
+      "final_student_mean_gap_sd": 4.456931125505702e-06,
+      "initial": "collapsed",
+      "repetitions": 5,
+      "scenario": "individual"
+    },
+    {
+      "coverage": 0.0,
+      "final_2000_missed_hardness": 0.03195592403737387,
+      "final_2000_missed_hardness_sd": 0.006402602611515678,
+      "final_2000_policy_missed_hardness": 0.03195597408492409,
+      "final_2000_policy_missed_hardness_sd": 0.006402539996786012,
+      "final_2000_stale_focus_fraction": 1.0,
+      "final_2000_stale_focus_fraction_sd": 0.0,
+      "final_2000_top100_probability": 1.4528385534997302e-07,
+      "final_2000_top100_probability_sd": 3.167900290890919e-07,
+      "final_mastery": 0.5375092390463427,
+      "final_mastery_sd": 0.1903945740372492,
+      "final_student_mean_gap": 0.04708673451107093,
+      "final_student_mean_gap_sd": 0.005475611780164313,
+      "initial": "fresh",
+      "repetitions": 5,
+      "scenario": "family"
+    },
+    {
+      "coverage": 0.25,
+      "final_2000_missed_hardness": 0.014485811849828733,
+      "final_2000_missed_hardness_sd": 0.006690732952305473,
+      "final_2000_policy_missed_hardness": 0.012698856553284463,
+      "final_2000_policy_missed_hardness_sd": 0.008517850024170439,
+      "final_2000_stale_focus_fraction": 0.7823,
+      "final_2000_stale_focus_fraction_sd": 0.43862791748815994,
+      "final_2000_top100_probability": 0.2000397510391665,
+      "final_2000_top100_probability_sd": 0.4471913818424522,
+      "final_mastery": 0.7551507954554276,
+      "final_mastery_sd": 0.10363799839728219,
+      "final_student_mean_gap": 0.04064416413945947,
+      "final_student_mean_gap_sd": 0.0028970357818324617,
+      "initial": "fresh",
+      "repetitions": 5,
+      "scenario": "family"
+    },
+    {
+      "coverage": 0.0,
+      "final_2000_missed_hardness": 0.03717830486074377,
+      "final_2000_missed_hardness_sd": 0.016121008545350833,
+      "final_2000_policy_missed_hardness": 0.03717831490385147,
+      "final_2000_policy_missed_hardness_sd": 0.016120999376067847,
+      "final_2000_stale_focus_fraction": 1.0,
+      "final_2000_stale_focus_fraction_sd": 0.0,
+      "final_2000_top100_probability": 1.473455262244907e-07,
+      "final_2000_top100_probability_sd": 2.085503999616246e-07,
+      "final_mastery": 0.5564598436280895,
+      "final_mastery_sd": 0.14383990732437715,
+      "final_student_mean_gap": 0.04744410986105409,
+      "final_student_mean_gap_sd": 0.005725051589102304,
+      "initial": "collapsed",
+      "repetitions": 5,
+      "scenario": "family"
+    },
+    {
+      "coverage": 0.25,
+      "final_2000_missed_hardness": 0.016330952471401615,
+      "final_2000_missed_hardness_sd": 0.011937396206941354,
+      "final_2000_policy_missed_hardness": 0.014783085678952094,
+      "final_2000_policy_missed_hardness_sd": 0.013515775545026658,
+      "final_2000_stale_focus_fraction": 0.5998,
+      "final_2000_stale_focus_fraction_sd": 0.5475401355151968,
+      "final_2000_top100_probability": 0.39999995669787947,
+      "final_2000_top100_probability_sd": 0.547722404950194,
+      "final_mastery": 0.7838976815413078,
+      "final_mastery_sd": 0.05935867209018112,
+      "final_student_mean_gap": 0.04000251726452687,
+      "final_student_mean_gap_sd": 0.002128000560758032,
+      "initial": "collapsed",
+      "repetitions": 5,
+      "scenario": "family"
+    }
+  ]
+}

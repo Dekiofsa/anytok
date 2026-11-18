@@ -1,5 +1,6 @@
 """Audit every synthetic student transition, then report all paired continuations."""
 import csv
+import gzip
 import json
 from pathlib import Path
 import shutil
@@ -117,12 +118,18 @@ def main():
         better=(trace['chosen_mean']>trace['favorite_mean']) & stale
         positive=better & (trace['advantage']>0)
         gained=trace['action_probability_after']>trace['action_probability']
+        epsilon=receipt['coverage']
+        probability=trace['action_probability'][positive]
+        # d log(q_a) / d log(pi_a): uniform observations can carry very little
+        # gradient credit when the trainable policy already suppresses that arm.
+        credit=(1-epsilon)*probability/((1-epsilon)*probability+epsilon/1000)
         mechanisms.append(dict(scenario=receipt['scenario'],initial=receipt['initial'],
             coverage=receipt['coverage'],seed=receipt['seed'],stale_steps=int(stale.sum()),
             harder_alternative_observations_while_stale=int(better.sum()),
             harder_alternative_with_nonpositive_advantage=int((better & ~positive).sum()),
             harder_alternative_with_positive_advantage=int(positive.sum()),
-            positive_advantage_without_probability_gain=int((positive & ~gained).sum())))
+            positive_advantage_without_probability_gain=int((positive & ~gained).sum()),
+            median_mixture_gradient_credit_on_positive_alternatives=float(np.median(credit)) if len(credit) else None))
         print(json.dumps(dict(stage='audit',completed_cells=len(receipts),total_cells=60,cell=folder.name)),flush=True)
         for end in range(500,plan['steps']+1,500):
             sl=slice(end-500,end)
@@ -163,6 +170,15 @@ def main():
     write_csv(REPORT/'summary.csv',summary);write_csv(REPORT/'paired-comparisons.csv',paired)
     write_csv(REPORT/'learning-curves.csv',curves);write_csv(REPORT/'per-run-results.csv',receipts)
     write_csv(REPORT/'mechanism-observations.csv',mechanisms)
+    traces=REPORT/'traces';traces.mkdir(exist_ok=True)
+    for folder in sorted((STATE/'cells').iterdir()):
+        if (folder/'complete.json').exists():shutil.copy2(folder/'trace.npz',traces/(folder.name+'.npz'))
+    # The committed training log contains scalar observations and hashes, not
+    # corpus text or model weights. Preserve it so the initial policy is replayable.
+    history=ROOT/'modal_results/anytok_pool_regret_rl_20k/committed-train.log'
+    (REPORT/'policy-history.jsonl.gz').write_bytes(gzip.compress(history.read_bytes(),mtime=0))
+    shutil.copy2(STATE/'replay-verification.json',REPORT/'replay-verification.json')
+    if (STATE/'runtime-verification.json').exists():shutil.copy2(STATE/'runtime-verification.json',REPORT/'runtime-verification.json')
     shutil.copy2(STATE/'plan.json',REPORT/'plan.json');plot(curves,plan)
     lines=['# Can an adversarial teacher keep up with a learning student?','',
         'This CPU-only experiment isolates exploration in the original REINFORCE teacher. The synthetic student begins with the measured difficulty of all 1,000 tokenizers at model step 6,500. It can stay unchanged, improve only on the selected tokenizer, or improve on every tokenizer using the selected algorithm. The learner sees only its selected tokenizer’s noisy reward.','',
@@ -178,6 +194,11 @@ def main():
             cells=[next(r for r in summary if (r['scenario'],r['initial'],r['coverage'])==(scenario,initial,c)) for c in COVERAGES]
             values=[f'{r["final_2000_missed_hardness"]:.5f} ± {r["final_2000_missed_hardness_sd"]:.5f}' for r in cells]
             lines.append(f'| {LABELS[scenario]} | {initial} | {values[0]} | {values[1]} |')
+    def ended_stale(scenario,initial,coverage):
+        return sum(r['final_2000_stale_focus_fraction']>.5 for r in receipts
+            if (r['scenario'],r['initial'],r['coverage'])==(scenario,initial,coverage))
+    lines+=['',f'With a fresh teacher and no coverage, an outdated majority persists through most of the final window in {ended_stale("frozen","fresh",0.)}/5 frozen-student continuations, {ended_stale("individual","fresh",0.)}/5 individual-learning continuations and {ended_stale("family","fresh",0.)}/5 family-learning continuations. Starting from the real collapsed policy, it persists in {ended_stale("frozen","collapsed",0.)}/5 continuations even after the student is frozen.','',
+        'Those comparisons separate two questions: whether the student’s learning rule can produce the failure from a fresh teacher, and whether a teacher with a real collapsed history recovers once the student stops changing. Neither result alone identifies the cause of the original real training collapse.']
     lines+=['',
         '![Actual teacher choices](synthetic_student.png)','',
         '[Learned choices without exploration](synthetic_student_focus.png) · [Outdated majority favorites](synthetic_student_stale.png) · [Synthetic student progress](synthetic_student_learning.png)','',
@@ -186,12 +207,13 @@ def main():
         'Student histories diverge across selectors. Compare each choice with the alternatives available to that teacher at that moment. A lower observed reward can mean the student has already improved, rather than that the teacher selected badly. Synthetic student progress is not evidence of real LM generalization.','',
         'Hardest-task selection and useful teaching are separate objectives. A tokenizer can remain hard because it is near an irreducible floor. Selecting it can maximize immediate reward while doing little to improve the student. The mastery plot tracks the synthetic learnable deficits separately.','',
         'mechanism-observations.csv counts what happens while a teacher has an outdated majority favorite: how often it observes a genuinely harder alternative, whether that observation produces a positive policy advantage, and whether the update then increases that alternative’s probability. A nonpositive advantage can reflect batch noise or a stale reward baseline; this count alone does not distinguish them.','',
+        'The exploration intervention is specifically an on-policy uniform mixture. Its gradient on a sampled action is weighted by `(1-epsilon) * pi(action) / q(action)`. An alternative can therefore be observed through the uniform component yet receive little gradient credit when its learned probability is tiny. The mechanism table records this factor. These results do not test a shuffled-coverage learner with another way of using exploration observations.','',
         '## Audit and reproduction','',
         'All 60 runs and all 1.2 million observations are retained. The audit reconstructs every reward, chosen/favorite rank and student update from the saved actions. Source and trace hashes are pinned. No world, seed or method is selected for favorable results. The original 75-run simulator remains separate and unchanged.','',
-        '`python scripts/run_synthetic_student.py` runs the experiment and report. `python scripts/report_synthetic_student.py` independently repeats the trace audit and rebuilds the report. Raw per-step traces remain in `modal_results/synthetic_student/cells/*/trace.npz`; receipt hashes are in per-run-results.csv. There are no real LM updates or GPU allocations.','']
+        '`python scripts/run_synthetic_student.py` runs the experiment and report. `python scripts/report_synthetic_student.py` independently repeats the trace audit and rebuilds the report. Every per-step trace is included in traces/, with receipt hashes in per-run-results.csv. Original working copies remain in `modal_results/synthetic_student/cells/*/trace.npz`. policy-history.jsonl.gz contains the original scalar training log needed to reconstruct the initial collapsed policy; decompress it to `modal_results/anytok_pool_regret_rl_20k/committed-train.log` when reproducing in a fresh checkout. Original full-pool reward inputs are in `reports/regret-pool-ranking-6500/`. There are no real LM updates or GPU allocations.','']
     (REPORT/'README.md').write_text('\n'.join(lines))
-    atomic_json(REPORT/'manifest.json',dict(files={p.name:dict(bytes=p.stat().st_size,sha256=sha256(p))
-        for p in REPORT.iterdir() if p.is_file() and p.name!='manifest.json'}))
+    atomic_json(REPORT/'manifest.json',dict(files={str(p.relative_to(REPORT)):dict(bytes=p.stat().st_size,sha256=sha256(p))
+        for p in REPORT.rglob('*') if p.is_file() and p.name!='manifest.json'}))
     print(json.dumps(dict(stage='report_complete',cells=60,observations=1200000)),flush=True)
 
 

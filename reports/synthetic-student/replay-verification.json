@@ -1,0 +1,10 @@
+{
+  "all_actual_actions_match": true,
+  "counts_match": true,
+  "max_advantage_error": 0.0,
+  "max_probability_error": 6.439293542825908e-14,
+  "observed_favorite": 771,
+  "observed_favorite_probability": 0.9016943137090189,
+  "state_sha256": "cb52b5b3fef46f8ccef2ed8a0958191fb474a56c79d10ffe996ddfbca9983d5f",
+  "updates": 6500
+}
