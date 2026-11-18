@@ -2,7 +2,9 @@
 
 [Live progress and plots](http://100.84.104.59:1337/?run=student-generalization). Repository snapshots can lag the running study.
 
-**1,380 / 1,380 runs complete.** This is a local CPU study; real training stays paused. Live plots are provisional until every planned observation passes the independent audit.
+**1,380 / 1,380 runs complete and audited.** All 27.6 million observations passed independent reconstruction. Raw traces are archived and verified. Real training stays paused.
+
+Start with [the findings in plain language](FINDINGS.md).
 
 We test whether an adversarial teacher keeps choosing problems that used to be hard after a synthetic student improves. The first study used either no sharing or complete sharing across a tokenizer algorithm. This study fills in the gap between those extremes and varies student speed independently.
 

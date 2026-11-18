@@ -206,9 +206,13 @@ def main():
         limitation='Synthetic rules test mechanisms, not real model generalization. Extra/shared budgets conserve different practice mass; neither fixes exact loss improvement.'))
     csv_file(REPORT/'summary.csv',summary);csv_file(REPORT/'per-run-results.csv',rows)
     shutil.copy2(STATE/'plan.json',REPORT/'plan.json');plots(plan,summary,len(rows))
+    completion=(f'**{len(rows):,} / {plan["cells"]:,} runs complete.** This is a local CPU study; real training stays paused. '
+        'Live plots are provisional until every planned observation passes the independent audit.' if args.partial else
+        f'**{len(rows):,} / {plan["cells"]:,} runs complete and audited.** '
+        f'All {plan["observations"]:,} observations passed independent reconstruction. Real training stays paused.')
     lines=['# How far does the stale-teacher failure generalize?','',
         '[Live progress and plots](http://100.84.104.59:1337/?run=student-generalization). Repository snapshots can lag the running study.','',
-        f'**{len(rows):,} / {plan["cells"]:,} runs complete.** This is a local CPU study; real training stays paused. Live plots are provisional until every planned observation passes the independent audit.','',
+        completion,'',
         'We test whether an adversarial teacher keeps choosing problems that used to be hard after a synthetic student improves. The first study used either no sharing or complete sharing across a tokenizer algorithm. This study fills in the gap between those extremes and varies student speed independently.','',
         'Practice can help related skills by 0%, 1%, 10% or 100% of its direct effect. Student speeds range from 100 times slower to 256 times faster than the earlier reference rule. We compare giving neighbours extra practice with spreading one fixed practice update across the group. The latter conserves practice weight, not the exact amount of loss reduction.','',
         'The follow-up checks remove or double observation noise, change learning plateaus and curve shapes, use smaller or randomly shuffled skill groups, share across all skills, and flatten or shuffle initial difficulty. Matched frozen controls accompany noise and initial-difficulty changes. Every condition is declared before results.','',
@@ -221,6 +225,7 @@ def main():
         'These are controlled hypothetical learning rules, not estimates that a real LM improves by this amount or transfers knowledge within these groups. The plots should identify hypotheses for real-world tests, including regions where our explanation fails.','',
         '## Data and reproduction','',
         '`python scripts/run_student_generalization.py` runs the frozen full plan. `python scripts/report_student_generalization.py --partial` refreshes the live views; without --partial it independently reconstructs every saved reward, student update and rank. Per-step traces and receipts remain under `modal_results/student_generalization/cells/`; full summary metadata are in this folder. No tokenizers, corpora or model checkpoints are downloaded.','']
+    if (REPORT/'FINDINGS.md').exists():lines.insert(2,'Start with [the findings in plain language](FINDINGS.md).\n')
     (REPORT/'README.md').write_text('\n'.join(lines))
     if not args.partial:
         atomic_json(REPORT/'trace-manifest.json',dict(files={str(p.relative_to(STATE)):dict(bytes=p.stat().st_size,sha256=sha256(p))
