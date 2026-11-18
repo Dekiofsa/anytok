@@ -139,6 +139,8 @@ class Monitor:
             result['selector_simulations_plot_updated_at'] = simulation_plot.stat().st_mtime if simulation_plot.is_file() else None
             four_way_plot = self.root / 'plots/four_way_8k.png'
             result['four_way_8k_plot_updated_at'] = four_way_plot.stat().st_mtime if four_way_plot.is_file() else None
+            synthetic_plot = self.root / 'plots/synthetic_student.png'
+            result['synthetic_student_plot_updated_at'] = synthetic_plot.stat().st_mtime if synthetic_plot.is_file() else None
             for name in ['regret', 'regret_entropy0']:
                 path = self.root / f'plots/frozen_policy_{name}.png'
                 result[f'frozen_{name}_plot_updated_at'] = path.stat().st_mtime if path.is_file() else None
@@ -225,6 +227,14 @@ ASSETS = {'/': ('index.html', 'text/html; charset=utf-8'),
           '/Manrope.ttf': ('Manrope.ttf', 'font/ttf')}
 
 PLOTS = {'/plots/natural_transfer.png': ('natural_transfer.png', 'image/png'),
+         '/plots/synthetic_student.png': ('synthetic_student.png', 'image/png'),
+         '/plots/synthetic_student.pdf': ('synthetic_student.pdf', 'application/pdf'),
+         '/plots/synthetic_student_focus.png': ('synthetic_student_focus.png', 'image/png'),
+         '/plots/synthetic_student_focus.pdf': ('synthetic_student_focus.pdf', 'application/pdf'),
+         '/plots/synthetic_student_stale.png': ('synthetic_student_stale.png', 'image/png'),
+         '/plots/synthetic_student_stale.pdf': ('synthetic_student_stale.pdf', 'application/pdf'),
+         '/plots/synthetic_student_learning.png': ('synthetic_student_learning.png', 'image/png'),
+         '/plots/synthetic_student_learning.pdf': ('synthetic_student_learning.pdf', 'application/pdf'),
          '/plots/four_way_8k.png': ('four_way_8k.png', 'image/png'),
          '/plots/four_way_8k.pdf': ('four_way_8k.pdf', 'application/pdf'),
          '/plots/four_way_8k_sample_a.png': ('four_way_8k_sample_a.png', 'image/png'),

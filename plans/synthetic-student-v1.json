@@ -1,0 +1,60 @@
+{
+  "batches_per_tokenizer": 32,
+  "calibration": {
+    "causal": false,
+    "decay_per_visit": 0.00013589888897870255,
+    "elapsed_steps": 1500,
+    "end_gap": 0.06048527893909727,
+    "end_step": 8000,
+    "note": "Observed joint-training change; not a causal effect per selection.",
+    "observed_drop": 0.012486762790812657,
+    "selected_visits": 1381,
+    "start_gap": 0.07297204172990993,
+    "start_step": 6500
+  },
+  "cells": 60,
+  "coverage": "q = (1-epsilon) * softmax(logits) + epsilon/1000; sample q and differentiate log q",
+  "coverages": [
+    0.0,
+    0.25
+  ],
+  "floor_fraction": 0.5,
+  "initialization": "Fresh original seed43 or replayed real step6500 weights, Adam and EMA. Five paired future sampling/noise streams, not five independently trained real models.",
+  "initializations": [
+    "fresh",
+    "collapsed"
+  ],
+  "limits": "Explicit hypothetical student rules, no real LM updates; full within-family transfer and 50% floors are assumptions, not measured causal effects.",
+  "mean_rule": "floor + (initial mean - floor) * exp(-rate * visits); floor = 0.5 * initial mean",
+  "observations": 1200000,
+  "reward": "Pre-update synthetic mean plus unchanged centered measured batch residual; negative observations retained",
+  "scenarios": [
+    "frozen",
+    "individual",
+    "family"
+  ],
+  "seeds": [
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "sharing": "Frozen: no learning. Individual: chosen tokenizer only. Family: every tokenizer with the same algorithm.",
+  "source_sha256": {
+    "modal_results/anytok_pool_regret_rl_20k/committed-train.log": "6013d0c82446f0a2842f3c4cdf8f2fc42c9c7beaf50c6464acc2e4616e559d93",
+    "reports/regret-favorite-trajectory/learning-curve.csv": "9d51aed3f0eb9d09c4b71ba81c577d0e208a7eded7c570eb95025b6018b1a5f3",
+    "reports/regret-pool-ranking-6500/all-scores.json.gz": "f5d7245ac233451c285ccdd4bd2195561cc75b4a66a50fc3a1f3480455d221ca",
+    "reports/regret-pool-ranking-6500/policy.json": "3b0938f9686df9708b73e89347b521486fa06803f6381c7f01f38eddcbb8da08",
+    "reports/regret-pool-ranking-6500/pool-index.json": "7cdc2c0bb4b300605d152255ed6156f598154fb3dbe402e272c83276941353a1",
+    "runtime/anytok_pool_settings_rl_20k/hf_hypernet/settings_policy.py": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+    "scripts/hardness_predictor.py": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+    "scripts/run_synthetic_student.py": "d836ad2338bb32467ad22afe628c4d40868137f4b21220dd78407d496a5a8736",
+    "scripts/selector_simulation.py": "672c45cf10dca824527d362ede15317c704503498382c8d30f59aebf3953e18a",
+    "scripts/synthetic_student.py": "4f3559abfbb2d9fda3923ace0afeeacdf91f83ed10b4365164fb32861a6cad06"
+  },
+  "steps": 20000,
+  "tokenizers": 1000,
+  "update": "Original shared settings network, Adam .001, EMA .99, entropy zero. No predictor or regression intervention.",
+  "version": 1
+}

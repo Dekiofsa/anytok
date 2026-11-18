@@ -1,6 +1,23 @@
 {
   "runs": [
     {
+      "id": "synthetic-student",
+      "name": "Synthetic student · REINFORCE coverage and adaptation",
+      "category": "Diagnostics",
+      "description": "CPU-only causal stress test: frozen, individual-learning and family-learning synthetic students with plateaus. Original REINFORCE with or without 25% uniform coverage, fresh and real collapsed starting policies. All 1,000 tokenizer settings; five paired continuation seeds.",
+      "adapter": "progress_json",
+      "platform": "Local · CPU only",
+      "status": "modal_results/synthetic_student/status.json",
+      "completed_field": "completed",
+      "progress_log": "modal_results/synthetic_student/events.jsonl",
+      "total": 1200000,
+      "unit": "simulated observations",
+      "completion_stage": "complete",
+      "profiles": [],
+      "app_names": [],
+      "logs": ["modal_results/synthetic_student/controller.log"]
+    },
+    {
       "id": "four-way-8k-evaluation",
       "name": "8k comparison · Uniform / Raw BPB / Regret / Predictor",
       "category": "Evaluations",
