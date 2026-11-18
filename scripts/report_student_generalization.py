@@ -138,6 +138,7 @@ def plots(plan,summary,completed):
         ('final_choice_gap','student_generalization_choices','How much harder a choice was available'),
         ('final_learned_gap','student_generalization_focus','How well the learned choices keep up · before random exploration')]:
         fig,axes=plt.subplots(2,2,figsize=(11,7),layout='constrained')
+        fig.get_layout_engine().set(rect=(0,.12,1,.88))
         for row,method in enumerate(['reinforce','coverage']):
             for col,budget in enumerate(['extra','shared']):
                 matrix=np.full((len(SHARING),len(SPEEDS)),np.nan);counts={}
@@ -164,7 +165,7 @@ def plots(plan,summary,completed):
                         ax.text(j,i,f'{n}/5',ha='center',va='center',color='white' if n in [0,5] else '#303945',fontsize=8)
         fig.suptitle(title+'\n'+subtitle,fontsize=12)
         fig.colorbar(image,ax=axes,label='Fraction of repetitions ending stuck' if field=='failure' else 'Synthetic difficulty difference · lower is better',shrink=.75)
-        fig.text(.5,-.015,'No-learning control · '+', '.join(frozen)+'. Grey cells await all five repetitions.\n“Stuck” means a majority favorite outside the current hardest 100. Sharing 0% uses the same control in both columns.\nThese are hypothetical students, not real LM results.',ha='center',fontsize=8,color='#67717D')
+        fig.text(.5,.015,'No-learning control · '+', '.join(frozen)+'. Grey cells await all five repetitions.\n“Stuck” means a majority favorite outside the current hardest 100. Sharing 0% uses the same control in both columns.\nThese are hypothetical students, not real LM results.',ha='center',va='bottom',fontsize=8,color='#67717D')
         for ext in ['png','pdf']:
             target=REPORT/(filename+'.'+ext);temporary=target.with_name(target.stem+'.tmp.'+ext)
             fig.savefig(temporary,dpi=170,bbox_inches='tight');temporary.replace(target)
