@@ -86,10 +86,12 @@ def group_members(candidates):
             indices=[]
             for i,c in enumerate(candidates):
                 if c['kind']!='pool':continue
-                value=(c['config'].get('noise_per_million',0)/1_000_000
-                       if field=='merge_noise' else c['config'].get(field))
+                value=c['config'].get('noise_per_million' if field=='merge_noise' else field)
+                if value is not None and field=='merge_noise':value/=1_000_000
                 if value is not None and lo<=value<=hi:indices.append(i)
             result[f'{label} {lo:g}–{hi:g}']=indices
+    result['noise not applicable']=[i for i,c in enumerate(candidates)
+        if c['kind']=='pool' and c['config'].get('noise_per_million') is None]
     return {k:v for k,v in result.items() if v}
 
 
@@ -133,6 +135,13 @@ def analyze(data,replicates=2000):
             heldout_mean_delta_vs_uniform_ci95=interval((gap_boot-gap_boot[:,:1])[:,:,held].mean(2)),
             heldout_mean_absolute=absolute[:,held].mean(1).tolist(),
             groups={},domains={})
+        info['predictor_comparisons']={}
+        for k,name in enumerate(MODELS[:-1]):
+            info['predictor_comparisons'][name]=dict(
+                pool_mean_gap_change=float(gaps[3,pool].mean()-gaps[k,pool].mean()),
+                pool_mean_gap_change_ci95=interval(total_pool_boot[:,3]-total_pool_boot[:,k]),
+                heldout_mean_gap_change=float(gaps[3,held].mean()-gaps[k,held].mean()),
+                heldout_mean_gap_change_ci95=interval((gap_boot[:,3,held]-gap_boot[:,k,held]).mean(1)))
         for label,indices in groups.items():
             info['groups'][label]=dict(count=len(indices),mean_gap=gaps[:,indices].mean(1).tolist(),
                 delta_vs_uniform=(gaps[:,indices]-gaps[:1,indices]).mean(1).tolist(),
@@ -259,6 +268,16 @@ def write_report(report,data):
         'Every checkpoint is frozen. All four models score the same 50 randomly sampled training-pool tokenizer files and 12 held-out tokenizer files on the same 576 broad-text passages. No passages were selected for having high model loss.','',
         '**Scoring:** BOS + unscored prefix + 32 scored canonical continuation tokens, within 128 total positions. Only prefix embeddings are transferred. The canonical continuation embeddings and output head remain fixed. Every tokenizer uses the same prefix text and target bytes.','',
         '**Gap = transferred BPB − that checkpoint’s canonical BPB. Lower is better.** Absolute BPB is reported separately because a smaller transfer gap can accompany a weaker LM. Scores are byte-weighted within each domain, then averaged equally over nine domains.','',
+        '## What the early results say','']
+    confirmation=report['splits']['confirm'];comparison=confirmation['predictor_comparisons']
+    lines += [f'On text sample B, the predictor has a mean training-pool gap of **{confirmation["pool_mean_gap"][3]:+.4f} BPB**, compared with {confirmation["pool_mean_gap"][0]:+.4f} for Uniform, {confirmation["pool_mean_gap"][1]:+.4f} for Raw-BPB RL and {confirmation["pool_mean_gap"][2]:+.4f} for Regret RL.','']
+    for name,label in zip(MODELS[:-1],LABELS[:-1]):
+        value=comparison[name];ci=value['pool_mean_gap_change_ci95']
+        interpretation=('The paired interval favors the predictor.' if ci[1]<0 else
+            'The paired interval favors the comparison model.' if ci[0]>0 else
+            'The paired interval does not resolve a difference.')
+        lines += [f'Compared with {label}, the predictor changes mean pool gap by {value["pool_mean_gap_change"]:+.4f} BPB (95% interval {ci[0]:+.4f} to {ci[1]:+.4f}). {interpretation}','']
+    lines += ['These are early results from one trained seed, on the fixed evaluation described below. They measure the resulting models; they do not establish that the predictor is the sole cause of the difference.','',
         '## Results','']
     for split,info in report['splits'].items():
         sample='A' if split=='screen' else 'B'

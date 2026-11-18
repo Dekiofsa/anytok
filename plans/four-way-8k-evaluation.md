@@ -7,6 +7,22 @@ All 576 passages passed all 62 encoders without changing any prefix or target.
 Frozen machine-readable specification: `plans/four-way-8k-v1.json`.
 Dashboard: `four-way-8k-evaluation`.
 
+Completed: all 248 pairs, with all four Slurm tasks exiting successfully.
+Elapsed allocations: 2m38s, 2m39s, 2m38s and 2m45s. Scores and provenance
+are hash-verified in `cminst/anytok-hardness-predictor-20k`, under
+`diagnostics/four-way-8k/`. Report and plots: `reports/four-way-8k/`.
+The report initially failed because WordPiece and Unigram store merge noise
+as null; the report now keeps those settings in a separate not-applicable
+group. Inference and the frozen evaluation specification are unchanged.
+
+On text sample B, random-pool mean gaps are Uniform +0.13755, Raw-BPB RL
++0.13356, Regret RL +0.15019 and Predictor +0.13215 BPB. The predictor's
+paired change versus Uniform is -0.00540 (95% interval -0.00900 to -0.00158),
+versus Raw-BPB -0.00141 (-0.00624 to +0.00341), and versus Regret RL -0.01805
+(-0.02680 to -0.01022). Sample A has the same qualitative comparison.
+These intervals exclude training-seed uncertainty and do not remove the
+training-protocol differences documented below.
+
 Compare the saved LM and hypernetwork together at exactly step 8,000:
 
 | Label | Run |

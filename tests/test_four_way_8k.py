@@ -130,3 +130,13 @@ def test_monitor_accepts_actual_workers_and_progress(tmp_path,monkeypatch):
     assert saved['workers']==workers
     assert saved['completed']==12 and saved['total']==248
     assert json.loads((tmp_path/'events.jsonl').read_text())==saved
+
+
+def test_noise_groups_keep_not_applicable_separate_from_zero():
+    from report_four_way_8k import group_members
+    candidates=[dict(kind='pool',config=dict(algorithm=a,pretokenizer='regex',
+        vocab_size=64000,noise_per_million=n)) for a,n in [('bpe',0),('wordpiece',500000),('unigram',None)]]
+    groups=group_members(candidates)
+    assert groups['noise not applicable']==[2]
+    assert groups['noise 0–0.25']==[0]
+    assert groups['noise 0.25–0.5']==[1]
