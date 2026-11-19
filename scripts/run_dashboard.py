@@ -139,6 +139,8 @@ class Monitor:
             result['selector_simulations_plot_updated_at'] = simulation_plot.stat().st_mtime if simulation_plot.is_file() else None
             four_way_plot = self.root / 'plots/four_way_8k.png'
             result['four_way_8k_plot_updated_at'] = four_way_plot.stat().st_mtime if four_way_plot.is_file() else None
+            predictor_trajectory_plot = self.root / 'plots/predictor_trajectory.png'
+            result['predictor_trajectory_plot_updated_at'] = predictor_trajectory_plot.stat().st_mtime if predictor_trajectory_plot.is_file() else None
             synthetic_plot = self.root / 'plots/synthetic_student.png'
             result['synthetic_student_plot_updated_at'] = synthetic_plot.stat().st_mtime if synthetic_plot.is_file() else None
             generalization_plot = self.root / 'plots/student_generalization.png'
@@ -289,7 +291,7 @@ PLOTS = {'/plots/natural_transfer.png': ('natural_transfer.png', 'image/png'),
          '/plots/uniform_weakness_rerun.png': ('uniform_weakness_rerun.png', 'image/png'),
          '/plots/uniform_weakness_rerun.pdf': ('uniform_weakness_rerun.pdf', 'application/pdf')}
 
-for _figure in ('uniform_trajectory_bpb', 'uniform_trajectory_gap', 'uniform_trajectory_late', 'uniform_trajectory_plateau', 'tokenizer_speed', 'rl_ood_20k', 'coverage_evidence_overview', 'coverage_evidence_heatmap', 'coverage_evidence_policy', 'coverage_evidence_mechanism'):
+for _figure in ('predictor_trajectory', 'predictor_trajectory_tokenizers', 'uniform_trajectory_bpb', 'uniform_trajectory_gap', 'uniform_trajectory_late', 'uniform_trajectory_plateau', 'tokenizer_speed', 'rl_ood_20k', 'coverage_evidence_overview', 'coverage_evidence_heatmap', 'coverage_evidence_policy', 'coverage_evidence_mechanism'):
     for _suffix, _mime in (('png', 'image/png'), ('pdf', 'application/pdf')):
         PLOTS[f'/plots/{_figure}.{_suffix}'] = (f'{_figure}.{_suffix}', _mime)
 

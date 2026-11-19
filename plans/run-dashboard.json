@@ -1,6 +1,23 @@
 {
   "runs": [
     {
+      "id": "predictor-uniform-trajectory",
+      "name": "Predictor vs uniform · 2k / 4k / 6k / 8k",
+      "category": "Evaluations",
+      "description": "Both frozen training runs at four matching steps. Same 50 pool and 12 held-out tokenizers, all 576 original passages, 32 scored continuation tokens within 128 positions. Existing verified 8k scores reused.",
+      "adapter": "progress_json",
+      "platform": "Tillicum · H200",
+      "status": "modal_results/predictor_trajectory/status.json",
+      "completed_field": "completed",
+      "progress_log": "modal_results/predictor_trajectory/events.jsonl",
+      "total": 496,
+      "unit": "model/tokenizer pairs",
+      "completion_stage": "complete",
+      "profiles": ["zlab"],
+      "app_names": [],
+      "logs": ["modal_results/predictor_trajectory/controller.log", "modal_results/predictor_trajectory/remote.log"]
+    },
+    {
       "id": "student-generalization",
       "name": "Teacher adaptation · where does it break?",
       "category": "Diagnostics",
