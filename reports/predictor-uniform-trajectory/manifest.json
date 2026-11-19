@@ -1,0 +1,40 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 3772,
+      "sha256": "29950d7610678c81312573ebc8f2b190f2681eea313c7fcf92fcd67d78d8a2e7"
+    },
+    "analysis.json": {
+      "bytes": 275415,
+      "sha256": "ff2bbbf87e341bb8509d206a5cc557df670363e917b1c001a7073842d53532c4"
+    },
+    "plan.json": {
+      "bytes": 154418,
+      "sha256": "ec34b5cf62d747fae95fb2f4df6971f156cb76621ca59bee470ddabb4a7a838a"
+    },
+    "predictor_trajectory.pdf": {
+      "bytes": 28310,
+      "sha256": "7524afb47055bfff0378609519c85b5a36c1cf27b113cdc4477cdf71bf46e5ac"
+    },
+    "predictor_trajectory.png": {
+      "bytes": 498725,
+      "sha256": "708dee4b7cb871468cc5d5a7bbad106581253ccd5c8627476e185a2eb845d86d"
+    },
+    "predictor_trajectory_tokenizers.pdf": {
+      "bytes": 49680,
+      "sha256": "ad532c6103c6964e995eff3211fe9a96bb7861001836566a169cb15785bf1996"
+    },
+    "predictor_trajectory_tokenizers.png": {
+      "bytes": 301369,
+      "sha256": "b50bf88767a26d54bd3050b8b4d3342a442a1bbe30daead1e5d9a54247989d40"
+    },
+    "results.json.gz": {
+      "bytes": 82292307,
+      "sha256": "09db9211ae2032df86fe4ec44ca86a39b453779201c339f6d1e9cc3e7c1e8359"
+    },
+    "tokenizer-scores.csv": {
+      "bytes": 90291,
+      "sha256": "cde0bc88effe98f37e64fd85db55cadb4f7bed11b0db6b0896bde2b3924c2888"
+    }
+  }
+}

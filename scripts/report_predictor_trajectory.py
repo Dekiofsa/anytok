@@ -154,14 +154,16 @@ def plots(report,output):
         ax.plot(steps,np.array(b['improvement_bpb'])[:,i],'o-',color=color,label=label)
         ax.plot(steps,np.array(a['improvement_bpb'])[:,i],'--',color=color,alpha=.55)
     ax.set_title('B · Five largest 8k winners, followed backward');ax.set_ylabel('Improvement in transfer gap (BPB)')
-    ax.legend(frameon=False,fontsize=6.8)
+    ax.margins(y=.23)
+    ax.legend(frameon=False,fontsize=6.8,loc='upper left',ncol=2)
     ax=axes[1,0]
     for name,color in [('wordpiece','#8657BC'),('bpe','#2F8FD0'),('unigram','#36967B')]:
         for pre,style in [('no-regex','-'),('regex','--')]:
             group=b['groups'].get(name+'/'+pre)
             if group: ax.plot(steps,group['mean_improvement'],marker='o',ls=style,color=color,label=name+' / '+pre)
     ax.set_title('C · Which tokenizer settings benefit? · sample B'); ax.set_ylabel('Mean improvement in transfer gap (BPB)')
-    ax.legend(frameon=False,fontsize=6.5,ncol=2)
+    ax.margins(y=.25)
+    ax.legend(frameon=False,fontsize=6.5,ncol=2,loc='upper right')
     ax=axes[1,1]
     for ni,label,color in [(0,'Uniform','#2F8FD0'),(1,'Predictor','#36967B')]:
         ax.plot(steps,np.array(b['pool_mean_absolute'])[:,ni],'o-',color=color,label=label+' · transferred')
@@ -172,7 +174,7 @@ def plots(report,output):
         ax.set_xticks(steps,[f'{s}k' for s in [2,4,6,8]]);ax.set_xlabel('Training step');ax.grid(alpha=.12)
     for ax in axes.flat[:3]: ax.axhline(0,color='#67717D',lw=.8)
     fig.suptitle('Predictor versus uniform · the same tokenizers and text at every checkpoint',fontsize=12)
-    fig.supxlabel('Positive improvement favors Predictor. A/B: solid = text sample B; dashed = sample A. Bands in A: paired 95% intervals.',fontsize=8)
+    fig.supxlabel('Positive improvement favors Predictor. Top panels: solid = sample B; dashed = sample A. Shading = paired 95% intervals.',fontsize=8)
     savefig(fig,output/'predictor_trajectory')
     pool=[i for i,c in enumerate(report['tokenizers']) if c['kind']=='pool']
     held=[i for i,c in enumerate(report['tokenizers']) if c['kind']!='pool']
@@ -210,6 +212,9 @@ def write_report(report,data):
         'Both actual training runs are evaluated at 2k, 4k, 6k and 8k on exactly the same 62 tokenizers and 576 broad-text passages. There are 50 randomly drawn training-pool tokenizers and 12 held-out tokenizers. No tokenizer or passage is dropped. The original 8k results are reused unchanged.','',
         '**Improvement = Uniform transfer gap − Predictor transfer gap. Positive favors Predictor.** Each transfer gap subtracts that checkpoint’s own canonical score. Absolute BPB and canonical BPB are saved separately, so changes in the LM are visible.','',
         'Scoring preserves the four-way evaluation: BOS + unscored prefix + 32 scored canonical continuation tokens, within 128 positions. Only prefix embeddings are transferred. Every pair scores 18,432 tokens and 53,707 bytes. Scores are byte-weighted within each of nine domains, then averaged equally over domains.','',
+        '## What we found','',
+        'Some tokenizers have larger improvements at 4k than at 8k, but there is no consistent pattern of a steadily fading advantage. Sample B has its largest average pool improvement at 4k; sample A has its largest at 8k. Both show a dip at 6k. The paired interval for the difference between the 4k and 8k pool advantages on sample B includes zero, so that small average difference is unresolved.','',
+        'For concrete examples, WordPiece/no-regex tokenizers #912, #149 and #408 have larger point-estimate advantages at 4k than 8k on both text samples. These are descriptive examples from the complete table, not new independent hypothesis tests. The tokenizer-specific trajectories differ: #763, the largest 8k winner on sample B, has a larger advantage at 8k than at 4k on both samples.','',
         '## Average improvement','',
         '| Step | Pool · sample A | Pool · sample B | Held-out · sample A | Held-out · sample B |','| --- | ---: | ---: | ---: | ---: |']
     a=report['splits']['screen'];b=report['splits']['confirm']

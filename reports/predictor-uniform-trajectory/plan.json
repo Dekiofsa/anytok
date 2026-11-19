@@ -1,0 +1,4309 @@
+{
+  "cached_comparisons": 124,
+  "comparisons": 496,
+  "models": [
+    {
+      "checkpoint": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/tillicum_hardness/run/step-002000",
+      "job": "predictor-002000",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "1d01db4b7ff68cb74e753e41f750310b9618c37f0280d5538006be2400951241"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "75f709711207743f8cfc87feaf6429f5d6d94834a05fe5d82d047f73288a5441"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "9a091c1f82dc2672f4c1ec5259d12d7921913c0183962f9c7aef615af5bf8a8d"
+          },
+          "policy.pt": {
+            "bytes": 79541,
+            "sha256": "0d70e24bfbcf14fdca2f4a8b2833ba710443d8f7bf5751b7d533628e821c5024"
+          },
+          "state.pt": {
+            "bytes": 5470859,
+            "sha256": "1bf27823a1acfa9cb5ac1e5124b0ab3051bcc4905269aeabfc9f90ea47a356fd"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "step": 2000
+      },
+      "name": "predictor",
+      "source": {
+        "platform": "Tillicum"
+      },
+      "step": 2000
+    },
+    {
+      "checkpoint": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/predictor_trajectory/checkpoints/uniform-002000",
+      "job": "uniform-002000",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "2fed74c28333f8abfc79bacda6b850e03c37400b4c8a9971be230d624bc08e90"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "437300da24b49ffd69c077c1e09ce76205093f0afe8a3a12fb891b3d4f3e3f0e"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "dc2b2d3394ed6cfb419c68bfd02c94edd1e712e1e7e10b1ccf39ef7ddfccdf4e"
+          },
+          "state.pt": {
+            "bytes": 5306005,
+            "sha256": "e592509742d4e427e8527d92485caf418a903ceb71cea03153183c7c53133128"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "step": 2000,
+        "trainer_sha256": "c6406d263fb9cbc8638492d8c77327ce249e215eb74dc43e10335bc95a11ed52"
+      },
+      "name": "uniform",
+      "source": {
+        "path": "run/step-002000",
+        "profile": "gildmember",
+        "volume": "anytok-pool-20k"
+      },
+      "step": 2000
+    },
+    {
+      "checkpoint": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/tillicum_hardness/run/step-004000",
+      "job": "predictor-004000",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "82e684d483a1c96c7069a29266b6aba35e1e39bb05e5e4e8f3e9d6affb5f1155"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "531554aba67ba2969f0cb421d65fef0394278f590aaa2364bb30cbb2a20095de"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "3a3c526223dadc134c31399f1a43937ffd84302a17cd2bad99849e8006b6b24d"
+          },
+          "policy.pt": {
+            "bytes": 79541,
+            "sha256": "c0923806ddc678ac14205f9efffa7a249cf467d6c00f7057faf482e3492d71e2"
+          },
+          "state.pt": {
+            "bytes": 5246091,
+            "sha256": "abbcaf34557c135bf5a3d8b172bd4d46d3166ab256137e04bfdaf8955528d4f6"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "step": 4000
+      },
+      "name": "predictor",
+      "source": {
+        "platform": "Tillicum"
+      },
+      "step": 4000
+    },
+    {
+      "checkpoint": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/predictor_trajectory/checkpoints/uniform-004000",
+      "job": "uniform-004000",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "96c37a18529794facb41d9ada47ae87eb5e912ada8c0ea3d311328fc9ee854e8"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "046cb117154042e46203fcbbbbe7528ccacda39589a26614cae7a64fdaaec4d3"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "89833bcecb19bdebaab94528cdbbd0cb4aeca206b4fd5232004351f4e6f2fd01"
+          },
+          "state.pt": {
+            "bytes": 5412757,
+            "sha256": "33a2c16ecef5681c9edb9ed58feb89956e05a4b6179e92b353fd3db5a41b381d"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "step": 4000,
+        "trainer_sha256": "c6406d263fb9cbc8638492d8c77327ce249e215eb74dc43e10335bc95a11ed52"
+      },
+      "name": "uniform",
+      "source": {
+        "path": "run/step-004000",
+        "profile": "gildmember",
+        "volume": "anytok-pool-20k"
+      },
+      "step": 4000
+    },
+    {
+      "checkpoint": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/tillicum_hardness/run/step-006000",
+      "job": "predictor-006000",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "1e59de117d044d68647dcfe51e918b8214929870a5873dba16aa045f82a019cd"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "72372020baa00564ec23382fc7bba0af60e2d22a1cdeed67e47b5196bdbd3571"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "27cada0c62d38f892b3e4fee4f3b76d8b2f484f754b71e58d0a4330a2b3ce0f6"
+          },
+          "policy.pt": {
+            "bytes": 79541,
+            "sha256": "fa4ce3726514e5065cc7686c594af07e3b575d527a6df303910d7ba4810e6924"
+          },
+          "state.pt": {
+            "bytes": 6120843,
+            "sha256": "61c0af40ee2e74be39f6a573229076503dfdf2a203b4b2e25084905345772785"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "step": 6000
+      },
+      "name": "predictor",
+      "source": {
+        "platform": "Tillicum"
+      },
+      "step": 6000
+    },
+    {
+      "checkpoint": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/predictor_trajectory/checkpoints/uniform-006000",
+      "job": "uniform-006000",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "12ea6aee97d900719844b4eba9d8d8746da7a2ac09b820eb2180f9a207a4941e"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "0f8a98b99ae9a2a64a9b6dde7071400cdbcf61e3534decd6ec7427122da35241"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "7caeec41f6e8c3ef83deafce0454f766b4b63b5e38ca16e1214f89aea7da7c12"
+          },
+          "state.pt": {
+            "bytes": 5988821,
+            "sha256": "20cc9843c91502e47164e3f148a8eded54b884b791adb44315e6cb6846ef62ac"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "step": 6000,
+        "trainer_sha256": "c6406d263fb9cbc8638492d8c77327ce249e215eb74dc43e10335bc95a11ed52"
+      },
+      "name": "uniform",
+      "source": {
+        "path": "run/step-006000",
+        "profile": "gildmember",
+        "volume": "anytok-pool-20k"
+      },
+      "step": 6000
+    },
+    {
+      "cached": true,
+      "checkpoint": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/tillicum_hardness/run/step-008000",
+      "job": "predictor-008000",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "8cd095e21e4bd9474972a398201d6e08be70d940832b328aa68a75ec4acebbb7"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "7fc561eab17f8a6ae24ad379c4b2f64567c63fba5037d41e2d68e1c0da126c2a"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "e82d9dff701aefe038e4eb714889e313b02c8c111f5755d4ce54fda1e6d4b6ab"
+          },
+          "policy.pt": {
+            "bytes": 79541,
+            "sha256": "3aa70433fa659903657e261d3f3760b710948e3d5e27a0c8a487dedeadf6c450"
+          },
+          "state.pt": {
+            "bytes": 5453451,
+            "sha256": "6ea92d5cd15db9ea3ba9fd772aeca2669adde3e327e9a7db3a50c5a678629b51"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "step": 8000
+      },
+      "name": "predictor",
+      "source": {
+        "parent_plan_sha256": "1559d699a00ec4d50f71816383aed41b569c1d6cb2fcffdba0104000a5d686ae"
+      },
+      "step": 8000
+    },
+    {
+      "cached": true,
+      "checkpoint": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/checkpoints/uniform",
+      "job": "uniform-008000",
+      "manifest": {
+        "files": {
+          "hypernet/config.json": {
+            "bytes": 2382,
+            "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+          },
+          "hypernet/model.safetensors": {
+            "bytes": 1376918848,
+            "sha256": "2c8dd1e97e517dcf2445e9a287e10a1cf12bd33dad22e7409c57bfd7848222e2"
+          },
+          "lm.pt": {
+            "bytes": 7248239832,
+            "sha256": "aef858f4409d2e3fe39994e26af7313e7a846ae9a516b0cc15bd98ded5998e21"
+          },
+          "optimizer.pt": {
+            "bytes": 14834411782,
+            "sha256": "e592b5a3ea1807d54f7693024f2ad100a88a5c2eb50e7695fcc56e5425cf579f"
+          },
+          "state.pt": {
+            "bytes": 5238677,
+            "sha256": "7aa11693c5c37048cb0f11a554e1bcc222da54a08f04527450cc259deec415ac"
+          }
+        },
+        "kind": "full_restart_checkpoint",
+        "step": 8000,
+        "trainer_sha256": "c6406d263fb9cbc8638492d8c77327ce249e215eb74dc43e10335bc95a11ed52"
+      },
+      "name": "uniform",
+      "source": {
+        "parent_plan_sha256": "1559d699a00ec4d50f71816383aed41b569c1d6cb2fcffdba0104000a5d686ae"
+      },
+      "step": 8000
+    }
+  ],
+  "new_comparisons": 372,
+  "panel_audit_sha256": "8db9bafc5747f8197664e7a81f0b8ce90f840e2ee51f508470204c8b335862c9",
+  "panel_sha256": "6ca657296882bfeff8a022c694093d60f97cbce197b50f2863b540a6cab0f5a9",
+  "parent": {
+    "candidates": [
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 21471960,
+            "code": 15630055,
+            "legal-en": 42323283,
+            "math-en": 15721890,
+            "medical-en": 13603754,
+            "papers-en": 2267218,
+            "qa-en": 30630986,
+            "web-ar": 3709448,
+            "web-en": 14425633,
+            "web-es": 3709449,
+            "web-fr": 3709449,
+            "web-hi": 3709448,
+            "web-ja": 3709448,
+            "web-ru": 3709448,
+            "web-zh": 3709448,
+            "wiki-ar": 2244885,
+            "wiki-en": 2244886,
+            "wiki-es": 2244886,
+            "wiki-fr": 2244886,
+            "wiki-hi": 2244885,
+            "wiki-ja": 2244885,
+            "wiki-ru": 2244885,
+            "wiki-zh": 2244885
+          },
+          "config_sha256": "173be007c2bae285d16a2379c820bdc8e6a2718e6d5f5f277c0f0a8b0e3fa873",
+          "domain_bytes": {
+            "books": 21471960,
+            "code": 15630055,
+            "legal": 42323283,
+            "math": 15721890,
+            "medical": 13603754,
+            "papers": 2267218,
+            "qa": 30630986,
+            "web": 40391771,
+            "wikipedia": 17959083
+          },
+          "index": 11,
+          "noise_per_million": 140733,
+          "pretokenizer": "no-regex",
+          "seed": 5467363680086820576,
+          "vocab_size": 64000
+        },
+        "features": {
+          "forms_sha256": "a165b33948b479294f967e6147e447a0536d7acacf7e4faa068496fc2e6c1c45",
+          "priors_sha256": "abf2242a0c9ba69961a60acdf7a8b4153fe5f83d13a3cafa4669256e7024f7b3",
+          "truncated_forms": 317
+        },
+        "id": "pool-0011",
+        "index": 11,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0011/tokenizer.json",
+        "sha256": "e0a5442ef381206f78ed1467ce84bde2ddc7f5509537e48e974a264138067bbf",
+        "vocab_size": 64000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 25430430,
+            "code": 16111804,
+            "legal-en": 29324719,
+            "math-en": 91038101,
+            "medical-en": 1492847,
+            "papers-en": 5420237,
+            "qa-en": 13300147,
+            "web-ar": 1541409,
+            "web-en": 5994370,
+            "web-es": 1541410,
+            "web-fr": 1541409,
+            "web-hi": 1541409,
+            "web-ja": 1541409,
+            "web-ru": 1541409,
+            "web-zh": 1541409,
+            "wiki-ar": 137185,
+            "wiki-en": 137186,
+            "wiki-es": 137185,
+            "wiki-fr": 137185,
+            "wiki-hi": 137185,
+            "wiki-ja": 137185,
+            "wiki-ru": 137185,
+            "wiki-zh": 137185
+          },
+          "config_sha256": "93bb1628662d460a09d1d7147fbf879dda1209c41fe3de55024ea41fba9468ab",
+          "domain_bytes": {
+            "books": 25430430,
+            "code": 16111804,
+            "legal": 29324719,
+            "math": 91038101,
+            "medical": 1492847,
+            "papers": 5420237,
+            "qa": 13300147,
+            "web": 16784234,
+            "wikipedia": 1097481
+          },
+          "index": 24,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 8242972511978873152,
+          "vocab_size": 45000
+        },
+        "features": {
+          "forms_sha256": "1a34a40ffc1f3e26b318c217ac573dc3e1bf87437362e79bb6598ba31e674dfa",
+          "priors_sha256": "a982a26bb85433baf3aca369bb2249234c290ebbcfdeb8c96b4796b81b6263fe",
+          "truncated_forms": 1218
+        },
+        "id": "pool-0024",
+        "index": 24,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0024/tokenizer.json",
+        "sha256": "225290a5fce818711a565de01e87826b8c4a68e5e77907205276c02745eae2ee",
+        "vocab_size": 45000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 75800357,
+            "code": 1258925,
+            "legal-en": 6444645,
+            "math-en": 44771472,
+            "medical-en": 5353069,
+            "papers-en": 1640661,
+            "qa-en": 739981,
+            "web-ar": 243021,
+            "web-en": 945081,
+            "web-es": 243021,
+            "web-fr": 243021,
+            "web-hi": 243021,
+            "web-ja": 243021,
+            "web-ru": 243021,
+            "web-zh": 243021,
+            "wiki-ar": 7668082,
+            "wiki-en": 7668083,
+            "wiki-es": 7668083,
+            "wiki-fr": 7668083,
+            "wiki-hi": 7668082,
+            "wiki-ja": 7668083,
+            "wiki-ru": 7668083,
+            "wiki-zh": 7668083
+          },
+          "config_sha256": "623d8ba994b76f79e0e10de306331f0e03e47c88203973391f388c619e8b808b",
+          "domain_bytes": {
+            "books": 75800357,
+            "code": 1258925,
+            "legal": 6444645,
+            "math": 44771472,
+            "medical": 5353069,
+            "papers": 1640661,
+            "qa": 739981,
+            "web": 2646228,
+            "wikipedia": 61344662
+          },
+          "index": 62,
+          "noise_per_million": null,
+          "pretokenizer": "regex",
+          "seed": 6140670645288554513,
+          "vocab_size": 52000
+        },
+        "features": {
+          "forms_sha256": "4d7e5b4478d1d1fb814e2e43a3405718f306b0ae703da7f13b08e265214463e3",
+          "priors_sha256": "2dab1172b40c28969b073500812f75c34cbebf32760ac041aea055cf81e2ecf5",
+          "truncated_forms": 70
+        },
+        "id": "pool-0062",
+        "index": 62,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0062/tokenizer.json",
+        "sha256": "cfe427072ae08f7c3492d18e303a5581f2188dbe9a52a0ab31701c50b251cffb",
+        "vocab_size": 52000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 49100574,
+            "code": 29000068,
+            "legal-en": 10334115,
+            "math-en": 10061505,
+            "medical-en": 3126790,
+            "papers-en": 12317586,
+            "qa-en": 13550270,
+            "web-ar": 3865689,
+            "web-en": 15033235,
+            "web-es": 3865689,
+            "web-fr": 3865689,
+            "web-hi": 3865689,
+            "web-ja": 3865689,
+            "web-ru": 3865689,
+            "web-zh": 3865689,
+            "wiki-ar": 3802004,
+            "wiki-en": 3802005,
+            "wiki-es": 3802005,
+            "wiki-fr": 3802004,
+            "wiki-hi": 3802004,
+            "wiki-ja": 3802004,
+            "wiki-ru": 3802004,
+            "wiki-zh": 3802004
+          },
+          "config_sha256": "4afcf001ac3f866207797577c8beb1ff4a14bac6f831aed976c6a437c1611b03",
+          "domain_bytes": {
+            "books": 49100574,
+            "code": 29000068,
+            "legal": 10334115,
+            "math": 10061505,
+            "medical": 3126790,
+            "papers": 12317586,
+            "qa": 13550270,
+            "web": 42093058,
+            "wikipedia": 30416034
+          },
+          "index": 121,
+          "noise_per_million": 492030,
+          "pretokenizer": "line256",
+          "seed": 6284832570162015289,
+          "vocab_size": 78000
+        },
+        "features": {
+          "forms_sha256": "907d7469bd1470dcf8535df3e62da24220ea5585c9cd63892b90a13e04f02711",
+          "priors_sha256": "5ca48116c1babcc47631f42fd1d3d3c94d1389725a2ce05447de36574dd04a92",
+          "truncated_forms": 174
+        },
+        "id": "pool-0121",
+        "index": 121,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0121/tokenizer.json",
+        "sha256": "2a54f9d21fc79ae423d7bd75e978f5a06e7c21075b3f2c70cc1cfbd37eff66b3",
+        "vocab_size": 78000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 26414082,
+            "code": 8326605,
+            "legal-en": 41617849,
+            "math-en": 41820133,
+            "medical-en": 927966,
+            "papers-en": 890309,
+            "qa-en": 8693542,
+            "web-ar": 3515116,
+            "web-en": 13669897,
+            "web-es": 3515117,
+            "web-fr": 3515117,
+            "web-hi": 3515116,
+            "web-ja": 3515116,
+            "web-ru": 3515116,
+            "web-zh": 3515116,
+            "wiki-ar": 4129225,
+            "wiki-en": 4129226,
+            "wiki-es": 4129226,
+            "wiki-fr": 4129226,
+            "wiki-hi": 4129225,
+            "wiki-ja": 4129225,
+            "wiki-ru": 4129225,
+            "wiki-zh": 4129225
+          },
+          "config_sha256": "bb33de9519eeb7467c1e902c9eae7c16b5e262fee391f4a6ead308edd68b6df6",
+          "domain_bytes": {
+            "books": 26414082,
+            "code": 8326605,
+            "legal": 41617849,
+            "math": 41820133,
+            "medical": 927966,
+            "papers": 890309,
+            "qa": 8693542,
+            "web": 38275711,
+            "wikipedia": 33033803
+          },
+          "index": 131,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 7067254218706285315,
+          "vocab_size": 54000
+        },
+        "features": {
+          "forms_sha256": "b781d76316157b0d65b823e522bfdca040d8b1ffd8e87224a162896832ae10b7",
+          "priors_sha256": "4b48089083c02d746ebb8c705b342a19f13f91da123cb81b4bba7cf2224d170d",
+          "truncated_forms": 1059
+        },
+        "id": "pool-0131",
+        "index": 131,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0131/tokenizer.json",
+        "sha256": "8a8bed7af24846e64dad9b7dc21577984eb8f4b696391699635674daecfe6bf3",
+        "vocab_size": 54000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 23250872,
+            "code": 12651785,
+            "legal-en": 31102870,
+            "math-en": 3838900,
+            "medical-en": 27101364,
+            "papers-en": 2896403,
+            "qa-en": 24038075,
+            "web-ar": 3419625,
+            "web-en": 13298543,
+            "web-es": 3419625,
+            "web-fr": 3419625,
+            "web-hi": 3419625,
+            "web-ja": 3419625,
+            "web-ru": 3419625,
+            "web-zh": 3419625,
+            "wiki-ar": 4735476,
+            "wiki-en": 4735477,
+            "wiki-es": 4735477,
+            "wiki-fr": 4735477,
+            "wiki-hi": 4735476,
+            "wiki-ja": 4735476,
+            "wiki-ru": 4735477,
+            "wiki-zh": 4735477
+          },
+          "config_sha256": "6d6d08210b6a8891b90afb23752aa55f653544b57f4b5b5406f97a9db1cbff6b",
+          "domain_bytes": {
+            "books": 23250872,
+            "code": 12651785,
+            "legal": 31102870,
+            "math": 3838900,
+            "medical": 27101364,
+            "papers": 2896403,
+            "qa": 24038075,
+            "web": 37235918,
+            "wikipedia": 37883813
+          },
+          "index": 138,
+          "noise_per_million": 692817,
+          "pretokenizer": "no-regex",
+          "seed": 3641976178017063905,
+          "vocab_size": 37000
+        },
+        "features": {
+          "forms_sha256": "d48518db0013da48c0b8506beb7d4369cc6d64277173c28bec2ad875046497eb",
+          "priors_sha256": "dc67e4b21a6811bb742c6fa46b50dfb034429d2a116a7dbd591373a72d60c999",
+          "truncated_forms": 29
+        },
+        "id": "pool-0138",
+        "index": 138,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0138/tokenizer.json",
+        "sha256": "adb6267227909550e0db7c824fdc92659f332ad4dc9cb98fe3ea34f3253708c5",
+        "vocab_size": 37000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 53944043,
+            "code": 3432322,
+            "legal-en": 9577787,
+            "math-en": 59201492,
+            "medical-en": 5643476,
+            "papers-en": 28817395,
+            "qa-en": 1529309,
+            "web-ar": 723680,
+            "web-en": 2814314,
+            "web-es": 723681,
+            "web-fr": 723681,
+            "web-hi": 723680,
+            "web-ja": 723681,
+            "web-ru": 723681,
+            "web-zh": 723681,
+            "wiki-ar": 3746762,
+            "wiki-en": 3746763,
+            "wiki-es": 3746762,
+            "wiki-fr": 3746762,
+            "wiki-hi": 3746762,
+            "wiki-ja": 3746762,
+            "wiki-ru": 3746762,
+            "wiki-zh": 3746762
+          },
+          "config_sha256": "2c2bacc0846d0b1893e67ab8094e8a9fe967c0c40dc45bfebf9e5e2cbf6ea1b3",
+          "domain_bytes": {
+            "books": 53944043,
+            "code": 3432322,
+            "legal": 9577787,
+            "math": 59201492,
+            "medical": 5643476,
+            "papers": 28817395,
+            "qa": 1529309,
+            "web": 7880079,
+            "wikipedia": 29974097
+          },
+          "index": 149,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 8794555924133328310,
+          "vocab_size": 124000
+        },
+        "features": {
+          "forms_sha256": "b4dc7972acae3a8f2c7760c23e77d821aef73ab1a42973e50474c52fe898f253",
+          "priors_sha256": "50cdc062155ab67c56e55e6b08b493b140f2f891c734bdb0ea79cca9706ea2f3",
+          "truncated_forms": 944
+        },
+        "id": "pool-0149",
+        "index": 149,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0149/tokenizer.json",
+        "sha256": "0461b8868ca06ec8152acbecd604db3f565731fe2231d72c2fe9e52bc7093ac5",
+        "vocab_size": 124000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 13250280,
+            "code": 2263343,
+            "legal-en": 36629914,
+            "math-en": 13914456,
+            "medical-en": 25589786,
+            "papers-en": 96346580,
+            "qa-en": 6999019,
+            "web-ar": 8448,
+            "web-en": 32854,
+            "web-es": 8448,
+            "web-fr": 8448,
+            "web-hi": 8448,
+            "web-ja": 8448,
+            "web-ru": 8448,
+            "web-zh": 8448,
+            "wiki-ar": 614329,
+            "wiki-en": 614329,
+            "wiki-es": 614329,
+            "wiki-fr": 614329,
+            "wiki-hi": 614329,
+            "wiki-ja": 614329,
+            "wiki-ru": 614329,
+            "wiki-zh": 614329
+          },
+          "config_sha256": "f73bf486345a85e8c230fadf75b68b17dbe105c85ee738fcb54c9f7dfb434deb",
+          "domain_bytes": {
+            "books": 13250280,
+            "code": 2263343,
+            "legal": 36629914,
+            "math": 13914456,
+            "medical": 25589786,
+            "papers": 96346580,
+            "qa": 6999019,
+            "web": 91990,
+            "wikipedia": 4914632
+          },
+          "index": 169,
+          "noise_per_million": null,
+          "pretokenizer": "regex",
+          "seed": 6711868542854027700,
+          "vocab_size": 41000
+        },
+        "features": {
+          "forms_sha256": "e2f62a7e85a7879a16b93a0675f5fb3c36c6337ca8153ecc14c8525f8127cac3",
+          "priors_sha256": "173a47a9e35c6020aec9ed1d3f86849246af397060e254f551ac5c4353cc9770",
+          "truncated_forms": 98
+        },
+        "id": "pool-0169",
+        "index": 169,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0169/tokenizer.json",
+        "sha256": "eaff7e1e7c9ff98144c2e27a3d019efae7f9a1cb718b4b36f616ef6bd0756564",
+        "vocab_size": 41000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 13687089,
+            "code": 4214612,
+            "legal-en": 32608621,
+            "math-en": 27603897,
+            "medical-en": 32769290,
+            "papers-en": 6066126,
+            "qa-en": 56772336,
+            "web-ar": 1547388,
+            "web-en": 6017620,
+            "web-es": 1547388,
+            "web-fr": 1547388,
+            "web-hi": 1547388,
+            "web-ja": 1547388,
+            "web-ru": 1547388,
+            "web-zh": 1547388,
+            "wiki-ar": 1178586,
+            "wiki-en": 1178587,
+            "wiki-es": 1178587,
+            "wiki-fr": 1178587,
+            "wiki-hi": 1178586,
+            "wiki-ja": 1178586,
+            "wiki-ru": 1178587,
+            "wiki-zh": 1178587
+          },
+          "config_sha256": "c595766387ded387f6ad6d75742a8c1c7388c6a11f8f864f9efc03b74c8e7be9",
+          "domain_bytes": {
+            "books": 13687089,
+            "code": 4214612,
+            "legal": 32608621,
+            "math": 27603897,
+            "medical": 32769290,
+            "papers": 6066126,
+            "qa": 56772336,
+            "web": 16849336,
+            "wikipedia": 9428693
+          },
+          "index": 176,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 2389820494600612123,
+          "vocab_size": 44000
+        },
+        "features": {
+          "forms_sha256": "8304b03896c93c1080c7c8ab2fd08c3eca0c38ed3fae19eae2375e3fb79526a5",
+          "priors_sha256": "bfbba7c40adf3a974dd1462ade968d93e926b2b04bb6ab8de2b144f8f8dc5ee2",
+          "truncated_forms": 955
+        },
+        "id": "pool-0176",
+        "index": 176,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0176/tokenizer.json",
+        "sha256": "cc7f7e264e488f335efe75d8f22ddab64796028fafd85d86878822a3df98970f",
+        "vocab_size": 44000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 18397246,
+            "code": 35320183,
+            "legal-en": 35469827,
+            "math-en": 27653817,
+            "medical-en": 2169312,
+            "papers-en": 12559677,
+            "qa-en": 44230679,
+            "web-ar": 241064,
+            "web-en": 937473,
+            "web-es": 241065,
+            "web-fr": 241065,
+            "web-hi": 241064,
+            "web-ja": 241064,
+            "web-ru": 241064,
+            "web-zh": 241064,
+            "wiki-ar": 2696792,
+            "wiki-en": 2696792,
+            "wiki-es": 2696792,
+            "wiki-fr": 2696792,
+            "wiki-hi": 2696792,
+            "wiki-ja": 2696792,
+            "wiki-ru": 2696792,
+            "wiki-zh": 2696792
+          },
+          "config_sha256": "a0f236740af17405128e83aedaa9d2767e35d4c49425eebaa69a7c8098b39ec1",
+          "domain_bytes": {
+            "books": 18397246,
+            "code": 35320183,
+            "legal": 35469827,
+            "math": 27653817,
+            "medical": 2169312,
+            "papers": 12559677,
+            "qa": 44230679,
+            "web": 2624923,
+            "wikipedia": 21574336
+          },
+          "index": 207,
+          "noise_per_million": 207580,
+          "pretokenizer": "line256",
+          "seed": 8420417723467261971,
+          "vocab_size": 53000
+        },
+        "features": {
+          "forms_sha256": "0387a293e4cac22e070fa2ebef04206f71c7ee6146d034326f5ddba79d3d8f04",
+          "priors_sha256": "72bdc8248eaaa5d50d8c882677f829cf176083eb544df25ebd8c733bfe9cd47b",
+          "truncated_forms": 182
+        },
+        "id": "pool-0207",
+        "index": 207,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0207/tokenizer.json",
+        "sha256": "1753a5894769525b76dc27d60fad1e24bad130569d771421c4701b10ef79a426",
+        "vocab_size": 53000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 1222320,
+            "code": 5781787,
+            "legal-en": 12395961,
+            "math-en": 10561897,
+            "medical-en": 62124305,
+            "papers-en": 12935703,
+            "qa-en": 23722078,
+            "web-ar": 4913846,
+            "web-en": 19109402,
+            "web-es": 4913847,
+            "web-fr": 4913847,
+            "web-hi": 4913846,
+            "web-ja": 4913846,
+            "web-ru": 4913846,
+            "web-zh": 4913846,
+            "wiki-ar": 2218703,
+            "wiki-en": 2218703,
+            "wiki-es": 2218703,
+            "wiki-fr": 2218703,
+            "wiki-hi": 2218702,
+            "wiki-ja": 2218703,
+            "wiki-ru": 2218703,
+            "wiki-zh": 2218703
+          },
+          "config_sha256": "d48da5630878387632c268ce79020274f19d5b0241182f13e79c84c2c1175622",
+          "domain_bytes": {
+            "books": 1222320,
+            "code": 5781787,
+            "legal": 12395961,
+            "math": 10561897,
+            "medical": 62124305,
+            "papers": 12935703,
+            "qa": 23722078,
+            "web": 53506326,
+            "wikipedia": 17749623
+          },
+          "index": 220,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 7947481595593280751,
+          "vocab_size": 53000
+        },
+        "features": {
+          "forms_sha256": "a0b5381e858ad21ffb950c119b536efe414840ecaebdbdb77680ce07a4c2b665",
+          "priors_sha256": "72bdc8248eaaa5d50d8c882677f829cf176083eb544df25ebd8c733bfe9cd47b",
+          "truncated_forms": 320
+        },
+        "id": "pool-0220",
+        "index": 220,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0220/tokenizer.json",
+        "sha256": "1b9b2688161fb5fda3f3e56d384fc96cf80bdb36b7e0e6b94a90ce6d078431ec",
+        "vocab_size": 53000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 18332288,
+            "code": 5549511,
+            "legal-en": 2115103,
+            "math-en": 31448937,
+            "medical-en": 15670910,
+            "papers-en": 23054760,
+            "qa-en": 36356180,
+            "web-ar": 3962507,
+            "web-en": 15409751,
+            "web-es": 3962508,
+            "web-fr": 3962508,
+            "web-hi": 3962507,
+            "web-ja": 3962507,
+            "web-ru": 3962508,
+            "web-zh": 3962508,
+            "wiki-ar": 3040626,
+            "wiki-en": 3040626,
+            "wiki-es": 3040626,
+            "wiki-fr": 3040626,
+            "wiki-hi": 3040625,
+            "wiki-ja": 3040626,
+            "wiki-ru": 3040626,
+            "wiki-zh": 3040626
+          },
+          "config_sha256": "1599648ea1bf52cc9bd13d459f1bc095bcdb4f60470dbf8cc2563f5de0c55af4",
+          "domain_bytes": {
+            "books": 18332288,
+            "code": 5549511,
+            "legal": 2115103,
+            "math": 31448937,
+            "medical": 15670910,
+            "papers": 23054760,
+            "qa": 36356180,
+            "web": 43147304,
+            "wikipedia": 24325007
+          },
+          "index": 221,
+          "noise_per_million": null,
+          "pretokenizer": "regex",
+          "seed": 3034495847147676024,
+          "vocab_size": 102000
+        },
+        "features": {
+          "forms_sha256": "b1010fc9fd43955fd4ce9f0fc4f6f65d6369e93238e8060b4c0dababb29b79a6",
+          "priors_sha256": "a1a4eee7b4478e72ab32c6c2e114fce265bb00d73dc183704b3ddce520bdb214",
+          "truncated_forms": 304
+        },
+        "id": "pool-0221",
+        "index": 221,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0221/tokenizer.json",
+        "sha256": "a55739be34042bf5610890dffa367a9b12b655d98a4fed03fabc24353d26a054",
+        "vocab_size": 102000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 133722191,
+            "code": 8977754,
+            "legal-en": 7799223,
+            "math-en": 17244016,
+            "medical-en": 1617069,
+            "papers-en": 4131864,
+            "qa-en": 13691570,
+            "web-ar": 487218,
+            "web-en": 1894738,
+            "web-es": 487219,
+            "web-fr": 487219,
+            "web-hi": 487218,
+            "web-ja": 487218,
+            "web-ru": 487218,
+            "web-zh": 487218,
+            "wiki-ar": 938881,
+            "wiki-en": 938881,
+            "wiki-es": 938881,
+            "wiki-fr": 938881,
+            "wiki-hi": 938880,
+            "wiki-ja": 938881,
+            "wiki-ru": 938881,
+            "wiki-zh": 938881
+          },
+          "config_sha256": "7f629c3895a8f5fc385f4587355dbba4c2b1bad0f6b636b62d7224e04eb72fad",
+          "domain_bytes": {
+            "books": 133722191,
+            "code": 8977754,
+            "legal": 7799223,
+            "math": 17244016,
+            "medical": 1617069,
+            "papers": 4131864,
+            "qa": 13691570,
+            "web": 5305266,
+            "wikipedia": 7511047
+          },
+          "index": 239,
+          "noise_per_million": null,
+          "pretokenizer": "regex",
+          "seed": 3728971972412253781,
+          "vocab_size": 45000
+        },
+        "features": {
+          "forms_sha256": "eb2b77fa9955965d0b4cb4b14f026ba31bf58fdc0d9a173f436087f14850494e",
+          "priors_sha256": "f94c0b09c729cf5889dde4c67e4b20c510af17e6f020a711ef1396adb42b6b7f",
+          "truncated_forms": 11
+        },
+        "id": "pool-0239",
+        "index": 239,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0239/tokenizer.json",
+        "sha256": "70553119bb9ee10d4463536b9dbae4a5c4fd9203a0a8366249da0e71d796712e",
+        "vocab_size": 45000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 3398156,
+            "code": 48030537,
+            "legal-en": 5488831,
+            "math-en": 36918101,
+            "medical-en": 27074089,
+            "papers-en": 6798591,
+            "qa-en": 44689897,
+            "web-ar": 506395,
+            "web-en": 1969313,
+            "web-es": 506395,
+            "web-fr": 506395,
+            "web-hi": 506394,
+            "web-ja": 506395,
+            "web-ru": 506395,
+            "web-zh": 506395,
+            "wiki-ar": 2760965,
+            "wiki-en": 2760966,
+            "wiki-es": 2760965,
+            "wiki-fr": 2760965,
+            "wiki-hi": 2760965,
+            "wiki-ja": 2760965,
+            "wiki-ru": 2760965,
+            "wiki-zh": 2760965
+          },
+          "config_sha256": "c46a8d5b654b484b6866f004e7d0e9a0b1d98d104eeb2cb3cba4a202d40169c9",
+          "domain_bytes": {
+            "books": 3398156,
+            "code": 48030537,
+            "legal": 5488831,
+            "math": 36918101,
+            "medical": 27074089,
+            "papers": 6798591,
+            "qa": 44689897,
+            "web": 5514077,
+            "wikipedia": 22087721
+          },
+          "index": 240,
+          "noise_per_million": null,
+          "pretokenizer": "regex",
+          "seed": 5704674464502349951,
+          "vocab_size": 98000
+        },
+        "features": {
+          "forms_sha256": "4f11a6e95b57d28778400233b62cd783df68a68cada11bce4d51a32a72b3fece",
+          "priors_sha256": "503bd742b8ad453c7e5ac82d332ab7da90d6385b044993efa1362c7ddd66f93b",
+          "truncated_forms": 188
+        },
+        "id": "pool-0240",
+        "index": 240,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0240/tokenizer.json",
+        "sha256": "ff058f7be6b84472c21683396bb9c20203a8f06c75a7af4c52fc8e99a68cd1f1",
+        "vocab_size": 98000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 23844311,
+            "code": 18400605,
+            "legal-en": 4951600,
+            "math-en": 24241810,
+            "medical-en": 852650,
+            "papers-en": 23695146,
+            "qa-en": 44554544,
+            "web-ar": 4016580,
+            "web-en": 15620032,
+            "web-es": 4016580,
+            "web-fr": 4016580,
+            "web-hi": 4016580,
+            "web-ja": 4016580,
+            "web-ru": 4016580,
+            "web-zh": 4016580,
+            "wiki-ar": 1965405,
+            "wiki-en": 1965406,
+            "wiki-es": 1965406,
+            "wiki-fr": 1965405,
+            "wiki-hi": 1965405,
+            "wiki-ja": 1965405,
+            "wiki-ru": 1965405,
+            "wiki-zh": 1965405
+          },
+          "config_sha256": "8baf4d9f0b698cb644932a8c3ace1d4a9ac1cbff0b0994122a12e155490ea774",
+          "domain_bytes": {
+            "books": 23844311,
+            "code": 18400605,
+            "legal": 4951600,
+            "math": 24241810,
+            "medical": 852650,
+            "papers": 23695146,
+            "qa": 44554544,
+            "web": 43736092,
+            "wikipedia": 15723242
+          },
+          "index": 291,
+          "noise_per_million": null,
+          "pretokenizer": "regex",
+          "seed": 1945637709801621295,
+          "vocab_size": 121000
+        },
+        "features": {
+          "forms_sha256": "9653a44685142721de99f31dd2c7f263cafeae4817318d39f7a448a782940c40",
+          "priors_sha256": "ba90dd93f60172e5fedcaaa4f6d3bffb7e3777c1ab0fc168aed0ac7a0edff601",
+          "truncated_forms": 5782
+        },
+        "id": "pool-0291",
+        "index": 291,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0291/tokenizer.json",
+        "sha256": "c89c37922a567fbdc10dea2c156922971aba20c5d45c80c954fa1bac9d6e8741",
+        "vocab_size": 121000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 17321515,
+            "code": 41436118,
+            "legal-en": 7281412,
+            "math-en": 47526296,
+            "medical-en": 20352906,
+            "papers-en": 20590354,
+            "qa-en": 7423425,
+            "web-ar": 2827233,
+            "web-en": 10994795,
+            "web-es": 2827233,
+            "web-fr": 2827233,
+            "web-hi": 2827233,
+            "web-ja": 2827233,
+            "web-ru": 2827233,
+            "web-zh": 2827233,
+            "wiki-ar": 910318,
+            "wiki-en": 910319,
+            "wiki-es": 910319,
+            "wiki-fr": 910319,
+            "wiki-hi": 910318,
+            "wiki-ja": 910318,
+            "wiki-ru": 910319,
+            "wiki-zh": 910318
+          },
+          "config_sha256": "2571bd8d83a7378b1f7f984ca580726cfb47152bdf8b2aedeb7d462c95b95551",
+          "domain_bytes": {
+            "books": 17321515,
+            "code": 41436118,
+            "legal": 7281412,
+            "math": 47526296,
+            "medical": 20352906,
+            "papers": 20590354,
+            "qa": 7423425,
+            "web": 30785426,
+            "wikipedia": 7282548
+          },
+          "index": 300,
+          "noise_per_million": null,
+          "pretokenizer": "line256",
+          "seed": 5399407035980473364,
+          "vocab_size": 73000
+        },
+        "features": {
+          "forms_sha256": "37e1384338b349727f717a54f30b73eafee210bb40ac6feb716bafdaa3e537aa",
+          "priors_sha256": "30e4ed05bfbafe1ddaf11f49b6046de35dcf20029c3fdf57b4848819e2af1ff2",
+          "truncated_forms": 572
+        },
+        "id": "pool-0300",
+        "index": 300,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0300/tokenizer.json",
+        "sha256": "a4eddc540bae4527643f69e2dacdf765ee0a0db26020d19700438a91f56fedce",
+        "vocab_size": 73000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 14640100,
+            "code": 12475154,
+            "legal-en": 20352955,
+            "math-en": 21620716,
+            "medical-en": 3249347,
+            "papers-en": 64973614,
+            "qa-en": 1139522,
+            "web-ar": 1165215,
+            "web-en": 4531391,
+            "web-es": 1165215,
+            "web-fr": 1165215,
+            "web-hi": 1165215,
+            "web-ja": 1165215,
+            "web-ru": 1165215,
+            "web-zh": 1165215,
+            "wiki-ar": 6107587,
+            "wiki-en": 6107587,
+            "wiki-es": 6107587,
+            "wiki-fr": 6107587,
+            "wiki-hi": 6107587,
+            "wiki-ja": 6107587,
+            "wiki-ru": 6107587,
+            "wiki-zh": 6107587
+          },
+          "config_sha256": "4a5b1f18c109b589e4ae62269e6056f909ef5f4005c0da335de5bcce1a77cb84",
+          "domain_bytes": {
+            "books": 14640100,
+            "code": 12475154,
+            "legal": 20352955,
+            "math": 21620716,
+            "medical": 3249347,
+            "papers": 64973614,
+            "qa": 1139522,
+            "web": 12687896,
+            "wikipedia": 48860696
+          },
+          "index": 307,
+          "noise_per_million": 49372,
+          "pretokenizer": "no-regex",
+          "seed": 59162625570182858,
+          "vocab_size": 39000
+        },
+        "features": {
+          "forms_sha256": "182b8aa2ccc844771adcfb9517565ec0f9dff034cada8f4247ca4d3ff2dbb89f",
+          "priors_sha256": "604b32f786cab332a15b4bb77deee90a8e9a714715df78bdd085b00a958556b3",
+          "truncated_forms": 95
+        },
+        "id": "pool-0307",
+        "index": 307,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0307/tokenizer.json",
+        "sha256": "f700817f865ccd19eac78b633ab75a691f511747709dca3948cf525ec052d85f",
+        "vocab_size": 39000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 4752704,
+            "code": 9904281,
+            "legal-en": 33536253,
+            "math-en": 50382971,
+            "medical-en": 15754464,
+            "papers-en": 16957943,
+            "qa-en": 6596507,
+            "web-ar": 2490006,
+            "web-en": 9683359,
+            "web-es": 2490007,
+            "web-fr": 2490007,
+            "web-hi": 2490006,
+            "web-ja": 2490007,
+            "web-ru": 2490007,
+            "web-zh": 2490007,
+            "wiki-ar": 4375184,
+            "wiki-en": 4375184,
+            "wiki-es": 4375184,
+            "wiki-fr": 4375184,
+            "wiki-hi": 4375183,
+            "wiki-ja": 4375184,
+            "wiki-ru": 4375184,
+            "wiki-zh": 4375184
+          },
+          "config_sha256": "82e0923b723fa69f556e885e8656ad16e442c34dac4146a0af5a076c82daa8ad",
+          "domain_bytes": {
+            "books": 4752704,
+            "code": 9904281,
+            "legal": 33536253,
+            "math": 50382971,
+            "medical": 15754464,
+            "papers": 16957943,
+            "qa": 6596507,
+            "web": 27113406,
+            "wikipedia": 35001471
+          },
+          "index": 308,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 3908740660985335218,
+          "vocab_size": 36000
+        },
+        "features": {
+          "forms_sha256": "fb8e73babacbe3acd15bda96d0e4e985043ac7c2a7add792b4557e1b8ea175ff",
+          "priors_sha256": "993adf7ca00064f9ac1729fabfbf341598114f2bd29d1b54bff269b5cdb6486c",
+          "truncated_forms": 867
+        },
+        "id": "pool-0308",
+        "index": 308,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0308/tokenizer.json",
+        "sha256": "9aac0d31938b65907c81fdc8dabdf66158451442438eb06529d83bf6655fbd31",
+        "vocab_size": 36000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 473623,
+            "code": 10681099,
+            "legal-en": 7652644,
+            "math-en": 38465480,
+            "medical-en": 15787736,
+            "papers-en": 6735295,
+            "qa-en": 11109928,
+            "web-ar": 7043197,
+            "web-en": 27390210,
+            "web-es": 7043197,
+            "web-fr": 7043197,
+            "web-hi": 7043196,
+            "web-ja": 7043197,
+            "web-ru": 7043197,
+            "web-zh": 7043197,
+            "wiki-ar": 4050201,
+            "wiki-en": 4050201,
+            "wiki-es": 4050201,
+            "wiki-fr": 4050201,
+            "wiki-hi": 4050200,
+            "wiki-ja": 4050201,
+            "wiki-ru": 4050201,
+            "wiki-zh": 4050201
+          },
+          "config_sha256": "11a661844c89678e0e674917c08a6eb7cab984f5589c4b2edd2d057753100ee9",
+          "domain_bytes": {
+            "books": 473623,
+            "code": 10681099,
+            "legal": 7652644,
+            "math": 38465480,
+            "medical": 15787736,
+            "papers": 6735295,
+            "qa": 11109928,
+            "web": 76692588,
+            "wikipedia": 32401607
+          },
+          "index": 351,
+          "noise_per_million": 42328,
+          "pretokenizer": "line256",
+          "seed": 5918975597699003424,
+          "vocab_size": 42000
+        },
+        "features": {
+          "forms_sha256": "e1cd81db3f3928b3b7df4d5c91f005253c034e72e8c5e11f3db02790384255b0",
+          "priors_sha256": "5f7798d9a59f12be29ce2c6d4844762761c661fb16cf38a2ec624125b29e5038",
+          "truncated_forms": 120
+        },
+        "id": "pool-0351",
+        "index": 351,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0351/tokenizer.json",
+        "sha256": "ca414e7e34e3ea63f2a9515c3fe0f4415a56bb7d969f5883f68793d7e7a6f3b7",
+        "vocab_size": 42000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 25236167,
+            "code": 78351410,
+            "legal-en": 5625128,
+            "math-en": 3745354,
+            "medical-en": 28137307,
+            "papers-en": 21848350,
+            "qa-en": 13674613,
+            "web-ar": 664843,
+            "web-en": 2585502,
+            "web-es": 664844,
+            "web-fr": 664844,
+            "web-hi": 664843,
+            "web-ja": 664843,
+            "web-ru": 664843,
+            "web-zh": 664843,
+            "wiki-ar": 2017783,
+            "wiki-en": 2017784,
+            "wiki-es": 2017784,
+            "wiki-fr": 2017783,
+            "wiki-hi": 2017783,
+            "wiki-ja": 2017783,
+            "wiki-ru": 2017783,
+            "wiki-zh": 2017783
+          },
+          "config_sha256": "b6f65cbe24c87176d325c55f4da6ef03983e9f9a923dae0a9a000f41aa6f61e1",
+          "domain_bytes": {
+            "books": 25236167,
+            "code": 78351410,
+            "legal": 5625128,
+            "math": 3745354,
+            "medical": 28137307,
+            "papers": 21848350,
+            "qa": 13674613,
+            "web": 7239405,
+            "wikipedia": 16142266
+          },
+          "index": 352,
+          "noise_per_million": null,
+          "pretokenizer": "regex",
+          "seed": 8650932972214272712,
+          "vocab_size": 111000
+        },
+        "features": {
+          "forms_sha256": "b7061f899aa0564923752ab882b50ab9d2456890f4fa40e85c450314fb5586d7",
+          "priors_sha256": "a9033028798d4a1f361759b113efc7a006119593605183e0b55570996f9e0c46",
+          "truncated_forms": 158
+        },
+        "id": "pool-0352",
+        "index": 352,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0352/tokenizer.json",
+        "sha256": "762ef497bea30143a028857c375c3c45ae0b9dca916e6489e319d49d6f2f9008",
+        "vocab_size": 111000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 66263959,
+            "code": 9469741,
+            "legal-en": 10585019,
+            "math-en": 15548759,
+            "medical-en": 25845557,
+            "papers-en": 33581622,
+            "qa-en": 25866811,
+            "web-ar": 878167,
+            "web-en": 3415094,
+            "web-es": 878167,
+            "web-fr": 878167,
+            "web-hi": 878167,
+            "web-ja": 878167,
+            "web-ru": 878167,
+            "web-zh": 878167,
+            "wiki-ar": 409533,
+            "wiki-en": 409534,
+            "wiki-es": 409534,
+            "wiki-fr": 409534,
+            "wiki-hi": 409533,
+            "wiki-ja": 409533,
+            "wiki-ru": 409534,
+            "wiki-zh": 409534
+          },
+          "config_sha256": "bb8a445325bfae7b60f60f6bdccd0a503d52fb861291c65e0ae6eecb3db01d39",
+          "domain_bytes": {
+            "books": 66263959,
+            "code": 9469741,
+            "legal": 10585019,
+            "math": 15548759,
+            "medical": 25845557,
+            "papers": 33581622,
+            "qa": 25866811,
+            "web": 9562263,
+            "wikipedia": 3276269
+          },
+          "index": 362,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 984425931098670239,
+          "vocab_size": 110000
+        },
+        "features": {
+          "forms_sha256": "813c91707957976621308bac6d2345d5de0ad0257a62a57dc36832c3b61619cf",
+          "priors_sha256": "a0474689ed3064c337dad72d673236f3b6ad0f26f1fdad27cb8048803a2d547b",
+          "truncated_forms": 818
+        },
+        "id": "pool-0362",
+        "index": 362,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0362/tokenizer.json",
+        "sha256": "d7d56b5af122477d01f16d7ced238c0efff21183969c405bda2b14ff18bc6f4d",
+        "vocab_size": 110000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 36180293,
+            "code": 24112644,
+            "legal-en": 16661604,
+            "math-en": 14926767,
+            "medical-en": 6705167,
+            "papers-en": 36051077,
+            "qa-en": 11576412,
+            "web-ar": 1229440,
+            "web-en": 4781156,
+            "web-es": 1229441,
+            "web-fr": 1229440,
+            "web-hi": 1229440,
+            "web-ja": 1229440,
+            "web-ru": 1229440,
+            "web-zh": 1229440,
+            "wiki-ar": 5049850,
+            "wiki-en": 5049850,
+            "wiki-es": 5049850,
+            "wiki-fr": 5049850,
+            "wiki-hi": 5049849,
+            "wiki-ja": 5049850,
+            "wiki-ru": 5049850,
+            "wiki-zh": 5049850
+          },
+          "config_sha256": "0002212ab892f932a818c5f110be448b8864866969a58a8281f2d94e31e10aff",
+          "domain_bytes": {
+            "books": 36180293,
+            "code": 24112644,
+            "legal": 16661604,
+            "math": 14926767,
+            "medical": 6705167,
+            "papers": 36051077,
+            "qa": 11576412,
+            "web": 13387237,
+            "wikipedia": 40398799
+          },
+          "index": 408,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 4112590640492068661,
+          "vocab_size": 113000
+        },
+        "features": {
+          "forms_sha256": "5f1770644bea054aece140d9cef79c1308ba62f535311a8c0fa8570d5c556ca6",
+          "priors_sha256": "a374c046cc2526b76a842e96ec9a05772e58b09b49734c66df8a5b5c7759c6db",
+          "truncated_forms": 1048
+        },
+        "id": "pool-0408",
+        "index": 408,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0408/tokenizer.json",
+        "sha256": "e366fa53752942988fdfa3790e498876d2077523872453ae9c741fa2dbce761c",
+        "vocab_size": 113000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 19149325,
+            "code": 29609969,
+            "legal-en": 13690024,
+            "math-en": 28268869,
+            "medical-en": 13097858,
+            "papers-en": 10333138,
+            "qa-en": 48675327,
+            "web-ar": 1692266,
+            "web-en": 6581037,
+            "web-es": 1692267,
+            "web-fr": 1692267,
+            "web-hi": 1692266,
+            "web-ja": 1692266,
+            "web-ru": 1692267,
+            "web-zh": 1692267,
+            "wiki-ar": 2343573,
+            "wiki-en": 2343574,
+            "wiki-es": 2343574,
+            "wiki-fr": 2343574,
+            "wiki-hi": 2343573,
+            "wiki-ja": 2343573,
+            "wiki-ru": 2343573,
+            "wiki-zh": 2343573
+          },
+          "config_sha256": "895c245a5e46615049efd6e37504d6ec5a7bf6e7c462a3806df730a2cf3443e1",
+          "domain_bytes": {
+            "books": 19149325,
+            "code": 29609969,
+            "legal": 13690024,
+            "math": 28268869,
+            "medical": 13097858,
+            "papers": 10333138,
+            "qa": 48675327,
+            "web": 18426903,
+            "wikipedia": 18748587
+          },
+          "index": 476,
+          "noise_per_million": 452075,
+          "pretokenizer": "regex",
+          "seed": 6019954384613285775,
+          "vocab_size": 64000
+        },
+        "features": {
+          "forms_sha256": "8fdcf373e3cb6ab974b214af0819eb5abf70c95c535406b25ff0ef4581ceb0c4",
+          "priors_sha256": "abf2242a0c9ba69961a60acdf7a8b4153fe5f83d13a3cafa4669256e7024f7b3",
+          "truncated_forms": 44
+        },
+        "id": "pool-0476",
+        "index": 476,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0476/tokenizer.json",
+        "sha256": "d88590f6cbdfb5f6910b149c4e6159cef3a175e0e5051e96d0467d9fb468853d",
+        "vocab_size": 64000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 84463312,
+            "code": 25122487,
+            "legal-en": 8705982,
+            "math-en": 30718605,
+            "medical-en": 4638062,
+            "papers-en": 13766290,
+            "qa-en": 9126466,
+            "web-ar": 2076015,
+            "web-en": 8073393,
+            "web-es": 2076016,
+            "web-fr": 2076016,
+            "web-hi": 2076015,
+            "web-ja": 2076015,
+            "web-ru": 2076015,
+            "web-zh": 2076015,
+            "wiki-ar": 106662,
+            "wiki-en": 106662,
+            "wiki-es": 106662,
+            "wiki-fr": 106662,
+            "wiki-hi": 106662,
+            "wiki-ja": 106662,
+            "wiki-ru": 106662,
+            "wiki-zh": 106662
+          },
+          "config_sha256": "81f583d552e9ff54ce440c40d5b1b0c9a95ab0e824aba8a0a568ad7835467331",
+          "domain_bytes": {
+            "books": 84463312,
+            "code": 25122487,
+            "legal": 8705982,
+            "math": 30718605,
+            "medical": 4638062,
+            "papers": 13766290,
+            "qa": 9126466,
+            "web": 22605500,
+            "wikipedia": 853296
+          },
+          "index": 482,
+          "noise_per_million": 308617,
+          "pretokenizer": "no-regex",
+          "seed": 6334581861992837161,
+          "vocab_size": 121000
+        },
+        "features": {
+          "forms_sha256": "b36223f7305b396c37c9b14094da5e2a8f0fcd120844e5ea27c40450e725dbb9",
+          "priors_sha256": "da91b362ef9dd360fc6456ec8cb68e032f56349f82b430bda88b675c0fae836b",
+          "truncated_forms": 584
+        },
+        "id": "pool-0482",
+        "index": 482,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0482/tokenizer.json",
+        "sha256": "c98a71c8a024a4ce29c9743608c8afe1af441cc7604e0e71189497e271bdf331",
+        "vocab_size": 121000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 53160582,
+            "code": 7480266,
+            "legal-en": 50854149,
+            "math-en": 4954271,
+            "medical-en": 16871217,
+            "papers-en": 21527132,
+            "qa-en": 14224112,
+            "web-ar": 1883519,
+            "web-en": 7324795,
+            "web-es": 1883519,
+            "web-fr": 1883519,
+            "web-hi": 1883519,
+            "web-ja": 1883519,
+            "web-ru": 1883519,
+            "web-zh": 1883519,
+            "wiki-ar": 1302355,
+            "wiki-en": 1302356,
+            "wiki-es": 1302356,
+            "wiki-fr": 1302356,
+            "wiki-hi": 1302355,
+            "wiki-ja": 1302355,
+            "wiki-ru": 1302355,
+            "wiki-zh": 1302355
+          },
+          "config_sha256": "5cc958c4d82834f21df011d13a7330746e8a312b9203b91711c3cddefd0d96f5",
+          "domain_bytes": {
+            "books": 53160582,
+            "code": 7480266,
+            "legal": 50854149,
+            "math": 4954271,
+            "medical": 16871217,
+            "papers": 21527132,
+            "qa": 14224112,
+            "web": 20509428,
+            "wikipedia": 10418843
+          },
+          "index": 493,
+          "noise_per_million": null,
+          "pretokenizer": "regex",
+          "seed": 8339363562957463390,
+          "vocab_size": 103000
+        },
+        "features": {
+          "forms_sha256": "b044378fa25da384687de7b972f2b46e4685dc8dfff5c3a33338109acb92e5b9",
+          "priors_sha256": "32f9fa19304ec0dba9a4041c7d666c111c2ecc6d0055f4e9489aa6a5c914a172",
+          "truncated_forms": 4055
+        },
+        "id": "pool-0493",
+        "index": 493,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0493/tokenizer.json",
+        "sha256": "6ca578723433a0b3cceaffc589023bb37cef5b43b29776cee33567e74f153e83",
+        "vocab_size": 103000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 1058861,
+            "code": 75291706,
+            "legal-en": 21265345,
+            "math-en": 2403062,
+            "medical-en": 45248814,
+            "papers-en": 5383786,
+            "qa-en": 17228016,
+            "web-ar": 2863819,
+            "web-en": 11137075,
+            "web-es": 2863820,
+            "web-fr": 2863820,
+            "web-hi": 2863819,
+            "web-ja": 2863819,
+            "web-ru": 2863820,
+            "web-zh": 2863819,
+            "wiki-ar": 117075,
+            "wiki-en": 117075,
+            "wiki-es": 117075,
+            "wiki-fr": 117075,
+            "wiki-hi": 117074,
+            "wiki-ja": 117075,
+            "wiki-ru": 117075,
+            "wiki-zh": 117075
+          },
+          "config_sha256": "4ac8d1d5a15e84efaf1c046854b3e76b897d2efda9e32432a05f1a19309be64e",
+          "domain_bytes": {
+            "books": 1058861,
+            "code": 75291706,
+            "legal": 21265345,
+            "math": 2403062,
+            "medical": 45248814,
+            "papers": 5383786,
+            "qa": 17228016,
+            "web": 31183811,
+            "wikipedia": 936599
+          },
+          "index": 521,
+          "noise_per_million": null,
+          "pretokenizer": "regex",
+          "seed": 6398227493684376607,
+          "vocab_size": 51000
+        },
+        "features": {
+          "forms_sha256": "40d6b0c160f7b9387ecd76f960bac023ba0ffb54cf514645b786ecc182e71086",
+          "priors_sha256": "a56e678c6ff1e4b92295d6c0ec4a2a570915113e38d9fcef28757428f160142d",
+          "truncated_forms": 29
+        },
+        "id": "pool-0521",
+        "index": 521,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0521/tokenizer.json",
+        "sha256": "e055dba662486b2979dfe31a9085910097f94c3af982e62d5534770cf8bea7ec",
+        "vocab_size": 51000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 16859391,
+            "code": 23342142,
+            "legal-en": 5149706,
+            "math-en": 16175967,
+            "medical-en": 15507031,
+            "papers-en": 28984311,
+            "qa-en": 20675796,
+            "web-ar": 1601477,
+            "web-en": 6227966,
+            "web-es": 1601477,
+            "web-fr": 1601477,
+            "web-hi": 1601477,
+            "web-ja": 1601477,
+            "web-ru": 1601477,
+            "web-zh": 1601477,
+            "wiki-ar": 6983419,
+            "wiki-en": 6983419,
+            "wiki-es": 6983419,
+            "wiki-fr": 6983419,
+            "wiki-hi": 6983418,
+            "wiki-ja": 6983419,
+            "wiki-ru": 6983419,
+            "wiki-zh": 6983419
+          },
+          "config_sha256": "6266badbbc9355767e0543c6f9330ed2e6f1ec7aeb701445fe3ceddc12db8035",
+          "domain_bytes": {
+            "books": 16859391,
+            "code": 23342142,
+            "legal": 5149706,
+            "math": 16175967,
+            "medical": 15507031,
+            "papers": 28984311,
+            "qa": 20675796,
+            "web": 17438305,
+            "wikipedia": 55867351
+          },
+          "index": 551,
+          "noise_per_million": 138828,
+          "pretokenizer": "line256",
+          "seed": 5648689819828361711,
+          "vocab_size": 75000
+        },
+        "features": {
+          "forms_sha256": "eb7ae21576d88000b94780cdf3384249c1bf3802c7b779267c84ab7c63f4b5e4",
+          "priors_sha256": "4b48310a45c251934545264bd0acc9fdbc84da60458b272f5c48c94fcb821a54",
+          "truncated_forms": 366
+        },
+        "id": "pool-0551",
+        "index": 551,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0551/tokenizer.json",
+        "sha256": "ba4e1fb3418b30af3011a1e47df94ac1452d6b683c19b5581c5ffcdb9c27b4a4",
+        "vocab_size": 75000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 62836232,
+            "code": 37839099,
+            "legal-en": 24656560,
+            "math-en": 203229,
+            "medical-en": 8097254,
+            "papers-en": 22370063,
+            "qa-en": 8186436,
+            "web-ar": 920954,
+            "web-en": 3581490,
+            "web-es": 920955,
+            "web-fr": 920955,
+            "web-hi": 920954,
+            "web-ja": 920955,
+            "web-ru": 920955,
+            "web-zh": 920955,
+            "wiki-ar": 3222869,
+            "wiki-en": 3222870,
+            "wiki-es": 3222870,
+            "wiki-fr": 3222869,
+            "wiki-hi": 3222869,
+            "wiki-ja": 3222869,
+            "wiki-ru": 3222869,
+            "wiki-zh": 3222869
+          },
+          "config_sha256": "2d2967cf92a43bb6691d9d823de8a1ada4a99e91ad3a3ea2a53e08d0e30e3fd5",
+          "domain_bytes": {
+            "books": 62836232,
+            "code": 37839099,
+            "legal": 24656560,
+            "math": 203229,
+            "medical": 8097254,
+            "papers": 22370063,
+            "qa": 8186436,
+            "web": 10028173,
+            "wikipedia": 25782954
+          },
+          "index": 554,
+          "noise_per_million": null,
+          "pretokenizer": "regex",
+          "seed": 7450782185411152843,
+          "vocab_size": 100000
+        },
+        "features": {
+          "forms_sha256": "e8b8db82d797cbf304c1cb1061940b6c2aa720870afe9507ca7558f4e873a6c9",
+          "priors_sha256": "66c5f644b54da9440e81323dec4429812db90dc041c59bf4c32144954a2e3a5d",
+          "truncated_forms": 3817
+        },
+        "id": "pool-0554",
+        "index": 554,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0554/tokenizer.json",
+        "sha256": "c5094d852bf05b0fa93c5085b40a4659830be00051331f0dfcf4e5df98cec185",
+        "vocab_size": 100000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 667595,
+            "code": 10765417,
+            "legal-en": 25177049,
+            "math-en": 4065430,
+            "medical-en": 50866922,
+            "papers-en": 70678423,
+            "qa-en": 23888076,
+            "web-ar": 1274555,
+            "web-en": 4956605,
+            "web-es": 1274556,
+            "web-fr": 1274556,
+            "web-hi": 1274555,
+            "web-ja": 1274556,
+            "web-ru": 1274556,
+            "web-zh": 1274556,
+            "wiki-ar": 1574,
+            "wiki-en": 1575,
+            "wiki-es": 1574,
+            "wiki-fr": 1574,
+            "wiki-hi": 1574,
+            "wiki-ja": 1574,
+            "wiki-ru": 1574,
+            "wiki-zh": 1574
+          },
+          "config_sha256": "984d056caf9a9758ce778c228881c145b496c225d11a5e64eba99eec460f86ee",
+          "domain_bytes": {
+            "books": 667595,
+            "code": 10765417,
+            "legal": 25177049,
+            "math": 4065430,
+            "medical": 50866922,
+            "papers": 70678423,
+            "qa": 23888076,
+            "web": 13878495,
+            "wikipedia": 12593
+          },
+          "index": 571,
+          "noise_per_million": null,
+          "pretokenizer": "regex",
+          "seed": 2856318190731723017,
+          "vocab_size": 52000
+        },
+        "features": {
+          "forms_sha256": "defd554daee8570d122a4144f020759a9b57c96f230ccc1ea4162207c84998cf",
+          "priors_sha256": "116985dc83f1de9523d7bdb6bad311727bf2fe0d849e5f4740f116547fe5c128",
+          "truncated_forms": 345
+        },
+        "id": "pool-0571",
+        "index": 571,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0571/tokenizer.json",
+        "sha256": "612ae4e2d6f7879f34b8256621654315c95bb4bb004ac143678c3873cb8c3a23",
+        "vocab_size": 52000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 95893,
+            "code": 39620260,
+            "legal-en": 780837,
+            "math-en": 10684668,
+            "medical-en": 29634448,
+            "papers-en": 42123272,
+            "qa-en": 3859970,
+            "web-ar": 2838783,
+            "web-en": 11039711,
+            "web-es": 2838783,
+            "web-fr": 2838783,
+            "web-hi": 2838782,
+            "web-ja": 2838783,
+            "web-ru": 2838783,
+            "web-zh": 2838783,
+            "wiki-ar": 5286182,
+            "wiki-en": 5286183,
+            "wiki-es": 5286183,
+            "wiki-fr": 5286183,
+            "wiki-hi": 5286182,
+            "wiki-ja": 5286182,
+            "wiki-ru": 5286183,
+            "wiki-zh": 5286183
+          },
+          "config_sha256": "cf382046aa06ceb05eb4fb033bebe3ab644bd08b7a981275573c8eaa7ee55b1b",
+          "domain_bytes": {
+            "books": 95893,
+            "code": 39620260,
+            "legal": 780837,
+            "math": 10684668,
+            "medical": 29634448,
+            "papers": 42123272,
+            "qa": 3859970,
+            "web": 30911191,
+            "wikipedia": 42289461
+          },
+          "index": 596,
+          "noise_per_million": 161782,
+          "pretokenizer": "line256",
+          "seed": 9053702273488657172,
+          "vocab_size": 49000
+        },
+        "features": {
+          "forms_sha256": "09715464d7028f28fefe03e8987dd650b88e6f957150f77e59f7322f20414c21",
+          "priors_sha256": "55b8f9ca41629b9da08e2034485834a4c6e95932db11b2538964c99b1a4db6c1",
+          "truncated_forms": 203
+        },
+        "id": "pool-0596",
+        "index": 596,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0596/tokenizer.json",
+        "sha256": "e8833386fd403ceea30895f63e5cbe30c842431a2132331f17c4723cc385720d",
+        "vocab_size": 49000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 88091853,
+            "code": 12784170,
+            "legal-en": 6749506,
+            "math-en": 13646462,
+            "medical-en": 13237331,
+            "papers-en": 26173765,
+            "qa-en": 3621921,
+            "web-ar": 1027853,
+            "web-en": 3997207,
+            "web-es": 1027854,
+            "web-fr": 1027854,
+            "web-hi": 1027853,
+            "web-ja": 1027853,
+            "web-ru": 1027853,
+            "web-zh": 1027853,
+            "wiki-ar": 3062851,
+            "wiki-en": 3062852,
+            "wiki-es": 3062852,
+            "wiki-fr": 3062852,
+            "wiki-hi": 3062851,
+            "wiki-ja": 3062851,
+            "wiki-ru": 3062852,
+            "wiki-zh": 3062851
+          },
+          "config_sha256": "b901ecdc1be6e2b9fe79b70650eaa4dbffe6e133048542bbb092284f3ef61d62",
+          "domain_bytes": {
+            "books": 88091853,
+            "code": 12784170,
+            "legal": 6749506,
+            "math": 13646462,
+            "medical": 13237331,
+            "papers": 26173765,
+            "qa": 3621921,
+            "web": 11192180,
+            "wikipedia": 24502812
+          },
+          "index": 599,
+          "noise_per_million": null,
+          "pretokenizer": "line256",
+          "seed": 9003790402432366821,
+          "vocab_size": 99000
+        },
+        "features": {
+          "forms_sha256": "250a3162e95f4a438c8b6044668a393c2398323a8e5bb624ab5abf26d6563f84",
+          "priors_sha256": "050d95119dbd3328ab29945820a9db5ae1e118035b8f10583ffd7bb95d51b48d",
+          "truncated_forms": 459
+        },
+        "id": "pool-0599",
+        "index": 599,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0599/tokenizer.json",
+        "sha256": "59d628a9aaf270aa6c328eb54d67c9543f6458b1eef33d99aa3efc33ffce00c7",
+        "vocab_size": 99000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 5845530,
+            "code": 62775807,
+            "legal-en": 66521036,
+            "math-en": 26217841,
+            "medical-en": 4431894,
+            "papers-en": 8975817,
+            "qa-en": 6602980,
+            "web-ar": 1326582,
+            "web-en": 5158931,
+            "web-es": 1326583,
+            "web-fr": 1326583,
+            "web-hi": 1326582,
+            "web-ja": 1326582,
+            "web-ru": 1326582,
+            "web-zh": 1326582,
+            "wiki-ar": 523011,
+            "wiki-en": 523011,
+            "wiki-es": 523011,
+            "wiki-fr": 523011,
+            "wiki-hi": 523011,
+            "wiki-ja": 523011,
+            "wiki-ru": 523011,
+            "wiki-zh": 523011
+          },
+          "config_sha256": "12ac5479842fce2e9d6e3db5deada04d20ea016b77ed27388ea954e0012cf0da",
+          "domain_bytes": {
+            "books": 5845530,
+            "code": 62775807,
+            "legal": 66521036,
+            "math": 26217841,
+            "medical": 4431894,
+            "papers": 8975817,
+            "qa": 6602980,
+            "web": 14445007,
+            "wikipedia": 4184088
+          },
+          "index": 624,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 8524080645450020932,
+          "vocab_size": 83000
+        },
+        "features": {
+          "forms_sha256": "2987cda39321001d09bb33a4ce519a0231f02a99839e72b25d4cd400f98cb9dc",
+          "priors_sha256": "af90e310682c1faccd1bc255f6c1882a1f45a3d3bc8ee71095ca2397028ff5f5",
+          "truncated_forms": 3401
+        },
+        "id": "pool-0624",
+        "index": 624,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0624/tokenizer.json",
+        "sha256": "5ae6aee3a281adb1d5491dac48e38e169549ae93f2a3d380e57a4db74e0ad42c",
+        "vocab_size": 83000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 15831230,
+            "code": 9779818,
+            "legal-en": 14294414,
+            "math-en": 4251293,
+            "medical-en": 52030477,
+            "papers-en": 31697401,
+            "qa-en": 7957563,
+            "web-ar": 2422204,
+            "web-en": 9419683,
+            "web-es": 2422204,
+            "web-fr": 2422204,
+            "web-hi": 2422204,
+            "web-ja": 2422204,
+            "web-ru": 2422204,
+            "web-zh": 2422204,
+            "wiki-ar": 4722836,
+            "wiki-en": 4722837,
+            "wiki-es": 4722837,
+            "wiki-fr": 4722837,
+            "wiki-hi": 4722836,
+            "wiki-ja": 4722836,
+            "wiki-ru": 4722837,
+            "wiki-zh": 4722837
+          },
+          "config_sha256": "d3c3a103ccc676b2cb262fe7f8809202e1a62c845b758ba5bceb39611a4b59d5",
+          "domain_bytes": {
+            "books": 15831230,
+            "code": 9779818,
+            "legal": 14294414,
+            "math": 4251293,
+            "medical": 52030477,
+            "papers": 31697401,
+            "qa": 7957563,
+            "web": 26375111,
+            "wikipedia": 37782693
+          },
+          "index": 635,
+          "noise_per_million": 13114,
+          "pretokenizer": "no-regex",
+          "seed": 817011740683518538,
+          "vocab_size": 120000
+        },
+        "features": {
+          "forms_sha256": "958cd998ebff30de3bce713460eff1cdd7231e5a2bb9156581d67e9e37d51e1c",
+          "priors_sha256": "bc81e8c582cf736d9d240f67909ca158ac8f86a1c043e27778b4e77fe57071b1",
+          "truncated_forms": 1363
+        },
+        "id": "pool-0635",
+        "index": 635,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0635/tokenizer.json",
+        "sha256": "0157f418ac60ef7c7f5f4590cd75bd165a54428932df133ee9b9e9e9a007429d",
+        "vocab_size": 120000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 2449679,
+            "code": 17464930,
+            "legal-en": 3437254,
+            "math-en": 73128521,
+            "medical-en": 8485170,
+            "papers-en": 72650153,
+            "qa-en": 12533978,
+            "web-ar": 246418,
+            "web-en": 958293,
+            "web-es": 246419,
+            "web-fr": 246418,
+            "web-hi": 246418,
+            "web-ja": 246418,
+            "web-ru": 246418,
+            "web-zh": 246418,
+            "wiki-ar": 895887,
+            "wiki-en": 895887,
+            "wiki-es": 895887,
+            "wiki-fr": 895887,
+            "wiki-hi": 895886,
+            "wiki-ja": 895887,
+            "wiki-ru": 895887,
+            "wiki-zh": 895887
+          },
+          "config_sha256": "742094ae033dbe6ed3616de0484a9b60cf27c76097858026c77cadf03307b975",
+          "domain_bytes": {
+            "books": 2449679,
+            "code": 17464930,
+            "legal": 3437254,
+            "math": 73128521,
+            "medical": 8485170,
+            "papers": 72650153,
+            "qa": 12533978,
+            "web": 2683220,
+            "wikipedia": 7167095
+          },
+          "index": 672,
+          "noise_per_million": null,
+          "pretokenizer": "line256",
+          "seed": 4267680304018504864,
+          "vocab_size": 100000
+        },
+        "features": {
+          "forms_sha256": "656daab594b3d2bca6eb00e9151d8aa7f4b9a6985c3ab364e24fd01a853aab9d",
+          "priors_sha256": "eeb400438210e3b415f1739c349bba85204b12710b22ee0b8bc4cc2162eea6cf",
+          "truncated_forms": 984
+        },
+        "id": "pool-0672",
+        "index": 672,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0672/tokenizer.json",
+        "sha256": "7a514c27aaea212ededd5de674f1627cb42cbf718de202accc8582ab3a35d93f",
+        "vocab_size": 100000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 20726263,
+            "code": 15052643,
+            "legal-en": 28614129,
+            "math-en": 71447696,
+            "medical-en": 1315122,
+            "papers-en": 16429416,
+            "qa-en": 41537430,
+            "web-ar": 332918,
+            "web-en": 1294684,
+            "web-es": 332919,
+            "web-fr": 332919,
+            "web-hi": 332918,
+            "web-ja": 332919,
+            "web-ru": 332919,
+            "web-zh": 332919,
+            "wiki-ar": 156523,
+            "wiki-en": 156524,
+            "wiki-es": 156524,
+            "wiki-fr": 156523,
+            "wiki-hi": 156523,
+            "wiki-ja": 156523,
+            "wiki-ru": 156523,
+            "wiki-zh": 156523
+          },
+          "config_sha256": "da5b480afc870b218374fce2f36659be66e7e65839360108cec3e1993a635459",
+          "domain_bytes": {
+            "books": 20726263,
+            "code": 15052643,
+            "legal": 28614129,
+            "math": 71447696,
+            "medical": 1315122,
+            "papers": 16429416,
+            "qa": 41537430,
+            "web": 3625115,
+            "wikipedia": 1252186
+          },
+          "index": 680,
+          "noise_per_million": null,
+          "pretokenizer": "regex",
+          "seed": 3447929364180323773,
+          "vocab_size": 99000
+        },
+        "features": {
+          "forms_sha256": "3a24cd947baa2e5c74b2cac6825fed3fd91d039fc28c56fa3a3d67049e858c89",
+          "priors_sha256": "050d95119dbd3328ab29945820a9db5ae1e118035b8f10583ffd7bb95d51b48d",
+          "truncated_forms": 117
+        },
+        "id": "pool-0680",
+        "index": 680,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0680/tokenizer.json",
+        "sha256": "3df6f476a724ba3d94c125da293819977e6335cf50dedd8d7d6249bf2b09f6e2",
+        "vocab_size": 99000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 80977271,
+            "code": 44727981,
+            "legal-en": 15420329,
+            "math-en": 7825502,
+            "medical-en": 621054,
+            "papers-en": 13199603,
+            "qa-en": 14748397,
+            "web-ar": 1771065,
+            "web-en": 6887476,
+            "web-es": 1771066,
+            "web-fr": 1771066,
+            "web-hi": 1771065,
+            "web-ja": 1771065,
+            "web-ru": 1771065,
+            "web-zh": 1771065,
+            "wiki-ar": 399366,
+            "wiki-en": 399367,
+            "wiki-es": 399367,
+            "wiki-fr": 399366,
+            "wiki-hi": 399366,
+            "wiki-ja": 399366,
+            "wiki-ru": 399366,
+            "wiki-zh": 399366
+          },
+          "config_sha256": "bf399a898f0922038f41e32de877917a32b291c8b91bb5300ec64133cd050619",
+          "domain_bytes": {
+            "books": 80977271,
+            "code": 44727981,
+            "legal": 15420329,
+            "math": 7825502,
+            "medical": 621054,
+            "papers": 13199603,
+            "qa": 14748397,
+            "web": 19284933,
+            "wikipedia": 3194930
+          },
+          "index": 705,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 4410061001912618752,
+          "vocab_size": 98000
+        },
+        "features": {
+          "forms_sha256": "16c426134dd088410b29847eab7cb5e708c39951b62f7aa6d829f93d7a63afb5",
+          "priors_sha256": "2d073bbbadda524b5616605d016f5c4953faa695d06fde0b516f3096336b21d8",
+          "truncated_forms": 2756
+        },
+        "id": "pool-0705",
+        "index": 705,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0705/tokenizer.json",
+        "sha256": "8e3fb50acc6d1939d6ad95f8a17af30b05c4b2a86d137298fbd784d25cdf2b9a",
+        "vocab_size": 98000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 35196218,
+            "code": 3712838,
+            "legal-en": 6688133,
+            "math-en": 13977137,
+            "medical-en": 6377399,
+            "papers-en": 23286379,
+            "qa-en": 64262710,
+            "web-ar": 1528457,
+            "web-en": 5944000,
+            "web-es": 1528458,
+            "web-fr": 1528457,
+            "web-hi": 1528457,
+            "web-ja": 1528457,
+            "web-ru": 1528457,
+            "web-zh": 1528457,
+            "wiki-ar": 3731998,
+            "wiki-en": 3731999,
+            "wiki-es": 3731999,
+            "wiki-fr": 3731998,
+            "wiki-hi": 3731998,
+            "wiki-ja": 3731998,
+            "wiki-ru": 3731998,
+            "wiki-zh": 3731998
+          },
+          "config_sha256": "4850e02b2463c123a0c4e7c9b414be7388dc5da42ca99f7c49e78b3211382551",
+          "domain_bytes": {
+            "books": 35196218,
+            "code": 3712838,
+            "legal": 6688133,
+            "math": 13977137,
+            "medical": 6377399,
+            "papers": 23286379,
+            "qa": 64262710,
+            "web": 16643200,
+            "wikipedia": 29855986
+          },
+          "index": 719,
+          "noise_per_million": 494011,
+          "pretokenizer": "line256",
+          "seed": 7273355073558249981,
+          "vocab_size": 84000
+        },
+        "features": {
+          "forms_sha256": "0ceacda08ed83448b010eec04706376a8b6a976fd0e03a0c6c764b3a36a05901",
+          "priors_sha256": "7a0162704737a1a3b7e7f9200740dbe805a42819290d328d76b0f6a53bc29254",
+          "truncated_forms": 93
+        },
+        "id": "pool-0719",
+        "index": 719,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0719/tokenizer.json",
+        "sha256": "309e4a56d84fb344b17a2480741ce81702d7b229332465f5fbffbbe51f3ee174",
+        "vocab_size": 84000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 5214704,
+            "code": 59725366,
+            "legal-en": 56866307,
+            "math-en": 11171291,
+            "medical-en": 667690,
+            "papers-en": 20496447,
+            "qa-en": 14806986,
+            "web-ar": 1035429,
+            "web-en": 4026670,
+            "web-es": 1035430,
+            "web-fr": 1035430,
+            "web-hi": 1035429,
+            "web-ja": 1035429,
+            "web-ru": 1035430,
+            "web-zh": 1035430,
+            "wiki-ar": 2472066,
+            "wiki-en": 2472067,
+            "wiki-es": 2472067,
+            "wiki-fr": 2472067,
+            "wiki-hi": 2472066,
+            "wiki-ja": 2472066,
+            "wiki-ru": 2472067,
+            "wiki-zh": 2472066
+          },
+          "config_sha256": "33e4298c94d19f166dad4670a4484dc82d4559bc0d306879a0d98049b7dfe5cc",
+          "domain_bytes": {
+            "books": 5214704,
+            "code": 59725366,
+            "legal": 56866307,
+            "math": 11171291,
+            "medical": 667690,
+            "papers": 20496447,
+            "qa": 14806986,
+            "web": 11274677,
+            "wikipedia": 19776532
+          },
+          "index": 723,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 1539069517454065148,
+          "vocab_size": 98000
+        },
+        "features": {
+          "forms_sha256": "5d06fe66cac74fb9f124ab889bfa44c618b637073413240e0663d57856ae705f",
+          "priors_sha256": "503bd742b8ad453c7e5ac82d332ab7da90d6385b044993efa1362c7ddd66f93b",
+          "truncated_forms": 1438
+        },
+        "id": "pool-0723",
+        "index": 723,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0723/tokenizer.json",
+        "sha256": "c7c18ce1774d897b7ded164af7dfcb1eeafb460f3dfa5bf8b55347c937b23a36",
+        "vocab_size": 98000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 3109112,
+            "code": 15364815,
+            "legal-en": 17135064,
+            "math-en": 31556638,
+            "medical-en": 55122912,
+            "papers-en": 57162462,
+            "qa-en": 14507837,
+            "web-ar": 474633,
+            "web-en": 1845797,
+            "web-es": 474634,
+            "web-fr": 474634,
+            "web-hi": 474633,
+            "web-ja": 474634,
+            "web-ru": 474634,
+            "web-zh": 474634,
+            "wiki-ar": 109116,
+            "wiki-en": 109116,
+            "wiki-es": 109116,
+            "wiki-fr": 109116,
+            "wiki-hi": 109115,
+            "wiki-ja": 109116,
+            "wiki-ru": 109116,
+            "wiki-zh": 109116
+          },
+          "config_sha256": "4845de868d7b6f87c6e4b143ef08bcead5e9a3f86e200efccb1ba2480299e3ea",
+          "domain_bytes": {
+            "books": 3109112,
+            "code": 15364815,
+            "legal": 17135064,
+            "math": 31556638,
+            "medical": 55122912,
+            "papers": 57162462,
+            "qa": 14507837,
+            "web": 5168233,
+            "wikipedia": 872927
+          },
+          "index": 751,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 5724706196185136967,
+          "vocab_size": 56000
+        },
+        "features": {
+          "forms_sha256": "dcaa27ae35a75caaf4446a817c35f0ba971ad299e7e8b36eefc770c6a3b2c488",
+          "priors_sha256": "c0003e9df995dbbb843953b4186035f52f1eea873eafcc9b93c5ca22ab6c1665",
+          "truncated_forms": 1525
+        },
+        "id": "pool-0751",
+        "index": 751,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0751/tokenizer.json",
+        "sha256": "ea4f0f960b217d22269cbfc1336e74cf7d132bc1f6783a131fc3ac42f4acd03f",
+        "vocab_size": 56000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 3735525,
+            "code": 40241058,
+            "legal-en": 13378419,
+            "math-en": 18900753,
+            "medical-en": 8409850,
+            "papers-en": 13839497,
+            "qa-en": 63232725,
+            "web-ar": 2108548,
+            "web-en": 8199910,
+            "web-es": 2108549,
+            "web-fr": 2108549,
+            "web-hi": 2108548,
+            "web-ja": 2108548,
+            "web-ru": 2108549,
+            "web-zh": 2108548,
+            "wiki-ar": 1912803,
+            "wiki-en": 1912803,
+            "wiki-es": 1912803,
+            "wiki-fr": 1912803,
+            "wiki-hi": 1912803,
+            "wiki-ja": 1912803,
+            "wiki-ru": 1912803,
+            "wiki-zh": 1912803
+          },
+          "config_sha256": "e5b00cc101d5c857096eafcbe89e88fd9fd82843f1020e51633039cda647c873",
+          "domain_bytes": {
+            "books": 3735525,
+            "code": 40241058,
+            "legal": 13378419,
+            "math": 18900753,
+            "medical": 8409850,
+            "papers": 13839497,
+            "qa": 63232725,
+            "web": 22959749,
+            "wikipedia": 15302424
+          },
+          "index": 763,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 3472973810024813403,
+          "vocab_size": 103000
+        },
+        "features": {
+          "forms_sha256": "fbfb61f64b2526aafcb763aa25a91f7e6647537cd866f5ca58eb2317875456c8",
+          "priors_sha256": "2eeffff1a6f1beee7d202a13b0b7218b2b437cb00fe835dee6f42657a4e2beae",
+          "truncated_forms": 1299
+        },
+        "id": "pool-0763",
+        "index": 763,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0763/tokenizer.json",
+        "sha256": "0690f55c0e8cbace1ceb9c6d71eb9dee3d13e5304717d688a7a7a764baab8482",
+        "vocab_size": 103000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 32794875,
+            "code": 18262026,
+            "legal-en": 48377631,
+            "math-en": 21306665,
+            "medical-en": 21025020,
+            "papers-en": 24244068,
+            "qa-en": 7705254,
+            "web-ar": 1708253,
+            "web-en": 6643208,
+            "web-es": 1708254,
+            "web-fr": 1708254,
+            "web-hi": 1708253,
+            "web-ja": 1708253,
+            "web-ru": 1708254,
+            "web-zh": 1708254,
+            "wiki-ar": 960434,
+            "wiki-en": 960435,
+            "wiki-es": 960435,
+            "wiki-fr": 960435,
+            "wiki-hi": 960434,
+            "wiki-ja": 960435,
+            "wiki-ru": 960435,
+            "wiki-zh": 960435
+          },
+          "config_sha256": "806c562efc97541b6d9bf20f3f5fe9b961137d2d3ba2ca79a96219eaea81466b",
+          "domain_bytes": {
+            "books": 32794875,
+            "code": 18262026,
+            "legal": 48377631,
+            "math": 21306665,
+            "medical": 21025020,
+            "papers": 24244068,
+            "qa": 7705254,
+            "web": 18600983,
+            "wikipedia": 7683478
+          },
+          "index": 853,
+          "noise_per_million": null,
+          "pretokenizer": "line256",
+          "seed": 7049514025873830757,
+          "vocab_size": 88000
+        },
+        "features": {
+          "forms_sha256": "0ea8e917469a178aaee4c570f6f9b84211322128cde40c278f0bcd67dde59261",
+          "priors_sha256": "46e467af9b4b878776c1c076425f88cbb348c788d6f23bf1708886ebdae892bf",
+          "truncated_forms": 922
+        },
+        "id": "pool-0853",
+        "index": 853,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0853/tokenizer.json",
+        "sha256": "514a1ddf630f5a3c83540a117b56c5a9a98ad8e27d25090593b5599737ea8a4c",
+        "vocab_size": 88000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 24967674,
+            "code": 7471952,
+            "legal-en": 33719118,
+            "math-en": 4278446,
+            "medical-en": 25017220,
+            "papers-en": 11765697,
+            "qa-en": 44516207,
+            "web-ar": 3167019,
+            "web-en": 12316187,
+            "web-es": 3167020,
+            "web-fr": 3167020,
+            "web-hi": 3167019,
+            "web-ja": 3167019,
+            "web-ru": 3167020,
+            "web-zh": 3167019,
+            "wiki-ar": 1722295,
+            "wiki-en": 1722296,
+            "wiki-es": 1722296,
+            "wiki-fr": 1722296,
+            "wiki-hi": 1722295,
+            "wiki-ja": 1722295,
+            "wiki-ru": 1722295,
+            "wiki-zh": 1722295
+          },
+          "config_sha256": "f8088a4691dc5d1c64c4ea30de67a63d851f5811b00ac4e06daf95fddf36786d",
+          "domain_bytes": {
+            "books": 24967674,
+            "code": 7471952,
+            "legal": 33719118,
+            "math": 4278446,
+            "medical": 25017220,
+            "papers": 11765697,
+            "qa": 44516207,
+            "web": 34485323,
+            "wikipedia": 13778363
+          },
+          "index": 879,
+          "noise_per_million": 58613,
+          "pretokenizer": "regex",
+          "seed": 4949075706228770379,
+          "vocab_size": 122000
+        },
+        "features": {
+          "forms_sha256": "622df07099671f89a775284af65a5051cba3c3295aa7f8ce312bd61c23342006",
+          "priors_sha256": "5e48094aeca48f81b2d83fb4eea5f6b30abe5c7ff9e338e09db01766bb40ac47",
+          "truncated_forms": 348
+        },
+        "id": "pool-0879",
+        "index": 879,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0879/tokenizer.json",
+        "sha256": "8d9456e4db7c9cefd91596688835c6f321c354476f4f1df8e903773bdb6637f2",
+        "vocab_size": 122000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 11605463,
+            "code": 11524557,
+            "legal-en": 59971212,
+            "math-en": 34291102,
+            "medical-en": 12111250,
+            "papers-en": 7459898,
+            "qa-en": 4960121,
+            "web-ar": 2638296,
+            "web-en": 10260039,
+            "web-es": 2638296,
+            "web-fr": 2638296,
+            "web-hi": 2638295,
+            "web-ja": 2638296,
+            "web-ru": 2638296,
+            "web-zh": 2638296,
+            "wiki-ar": 3668536,
+            "wiki-en": 3668536,
+            "wiki-es": 3668536,
+            "wiki-fr": 3668536,
+            "wiki-hi": 3668535,
+            "wiki-ja": 3668536,
+            "wiki-ru": 3668536,
+            "wiki-zh": 3668536
+          },
+          "config_sha256": "d75dc4484bd4457098315b609a87624478c18ca20632d1898a2d85bfb83c7199",
+          "domain_bytes": {
+            "books": 11605463,
+            "code": 11524557,
+            "legal": 59971212,
+            "math": 34291102,
+            "medical": 12111250,
+            "papers": 7459898,
+            "qa": 4960121,
+            "web": 28728110,
+            "wikipedia": 29348287
+          },
+          "index": 912,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 5696716777954744239,
+          "vocab_size": 96000
+        },
+        "features": {
+          "forms_sha256": "848aee32016731175f5b8e715d9603ce4417d63fbf080115943071d868f24885",
+          "priors_sha256": "b39d6e7ac91bb4c9a09026a7765ee037018de0cf2c7cdbce1937034173ee6b2f",
+          "truncated_forms": 842
+        },
+        "id": "pool-0912",
+        "index": 912,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0912/tokenizer.json",
+        "sha256": "f9e4f87da6c4fbfa7749cc664e96e126d5fb88d676bc6a3a7f4fa562189fa5ad",
+        "vocab_size": 96000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 4862928,
+            "code": 16407027,
+            "legal-en": 17646283,
+            "math-en": 69646383,
+            "medical-en": 12316389,
+            "papers-en": 26622433,
+            "qa-en": 4771593,
+            "web-ar": 433851,
+            "web-en": 1687201,
+            "web-es": 433852,
+            "web-fr": 433852,
+            "web-hi": 433851,
+            "web-ja": 433852,
+            "web-ru": 433852,
+            "web-zh": 433852,
+            "wiki-ar": 5375350,
+            "wiki-en": 5375351,
+            "wiki-es": 5375350,
+            "wiki-fr": 5375350,
+            "wiki-hi": 5375350,
+            "wiki-ja": 5375350,
+            "wiki-ru": 5375350,
+            "wiki-zh": 5375350
+          },
+          "config_sha256": "3574173723838f1f2f5a7aa2e896695d2b12c11642e181c8f478cec7e8d4d326",
+          "domain_bytes": {
+            "books": 4862928,
+            "code": 16407027,
+            "legal": 17646283,
+            "math": 69646383,
+            "medical": 12316389,
+            "papers": 26622433,
+            "qa": 4771593,
+            "web": 4724163,
+            "wikipedia": 43002801
+          },
+          "index": 913,
+          "noise_per_million": 579361,
+          "pretokenizer": "line256",
+          "seed": 4988047013377788815,
+          "vocab_size": 71000
+        },
+        "features": {
+          "forms_sha256": "2064e23a8cec27420293ce617b928aaa2de371c3f374d8c6471b602ee215d56a",
+          "priors_sha256": "24a2add65f10df3d3fc5e1504a49f7d74acdeeeee47537522037bbc5ed60732e",
+          "truncated_forms": 113
+        },
+        "id": "pool-0913",
+        "index": 913,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0913/tokenizer.json",
+        "sha256": "79503a2151aa643abb83f108f206a8642f268c49658e07629a4cff45b151f6bf",
+        "vocab_size": 71000
+      },
+      {
+        "config": {
+          "algorithm": "bpe",
+          "bucket_bytes": {
+            "books-en": 14281674,
+            "code": 5909502,
+            "legal-en": 60631722,
+            "math-en": 6444495,
+            "medical-en": 23871319,
+            "papers-en": 35207312,
+            "qa-en": 3037214,
+            "web-ar": 3071796,
+            "web-en": 11945873,
+            "web-es": 3071796,
+            "web-fr": 3071796,
+            "web-hi": 3071796,
+            "web-ja": 3071796,
+            "web-ru": 3071796,
+            "web-zh": 3071796,
+            "wiki-ar": 2146039,
+            "wiki-en": 2146040,
+            "wiki-es": 2146040,
+            "wiki-fr": 2146040,
+            "wiki-hi": 2146039,
+            "wiki-ja": 2146039,
+            "wiki-ru": 2146040,
+            "wiki-zh": 2146040
+          },
+          "config_sha256": "652b83dee749b3eb71d44a2d393c7b8ad6c8d91727e88e4123381e41f4d24bf8",
+          "domain_bytes": {
+            "books": 14281674,
+            "code": 5909502,
+            "legal": 60631722,
+            "math": 6444495,
+            "medical": 23871319,
+            "papers": 35207312,
+            "qa": 3037214,
+            "web": 33448445,
+            "wikipedia": 17168317
+          },
+          "index": 932,
+          "noise_per_million": 535499,
+          "pretokenizer": "regex",
+          "seed": 881821653748056949,
+          "vocab_size": 67000
+        },
+        "features": {
+          "forms_sha256": "cce3ae57d3a423255f97cb22ee8c40aa6ca9aa1092cadbd2b037c7c2ac6d4b3f",
+          "priors_sha256": "527d5b60cd4a36bc1c85432fa401217dcbd4b77c7c23105075143f10cf15c152",
+          "truncated_forms": 63
+        },
+        "id": "pool-0932",
+        "index": 932,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0932/tokenizer.json",
+        "sha256": "8d8de75c878062d0eb29a65c6e3eefec08d253f92b6216435f3f5edd0ea3f724",
+        "vocab_size": 67000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 6426392,
+            "code": 823309,
+            "legal-en": 17094096,
+            "math-en": 32596494,
+            "medical-en": 11360259,
+            "papers-en": 35572010,
+            "qa-en": 16907825,
+            "web-ar": 4626130,
+            "web-en": 17990508,
+            "web-es": 4626131,
+            "web-fr": 4626131,
+            "web-hi": 4626130,
+            "web-ja": 4626130,
+            "web-ru": 4626131,
+            "web-zh": 4626131,
+            "wiki-ar": 3605774,
+            "wiki-en": 3605775,
+            "wiki-es": 3605774,
+            "wiki-fr": 3605774,
+            "wiki-hi": 3605774,
+            "wiki-ja": 3605774,
+            "wiki-ru": 3605774,
+            "wiki-zh": 3605774
+          },
+          "config_sha256": "7d8c7fe9ef32e55cff22d64a63641a55ed217a31790b502dc712d561828dccef",
+          "domain_bytes": {
+            "books": 6426392,
+            "code": 823309,
+            "legal": 17094096,
+            "math": 32596494,
+            "medical": 11360259,
+            "papers": 35572010,
+            "qa": 16907825,
+            "web": 50373422,
+            "wikipedia": 28846193
+          },
+          "index": 936,
+          "noise_per_million": null,
+          "pretokenizer": "line256",
+          "seed": 8336881414667709870,
+          "vocab_size": 86000
+        },
+        "features": {
+          "forms_sha256": "f2d96cfffe3b36d1058df9a8dc2e4cf4aca36ff30a2d93d0a0c78ec15f92b032",
+          "priors_sha256": "7153db743ba063986ee5decd7c45f521c02a69239176d73d7145d086fdb8179a",
+          "truncated_forms": 423
+        },
+        "id": "pool-0936",
+        "index": 936,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0936/tokenizer.json",
+        "sha256": "28618d01d21270692519649ac5cf7def217d85497736a12c565574e2a47c29ce",
+        "vocab_size": 86000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 20891986,
+            "code": 14630148,
+            "legal-en": 27052691,
+            "math-en": 5750449,
+            "medical-en": 71713391,
+            "papers-en": 10054297,
+            "qa-en": 25884295,
+            "web-ar": 1773971,
+            "web-en": 6898777,
+            "web-es": 1773971,
+            "web-fr": 1773971,
+            "web-hi": 1773971,
+            "web-ja": 1773971,
+            "web-ru": 1773971,
+            "web-zh": 1773971,
+            "wiki-ar": 588271,
+            "wiki-en": 588272,
+            "wiki-es": 588271,
+            "wiki-fr": 588271,
+            "wiki-hi": 588271,
+            "wiki-ja": 588271,
+            "wiki-ru": 588271,
+            "wiki-zh": 588271
+          },
+          "config_sha256": "ea51f949edb1dbde2c49f54626e4f993c1da85cbab5139a7aa21154784ac26bd",
+          "domain_bytes": {
+            "books": 20891986,
+            "code": 14630148,
+            "legal": 27052691,
+            "math": 5750449,
+            "medical": 71713391,
+            "papers": 10054297,
+            "qa": 25884295,
+            "web": 19316574,
+            "wikipedia": 4706169
+          },
+          "index": 943,
+          "noise_per_million": null,
+          "pretokenizer": "line256",
+          "seed": 3722121035808471666,
+          "vocab_size": 98000
+        },
+        "features": {
+          "forms_sha256": "9417b3a865414b325cda242834be5c9d59e3e0d062db737c702b1e5419bbe2eb",
+          "priors_sha256": "503bd742b8ad453c7e5ac82d332ab7da90d6385b044993efa1362c7ddd66f93b",
+          "truncated_forms": 958
+        },
+        "id": "pool-0943",
+        "index": 943,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0943/tokenizer.json",
+        "sha256": "52c60d095432d7f7ee39584054ba74e94a2a749bec21e2c4a60b6c48f7cdb38e",
+        "vocab_size": 98000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 13165648,
+            "code": 9381529,
+            "legal-en": 57017208,
+            "math-en": 7376227,
+            "medical-en": 35354381,
+            "papers-en": 12096154,
+            "qa-en": 32034162,
+            "web-ar": 1217372,
+            "web-en": 4734224,
+            "web-es": 1217372,
+            "web-fr": 1217372,
+            "web-hi": 1217371,
+            "web-ja": 1217372,
+            "web-ru": 1217372,
+            "web-zh": 1217372,
+            "wiki-ar": 2539858,
+            "wiki-en": 2539858,
+            "wiki-es": 2539858,
+            "wiki-fr": 2539858,
+            "wiki-hi": 2539858,
+            "wiki-ja": 2539858,
+            "wiki-ru": 2539858,
+            "wiki-zh": 2539858
+          },
+          "config_sha256": "2b77bae30cec851cfff671b50ef8f4ac00f811f8408438e19e50e5400146d070",
+          "domain_bytes": {
+            "books": 13165648,
+            "code": 9381529,
+            "legal": 57017208,
+            "math": 7376227,
+            "medical": 35354381,
+            "papers": 12096154,
+            "qa": 32034162,
+            "web": 13255827,
+            "wikipedia": 20318864
+          },
+          "index": 981,
+          "noise_per_million": null,
+          "pretokenizer": "line256",
+          "seed": 7097272255857778126,
+          "vocab_size": 91000
+        },
+        "features": {
+          "forms_sha256": "8d41b46ac05f14c916cbb3617932f9bbb4806f37532cdefc20402b199412e428",
+          "priors_sha256": "3be74f3813bbf50583a77a93a18c1da9dd0cf5e50a5d5b3cbbcb0660711e2a0d",
+          "truncated_forms": 546
+        },
+        "id": "pool-0981",
+        "index": 981,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0981/tokenizer.json",
+        "sha256": "5c4d3d47508c0faa00fbaa2270afbeb6110000c5cd3365c24626892e3d7b9bbc",
+        "vocab_size": 91000
+      },
+      {
+        "config": {
+          "algorithm": "unigram",
+          "bucket_bytes": {
+            "books-en": 17338367,
+            "code": 33718083,
+            "legal-en": 40234974,
+            "math-en": 31117753,
+            "medical-en": 3078098,
+            "papers-en": 21232654,
+            "qa-en": 3649243,
+            "web-ar": 2851071,
+            "web-en": 11087499,
+            "web-es": 2851072,
+            "web-fr": 2851071,
+            "web-hi": 2851071,
+            "web-ja": 2851071,
+            "web-ru": 2851071,
+            "web-zh": 2851071,
+            "wiki-ar": 2323229,
+            "wiki-en": 2323229,
+            "wiki-es": 2323229,
+            "wiki-fr": 2323229,
+            "wiki-hi": 2323228,
+            "wiki-ja": 2323229,
+            "wiki-ru": 2323229,
+            "wiki-zh": 2323229
+          },
+          "config_sha256": "1a2709dbee520cf9f21487307e81d51f46652f411f612f9f8c31654d0d6541a2",
+          "domain_bytes": {
+            "books": 17338367,
+            "code": 33718083,
+            "legal": 40234974,
+            "math": 31117753,
+            "medical": 3078098,
+            "papers": 21232654,
+            "qa": 3649243,
+            "web": 31044997,
+            "wikipedia": 18585831
+          },
+          "index": 994,
+          "noise_per_million": null,
+          "pretokenizer": "no-regex",
+          "seed": 7648825703672505766,
+          "vocab_size": 63000
+        },
+        "features": {
+          "forms_sha256": "63cb264b774a2487fb6e5be1280e31668b8ab48482dd1914dd0f582ea6bc5b3d",
+          "priors_sha256": "0d124727b51944eebe6d8c74c48756b904ad5fafb1fc2ebccb853f7f1a367fab",
+          "truncated_forms": 1700
+        },
+        "id": "pool-0994",
+        "index": 994,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0994/tokenizer.json",
+        "sha256": "5c51ab3f3dbbe667944c76ebb2f5213233ac2c38534f175b23994870378ed2e4",
+        "vocab_size": 63000
+      },
+      {
+        "config": {
+          "algorithm": "wordpiece",
+          "bucket_bytes": {
+            "books-en": 4898241,
+            "code": 2699042,
+            "legal-en": 102673,
+            "math-en": 147500,
+            "medical-en": 2396598,
+            "papers-en": 53295577,
+            "qa-en": 103484637,
+            "web-ar": 2111359,
+            "web-en": 8210839,
+            "web-es": 2111359,
+            "web-fr": 2111359,
+            "web-hi": 2111358,
+            "web-ja": 2111359,
+            "web-ru": 2111359,
+            "web-zh": 2111359,
+            "wiki-ar": 1248172,
+            "wiki-en": 1248173,
+            "wiki-es": 1248173,
+            "wiki-fr": 1248173,
+            "wiki-hi": 1248172,
+            "wiki-ja": 1248172,
+            "wiki-ru": 1248173,
+            "wiki-zh": 1248173
+          },
+          "config_sha256": "1a5289c8500f30851c96fb270ea544a53eb9e80e9a53b1d0bca55575eee9e4c4",
+          "domain_bytes": {
+            "books": 4898241,
+            "code": 2699042,
+            "legal": 102673,
+            "math": 147500,
+            "medical": 2396598,
+            "papers": 53295577,
+            "qa": 103484637,
+            "web": 22990351,
+            "wikipedia": 9985381
+          },
+          "index": 996,
+          "noise_per_million": null,
+          "pretokenizer": "line256",
+          "seed": 6614733182495639550,
+          "vocab_size": 93000
+        },
+        "features": {
+          "forms_sha256": "e363f5ab323184944e10dc1d5f9ee5c7a9b3e5f6258f76add3e5d45b06278eea",
+          "priors_sha256": "2e33b71da18ffff61f1bc0243746964336d6296f200c435350b3a5b487874f7b",
+          "truncated_forms": 333
+        },
+        "id": "pool-0996",
+        "index": 996,
+        "kind": "pool",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/local_memory/artifacts/input/pool/tokenizers/0996/tokenizer.json",
+        "sha256": "9e085a01fc0ceb240ef749648c71da1db412a4271751d27179080bcdec4999a8",
+        "vocab_size": 93000
+      },
+      {
+        "config": {
+          "algorithm": "byte-level BPE",
+          "max_token_length": 64,
+          "min_frequency": 2,
+          "normalizer": null,
+          "pre_tokenizer": "Split(lines, max 256 characters) -> ByteLevel(add_prefix_space=False, use_regex=False)",
+          "special_tokens": [
+            "<|endoftext|>"
+          ],
+          "tokenizers_version": "0.22.2",
+          "vocab_size": 48000
+        },
+        "features": {
+          "forms_sha256": "7f582aa9190b2b845d7539b54a3efe9d89d2ad0f30bf62524b01752faad8d537",
+          "priors_sha256": "60441bedb5f8a986532ca4dedc758092e54069d8b37ecd6ebe8856c96ae4d371",
+          "truncated_forms": 71
+        },
+        "id": "ood48-base",
+        "kind": "saved-native",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/heldout/ood48-base/tokenizer.json",
+        "sha256": "1ad75ae98d1eef7afb2b348c82ce48199b4fdf2aa417cc55a515a25047651a47",
+        "vocab_size": 48000
+      },
+      {
+        "config": {
+          "algorithm": "byte-level BPE",
+          "max_token_length": 64,
+          "min_frequency": 2,
+          "normalizer": null,
+          "pre_tokenizer": "Split(lines, max 256 characters) -> ByteLevel(add_prefix_space=False, use_regex=False)",
+          "special_tokens": [
+            "<|endoftext|>"
+          ],
+          "tokenizers_version": "0.22.2",
+          "vocab_size": 48000
+        },
+        "features": {
+          "forms_sha256": "dc6c727aa105dea1407bc1c8c2d7be10a0659c81b0c978f4988e310f33506107",
+          "priors_sha256": "60441bedb5f8a986532ca4dedc758092e54069d8b37ecd6ebe8856c96ae4d371",
+          "truncated_forms": 193
+        },
+        "id": "ood48-code50",
+        "kind": "saved-native",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/heldout/ood48-code50/tokenizer.json",
+        "sha256": "75485103c030d09fc3cdc282b81e552f74f37e1d692df9b546f091171bfe4c0c",
+        "vocab_size": 48000
+      },
+      {
+        "config": {
+          "algorithm": "byte-level BPE",
+          "max_token_length": 64,
+          "min_frequency": 2,
+          "normalizer": null,
+          "pre_tokenizer": "Split(lines, max 256 characters) -> ByteLevel(add_prefix_space=False, use_regex=False)",
+          "special_tokens": [
+            "<|endoftext|>"
+          ],
+          "tokenizers_version": "0.22.2",
+          "vocab_size": 48000
+        },
+        "features": {
+          "forms_sha256": "534f8d69f0e4f04d51ab5968bd9b396a5e2ef00ba89fd6882113c2ff91d137aa",
+          "priors_sha256": "60441bedb5f8a986532ca4dedc758092e54069d8b37ecd6ebe8856c96ae4d371",
+          "truncated_forms": 53
+        },
+        "id": "ood48-papers25",
+        "kind": "saved-native",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/heldout/ood48-papers25/tokenizer.json",
+        "sha256": "99ca0d30e10a62ca32e415e4842dd4a9be634b5ed0f8c3f926dc05f135e02c9b",
+        "vocab_size": 48000
+      },
+      {
+        "config": {
+          "algorithm": "byte-level BPE",
+          "max_token_length": 64,
+          "min_frequency": 2,
+          "normalizer": null,
+          "pre_tokenizer": "Split(lines, max 256 characters) -> ByteLevel(add_prefix_space=False, use_regex=False)",
+          "special_tokens": [
+            "<|endoftext|>"
+          ],
+          "tokenizers_version": "0.22.2",
+          "vocab_size": 48000
+        },
+        "features": {
+          "forms_sha256": "8610c2417108bc51a1c1c4fa16fe178116a934a88a07f0e90b26934f14b226f9",
+          "priors_sha256": "60441bedb5f8a986532ca4dedc758092e54069d8b37ecd6ebe8856c96ae4d371",
+          "truncated_forms": 117
+        },
+        "id": "ood48-math50",
+        "kind": "saved-native",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/heldout/ood48-math50/tokenizer.json",
+        "sha256": "7fb3935be8f83c2667656fbbd8c3d9e9f5445efc79d35457dc5d33eb18f2a892",
+        "vocab_size": 48000
+      },
+      {
+        "config": {
+          "algorithm": "byte-level BPE",
+          "max_token_length": 64,
+          "min_frequency": 2,
+          "normalizer": null,
+          "pre_tokenizer": "Split(lines, max 256 characters) -> ByteLevel(add_prefix_space=False, use_regex=False)",
+          "special_tokens": [
+            "<|endoftext|>"
+          ],
+          "tokenizers_version": "0.22.2",
+          "vocab_size": 48000
+        },
+        "features": {
+          "forms_sha256": "37ecde9ceb5b989bb8af463319a0369b448368437dea0407087b79147ccc30df",
+          "priors_sha256": "60441bedb5f8a986532ca4dedc758092e54069d8b37ecd6ebe8856c96ae4d371",
+          "truncated_forms": 59
+        },
+        "id": "ood48-qa25",
+        "kind": "saved-native",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/heldout/ood48-qa25/tokenizer.json",
+        "sha256": "bdb710b6e53cc12881556277bc0028d8f756b5cb2506babda0a4195d10d31ea3",
+        "vocab_size": 48000
+      },
+      {
+        "config": {
+          "algorithm": "byte-level BPE",
+          "max_token_length": 64,
+          "min_frequency": 2,
+          "normalizer": null,
+          "pre_tokenizer": "Split(lines, max 256 characters) -> ByteLevel(add_prefix_space=False, use_regex=False)",
+          "special_tokens": [
+            "<|endoftext|>"
+          ],
+          "tokenizers_version": "0.22.2",
+          "vocab_size": 48000
+        },
+        "features": {
+          "forms_sha256": "6f569b715187f2471fda147a189adc67eb7a9003872fac434aa22d2945acbbc8",
+          "priors_sha256": "60441bedb5f8a986532ca4dedc758092e54069d8b37ecd6ebe8856c96ae4d371",
+          "truncated_forms": 52
+        },
+        "id": "ood48-books25",
+        "kind": "saved-native",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/heldout/ood48-books25/tokenizer.json",
+        "sha256": "3004f009fa0a02cdc43b26a79ed901e2d21b6d81ee39560c3a7bf3c71914e308",
+        "vocab_size": 48000
+      },
+      {
+        "config": {
+          "algorithm": "byte-level BPE",
+          "max_token_length": 64,
+          "min_frequency": 2,
+          "normalizer": null,
+          "pre_tokenizer": "Split(lines, max 256 characters) -> ByteLevel(add_prefix_space=False, use_regex=False)",
+          "special_tokens": [
+            "<|endoftext|>"
+          ],
+          "tokenizers_version": "0.22.2",
+          "vocab_size": 48000
+        },
+        "features": {
+          "forms_sha256": "46d56a2b2cbe4d82a7f25331bb9c26e3449e79c0eca2a88e54498c8611822bd5",
+          "priors_sha256": "60441bedb5f8a986532ca4dedc758092e54069d8b37ecd6ebe8856c96ae4d371",
+          "truncated_forms": 134
+        },
+        "id": "ood48-medical40",
+        "kind": "saved-native",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/heldout/ood48-medical40/tokenizer.json",
+        "sha256": "014f4cf40e1efb14382b1d841811e59cd5a258bb488df51cfdd37fb93a1477d7",
+        "vocab_size": 48000
+      },
+      {
+        "config": {
+          "algorithm": "byte-level BPE",
+          "max_token_length": 64,
+          "min_frequency": 2,
+          "normalizer": null,
+          "pre_tokenizer": "Split(lines, max 256 characters) -> ByteLevel(add_prefix_space=False, use_regex=False)",
+          "special_tokens": [
+            "<|endoftext|>"
+          ],
+          "tokenizers_version": "0.22.2",
+          "vocab_size": 48000
+        },
+        "features": {
+          "forms_sha256": "051141738b6a526d78a5707c1ae5b522dc40d23fb94875ae6ab43b487150b0d6",
+          "priors_sha256": "60441bedb5f8a986532ca4dedc758092e54069d8b37ecd6ebe8856c96ae4d371",
+          "truncated_forms": 47
+        },
+        "id": "ood48-legal40",
+        "kind": "saved-native",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/heldout/ood48-legal40/tokenizer.json",
+        "sha256": "a8bdc26e719afa952b013d8dd8aa29a44833fd6d6208e31d91be2488a9df7163",
+        "vocab_size": 48000
+      },
+      {
+        "config": {
+          "algorithm": "byte-level BPE",
+          "max_token_length": 64,
+          "min_frequency": 2,
+          "normalizer": null,
+          "pre_tokenizer": "Split(lines, max 256 characters) -> ByteLevel(add_prefix_space=False, use_regex=False)",
+          "special_tokens": [
+            "<|endoftext|>"
+          ],
+          "tokenizers_version": "0.22.2",
+          "vocab_size": 48000
+        },
+        "features": {
+          "forms_sha256": "4620bf3e9afcb53828ec11a7c51c9f12257e99457aa1b9bd1a94392725863e05",
+          "priors_sha256": "60441bedb5f8a986532ca4dedc758092e54069d8b37ecd6ebe8856c96ae4d371",
+          "truncated_forms": 40
+        },
+        "id": "ood48-spanish35",
+        "kind": "saved-native",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/heldout/ood48-spanish35/tokenizer.json",
+        "sha256": "b1a2225a7f2bf50b772d5b47450f8a320ce6c661bbd2f0fcf19c3335398a2284",
+        "vocab_size": 48000
+      },
+      {
+        "config": {
+          "algorithm": "byte-level BPE",
+          "max_token_length": 64,
+          "min_frequency": 2,
+          "normalizer": null,
+          "pre_tokenizer": "Split(lines, max 256 characters) -> ByteLevel(add_prefix_space=False, use_regex=False)",
+          "special_tokens": [
+            "<|endoftext|>"
+          ],
+          "tokenizers_version": "0.22.2",
+          "vocab_size": 48000
+        },
+        "features": {
+          "forms_sha256": "54f8dcff87b377924dca4673e1d4ba2b33e86c67f2eae8ef1648e5ab2bf7a53f",
+          "priors_sha256": "60441bedb5f8a986532ca4dedc758092e54069d8b37ecd6ebe8856c96ae4d371",
+          "truncated_forms": 67
+        },
+        "id": "ood48-chinese35",
+        "kind": "saved-native",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/heldout/ood48-chinese35/tokenizer.json",
+        "sha256": "7fb9f4a2cc02050e04158d1a49e31ade984e4f614ca96135bb7e8d781474326c",
+        "vocab_size": 48000
+      },
+      {
+        "config": {
+          "algorithm": "byte-level BPE",
+          "max_token_length": 64,
+          "min_frequency": 2,
+          "normalizer": null,
+          "pre_tokenizer": "Split(lines, max 256 characters) -> ByteLevel(add_prefix_space=False, use_regex=False)",
+          "special_tokens": [
+            "<|endoftext|>"
+          ],
+          "tokenizers_version": "0.22.2",
+          "vocab_size": 48000
+        },
+        "features": {
+          "forms_sha256": "39ab4dbe0e9dfcf18a3f877ce8b3e762b2fb859658a6532fd16dc570ff141081",
+          "priors_sha256": "60441bedb5f8a986532ca4dedc758092e54069d8b37ecd6ebe8856c96ae4d371",
+          "truncated_forms": 380
+        },
+        "id": "ood48-japanese35",
+        "kind": "saved-native",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/heldout/ood48-japanese35/tokenizer.json",
+        "sha256": "f59419d4ad4085f0ae18dae1e8634582d97452869d1c013df6323d783d0124ef",
+        "vocab_size": 48000
+      },
+      {
+        "config": {
+          "algorithm": "byte-level BPE",
+          "max_token_length": 64,
+          "min_frequency": 2,
+          "normalizer": null,
+          "pre_tokenizer": "Split(lines, max 256 characters) -> ByteLevel(add_prefix_space=False, use_regex=False)",
+          "special_tokens": [
+            "<|endoftext|>"
+          ],
+          "tokenizers_version": "0.22.2",
+          "vocab_size": 64000
+        },
+        "features": {
+          "forms_sha256": "ead30c5a2786a479f1be110b1a088b6f9fecd981a82aed64ee263e3fc37e7f61",
+          "priors_sha256": "abf2242a0c9ba69961a60acdf7a8b4153fe5f83d13a3cafa4669256e7024f7b3",
+          "truncated_forms": 134
+        },
+        "id": "base64",
+        "kind": "saved-native",
+        "path": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/heldout/base64/tokenizer.json",
+        "sha256": "8e9ba3174eb2123de0083a7d4eb3f9492160fcd0ba559801f30de45a1602a2bd",
+        "vocab_size": 64000
+      }
+    ],
+    "code": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/tillicum_hardness/.hardness-code-44d2de3f474ff71c",
+    "code_manifest_sha256": "9a5f1d83207bca52df2645bee5ddf8fc9622bb021ecfe53835bd88ab273867eb",
+    "comparisons": 248,
+    "documents": 576,
+    "evaluator_sources": {
+      "four_way_8k.py": "a1062e7ecc6be981ac57c785fea354ecdaef6bc6885919669c6c925cdc26b935",
+      "natural_transfer.py": "3d9da090f5deca5b4086873d4ae6a92486409603011e6aca5c1f13647a246190",
+      "package_training_inputs.py": "7890313184496cb5a2f82980d1544cc9d90b0b6f143f336a5f09fab99f8e9e3f",
+      "pool_generalization.py": "4f57152243a761f828cdbffee8fa6cf73f8872b2fff41f0f00d2e2102f5d5914",
+      "uniform_trajectory.py": "2e92ea1559b1f9e581f73ff1ccd1d7b4c8977735fd5984fd7fe3d8961040d975",
+      "uniform_weakness.py": "c53d66d046e47049d4e754673d0159deff2cdc71ce503075abe54635a8efceb3"
+    },
+    "input_hashes": {
+      "eval/code.jsonl.gz": "135e3dabd9b37eacceef78b06714a91bb7b61e756e84ee4cd2cf2e007c8d6a5c",
+      "eval/legal-en.jsonl.gz": "0018bf162ac8dc639ab7666330a70bd44b32c5a13f4a169147260253915a2320",
+      "eval/math-en.jsonl.gz": "6c2c80aa14179af6f8772b55d383961cead8ba11038eaa9db96c74b96aa8208d",
+      "eval/medical-en.jsonl.gz": "2240a09c7d24a089913f755205b190ec1fc3bb54b915d121e0b84db9b7b61489",
+      "eval/web-ar.jsonl.gz": "46fdaf8aef2d19512d50d702f22cdb070a14f1daac44306e380b93dec0121242",
+      "eval/web-en.jsonl.gz": "63389c9f58edd9cf55ac9576ea0e94c8704d65e5a9375004b59bbc7eff3a2a91",
+      "eval/web-hi.jsonl.gz": "d7f3b27038894ff1e027991a3414bd64e479fcbc19e3b9e4e8c93ec757a82d65",
+      "eval/web-ja.jsonl.gz": "9696fc7d8a59234b6e164a5b48a48a42f09fa0e072b15bbe583afce09743dea3",
+      "eval/web-zh.jsonl.gz": "61b8fd1ad71c5fdca8f20260ec85d271493c6f6da62f642ed150f3feb47d60b1",
+      "model/config.json": "33397f6af8090f7290f27ce6fb1cd23a95fd0915a5c648dfd10b6002aaf7fc48",
+      "model/model.safetensors": "1193528982f4ac0c0b707ce36fd7dc03a0ef6f3e1a432deb886dce2e90c300c0",
+      "model/tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c"
+    },
+    "models": [
+      {
+        "checkpoint": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/checkpoints/uniform",
+        "config": {
+          "batch_size": 128,
+          "data_manifest_sha256": "363fbd074905cc60e490109fd3017513f3f54f234d092475786643a9b92c304d",
+          "data_snippet_chars": 512,
+          "hn_peak_lr": 6e-05,
+          "joint_helpers_sha256": "7ce18a9d9843faac1a9438f6ad595588569c0512574b7a602e5b11b432bdaf5e",
+          "lexical_loss_weight": 0.5,
+          "lm_peak_lr": 1e-06,
+          "lr_final_fraction": 0.1,
+          "lr_ramp_updates": 10000,
+          "main_updates": 190000,
+          "max_pieces": 10,
+          "microbatch_size": 32,
+          "min_data_chars": 32,
+          "model": "/mnt/zett/input/model",
+          "pool_index_sha256": "7cdc2c0bb4b300605d152255ed6156f598154fb3dbe402e272c83276941353a1",
+          "pool_plan_sha256": "1f5d0be379e321015d1ab7b35bb93bcf82e8ce32f949411de1d7272dfa3cb1bb",
+          "pool_priors": "native_unigram_scores_otherwise_zero",
+          "pool_sampling_sha256": "846446a0ddb8b833801bb74b7939452a3195760a98e9bab2a3dd2e73d57f1b57",
+          "pool_size": 1000,
+          "protected_steps": [
+            500,
+            1000,
+            1500,
+            2000,
+            2500,
+            3000,
+            3500,
+            4000,
+            4500,
+            5000,
+            5500,
+            6000,
+            6500,
+            7000,
+            7500,
+            8000,
+            8500,
+            9000,
+            9500,
+            10000,
+            10500,
+            11000,
+            11500,
+            12000,
+            12500,
+            13000,
+            13500,
+            14000,
+            14500,
+            15000,
+            15500,
+            16000,
+            16500,
+            17000,
+            17500,
+            18000,
+            18500,
+            19000,
+            19500,
+            20000
+          ],
+          "recipe_sha256": "b3bc193333aa13d3a513f1c8978805835f837190cd0e5991742c55e9a0752cfe",
+          "sampler_text_chars": 2048,
+          "seed": 42,
+          "sequence_length": 128,
+          "tokenizer_sampling": "uniform_with_replacement_per_optimizer_update",
+          "training_script_sha256": "c6406d263fb9cbc8638492d8c77327ce249e215eb74dc43e10335bc95a11ed52",
+          "warmup_checkpoint": "/__modal/volumes/vo-Q4yty65hVtdj87Mu7hF1yy/input/warmup"
+        },
+        "manifest": {
+          "files": {
+            "hypernet/config.json": {
+              "bytes": 2382,
+              "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+            },
+            "hypernet/model.safetensors": {
+              "bytes": 1376918848,
+              "sha256": "2c8dd1e97e517dcf2445e9a287e10a1cf12bd33dad22e7409c57bfd7848222e2"
+            },
+            "lm.pt": {
+              "bytes": 7248239832,
+              "sha256": "aef858f4409d2e3fe39994e26af7313e7a846ae9a516b0cc15bd98ded5998e21"
+            },
+            "optimizer.pt": {
+              "bytes": 14834411782,
+              "sha256": "e592b5a3ea1807d54f7693024f2ad100a88a5c2eb50e7695fcc56e5425cf579f"
+            },
+            "state.pt": {
+              "bytes": 5238677,
+              "sha256": "7aa11693c5c37048cb0f11a554e1bcc222da54a08f04527450cc259deec415ac"
+            }
+          },
+          "kind": "full_restart_checkpoint",
+          "step": 8000,
+          "trainer_sha256": "c6406d263fb9cbc8638492d8c77327ce249e215eb74dc43e10335bc95a11ed52"
+        },
+        "name": "uniform",
+        "source": {
+          "path": "run/step-008000",
+          "profile": "gildmember",
+          "volume": "anytok-pool-20k"
+        }
+      },
+      {
+        "checkpoint": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/four_way_8k/checkpoints/raw_bpb",
+        "config": {
+          "batch_size": 128,
+          "data_manifest_sha256": "363fbd074905cc60e490109fd3017513f3f54f234d092475786643a9b92c304d",
+          "data_snippet_chars": 512,
+          "fixed_eval_sha256": "f2731fdda25480376cae15e6e8902d8dd3f3884d9c2463d2c1d394714325b6dd",
+          "hn_peak_lr": 6e-05,
+          "joint_helpers_sha256": "7ce18a9d9843faac1a9438f6ad595588569c0512574b7a602e5b11b432bdaf5e",
+          "lexical_loss_weight": 0.5,
+          "lm_peak_lr": 1e-06,
+          "lr_final_fraction": 0.1,
+          "lr_ramp_updates": 10000,
+          "main_updates": 190000,
+          "max_pieces": 10,
+          "microbatch_size": 32,
+          "min_data_chars": 32,
+          "model": "/mnt/rl/input/model",
+          "policy": {
+            "baseline_decay": 0.99,
+            "entropy_weight": 0.01,
+            "feature_names": [
+              "algorithm:bpe",
+              "algorithm:wordpiece",
+              "algorithm:unigram",
+              "pretokenizer:regex",
+              "pretokenizer:line256",
+              "pretokenizer:no-regex",
+              "vocab_log2_32k_to_128k",
+              "merge_noise_applicable",
+              "merge_noise_fraction_of_0.75",
+              "domain_fraction:web",
+              "domain_fraction:wikipedia",
+              "domain_fraction:code",
+              "domain_fraction:papers",
+              "domain_fraction:math",
+              "domain_fraction:qa",
+              "domain_fraction:books",
+              "domain_fraction:medical",
+              "domain_fraction:legal"
+            ],
+            "feature_sha256": "9fe7f9e5ace73c04001db96c1953cdc52e62287f1b0a64210e247b0e1f290c23",
+            "hidden_sizes": [
+              64,
+              64
+            ],
+            "kind": "shared_settings_mlp",
+            "learning_rate": 0.001,
+            "seed": 43,
+            "size": 1000
+          },
+          "policy_reward": "pre_model_update_continuation_nats / scored_utf8_bytes / ln(2)",
+          "policy_source_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+          "pool_index_sha256": "7cdc2c0bb4b300605d152255ed6156f598154fb3dbe402e272c83276941353a1",
+          "pool_plan_sha256": "1f5d0be379e321015d1ab7b35bb93bcf82e8ce32f949411de1d7272dfa3cb1bb",
+          "pool_priors": "native_unigram_scores_otherwise_zero",
+          "pool_sampling_sha256": "846446a0ddb8b833801bb74b7939452a3195760a98e9bab2a3dd2e73d57f1b57",
+          "pool_size": 1000,
+          "protected_steps": [
+            500,
+            1000,
+            1500,
+            2000,
+            2500,
+            3000,
+            3500,
+            4000,
+            4500,
+            5000,
+            5500,
+            6000,
+            6500,
+            7000,
+            7500,
+            8000,
+            8500,
+            9000,
+            9500,
+            10000,
+            10500,
+            11000,
+            11500,
+            12000,
+            12500,
+            13000,
+            13500,
+            14000,
+            14500,
+            15000,
+            15500,
+            16000,
+            16500,
+            17000,
+            17500,
+            18000,
+            18500,
+            19000,
+            19500,
+            20000
+          ],
+          "recipe_sha256": "b3bc193333aa13d3a513f1c8978805835f837190cd0e5991742c55e9a0752cfe",
+          "sampler_text_chars": 2048,
+          "seed": 42,
+          "sequence_length": 128,
+          "tokenizer_sampling": "adversarial_shared_settings_mlp_per_optimizer_update",
+          "training_script_sha256": "36057349fd398b363a84ce6d8f12438e49cb17b401e4afdaf9e93a6333a691af",
+          "warmup_checkpoint": "/__modal/volumes/vo-pDJKAiFBjNPpC4nYesOUM2/input/warmup"
+        },
+        "manifest": {
+          "files": {
+            "hypernet/config.json": {
+              "bytes": 2382,
+              "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+            },
+            "hypernet/model.safetensors": {
+              "bytes": 1376918848,
+              "sha256": "367ffaf72a1a0954e3bf7bec2d0296f70156c9075a6f27c34ca8da420d4d7724"
+            },
+            "lm.pt": {
+              "bytes": 7248239832,
+              "sha256": "7991dd5b42564226180cb7ece83c8fabe8917c5163bcd1a636200339a6678075"
+            },
+            "optimizer.pt": {
+              "bytes": 14834411782,
+              "sha256": "b1a284a4362e5cd05f8b446f81949cdf27896f2dfdb03439c1fd99c0cc38aef9"
+            },
+            "policy.pt": {
+              "bytes": 207610,
+              "sha256": "552681c14b7369315224e7368f441733300c6decec33a0931538e75a1765d69f"
+            },
+            "state.pt": {
+              "bytes": 5538054,
+              "sha256": "8255d22b9c8c48694dc408722627018518ec42c63e9735221195ef11286f4570"
+            }
+          },
+          "kind": "full_restart_checkpoint",
+          "policy_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+          "step": 8000,
+          "trainer_sha256": "36057349fd398b363a84ce6d8f12438e49cb17b401e4afdaf9e93a6333a691af"
+        },
+        "name": "raw_bpb",
+        "source": {
+          "path": "settings-run/step-008000",
+          "profile": "neural-net-1411",
+          "volume": "anytok-pool-rl-20k"
+        }
+      },
+      {
+        "checkpoint": "/gpfs/scrubbed/qxli2/anytok-h200-smoke/modal_results/tillicum_regret/run/step-008000",
+        "config": {
+          "batch_size": 128,
+          "data_manifest_sha256": "363fbd074905cc60e490109fd3017513f3f54f234d092475786643a9b92c304d",
+          "data_snippet_chars": 512,
+          "fixed_eval_sha256": "f2731fdda25480376cae15e6e8902d8dd3f3884d9c2463d2c1d394714325b6dd",
+          "hn_peak_lr": 6e-05,
+          "joint_helpers_sha256": "7ce18a9d9843faac1a9438f6ad595588569c0512574b7a602e5b11b432bdaf5e",
+          "lexical_loss_weight": 0.5,
+          "lm_peak_lr": 1e-06,
+          "lr_final_fraction": 0.1,
+          "lr_ramp_updates": 10000,
+          "main_updates": 190000,
+          "max_pieces": 10,
+          "memory_execution": "optimized",
+          "memory_source_sha256": {
+            "chunked_hypernetwork.py": "ecf04b58a90bee6211f9fda3712d73649e89f9c42fa01179caebbe48cbe26afd",
+            "local_memory_variants.py": "c1610140bf517fc26fbb41e541ccf0f135dbacc59df3a3ca880d1e1a4b599de6",
+            "lossless_layer_norm.py": "0bd292f45fdceb9eda11c1bff970a2a90f9e645c08f5135c02dcea9d36da1d8d",
+            "lossless_mlp.py": "b7849b1455a5d62f034ae83ad6a4a86b532e03398323a8d9c7398934a4807872",
+            "pool_training_memory.py": "3c482f79514a11d1fd65a7ecb033a3ec8a18bbd72e26ce5196948695f7ee93f8"
+          },
+          "microbatch_size": 32,
+          "min_data_chars": 32,
+          "model": "/gpfs/scrubbed/qxli2/anytok-h200-smoke/modal_results/local_memory/artifacts/input/model",
+          "paired_reward_source_sha256": "406cfc58bf1c46cef0dc6785bbb313ca5797c0d35bf6cd786b3115a92e5523c1",
+          "pairing_protocol": "nearest_valid_canonical_midpoint_boundary_joint_128_positions_v1",
+          "policy": {
+            "baseline_decay": 0.99,
+            "entropy_weight": 0.0,
+            "feature_names": [
+              "algorithm:bpe",
+              "algorithm:wordpiece",
+              "algorithm:unigram",
+              "pretokenizer:regex",
+              "pretokenizer:line256",
+              "pretokenizer:no-regex",
+              "vocab_log2_32k_to_128k",
+              "merge_noise_applicable",
+              "merge_noise_fraction_of_0.75",
+              "domain_fraction:web",
+              "domain_fraction:wikipedia",
+              "domain_fraction:code",
+              "domain_fraction:papers",
+              "domain_fraction:math",
+              "domain_fraction:qa",
+              "domain_fraction:books",
+              "domain_fraction:medical",
+              "domain_fraction:legal"
+            ],
+            "feature_sha256": "9fe7f9e5ace73c04001db96c1953cdc52e62287f1b0a64210e247b0e1f290c23",
+            "hidden_sizes": [
+              64,
+              64
+            ],
+            "kind": "shared_settings_mlp",
+            "learning_rate": 0.001,
+            "seed": 43,
+            "size": 1000
+          },
+          "policy_reward": "paired_pre_model_update_transferred_bpb_minus_current_canonical_bpb",
+          "policy_source_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+          "pool_index_sha256": "7cdc2c0bb4b300605d152255ed6156f598154fb3dbe402e272c83276941353a1",
+          "pool_plan_sha256": "1f5d0be379e321015d1ab7b35bb93bcf82e8ce32f949411de1d7272dfa3cb1bb",
+          "pool_priors": "native_unigram_scores_otherwise_zero",
+          "pool_sampling_sha256": "846446a0ddb8b833801bb74b7939452a3195760a98e9bab2a3dd2e73d57f1b57",
+          "pool_size": 1000,
+          "protected_steps": [
+            500,
+            1000,
+            1500,
+            2000,
+            2500,
+            3000,
+            3500,
+            4000,
+            4500,
+            5000,
+            5500,
+            6000,
+            6500,
+            7000,
+            7500,
+            8000,
+            8500,
+            9000,
+            9500,
+            10000,
+            10500,
+            11000,
+            11500,
+            12000,
+            12500,
+            13000,
+            13500,
+            14000,
+            14500,
+            15000,
+            15500,
+            16000,
+            16500,
+            17000,
+            17500,
+            18000,
+            18500,
+            19000,
+            19500,
+            20000
+          ],
+          "recipe_sha256": "b3bc193333aa13d3a513f1c8978805835f837190cd0e5991742c55e9a0752cfe",
+          "reward_objective": "regret",
+          "sampler_text_chars": 2048,
+          "seed": 42,
+          "sequence_length": 128,
+          "tokenizer_sampling": "adversarial_shared_settings_mlp_per_optimizer_update",
+          "training_script_sha256": "c411e683c2251047ad497512aea1ca948ffb0bece398ce5fd21992782e18ce8b",
+          "warmup_checkpoint": "/gpfs/scrubbed/qxli2/anytok-h200-smoke/modal_results/local_memory/artifacts/input/warmup"
+        },
+        "manifest": {
+          "files": {
+            "hypernet/config.json": {
+              "bytes": 2382,
+              "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+            },
+            "hypernet/model.safetensors": {
+              "bytes": 1376918848,
+              "sha256": "29dd6eab220943651156b8b005989b85e227db52b400cf9470ec82ff1fc58d2a"
+            },
+            "lm.pt": {
+              "bytes": 7248239832,
+              "sha256": "f1db029eb66dbfbd1cc0199b7829a76f4d89831b94f3c7f9c9b3afadd83beef6"
+            },
+            "optimizer.pt": {
+              "bytes": 14834411782,
+              "sha256": "00876e08201e6dcf5465b37a5c7ec8a3585641bb7e5e4b134247bc5ab2fa01fb"
+            },
+            "policy.pt": {
+              "bytes": 207610,
+              "sha256": "62e074cf6f7930218b94a3bc1f3143f5e05a038df3fc20fe0e79443770b28ab9"
+            },
+            "state.pt": {
+              "bytes": 5593798,
+              "sha256": "6d8e89aa65f04f12df692e8a7a085b4737b1e0e024f1427423c4c9365bc1201b"
+            }
+          },
+          "kind": "full_restart_checkpoint",
+          "step": 8000
+        },
+        "name": "regret"
+      },
+      {
+        "checkpoint": "/gpfs/scrubbed/qxli2/anytok-hardness-20k/modal_results/tillicum_hardness/run/step-008000",
+        "config": {
+          "batch_size": 128,
+          "data_manifest_sha256": "363fbd074905cc60e490109fd3017513f3f54f234d092475786643a9b92c304d",
+          "data_snippet_chars": 512,
+          "fixed_eval_sha256": "f2731fdda25480376cae15e6e8902d8dd3f3884d9c2463d2c1d394714325b6dd",
+          "hn_peak_lr": 6e-05,
+          "joint_helpers_sha256": "7ce18a9d9843faac1a9438f6ad595588569c0512574b7a602e5b11b432bdaf5e",
+          "lexical_loss_weight": 0.5,
+          "lm_peak_lr": 1e-06,
+          "lr_final_fraction": 0.1,
+          "lr_ramp_updates": 10000,
+          "main_updates": 190000,
+          "max_pieces": 10,
+          "memory_execution": "optimized",
+          "memory_source_sha256": {
+            "chunked_hypernetwork.py": "ecf04b58a90bee6211f9fda3712d73649e89f9c42fa01179caebbe48cbe26afd",
+            "local_memory_variants.py": "c1610140bf517fc26fbb41e541ccf0f135dbacc59df3a3ca880d1e1a4b599de6",
+            "lossless_layer_norm.py": "0bd292f45fdceb9eda11c1bff970a2a90f9e645c08f5135c02dcea9d36da1d8d",
+            "lossless_mlp.py": "b7849b1455a5d62f034ae83ad6a4a86b532e03398323a8d9c7398934a4807872",
+            "pool_training_memory.py": "3c482f79514a11d1fd65a7ecb033a3ec8a18bbd72e26ce5196948695f7ee93f8"
+          },
+          "microbatch_size": 32,
+          "min_data_chars": 32,
+          "model": "/gpfs/scrubbed/qxli2/anytok-h200-smoke/modal_results/local_memory/artifacts/input/model",
+          "paired_reward_source_sha256": "406cfc58bf1c46cef0dc6785bbb313ca5797c0d35bf6cd786b3115a92e5523c1",
+          "pairing_protocol": "nearest_valid_canonical_midpoint_boundary_joint_128_positions_v1",
+          "policy": {
+            "exploration_period": 4,
+            "feature_sha256": "9c2b8cc7da5e7dc70051ef9b7fac950c000175aebf97a7a093335b39a925b704",
+            "feature_source_sha256": "6dbfcbf8c6552ef98b56de08c09ae59bd35a2d7d1a75e7e295cfcf5346a90b8c",
+            "hidden_sizes": [
+              64,
+              64
+            ],
+            "kind": "online_hardness_regression",
+            "learning_rate": 0.001,
+            "loss": "single_observation_squared_error",
+            "replay": false,
+            "seed": 43,
+            "warmup_updates": 0
+          },
+          "policy_reward": "paired_pre_model_update_transferred_bpb_minus_current_canonical_bpb",
+          "policy_source_sha256": "f31fbf744fd2287ffc8914d468ea766e432e6f8cdf1fe79cdf32c5c55d31601b",
+          "pool_index_sha256": "7cdc2c0bb4b300605d152255ed6156f598154fb3dbe402e272c83276941353a1",
+          "pool_plan_sha256": "1f5d0be379e321015d1ab7b35bb93bcf82e8ce32f949411de1d7272dfa3cb1bb",
+          "pool_priors": "native_unigram_scores_otherwise_zero",
+          "pool_sampling_sha256": "846446a0ddb8b833801bb74b7939452a3195760a98e9bab2a3dd2e73d57f1b57",
+          "pool_size": 1000,
+          "predictor_source_sha256": "e6e9beedbc8d05e5816c5f6204894febcda88b2ab0047bc6e000be296afe1265",
+          "protected_steps": [
+            500,
+            1000,
+            1500,
+            2000,
+            2500,
+            3000,
+            3500,
+            4000,
+            4500,
+            5000,
+            5500,
+            6000,
+            6500,
+            7000,
+            7500,
+            8000,
+            8500,
+            9000,
+            9500,
+            10000,
+            10500,
+            11000,
+            11500,
+            12000,
+            12500,
+            13000,
+            13500,
+            14000,
+            14500,
+            15000,
+            15500,
+            16000,
+            16500,
+            17000,
+            17500,
+            18000,
+            18500,
+            19000,
+            19500,
+            20000
+          ],
+          "recipe_sha256": "b3bc193333aa13d3a513f1c8978805835f837190cd0e5991742c55e9a0752cfe",
+          "reward_objective": "regret",
+          "sampler_text_chars": 2048,
+          "seed": 42,
+          "sequence_length": 128,
+          "tokenizer_sampling": "regret_predictor_argmax_with_one_in_four_shuffled_coverage",
+          "training_script_sha256": "1679e8a9cbce3d68e06565e23efb11b0f42e4118012d79f61050a316f276ee5c",
+          "warmup_checkpoint": "/gpfs/scrubbed/qxli2/anytok-h200-smoke/modal_results/local_memory/artifacts/input/warmup"
+        },
+        "manifest": {
+          "files": {
+            "hypernet/config.json": {
+              "bytes": 2382,
+              "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+            },
+            "hypernet/model.safetensors": {
+              "bytes": 1376918848,
+              "sha256": "8cd095e21e4bd9474972a398201d6e08be70d940832b328aa68a75ec4acebbb7"
+            },
+            "lm.pt": {
+              "bytes": 7248239832,
+              "sha256": "7fc561eab17f8a6ae24ad379c4b2f64567c63fba5037d41e2d68e1c0da126c2a"
+            },
+            "optimizer.pt": {
+              "bytes": 14834411782,
+              "sha256": "e82d9dff701aefe038e4eb714889e313b02c8c111f5755d4ce54fda1e6d4b6ab"
+            },
+            "policy.pt": {
+              "bytes": 79541,
+              "sha256": "3aa70433fa659903657e261d3f3760b710948e3d5e27a0c8a487dedeadf6c450"
+            },
+            "state.pt": {
+              "bytes": 5453451,
+              "sha256": "6ea92d5cd15db9ea3ba9fd772aeca2669adde3e327e9a7db3a50c5a678629b51"
+            }
+          },
+          "kind": "full_restart_checkpoint",
+          "step": 8000
+        },
+        "name": "predictor"
+      }
+    ],
+    "panel_audit_sha256": "8db9bafc5747f8197664e7a81f0b8ce90f840e2ee51f508470204c8b335862c9",
+    "panel_sha256": "6ca657296882bfeff8a022c694093d60f97cbce197b50f2863b540a6cab0f5a9",
+    "parent_panel_sha256": "21920fd9255e26459f3bc63f9574c7004b69ee6df24b77e5945b9dc884f1cc8a",
+    "position_cap": 128,
+    "random_indices": [
+      879,
+      149,
+      24,
+      994,
+      239,
+      207,
+      220,
+      351,
+      307,
+      221,
+      352,
+      476,
+      62,
+      11,
+      912,
+      763,
+      362,
+      300,
+      291,
+      493,
+      723,
+      121,
+      943,
+      521,
+      751,
+      408,
+      482,
+      176,
+      131,
+      308,
+      672,
+      680,
+      551,
+      599,
+      913,
+      981,
+      996,
+      554,
+      932,
+      138,
+      624,
+      240,
+      936,
+      853,
+      571,
+      169,
+      596,
+      635,
+      705,
+      719
+    ],
+    "random_indices_sha256": "2689f6d6976612ba4cf429cb982149f673e15258a6252d6244fd43868cc02bb4",
+    "runtime": {
+      "numpy": "2.3.5",
+      "tokenizers": "0.22.2",
+      "torch": "2.15.0",
+      "transformers": "5.15.1"
+    },
+    "sources": [
+      {
+        "bytes": 7248239832,
+        "path": "checkpoints/uniform/lm.pt",
+        "profile": "gildmember",
+        "remote": "run/step-008000/lm.pt",
+        "sha256": "aef858f4409d2e3fe39994e26af7313e7a846ae9a516b0cc15bd98ded5998e21",
+        "volume": "anytok-pool-20k"
+      },
+      {
+        "bytes": 2382,
+        "path": "checkpoints/uniform/hypernet/config.json",
+        "profile": "gildmember",
+        "remote": "run/step-008000/hypernet/config.json",
+        "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d",
+        "volume": "anytok-pool-20k"
+      },
+      {
+        "bytes": 1376918848,
+        "path": "checkpoints/uniform/hypernet/model.safetensors",
+        "profile": "gildmember",
+        "remote": "run/step-008000/hypernet/model.safetensors",
+        "sha256": "2c8dd1e97e517dcf2445e9a287e10a1cf12bd33dad22e7409c57bfd7848222e2",
+        "volume": "anytok-pool-20k"
+      },
+      {
+        "bytes": 7248239832,
+        "path": "checkpoints/raw_bpb/lm.pt",
+        "profile": "neural-net-1411",
+        "remote": "settings-run/step-008000/lm.pt",
+        "sha256": "7991dd5b42564226180cb7ece83c8fabe8917c5163bcd1a636200339a6678075",
+        "volume": "anytok-pool-rl-20k"
+      },
+      {
+        "bytes": 2382,
+        "path": "checkpoints/raw_bpb/hypernet/config.json",
+        "profile": "neural-net-1411",
+        "remote": "settings-run/step-008000/hypernet/config.json",
+        "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d",
+        "volume": "anytok-pool-rl-20k"
+      },
+      {
+        "bytes": 1376918848,
+        "path": "checkpoints/raw_bpb/hypernet/model.safetensors",
+        "profile": "neural-net-1411",
+        "remote": "settings-run/step-008000/hypernet/model.safetensors",
+        "sha256": "367ffaf72a1a0954e3bf7bec2d0296f70156c9075a6f27c34ca8da420d4d7724",
+        "volume": "anytok-pool-rl-20k"
+      },
+      {
+        "bytes": 3570854,
+        "path": "heldout/ood48-base/tokenizer.json",
+        "profile": "trenton",
+        "remote": "weakness-v1/tokenizers/ood48-base/tokenizer.json",
+        "sha256": "1ad75ae98d1eef7afb2b348c82ce48199b4fdf2aa417cc55a515a25047651a47",
+        "volume": "anytok-pool-generalization"
+      },
+      {
+        "bytes": 3532702,
+        "path": "heldout/ood48-code50/tokenizer.json",
+        "profile": "trenton",
+        "remote": "weakness-v1/tokenizers/ood48-code50/tokenizer.json",
+        "sha256": "75485103c030d09fc3cdc282b81e552f74f37e1d692df9b546f091171bfe4c0c",
+        "volume": "anytok-pool-generalization"
+      },
+      {
+        "bytes": 3557586,
+        "path": "heldout/ood48-papers25/tokenizer.json",
+        "profile": "trenton",
+        "remote": "weakness-v1/tokenizers/ood48-papers25/tokenizer.json",
+        "sha256": "99ca0d30e10a62ca32e415e4842dd4a9be634b5ed0f8c3f926dc05f135e02c9b",
+        "volume": "anytok-pool-generalization"
+      },
+      {
+        "bytes": 3528488,
+        "path": "heldout/ood48-math50/tokenizer.json",
+        "profile": "trenton",
+        "remote": "weakness-v1/tokenizers/ood48-math50/tokenizer.json",
+        "sha256": "7fb3935be8f83c2667656fbbd8c3d9e9f5445efc79d35457dc5d33eb18f2a892",
+        "volume": "anytok-pool-generalization"
+      },
+      {
+        "bytes": 3538600,
+        "path": "heldout/ood48-qa25/tokenizer.json",
+        "profile": "trenton",
+        "remote": "weakness-v1/tokenizers/ood48-qa25/tokenizer.json",
+        "sha256": "bdb710b6e53cc12881556277bc0028d8f756b5cb2506babda0a4195d10d31ea3",
+        "volume": "anytok-pool-generalization"
+      },
+      {
+        "bytes": 3540894,
+        "path": "heldout/ood48-books25/tokenizer.json",
+        "profile": "trenton",
+        "remote": "weakness-v1/tokenizers/ood48-books25/tokenizer.json",
+        "sha256": "3004f009fa0a02cdc43b26a79ed901e2d21b6d81ee39560c3a7bf3c71914e308",
+        "volume": "anytok-pool-generalization"
+      },
+      {
+        "bytes": 3551548,
+        "path": "heldout/ood48-medical40/tokenizer.json",
+        "profile": "trenton",
+        "remote": "weakness-v1/tokenizers/ood48-medical40/tokenizer.json",
+        "sha256": "014f4cf40e1efb14382b1d841811e59cd5a258bb488df51cfdd37fb93a1477d7",
+        "volume": "anytok-pool-generalization"
+      },
+      {
+        "bytes": 3566974,
+        "path": "heldout/ood48-legal40/tokenizer.json",
+        "profile": "trenton",
+        "remote": "weakness-v1/tokenizers/ood48-legal40/tokenizer.json",
+        "sha256": "a8bdc26e719afa952b013d8dd8aa29a44833fd6d6208e31d91be2488a9df7163",
+        "volume": "anytok-pool-generalization"
+      },
+      {
+        "bytes": 3523422,
+        "path": "heldout/ood48-spanish35/tokenizer.json",
+        "profile": "trenton",
+        "remote": "weakness-v1/tokenizers/ood48-spanish35/tokenizer.json",
+        "sha256": "b1a2225a7f2bf50b772d5b47450f8a320ce6c661bbd2f0fcf19c3335398a2284",
+        "volume": "anytok-pool-generalization"
+      },
+      {
+        "bytes": 3598926,
+        "path": "heldout/ood48-chinese35/tokenizer.json",
+        "profile": "trenton",
+        "remote": "weakness-v1/tokenizers/ood48-chinese35/tokenizer.json",
+        "sha256": "7fb9f4a2cc02050e04158d1a49e31ade984e4f614ca96135bb7e8d781474326c",
+        "volume": "anytok-pool-generalization"
+      },
+      {
+        "bytes": 3697090,
+        "path": "heldout/ood48-japanese35/tokenizer.json",
+        "profile": "trenton",
+        "remote": "weakness-v1/tokenizers/ood48-japanese35/tokenizer.json",
+        "sha256": "f59419d4ad4085f0ae18dae1e8634582d97452869d1c013df6323d783d0124ef",
+        "volume": "anytok-pool-generalization"
+      },
+      {
+        "bytes": 4836550,
+        "path": "heldout/base64/tokenizer.json",
+        "profile": "trenton",
+        "remote": "weakness-v1/tokenizers/base64/tokenizer.json",
+        "sha256": "8e9ba3174eb2123de0083a7d4eb3f9492160fcd0ba559801f30de45a1602a2bd",
+        "volume": "anytok-pool-generalization"
+      },
+      {
+        "bytes": 1797868,
+        "path": "parent-panel.json",
+        "profile": "blackpantherx86",
+        "remote": "corrected-pool-check-v1/panel.json",
+        "volume": "anytok-rl-all-pool-20k"
+      }
+    ],
+    "step": 8000,
+    "suffix_tokens": 32,
+    "training_resumed": false,
+    "trimmed_passages": 0,
+    "version": 1
+  },
+  "parent_panel_sha256": "6ca657296882bfeff8a022c694093d60f97cbce197b50f2863b540a6cab0f5a9",
+  "parent_plan_sha256": "1559d699a00ec4d50f71816383aed41b569c1d6cb2fcffdba0104000a5d686ae",
+  "source_hashes": {
+    "scripts/predictor_trajectory.py": "36569deec9bd46de0935c099d8a7dd3bf25a9e139b70229de297e25eb3ac6743"
+  },
+  "steps": [
+    2000,
+    4000,
+    6000,
+    8000
+  ],
+  "training_resumed": false,
+  "version": 1
+}
