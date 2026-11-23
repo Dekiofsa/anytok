@@ -293,6 +293,11 @@ code tree, input bundle and train environment, but not through `submit.sh`: each
 into a `code/` folder beside its state, and a monitor-only observer on the laptop for its dashboard entry.
 Afterwards `hyakusage` showed 70.31 USD of the account's 250 USD used.
 
+On 2026-11-22, after everything was saved on Hugging Face and in this repository, the outputs on Tillicum were
+deleted, about 900 GB: both runs' folders on scrubbed and project storage, the ranking state, the HF staging
+tree, the relocation notes and the downloaded input archive. The extracted input bundle, the train environment
+and the checkout were kept (24 GB), so a new job needs no setup. The commands below show where the jobs ran.
+
 **Full-pool ranking of step 20,000** (plan `plans/rawbpb-pool-ranking-20000.md`, report
 `reports/rawbpb-pool-ranking-20000/`, dashboard entry `rawbpb-pool-ranking-20000`). All 1,000 pool tokenizers
 are scored on this run's frozen step-20,000 full restart with the protocol of Qingyun's step-6,500 ranking

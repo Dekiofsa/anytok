@@ -167,7 +167,9 @@ His checkpoints stay in `cminst/anytok-regret-rl-20k`, which holds steps
 
 The jobs ran in `/gpfs/scrubbed/<user>/anytok-runs/regret-rl-20k` (`run/`,
 `check-run/`, `backups/`, `code/`). Scrubbed storage is purged after 60 days
-without access, so the Hugging Face folder is the copy of record.
+without access, so the Hugging Face folder is the copy of record. The cluster
+folder was deleted on 2026-11-22, after everything in it was saved on Hugging
+Face and in this repository.
 
 Local metadata (gitignored): `modal_results/regret_rl_20k_continuation/`
 (`status.json`, `events.jsonl`, `controller.log`). The monitor-only observer

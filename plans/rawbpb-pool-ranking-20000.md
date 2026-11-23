@@ -159,7 +159,8 @@ copied the small result files home and verified their hashes.
   `60670ac8cea5b53695ec43db8160c86856c2b70b`, also verified.
 - **Cluster working folder.** The jobs ran in
   `/gpfs/projects/stf/<user>/anytok-runs/rawbpb-pool-ranking-20000/` on
-  Tillicum. It is not the persistent copy.
+  Tillicum. It was deleted on 2026-11-22, after its data was saved on
+  Hugging Face.
 - **Local metadata.** `modal_results/rawbpb_pool_ranking_20000/`
   (gitignored): the observer's `status.json`, `events.jsonl` and
   `controller.log`, and the copied results.
