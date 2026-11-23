@@ -285,6 +285,74 @@ here: the 9.3 GB download and extraction (not downloaded off-cluster, `AGENTS.md
 real trainer (it needs CUDA; Qingyun ran it on a Tillicum H200), Slurm's signal timing, and the
 dashboard on the login node.
 
+### 0.10 Follow-up jobs (2026-11-20 to 22)
+
+Two follow-up experiments ran on account `stf` (Slurm jobs 503015, array 503041 with four tasks, 505608 and
+505613; partition `gpu-h200`, one H200 each, no `-c` or `--mem`, so 4 CPUs and 120G) with this run's staged
+code tree, input bundle and train environment, but not through `submit.sh`: each has its own scripts, staged
+into a `code/` folder beside its state, and a monitor-only observer on the laptop for its dashboard entry.
+Afterwards `hyakusage` showed 70.31 USD of the account's 250 USD used.
+
+**Full-pool ranking of step 20,000** (plan `plans/rawbpb-pool-ranking-20000.md`, report
+`reports/rawbpb-pool-ranking-20000/`, dashboard entry `rawbpb-pool-ranking-20000`). All 1,000 pool tokenizers
+are scored on this run's frozen step-20,000 full restart with the protocol of Qingyun's step-6,500 ranking
+(`plans/regret-pool-ranking-6500.md` on zett-modal-20k), on a fresh panel (the next 32 training batches of 128
+the run would have drawn after 20,000), and the saved policy is compared with the measured ranking by gap and
+by raw BPB. Scripts: `scripts/prepare_rawbpb_pool_ranking.py` (the panel, cross-checked by replaying updates
+18,001-20,000) and `scripts/score_rawbpb_pool_ranking.py`, each with an `.sbatch`; the status reader
+`scripts/rawbpb_pool_ranking_status.py`; the observer `scripts/run_rawbpb_pool_ranking.py`, which copies the
+small results home; and `scripts/report_rawbpb_pool_ranking.py` with `scripts/pool_policy_ranking.py`. Jobs:
+503015 (preparation and a one-tokenizer smoke, debug, 0:20:25) and array 503041 (four shards of 250, normal
+QoS, 8 h limit, 3:41:19 to 3:49:25 each): 15.38 GPU-hours, 13.84 USD. Kept: HF `Dekiofsa/RLtokenizers`,
+`raw-bpb-rl-20k/diagnostics/policy-ranking-step-020000/` (added at revision `2533fc56...`: scores, panel,
+policy, run plan and `records/`); local copies in `modal_results/rawbpb_pool_ranking_20000/` (gitignored).
+
+**Regret RL continuation, updates 8,001 to 20,000** (plan `plans/regret-rl-20k-continuation.md`, report
+`reports/regret-rl-20k-continuation/`, dashboard entry `regret-rl-20k-continuation`). Qingyun's entropy-0
+regret run (HF `cminst/anytok-regret-rl-20k`, paused at 8,000) resumes from its step-8,000 full restart with
+the same trainer, inputs and settings; only the input locations, the account and the upload destination
+change. Scripts: `scripts/fetch_regret_continuation_restart.py` (the 23.5 GB restart from HF straight to
+scrubbed storage, checked against its manifest), `scripts/resume_regret_continuation.py` (the guard: only the
+model and warmup locations may differ), `scripts/continue_regret_rl.py` (the driver: `--check`, training with
+uploads, `--backup-only`) with its two `.sbatch` files, and the observer `scripts/run_regret_continuation.py`
+with `scripts/regret_continuation_status.py`; the report comes from `scripts/extract_regret_continuation.py`
+and `scripts/report_regret_continuation.py`. Jobs: 505608 (the resume check, updates 8,001-8,002, debug,
+0:01:59; all 10 checks passed, and update 8,001 matched the source run's logged update exactly except for the
+time per update) and 505613 (updates 8,001-20,000, normal QoS, 24 h limit, 22:50:25 at 6.85 s per update; the
+second approved allocation was not needed): 22.87 GPU-hours, 20.59 USD (training 20.56, check 0.03). Kept: HF
+`Dekiofsa/RLtokenizers`, `regret-rl-20k/` (pin revision `40ae95d6...`): `checkpoints/step-008500` to
+`step-020000`, each verified on HF against its manifest, `latest_restart.json` (step 20,000), `metadata/`
+(`events.jsonl` of updates 1-20,000) and `records/` (receipts, Slurm logs, as-run code); local metadata in
+`modal_results/regret_rl_20k_continuation/` (gitignored).
+
+```bash
+# login node, from a checkout with these scripts; each job script's header lists what its code/ must hold
+S=/gpfs/projects/stf/<user>/anytok-runs/rawbpb-pool-ranking-20000        # ranking state
+R=/gpfs/scrubbed/<user>/anytok-runs/regret-rl-20k                      # continuation state
+E=/gpfs/projects/stf/<user>/anytok-data/env/train                      # the train environment
+mkdir -p $S/code && cp scripts/prepare_rawbpb_pool_ranking.py scripts/score_rawbpb_pool_ranking.py \
+  scripts/rawbpb_pool_ranking_status.py scripts/package_training_inputs.py $S/code/
+sbatch scripts/prepare_rawbpb_pool_ranking.sbatch fresh       # 503015: panel, cross-check, smoke
+sbatch scripts/score_rawbpb_pool_ranking.sbatch               # 503041, after 503015 had ended
+mkdir -p $R/code && cp scripts/fetch_regret_continuation_restart.py $R/code/
+(export HF_HOME=$R/.hf-home HF_XET_CACHE=$R/.hf-home/xet HF_XET_CHUNK_CACHE_SIZE_BYTES=0 HF_HUB_DISABLE_TELEMETRY=1
+ unset HF_TOKEN HUGGING_FACE_HUB_TOKEN PYTHONPATH          # caches stay off the 10 GB home; the fetch needs no token
+ nice -n 10 $E/bin/python -I $R/code/fetch_regret_continuation_restart.py --state $R)   # fills $R/run (23.5 GB)
+cp scripts/continue_regret_rl.py scripts/resume_regret_continuation.py \
+  scripts/continue_regret_rl_check.sbatch scripts/continue_regret_rl.sbatch $R/code/
+sbatch $R/code/continue_regret_rl_check.sbatch      # 505608: writes check-receipt.json
+sbatch $R/code/continue_regret_rl.sbatch            # 505613: queues at most one more allocation itself
+# laptop, from the repository root, with the same S, R and E: the observers (standard library only) ...
+python3 scripts/run_rawbpb_pool_ranking.py --host <user>@tillicum.hyak.uw.edu --remote-state $S \
+  --remote-input /gpfs/projects/stf/<user>/anytok-data/input --python $E/bin/python --until complete
+python3 scripts/run_regret_continuation.py --host <user>@tillicum.hyak.uw.edu --remote-state $R \
+  --python $E/bin/python --until complete
+# ... then the reports, with a venv holding numpy 2.0.2, matplotlib 3.9.4 and fontTools (the committed figures' versions)
+.venv/bin/python scripts/report_rawbpb_pool_ranking.py --reference <folder>   # <folder>: see --help
+.venv/bin/python scripts/extract_regret_continuation.py --sacct <sacct -X -P rows of 505608 and 505613>
+.venv/bin/python scripts/report_regret_continuation.py                         # from reports/.../data/ alone
+```
+
 ---
 
 ## 1. What is reproduced, the forced deviations and the RL protocol

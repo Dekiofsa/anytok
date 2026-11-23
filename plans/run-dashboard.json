@@ -150,6 +150,48 @@
       "description": "Trains the LM and hypernetwork with the original ZeTT tokenizer-sampling method."
     },
     {
+      "id": "rawbpb-pool-ranking-20000",
+      "name": "Raw-BPB 20k · policy vs all 1,000 tokenizers",
+      "adapter": "progress_json",
+      "platform": "Tillicum · H200",
+      "status": "modal_results/rawbpb_pool_ranking_20000/status.json",
+      "progress_log": "modal_results/rawbpb_pool_ranking_20000/events.jsonl",
+      "completion_stage": "complete",
+      "total": 1000,
+      "unit": "tokenizers",
+      "profiles": [
+        "stf"
+      ],
+      "app_names": [],
+      "logs": [
+        "modal_results/rawbpb_pool_ranking_20000/controller.log",
+        "modal_results/rawbpb_pool_ranking_20000/events.jsonl"
+      ],
+      "category": "Evaluations",
+      "description": "Frozen step 20,000 of the raw-BPB RL run; every pool tokenizer is scored on 32 fixed training-style batches of 128 examples with the exact training reward and active dropout, then the saved policy is compared with the measured ranking. Four H200 workers on Tillicum."
+    },
+    {
+      "id": "regret-rl-20k-continuation",
+      "name": "Regret RL · continue 8k → 20k",
+      "adapter": "progress_json",
+      "platform": "Tillicum · H200",
+      "status": "modal_results/regret_rl_20k_continuation/status.json",
+      "progress_log": "modal_results/regret_rl_20k_continuation/events.jsonl",
+      "completion_stage": "complete",
+      "total": 20000,
+      "unit": "updates",
+      "profiles": [
+        "stf"
+      ],
+      "app_names": [],
+      "logs": [
+        "modal_results/regret_rl_20k_continuation/controller.log",
+        "modal_results/regret_rl_20k_continuation/events.jsonl"
+      ],
+      "category": "Training",
+      "description": "Continues the entropy-zero regret RL run from its verified step-8,000 full restart to update 20,000 on one Tillicum H200 (a one-hour resume check, then up to two 24-hour allocations). Checkpoints are backed up to Hugging Face as they are written."
+    },
+    {
       "id": "rl-ood-20k",
       "name": "RL vs uniform · held-out tokenizer weaknesses",
       "adapter": "progress_json",
