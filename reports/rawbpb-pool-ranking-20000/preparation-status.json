@@ -1,0 +1,16 @@
+{
+  "at_utc": "2026-11-20T11:33:48.100254+00:00",
+  "batches": 32,
+  "checkpoint_step": 20000,
+  "detail": "fresh panel and step-20000 checkpoint frozen for the full-pool ranking",
+  "examples": 4096,
+  "panel_manifest_sha256": "95dff14336e629bd56d4cd99b891eb8d432c6f380868ab4d632ceb2c4ea64609",
+  "panel_mode": "fresh",
+  "panel_sha256": "87d13112de30d08394afc2985bf25d6aab5bd9e73b0a3bfc6951234681307c97",
+  "replayed_updates": {
+    "count": 2000,
+    "first": 18001,
+    "last": 20000
+  },
+  "stage": "prepared"
+}

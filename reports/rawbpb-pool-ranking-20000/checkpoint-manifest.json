@@ -1,0 +1,30 @@
+{
+  "files": {
+    "hypernet/config.json": {
+      "bytes": 2382,
+      "sha256": "22cb4f86771ec9ca181ff9b32017981707d08f7848f6923f91028c708aca2c8d"
+    },
+    "hypernet/model.safetensors": {
+      "bytes": 1376918848,
+      "sha256": "059c4da65661304bc5b2969860f2dddd023ee4c5faca30bc890c8757c18dc36e"
+    },
+    "lm.pt": {
+      "bytes": 7248239832,
+      "sha256": "ddf1e074758e259e7def46890bbc95587461817271732932db9c1fbadd027e32"
+    },
+    "optimizer.pt": {
+      "bytes": 14834411782,
+      "sha256": "715d2054e33e38e30cee7acf7704d9522dee2581db23503322e751c5da2a6a93"
+    },
+    "policy.pt": {
+      "bytes": 207610,
+      "sha256": "5d2976a249dab0f2ccdf44dfe73a4173f82613f20e8b79c3c60011e1c1811d77"
+    },
+    "state.pt": {
+      "bytes": 6283718,
+      "sha256": "c62ad017ed8e660e6ea841ebe7f6fa292fdddeae4a3d3263a93c5dba20742505"
+    }
+  },
+  "kind": "full_restart_checkpoint",
+  "step": 20000
+}

@@ -1,0 +1,52 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 9609,
+      "sha256": "38f87086643036213b79e2963c94d02d96b6034a3a8e22a5d5632587dbce4b49"
+    },
+    "all-scores.json.gz": {
+      "bytes": 3327859,
+      "sha256": "29bb3b16a93d46397754af52db1cba768d34cf3b392bed59e74f181b4a57d7d9"
+    },
+    "analysis.json": {
+      "bytes": 113575,
+      "sha256": "3e7db8081f24b41ee22fdb634826605c3966a27faa20df6610f4e6927978b327"
+    },
+    "checkpoint-manifest.json": {
+      "bytes": 904,
+      "sha256": "8849ec2df94e583925e1e97cdd642416a7ddb27a4ef1ecad6fbf54a4b38976b7"
+    },
+    "panel-manifest.json": {
+      "bytes": 6070,
+      "sha256": "95dff14336e629bd56d4cd99b891eb8d432c6f380868ab4d632ceb2c4ea64609"
+    },
+    "policy.json": {
+      "bytes": 35575,
+      "sha256": "fe53dad91c2d7e920bffa743ca4068d2e2b34eecdb92f6873a837a100ed07042"
+    },
+    "pool-index.json": {
+      "bytes": 9499717,
+      "sha256": "7cdc2c0bb4b300605d152255ed6156f598154fb3dbe402e272c83276941353a1"
+    },
+    "preparation-status.json": {
+      "bytes": 517,
+      "sha256": "d7fa0a2761a0ee22ce29a9846a3bc10209870788d7287077e6c7f8fd3d4d68c7"
+    },
+    "rawbpb_pool_ranking_20000.pdf": {
+      "bytes": 36963,
+      "sha256": "882c13cdf147be75d80477e82966bf3b0477ff20810ec8317b0758962a07b30b"
+    },
+    "rawbpb_pool_ranking_20000.png": {
+      "bytes": 247703,
+      "sha256": "d8a89479edbcd70a217efcaa9ea92174213ff0fc7e408c2367c3fc572bfb3e64"
+    },
+    "run-plan.json": {
+      "bytes": 9530,
+      "sha256": "8fc65eebea9c27ec6d5b2e5d3080b490308d437437dd5339add4b7b4140b2413"
+    },
+    "tokenizer-ranking.csv": {
+      "bytes": 161028,
+      "sha256": "24fbf40bc92c6692feb874a64e0a8e345319058ab4a72f5edb514a326373e555"
+    }
+  }
+}
