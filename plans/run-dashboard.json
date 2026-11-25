@@ -150,6 +150,27 @@
       "description": "Trains the LM and hypernetwork with the original ZeTT tokenizer-sampling method."
     },
     {
+      "id": "rawbpb-heldout-pool",
+      "name": "Raw-BPB 20k · held-out eval of all 42 checkpoints",
+      "adapter": "progress_json",
+      "platform": "Tillicum · H200",
+      "status": "modal_results/rawbpb_heldout_pool/status.json",
+      "progress_log": "modal_results/rawbpb_heldout_pool/events.jsonl",
+      "completion_stage": "complete",
+      "total": 42000,
+      "unit": "tokenizer scores",
+      "profiles": [
+        "stf"
+      ],
+      "app_names": [],
+      "logs": [
+        "modal_results/rawbpb_heldout_pool/observer.log",
+        "modal_results/rawbpb_heldout_pool/events.jsonl"
+      ],
+      "category": "Evaluations",
+      "description": "Qingyun's held-out full-pool eval (948787e: 156 frozen passages, 4,992 scored tokens, dropout off) on every save of the raw-BPB RL run, steps 0 to 20,000 every 500 plus 16,409. Each checkpoint scores all 1,000 pool tokenizers on one Tillicum H200, after a GPU smoke test."
+    },
+    {
       "id": "rawbpb-pool-ranking-20000",
       "name": "Raw-BPB 20k · policy vs all 1,000 tokenizers",
       "adapter": "progress_json",
